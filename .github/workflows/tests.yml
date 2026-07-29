@@ -3,9 +3,54 @@ name: EventHub Selenium BDD
 on:
   push:
   pull_request:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: Browser for UI tests
+        required: true
+        default: chrome
+        type: choice
+        options:
+          - chrome
+          - firefox
+      suite:
+        description: Test suite/tag expression to run
+        required: true
+        default: smoke
+        type: choice
+        options:
+          - smoke
+          - ui
+          - api
+          - regression
+          - admin
+          - auth
+          - bookings
+          - events
+          - hybrid
+          - stateful
+          - all
+      parallel:
+        description: Run scenarios in parallel
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      thread-count:
+        description: Thread count used when parallel=true
+        required: true
+        default: "2"
+        type: choice
+        options:
+          - "2"
+          - "3"
+          - "4"
+          - "5"
 
 jobs:
-  smoke:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,8 +59,31 @@ jobs:
           distribution: temurin
           java-version: "17"
           cache: maven
-      - name: Run smoke tests
-        run: mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@smoke"
+      - name: Run tests
+        shell: bash
+        run: |
+          BROWSER="${{ github.event.inputs.browser || 'chrome' }}"
+          SUITE="${{ github.event.inputs.suite || 'smoke' }}"
+          PARALLEL="${{ github.event.inputs.parallel || 'false' }}"
+          THREAD_COUNT="${{ github.event.inputs['thread-count'] || '2' }}"
+
+          if [[ "$SUITE" == "all" ]]; then
+            TAG_EXPRESSION=""
+          else
+            TAG_EXPRESSION="@$SUITE"
+          fi
+
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
+
+          if [[ -n "$TAG_EXPRESSION" ]]; then
+            MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
+          fi
+
+          if [[ "$PARALLEL" == "true" ]]; then
+            MVN_ARGS+=(-Dparallel=methods -Dthread.count="$THREAD_COUNT")
+          fi
+
+          mvn test "${MVN_ARGS[@]}"
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4
