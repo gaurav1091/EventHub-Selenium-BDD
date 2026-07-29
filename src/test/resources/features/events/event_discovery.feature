@@ -26,6 +26,7 @@ Feature: Event discovery
     When I open the Events page
     And I search events for "Dilli Diwali Mela"
     Then I should see event "Dilli Diwali Mela"
+    And I should not see event "World Tech Summit"
 
   @regression @parallel-safe
   Scenario: User can filter events by city and category
@@ -61,3 +62,8 @@ Feature: Event discovery
     Examples:
       | entryPoint | eventName             |
       | the title  | World Tech Summit     |
+
+  @regression @parallel-safe
+  Scenario: User can open a bookable event detail page from Book Now
+    When I open details from Book Now for a bookable event
+    Then I should see the event detail booking panel

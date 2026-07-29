@@ -55,6 +55,12 @@ public class EventDetailPage extends BasePage {
         type(PHONE, booking.customerPhone());
     }
 
+    public void assertBookingFormContains(BookingRequest booking) {
+        assertThat(visible(FULL_NAME).getAttribute("value")).isEqualTo(booking.customerName());
+        assertThat(visible(EMAIL).getAttribute("value")).isEqualTo(booking.customerEmail());
+        assertThat(visible(PHONE).getAttribute("value")).isEqualTo(booking.customerPhone());
+    }
+
     public void confirmBooking() {
         click(CONFIRM_BOOKING);
     }

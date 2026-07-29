@@ -43,3 +43,9 @@ Feature: EventHub authentication
     Given I am an anonymous visitor
     When I directly open protected route "/bookings"
     Then I should be returned to the login page
+
+  @regression @parallel-safe
+  Scenario: Authenticated user can directly open a protected route
+    Given I am signed in to EventHub
+    When I directly open protected route "/bookings"
+    Then the My Bookings page should be loaded

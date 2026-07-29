@@ -39,3 +39,14 @@ SUITE=parallel-safe PARALLEL=true THREAD_COUNT=4 docker compose run --rm eventhu
 
 Reusable expected data lives in `src/test/resources/test-data/eventhub-test-data.json`.
 Dynamic stateful records should be created through factories with unique names and cleaned through API helpers.
+
+## CI Policy
+
+Push, pull request, and nightly runs execute a matrix:
+
+- Chrome smoke, serial.
+- Firefox smoke, serial.
+- Chrome API, parallel.
+- Chrome `@parallel-safe`, parallel with four threads.
+
+Manual workflow dispatch runs exactly one selected browser/suite/parallel combination from the GitHub Actions inputs.

@@ -115,6 +115,16 @@ public class BookingSteps {
         detailPage.fillBookingForm(booking);
     }
 
+    @When("I enter valid booking customer details for a bookable event")
+    public void iEnterValidBookingCustomerDetailsForABookableEvent() {
+        eventsPage.openEventsPage();
+        eventsPage.bookFirstAvailableEvent();
+        String eventId = context.apiClient().findFirstBookableEventId();
+        BookingRequest booking = TestDataFactory.booking(eventId, 1);
+        context.setLastBookingRequest(booking);
+        detailPage.fillBookingForm(booking);
+    }
+
     @When("I create a booking through the API for cleanup")
     public void iCreateABookingThroughTheApiForCleanup() {
         String eventId = context.apiClient().findFirstBookableEventId();
@@ -177,6 +187,11 @@ public class BookingSteps {
     @Then("I should see the event detail booking panel")
     public void iShouldSeeTheEventDetailBookingPanel() {
         detailPage.assertBookingPanelVisible();
+    }
+
+    @Then("the booking form should contain the generated customer details")
+    public void theBookingFormShouldContainTheGeneratedCustomerDetails() {
+        detailPage.assertBookingFormContains(context.lastBookingRequest());
     }
 
     @Then("the ticket quantity should be {int}")

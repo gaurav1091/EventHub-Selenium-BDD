@@ -54,8 +54,30 @@ on:
           - "5"
 
 jobs:
-  tests:
+  matrix-tests:
+    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - browser: chrome
+            suite: smoke
+            parallel: "false"
+            thread-count: "2"
+          - browser: firefox
+            suite: smoke
+            parallel: "false"
+            thread-count: "2"
+          - browser: chrome
+            suite: api
+            parallel: "true"
+            thread-count: "2"
+          - browser: chrome
+            suite: parallel-safe
+            parallel: "true"
+            thread-count: "4"
+    name: matrix / ${{ matrix.browser }} / ${{ matrix.suite }} / parallel=${{ matrix.parallel }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-java@v5
@@ -66,10 +88,10 @@ jobs:
       - name: Run tests
         shell: bash
         run: |
-          BROWSER="${{ github.event.inputs.browser || 'chrome' }}"
-          SUITE="${{ github.event.inputs.suite || 'smoke' }}"
-          PARALLEL="${{ github.event.inputs.parallel || 'false' }}"
-          THREAD_COUNT="${{ github.event.inputs['thread-count'] || '2' }}"
+          BROWSER="${{ matrix.browser }}"
+          SUITE="${{ matrix.suite }}"
+          PARALLEL="${{ matrix.parallel }}"
+          THREAD_COUNT="${{ matrix['thread-count'] }}"
 
           if [[ "$SUITE" == "all" ]]; then
             TAG_EXPRESSION=""
@@ -99,7 +121,61 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v5
         with:
-          name: eventhub-test-reports
+          name: eventhub-test-reports-${{ matrix.browser }}-${{ matrix.suite }}-parallel-${{ matrix.parallel }}
+          path: |
+            target/cucumber-reports
+            target/extent-report
+            target/allure-results
+            screenshots
+
+  selected-tests:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    name: selected / ${{ github.event.inputs.browser }} / ${{ github.event.inputs.suite }} / parallel=${{ github.event.inputs.parallel }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Run selected tests
+        shell: bash
+        run: |
+          BROWSER="${{ github.event.inputs.browser }}"
+          SUITE="${{ github.event.inputs.suite }}"
+          PARALLEL="${{ github.event.inputs.parallel }}"
+          THREAD_COUNT="${{ github.event.inputs['thread-count'] }}"
+
+          if [[ "$SUITE" == "all" ]]; then
+            TAG_EXPRESSION=""
+          else
+            TAG_EXPRESSION="@$SUITE"
+          fi
+
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
+
+          if [[ "$PARALLEL" == "true" ]]; then
+            if [[ -z "$TAG_EXPRESSION" ]]; then
+              TAG_EXPRESSION="not @stateful"
+            else
+              TAG_EXPRESSION="($TAG_EXPRESSION) and not @stateful"
+            fi
+            MVN_ARGS+=(-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count="$THREAD_COUNT")
+          else
+            MVN_ARGS+=(-Dparallel=none)
+          fi
+
+          if [[ -n "$TAG_EXPRESSION" ]]; then
+            MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
+          fi
+
+          mvn test "${MVN_ARGS[@]}"
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: eventhub-test-reports-selected-${{ github.event.inputs.browser }}-${{ github.event.inputs.suite }}-parallel-${{ github.event.inputs.parallel }}
           path: |
             target/cucumber-reports
             target/extent-report

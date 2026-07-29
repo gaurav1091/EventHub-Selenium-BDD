@@ -87,8 +87,7 @@ public class ApiSteps {
 
     @When("I create a booking through the API with invalid payload")
     public void iCreateABookingThroughTheApiWithInvalidPayload() {
-        BookingRequest booking = new BookingRequest("", "", "bad-email", "123", 0);
-        context.put("response", context.apiClient().createBooking(booking));
+        context.put("response", context.apiClient().createBooking(TestDataFactory.invalidApiBooking()));
     }
 
     @Then("the API health response should be successful")

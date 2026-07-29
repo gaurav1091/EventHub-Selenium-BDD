@@ -29,6 +29,14 @@ public final class TestData {
         return node.asInt();
     }
 
+    public static String textAt(String path, int index, String field) {
+        JsonNode node = node(path).path(index).path(field);
+        if (!node.isTextual()) {
+            throw new FrameworkException("Test data value is not text: " + path + "[" + index + "]." + field);
+        }
+        return node.asText();
+    }
+
     private static JsonNode node(String path) {
         JsonNode current = ROOT;
         for (String part : path.split("\\.")) {

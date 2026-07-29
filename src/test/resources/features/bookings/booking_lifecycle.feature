@@ -74,6 +74,11 @@ Feature: Event booking lifecycle
     And I submit the booking form without customer details
     Then the booking form should show required field validation
 
+  @regression @parallel-safe
+  Scenario: Booking form accepts generated valid customer data before submit
+    When I enter valid booking customer details for a bookable event
+    Then the booking form should contain the generated customer details
+
   @regression @stateful
   Scenario: Selenium-created bookings can be cleaned through API
     When I create a booking through the API for cleanup

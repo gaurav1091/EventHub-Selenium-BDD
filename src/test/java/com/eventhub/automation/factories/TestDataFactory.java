@@ -25,6 +25,16 @@ public final class TestDataFactory {
         );
     }
 
+    public static BookingRequest invalidApiBooking() {
+        return new BookingRequest(
+                TestData.text("invalidApiBooking.eventId"),
+                TestData.text("invalidApiBooking.customerName"),
+                TestData.text("invalidApiBooking.customerEmail"),
+                TestData.text("invalidApiBooking.customerPhone"),
+                TestData.integer("invalidApiBooking.quantity")
+        );
+    }
+
     public static EventRequest event(String titlePrefix, int seats) {
         String token = UUID.randomUUID().toString().substring(0, 8);
         OffsetDateTime eventDate = OffsetDateTime.now(ZoneOffset.UTC).plusDays(30);

@@ -88,6 +88,7 @@ USER_EMAIL=you@example.com USER_PASSWORD=secret mvn test
 ```
 
 The tag and suite strategy is documented in `docs/test-strategy.md`.
+GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix automatically, while manual dispatch still lets you choose one browser, suite, parallel mode, and thread count.
 
 ## Docker
 
