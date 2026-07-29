@@ -20,6 +20,10 @@ public class EventsPage extends BasePage {
     }
 
     public void assertLoaded() {
+        Waits.until(driver(), webDriver -> webDriver.getCurrentUrl().contains("/events")
+                && webDriver.findElements(By.tagName("h1")).stream()
+                .anyMatch(heading -> heading.isDisplayed()
+                        && heading.getText().toLowerCase().contains("upcoming events")));
         assertThat(text(By.tagName("h1"))).containsIgnoringCase("Upcoming Events");
         assertThat(isDisplayed(SEARCH)).isTrue();
     }

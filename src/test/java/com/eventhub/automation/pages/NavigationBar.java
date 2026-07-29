@@ -1,5 +1,6 @@
 package com.eventhub.automation.pages;
 
+import com.eventhub.automation.utils.Waits;
 import org.openqa.selenium.By;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -16,18 +17,22 @@ public class NavigationBar extends BasePage {
 
     public void openHome() {
         click(By.xpath("//a[normalize-space()='Home' or @href='/']"));
+        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("Featured Events"));
     }
 
     public void openEvents() {
         click(By.xpath("//a[normalize-space()='Events' or contains(@href,'/events')]"));
+        Waits.urlContains(driver(), "/events");
     }
 
     public void openBookings() {
         click(By.xpath("//a[contains(normalize-space(.),'My Bookings') or contains(@href,'/bookings')]"));
+        Waits.urlContains(driver(), "/bookings");
     }
 
     public void openAdminEvents() {
         click(By.xpath("//a[contains(normalize-space(.),'Admin') or contains(@href,'/admin/events')]"));
+        Waits.urlContains(driver(), "/admin/events");
     }
 
     public void logout() {
