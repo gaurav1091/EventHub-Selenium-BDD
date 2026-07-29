@@ -28,8 +28,9 @@
         <browser>chrome</browser>
         <headless>false</headless>
         <environment>qa</environment>
-        <parallel>methods</parallel>
+        <parallel>none</parallel>
         <thread.count>2</thread.count>
+        <suite.xml.file>target/test-classes/suites/testng.xml</suite.xml.file>
         <cucumber.filter.tags>not @wip</cucumber.filter.tags>
     </properties>
 
@@ -164,7 +165,7 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>target/test-classes/suites/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${suite.xml.file}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar

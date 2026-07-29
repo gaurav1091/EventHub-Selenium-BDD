@@ -73,14 +73,14 @@ jobs:
             TAG_EXPRESSION="@$SUITE"
           fi
 
-          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dparallel=none)
 
           if [[ -n "$TAG_EXPRESSION" ]]; then
             MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
           fi
 
           if [[ "$PARALLEL" == "true" ]]; then
-            MVN_ARGS+=(-Dparallel=methods -Dthread.count="$THREAD_COUNT")
+            MVN_ARGS+=(-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count="$THREAD_COUNT")
           fi
 
           mvn test "${MVN_ARGS[@]}"

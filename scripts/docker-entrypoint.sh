@@ -27,7 +27,11 @@ if [[ -n "${TAG_EXPRESSION}" ]]; then
 fi
 
 if [[ "${PARALLEL}" == "true" ]]; then
-  MVN_ARGS+=("-Dparallel=methods" "-Dthread.count=${THREAD_COUNT}")
+  MVN_ARGS+=(
+    "-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml"
+    "-Dparallel=methods"
+    "-Dthread.count=${THREAD_COUNT}"
+  )
 else
   MVN_ARGS+=("-Dparallel=none")
 fi

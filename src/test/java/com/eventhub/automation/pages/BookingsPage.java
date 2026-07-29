@@ -14,7 +14,10 @@ public class BookingsPage extends BasePage {
 
     public void assertBookingVisible(String eventName) {
         assertThat(eventName).as("expected booking text").isNotBlank();
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains(eventName));
+        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
+                && !webDriver.getPageSource().contains("animate-pulse")
+                && !webDriver.getPageSource().contains("animate-spin")
+                && webDriver.getPageSource().contains(eventName));
         assertThat(driver().getPageSource()).contains(eventName);
     }
 

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="EventHub Parallel Automation Suite" parallel="methods" thread-count="${thread.count}"
+       data-provider-thread-count="${thread.count}" verbose="1">
+    <listeners>
+        <listener class-name="com.eventhub.automation.listeners.TestLifecycleListener"/>
+    </listeners>
+    <test name="Parallel Cucumber BDD Tests">
+        <classes>
+            <class name="com.eventhub.automation.runners.ParallelCucumberTestRunner"/>
+        </classes>
+    </test>
+</suite>
