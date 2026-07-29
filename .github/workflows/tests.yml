@@ -1,0 +1,28 @@
+name: EventHub Selenium BDD
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Run smoke tests
+        run: mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@smoke"
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eventhub-test-reports
+          path: |
+            target/cucumber-reports
+            target/extent-report
+            target/allure-results
+            screenshots

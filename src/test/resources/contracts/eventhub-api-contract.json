@@ -1,0 +1,16 @@
+{
+  "service": "EventHub API",
+  "baseUrl": "https://api.eventhub.rahulshettyacademy.com",
+  "endpoints": [
+    {"method": "GET", "path": "/api/health", "auth": false},
+    {"method": "POST", "path": "/api/auth/login", "auth": false},
+    {"method": "GET", "path": "/api/auth/me", "auth": true},
+    {"method": "GET", "path": "/api/events", "auth": true},
+    {"method": "GET", "path": "/api/events/{eventId}", "auth": true},
+    {"method": "POST", "path": "/api/events", "auth": true},
+    {"method": "DELETE", "path": "/api/events/{eventId}", "auth": true},
+    {"method": "GET", "path": "/api/bookings", "auth": true},
+    {"method": "POST", "path": "/api/bookings", "auth": true},
+    {"method": "DELETE", "path": "/api/bookings/{bookingId}", "auth": true}
+  ]
+}

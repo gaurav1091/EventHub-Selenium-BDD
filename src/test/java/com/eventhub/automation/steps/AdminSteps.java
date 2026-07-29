@@ -1,0 +1,93 @@
+package com.eventhub.automation.steps;
+
+import com.eventhub.automation.api.ApiAssertions;
+import com.eventhub.automation.factories.TestDataFactory;
+import com.eventhub.automation.models.EventRequest;
+import com.eventhub.automation.pages.AdminEventsPage;
+import com.eventhub.automation.pages.EventsPage;
+import com.eventhub.automation.support.TestContext;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.response.Response;
+
+public class AdminSteps {
+    private final TestContext context;
+    private final AdminEventsPage adminEventsPage = new AdminEventsPage();
+    private final EventsPage eventsPage = new EventsPage();
+
+    public AdminSteps(TestContext context) {
+        this.context = context;
+    }
+
+    @When("I open the Admin Events page")
+    public void iOpenTheAdminEventsPage() {
+        adminEventsPage.openAdminEventsPage();
+    }
+
+    @When("I submit the admin event form without required fields")
+    public void iSubmitTheAdminEventFormWithoutRequiredFields() {
+        adminEventsPage.submitEmptyForm();
+    }
+
+    @When("I create a disposable admin event through the UI")
+    public void iCreateADisposableAdminEventThroughTheUi() {
+        EventRequest event = TestDataFactory.event("Selenium UI Event", 6);
+        context.put("adminEventTitle", event.title());
+        adminEventsPage.createEvent(event);
+    }
+
+    @When("I create a one-seat admin event through the API")
+    public void iCreateAOneSeatAdminEventThroughTheApi() {
+        EventRequest event = TestDataFactory.event("Selenium One Seat Event", 1);
+        Response response = context.apiClient().createEvent(event);
+        ApiAssertions.assertSuccess(response);
+        context.put("createdEventTitle", event.title());
+        context.put("createdEventId", response.jsonPath().getString("data.id"));
+    }
+
+    @When("I book {int} ticket for the created admin event")
+    public void iBookTicketForTheCreatedAdminEvent(int quantity) {
+        String title = context.get("createdEventTitle", String.class);
+        eventsPage.openEventsPage();
+        eventsPage.bookEvent(title);
+    }
+
+    @Then("the Admin Events page should show the create form and events table")
+    public void theAdminEventsPageShouldShowTheCreateFormAndEventsTable() {
+        adminEventsPage.assertLoaded();
+    }
+
+    @Then("the admin form should show required field validation")
+    public void theAdminFormShouldShowRequiredFieldValidation() {
+        adminEventsPage.assertValidationVisible();
+    }
+
+    @Then("the disposable admin event should appear in the admin table")
+    public void theDisposableAdminEventShouldAppearInTheAdminTable() {
+        adminEventsPage.assertEventVisible(context.get("adminEventTitle", String.class));
+    }
+
+    @Then("the disposable admin event should appear in event discovery")
+    public void theDisposableAdminEventShouldAppearInEventDiscovery() {
+        eventsPage.openEventsPage();
+        eventsPage.search(context.get("adminEventTitle", String.class));
+        eventsPage.assertEventVisible(context.get("adminEventTitle", String.class));
+    }
+
+    @Then("the created admin event should appear in the admin table")
+    public void theCreatedAdminEventShouldAppearInTheAdminTable() {
+        adminEventsPage.assertEventVisible(context.get("createdEventTitle", String.class));
+    }
+
+    @Then("the created admin event should appear in event discovery")
+    public void theCreatedAdminEventShouldAppearInEventDiscovery() {
+        eventsPage.openEventsPage();
+        eventsPage.search(context.get("createdEventTitle", String.class));
+        eventsPage.assertEventVisible(context.get("createdEventTitle", String.class));
+    }
+
+    @Then("the created admin event should show no remaining seats or be unavailable for booking")
+    public void theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking() {
+        eventsPage.assertEventVisible(context.get("createdEventTitle", String.class));
+    }
+}

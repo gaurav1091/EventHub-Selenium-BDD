@@ -1,0 +1,12 @@
+services:
+  eventhub-tests:
+    build: .
+    environment:
+      BROWSER: chrome
+      HEADLESS: "true"
+      ENVIRONMENT: qa
+      USER_EMAIL: gaurav_1091@gmail.com
+      USER_PASSWORD: Test@1234
+    volumes:
+      - ./target:/eventhub/target
+      - ./screenshots:/eventhub/screenshots
