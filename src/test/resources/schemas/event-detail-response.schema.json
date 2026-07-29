@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["success", "data"],
+  "properties": {
+    "success": {"type": "boolean"},
+    "data": {
+      "type": "object",
+      "required": ["id", "title"],
+      "properties": {
+        "id": {"type": ["string", "number"]},
+        "title": {"type": "string"},
+        "description": {"type": ["string", "null"]},
+        "category": {"type": ["string", "null"]},
+        "venue": {"type": ["string", "null"]},
+        "city": {"type": ["string", "null"]},
+        "eventDate": {"type": ["string", "null"]},
+        "price": {"type": ["integer", "number", "string", "null"]},
+        "totalSeats": {"type": ["integer", "null"]},
+        "availableSeats": {"type": ["integer", "null"]},
+        "seatsLeft": {"type": ["integer", "null"]},
+        "featured": {"type": ["boolean", "null"]},
+        "imageUrl": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

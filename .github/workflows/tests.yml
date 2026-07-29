@@ -55,7 +55,7 @@ on:
 
 jobs:
   matrix-tests:
-    if: github.event_name != 'workflow_dispatch'
+    if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -122,6 +122,64 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           name: eventhub-test-reports-${{ matrix.browser }}-${{ matrix.suite }}-parallel-${{ matrix.parallel }}
+          path: |
+            target/cucumber-reports
+            target/extent-report
+            target/allure-results
+            screenshots
+
+  nightly-regression:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - browser: chrome
+            suite: regression
+            tag-expression: "(@regression and @parallel-safe) and not @stateful"
+            parallel: "true"
+            thread-count: "4"
+          - browser: firefox
+            suite: regression
+            tag-expression: "(@regression and @parallel-safe) and not @stateful"
+            parallel: "true"
+            thread-count: "4"
+          - browser: chrome
+            suite: api-regression
+            tag-expression: "@api and @regression"
+            parallel: "true"
+            thread-count: "3"
+          - browser: chrome
+            suite: stateful-regression
+            tag-expression: "@stateful"
+            parallel: "false"
+            thread-count: "1"
+    name: nightly / ${{ matrix.browser }} / ${{ matrix.suite }} / parallel=${{ matrix.parallel }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Run nightly regression
+        shell: bash
+        run: |
+          MVN_ARGS=(-Dheadless=true -Dbrowser="${{ matrix.browser }}" "-Dcucumber.filter.tags=${{ matrix['tag-expression'] }}")
+
+          if [[ "${{ matrix.parallel }}" == "true" ]]; then
+            MVN_ARGS+=(-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count="${{ matrix['thread-count'] }}")
+          else
+            MVN_ARGS+=(-Dparallel=none)
+          fi
+
+          mvn test "${MVN_ARGS[@]}"
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: eventhub-nightly-reports-${{ matrix.browser }}-${{ matrix.suite }}-parallel-${{ matrix.parallel }}
           path: |
             target/cucumber-reports
             target/extent-report

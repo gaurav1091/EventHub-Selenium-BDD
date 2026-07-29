@@ -20,6 +20,7 @@ Feature: EventHub API contract
   Scenario: Authenticated user can retrieve current user profile through API
     When I request the current user profile through the API
     Then the API current user response should include the registered identity
+    And the API response should match schema "schemas/current-user-response.schema.json"
 
   @smoke @parallel-safe
   Scenario: Authenticated user can list events through API
@@ -31,6 +32,7 @@ Feature: EventHub API contract
   Scenario: Authenticated user can retrieve an event detail through API
     When I request event "World Tech Summit" through the API
     Then the API event detail response should describe "World Tech Summit"
+    And the API response should match schema "schemas/event-detail-response.schema.json"
 
   @smoke @stateful
   Scenario: Authenticated user can create and cancel a booking through API

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["success"],
+  "properties": {
+    "success": {"type": "boolean"},
+    "user": {
+      "type": "object",
+      "required": ["email"],
+      "properties": {
+        "id": {"type": ["string", "number", "null"]},
+        "email": {"type": "string"},
+        "name": {"type": ["string", "null"]},
+        "role": {"type": ["string", "null"]}
+      }
+    },
+    "data": {
+      "type": "object",
+      "required": ["email"],
+      "properties": {
+        "id": {"type": ["string", "number", "null"]},
+        "email": {"type": "string"},
+        "name": {"type": ["string", "null"]},
+        "role": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "anyOf": [
+    {"required": ["user"]},
+    {"required": ["data"]}
+  ]
+}
