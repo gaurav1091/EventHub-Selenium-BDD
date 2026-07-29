@@ -22,11 +22,12 @@ MVN_ARGS=(
   "-Denvironment=${ENVIRONMENT}"
 )
 
-if [[ -n "${TAG_EXPRESSION}" ]]; then
-  MVN_ARGS+=("-Dcucumber.filter.tags=${TAG_EXPRESSION}")
-fi
-
 if [[ "${PARALLEL}" == "true" ]]; then
+  if [[ -z "${TAG_EXPRESSION}" ]]; then
+    TAG_EXPRESSION="not @stateful"
+  else
+    TAG_EXPRESSION="(${TAG_EXPRESSION}) and not @stateful"
+  fi
   MVN_ARGS+=(
     "-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml"
     "-Dparallel=methods"
@@ -34,6 +35,10 @@ if [[ "${PARALLEL}" == "true" ]]; then
   )
 else
   MVN_ARGS+=("-Dparallel=none")
+fi
+
+if [[ -n "${TAG_EXPRESSION}" ]]; then
+  MVN_ARGS+=("-Dcucumber.filter.tags=${TAG_EXPRESSION}")
 fi
 
 if [[ "$#" -gt 0 ]]; then

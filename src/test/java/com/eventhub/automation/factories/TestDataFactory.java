@@ -19,8 +19,8 @@ public final class TestDataFactory {
         return new BookingRequest(
                 eventId,
                 prefix + " " + token,
-                "selenium." + token + "@example.com",
-                "+91 98765 43210",
+                "selenium." + token + "@" + TestData.text("booking.emailDomain"),
+                TestData.text("booking.phone"),
                 quantity
         );
     }
@@ -31,15 +31,15 @@ public final class TestDataFactory {
         String browserDateTime = eventDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm"));
         return new EventRequest(
                 titlePrefix + " " + token,
-                "Disposable automation event created by Selenium Java framework.",
-                "Technology",
-                "Automation Arena",
-                "Bengaluru",
+                TestData.text("adminEvent.description"),
+                TestData.text("adminEvent.category"),
+                TestData.text("adminEvent.venue"),
+                TestData.text("adminEvent.city"),
                 browserDateTime,
                 eventDate.format(DateTimeFormatter.ISO_INSTANT),
-                99,
+                TestData.integer("adminEvent.price"),
                 seats,
-                "https://images.unsplash.com/photo-1511578314322-379afb476865"
+                TestData.text("adminEvent.imageUrl")
         );
     }
 }

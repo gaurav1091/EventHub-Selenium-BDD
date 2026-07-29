@@ -14,6 +14,10 @@ public class NavigationBar extends BasePage {
         assertThat(source).contains(email);
     }
 
+    public void openHome() {
+        click(By.xpath("//a[normalize-space()='Home' or @href='/']"));
+    }
+
     public void openEvents() {
         click(By.xpath("//a[normalize-space()='Events' or contains(@href,'/events')]"));
     }

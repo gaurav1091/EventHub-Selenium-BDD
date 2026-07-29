@@ -42,12 +42,12 @@ Feature: Event booking lifecycle
     And I clear all bookings
     Then no bookings for the current Selenium customer should remain
 
-  @regression
+  @regression @parallel-safe
   Scenario: Event detail page shows booking form and event content
     When I open details for a bookable event
     Then I should see the event detail booking panel
 
-  @regression
+  @regression @parallel-safe
   Scenario: Ticket quantity controls update the booking total
     When I open details for an event with at least 4 available tickets
     Then the ticket quantity should be 1
@@ -57,7 +57,7 @@ Feature: Event booking lifecycle
     When I decrease tickets by 1
     Then the ticket quantity should be 1
 
-  @regression
+  @regression @parallel-safe
   Scenario Outline: Booking form validates invalid customer data
     When I open details for a bookable event
     And I enter booking customer email "<email>" and phone "<phone>"
@@ -68,7 +68,7 @@ Feature: Event booking lifecycle
       | invalid-email             | +91 98765 43210 | booking email |
       | gauravarora1091@gmail.com | 123             | booking phone |
 
-  @regression
+  @regression @parallel-safe
   Scenario: Booking form validates required customer details
     When I open details for a bookable event
     And I submit the booking form without customer details

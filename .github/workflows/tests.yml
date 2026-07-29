@@ -3,6 +3,8 @@ name: EventHub Selenium BDD
 on:
   push:
   pull_request:
+  schedule:
+    - cron: "30 20 * * *"
   workflow_dispatch:
     inputs:
       browser:
@@ -27,8 +29,10 @@ on:
           - auth
           - bookings
           - events
+          - navigation
           - hybrid
           - stateful
+          - parallel-safe
           - all
       parallel:
         description: Run scenarios in parallel
@@ -73,14 +77,21 @@ jobs:
             TAG_EXPRESSION="@$SUITE"
           fi
 
-          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dparallel=none)
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
+
+          if [[ "$PARALLEL" == "true" ]]; then
+            if [[ -z "$TAG_EXPRESSION" ]]; then
+              TAG_EXPRESSION="not @stateful"
+            else
+              TAG_EXPRESSION="($TAG_EXPRESSION) and not @stateful"
+            fi
+            MVN_ARGS+=(-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count="$THREAD_COUNT")
+          else
+            MVN_ARGS+=(-Dparallel=none)
+          fi
 
           if [[ -n "$TAG_EXPRESSION" ]]; then
             MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
-          fi
-
-          if [[ "$PARALLEL" == "true" ]]; then
-            MVN_ARGS+=(-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count="$THREAD_COUNT")
           fi
 
           mvn test "${MVN_ARGS[@]}"

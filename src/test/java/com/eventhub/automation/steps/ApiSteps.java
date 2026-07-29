@@ -146,4 +146,9 @@ public class ApiSteps {
     public void theApiShouldRejectTheRequestWithStatus(int status) {
         ApiAssertions.assertStatus(context.get("response", Response.class), status);
     }
+
+    @Then("the API response should match schema {string}")
+    public void theApiResponseShouldMatchSchema(String schemaPath) {
+        ApiAssertions.assertMatchesSchema(context.get("response", Response.class), schemaPath);
+    }
 }

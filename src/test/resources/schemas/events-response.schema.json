@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["success", "data"],
+  "properties": {
+    "success": {"type": "boolean"},
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": {"type": ["string", "number"]},
+          "title": {"type": "string"},
+          "category": {"type": ["string", "null"]},
+          "city": {"type": ["string", "null"]},
+          "availableSeats": {"type": ["integer", "null"]},
+          "seatsLeft": {"type": ["integer", "null"]}
+        }
+      }
+    }
+  }
+}

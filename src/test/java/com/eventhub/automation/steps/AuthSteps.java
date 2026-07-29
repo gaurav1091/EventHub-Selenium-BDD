@@ -62,6 +62,11 @@ public class AuthSteps {
         DriverManager.getDriver().get(ConfigReader.getRequired("base.url") + route);
     }
 
+    @When("I refresh the current page")
+    public void iRefreshTheCurrentPage() {
+        DriverManager.getDriver().navigate().refresh();
+    }
+
     @When("I sign out")
     public void iSignOut() {
         navigationBar.logout();

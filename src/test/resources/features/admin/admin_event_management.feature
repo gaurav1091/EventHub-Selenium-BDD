@@ -4,12 +4,12 @@ Feature: Admin event management
   Background:
     Given I am signed in to EventHub
 
-  @smoke
+  @smoke @parallel-safe
   Scenario: Admin Events page renders management controls
     When I open the Admin Events page
     Then the Admin Events page should show the create form and events table
 
-  @regression
+  @regression @parallel-safe
   Scenario: Admin event form validates required fields
     When I open the Admin Events page
     And I submit the admin event form without required fields

@@ -3,6 +3,7 @@ package com.eventhub.automation.api;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public final class ApiAssertions {
@@ -39,5 +40,9 @@ public final class ApiAssertions {
     public static void assertBookingReference(Response response) {
         String reference = response.jsonPath().getString("data.bookingRef");
         assertThat(reference).matches("[A-Z]-[A-Z0-9]{6}");
+    }
+
+    public static void assertMatchesSchema(Response response, String schemaPath) {
+        response.then().body(matchesJsonSchemaInClasspath(schemaPath));
     }
 }

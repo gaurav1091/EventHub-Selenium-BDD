@@ -12,6 +12,13 @@ public class BookingsPage extends BasePage {
         return this;
     }
 
+    public void assertLoaded() {
+        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
+                && !webDriver.getPageSource().contains("animate-pulse")
+                && !webDriver.getPageSource().contains("animate-spin"));
+        assertThat(driver().getPageSource()).contains("My Bookings");
+    }
+
     public void assertBookingVisible(String eventName) {
         assertThat(eventName).as("expected booking text").isNotBlank();
         Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
@@ -22,23 +29,17 @@ public class BookingsPage extends BasePage {
     }
 
     public void assertBookingNotVisible(String eventName) {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
-                && !webDriver.getPageSource().contains("animate-pulse")
-                && !webDriver.getPageSource().contains("animate-spin"));
+        assertLoaded();
         assertThat(driver().getPageSource()).doesNotContain(eventName);
     }
 
     public void openDetails() {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
-                && !webDriver.getPageSource().contains("animate-pulse")
-                && !webDriver.getPageSource().contains("animate-spin"));
+        assertLoaded();
         click(By.xpath("//button[contains(normalize-space(.),'Details') or contains(normalize-space(.),'View')]"));
     }
 
     public void cancelBooking() {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
-                && !webDriver.getPageSource().contains("animate-pulse")
-                && !webDriver.getPageSource().contains("animate-spin"));
+        assertLoaded();
         click(By.xpath("//button[contains(normalize-space(.),'Cancel Booking') or contains(normalize-space(.),'Cancel')]"));
         acceptNativeConfirmIfPresent();
         if (!driver().findElements(By.xpath("//button[normalize-space()='Confirm' or normalize-space()='Yes']")).isEmpty()) {
@@ -47,9 +48,7 @@ public class BookingsPage extends BasePage {
     }
 
     public void clearAllBookings() {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
-                && !webDriver.getPageSource().contains("animate-pulse")
-                && !webDriver.getPageSource().contains("animate-spin"));
+        assertLoaded();
         click(By.xpath("//button[contains(normalize-space(.),'Clear all') or contains(normalize-space(.),'Clear All')]"));
         acceptNativeConfirmIfPresent();
         if (!driver().findElements(By.xpath("//button[normalize-space()='Confirm' or normalize-space()='Yes']")).isEmpty()) {

@@ -43,7 +43,7 @@ mvn test -Dheadless=true
 Parallel tuning:
 
 ```bash
-mvn test -Dthread.count=4
+mvn test -Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=4 -Dcucumber.filter.tags="@parallel-safe"
 ```
 
 API only:
@@ -86,6 +86,8 @@ Defaults live in `src/test/resources/config/config.properties`. Override with Ma
 mvn test -Duser.email=you@example.com -Duser.password='secret'
 USER_EMAIL=you@example.com USER_PASSWORD=secret mvn test
 ```
+
+The tag and suite strategy is documented in `docs/test-strategy.md`.
 
 ## Docker
 
