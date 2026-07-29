@@ -89,6 +89,34 @@ USER_EMAIL=you@example.com USER_PASSWORD=secret mvn test
 
 ## Docker
 
+Run the default Docker suite, which uses Chrome, headless mode, and `@smoke`:
+
 ```bash
 docker compose up --build
 ```
+
+Run a specific browser and suite:
+
+```bash
+BROWSER=firefox SUITE=bookings docker compose run --rm eventhub-tests
+```
+
+Run in parallel:
+
+```bash
+BROWSER=chrome SUITE=ui PARALLEL=true THREAD_COUNT=4 docker compose run --rm eventhub-tests
+```
+
+Run with a virtual display instead of browser headless mode:
+
+```bash
+DOCKER_HEADLESS=false BROWSER=chrome SUITE=smoke docker compose run --rm eventhub-tests
+```
+
+Run a custom Cucumber tag expression:
+
+```bash
+CUCUMBER_FILTER_TAGS="@bookings and not @stateful" docker compose run --rm eventhub-tests
+```
+
+The container reads credentials and environment defaults from `.env` through Docker Compose. Reports and failure screenshots are mounted back to `target/`, `logs/`, and `screenshots/` on your machine.

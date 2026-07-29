@@ -1,12 +1,20 @@
 services:
   eventhub-tests:
     build: .
+    image: eventhub-selenium-bdd:latest
+    platform: linux/amd64
+    shm_size: "2gb"
+    env_file:
+      - .env
     environment:
-      BROWSER: chrome
-      HEADLESS: "true"
-      ENVIRONMENT: qa
-      USER_EMAIL: gaurav_1091@gmail.com
-      USER_PASSWORD: Test@1234
+      BROWSER: ${BROWSER:-chrome}
+      HEADLESS: ${DOCKER_HEADLESS:-true}
+      ENVIRONMENT: ${ENVIRONMENT:-qa}
+      SUITE: ${SUITE:-smoke}
+      PARALLEL: ${PARALLEL:-false}
+      THREAD_COUNT: ${THREAD_COUNT:-2}
+      CUCUMBER_FILTER_TAGS: ${CUCUMBER_FILTER_TAGS:-}
     volumes:
       - ./target:/eventhub/target
       - ./screenshots:/eventhub/screenshots
+      - ./logs:/eventhub/logs
