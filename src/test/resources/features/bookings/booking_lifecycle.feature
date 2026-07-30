@@ -57,6 +57,14 @@ Feature: Event booking lifecycle
     When I decrease tickets by 1
     Then the ticket quantity should be 1
 
+  @regression @stateful @api-cleanup
+  Scenario: Booking cannot exceed available tickets
+    When I create a one-seat admin event through the API
+    And I open booking details for the created admin event
+    Then the ticket quantity should be 1
+    And the ticket decrement control should be disabled
+    And the ticket increment control should be disabled
+
   @regression @parallel-safe
   Scenario Outline: Booking form validates invalid customer data
     When I open details for a bookable event

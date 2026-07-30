@@ -112,6 +112,16 @@ public class EventsPage extends BasePage {
         assertThat(cardText).containsPattern("(Book Now|SOLD OUT|Sold Out)");
     }
 
+    public void assertEventUnavailableForBooking(String eventName) {
+        String cardText = articleFor(eventName).getText();
+        assertThat(cardText).containsPattern("(SOLD OUT|Sold Out|0\\s+seats? (left|available)!?)");
+        assertThat(articleFor(eventName)
+                .findElements(By.xpath(".//*[self::button or self::a][contains(normalize-space(.),'Book Now') "
+                        + "and not(@aria-disabled='true') and not(@disabled)]")))
+                .as("Expected sold-out event not to expose an enabled Book Now action")
+                .isEmpty();
+    }
+
     public int filterCount() {
         return elements(SELECTS).size();
     }

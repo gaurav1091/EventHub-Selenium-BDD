@@ -46,6 +46,10 @@ public class EventDetailPage extends BasePage {
         assertThat(visible(MINUS).isEnabled()).isFalse();
     }
 
+    public void assertIncrementDisabled() {
+        assertThat(visible(PLUS).isEnabled()).isFalse();
+    }
+
     public void assertTotalContains(String amount) {
         assertThat(driver().getPageSource()).contains(amount);
     }

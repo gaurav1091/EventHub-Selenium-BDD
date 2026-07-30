@@ -21,3 +21,8 @@ Feature: Admin event management
     And I open the Admin Events page
     Then the created admin event should appear in the admin table
     And the created admin event should appear in event discovery
+
+  @regression @stateful @api-cleanup
+  Scenario: Sold-out admin event is unavailable from discovery
+    When I create a sold-out one-seat admin event through the API
+    Then the created admin event should show no remaining seats or be unavailable for booking

@@ -204,6 +204,11 @@ public class BookingSteps {
         detailPage.assertDecrementDisabled();
     }
 
+    @Then("the ticket increment control should be disabled")
+    public void theTicketIncrementControlShouldBeDisabled() {
+        detailPage.assertIncrementDisabled();
+    }
+
     @Then("the booking total should include {string}")
     public void theBookingTotalShouldInclude(String total) {
         detailPage.assertTotalContains(total);

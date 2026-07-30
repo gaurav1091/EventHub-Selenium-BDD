@@ -45,8 +45,24 @@ public class AdminSteps {
         context.put("createdEventId", response.jsonPath().getString("data.id"));
     }
 
+    @When("I create a sold-out one-seat admin event through the API")
+    public void iCreateASoldOutOneSeatAdminEventThroughTheApi() {
+        iCreateAOneSeatAdminEventThroughTheApi();
+        String eventId = context.get("createdEventId", String.class);
+        Response response = context.apiClient().createBooking(TestDataFactory.booking(eventId, 1));
+        ApiAssertions.assertSuccess(response);
+        context.put("createdBookingId", response.jsonPath().getString("data.id"));
+    }
+
     @When("I book {int} ticket for the created admin event")
     public void iBookTicketForTheCreatedAdminEvent(int quantity) {
+        String title = context.get("createdEventTitle", String.class);
+        eventsPage.openEventsPage();
+        eventsPage.bookEvent(title);
+    }
+
+    @When("I open booking details for the created admin event")
+    public void iOpenBookingDetailsForTheCreatedAdminEvent() {
         String title = context.get("createdEventTitle", String.class);
         eventsPage.openEventsPage();
         eventsPage.bookEvent(title);
@@ -88,6 +104,8 @@ public class AdminSteps {
 
     @Then("the created admin event should show no remaining seats or be unavailable for booking")
     public void theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking() {
-        eventsPage.assertEventVisible(context.get("createdEventTitle", String.class));
+        eventsPage.openEventsPage();
+        eventsPage.search(context.get("createdEventTitle", String.class));
+        eventsPage.assertEventUnavailableForBooking(context.get("createdEventTitle", String.class));
     }
 }
