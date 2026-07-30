@@ -1,10 +1,10 @@
 package com.eventhub.automation.pages;
 
 import com.eventhub.automation.models.EventRequest;
-import com.eventhub.automation.utils.Waits;
 import org.openqa.selenium.By;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
+import static com.eventhub.automation.utils.UiAssertions.assertPageContainsAnyOf;
 
 public class AdminEventsPage extends BasePage {
     public AdminEventsPage openAdminEventsPage() {
@@ -13,11 +13,7 @@ public class AdminEventsPage extends BasePage {
     }
 
     public void assertLoaded() {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("All Events")
-                || webDriver.getPageSource().contains("Add New Event")
-                || webDriver.getPageSource().contains("Create Event")
-                || webDriver.getPageSource().contains("Manage Events"));
-        assertThat(driver().getPageSource()).containsAnyOf("All Events", "Add New Event", "Create Event", "Manage Events");
+        assertPageContainsAnyOf(driver(), "All Events", "Add New Event", "Create Event", "Manage Events");
     }
 
     public void submitEmptyForm() {
@@ -40,12 +36,11 @@ public class AdminEventsPage extends BasePage {
     }
 
     public void assertValidationVisible() {
-        assertThat(driver().getPageSource()).containsAnyOf("required", "Required", "Please fill");
+        assertPageContainsAnyOf(driver(), "required", "Required", "Please fill");
     }
 
     public void assertEventVisible(String eventName) {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains(eventName));
-        assertThat(driver().getPageSource()).contains(eventName);
+        assertPageContains(driver(), eventName);
     }
 
     private void openCreateFormIfNeeded() {

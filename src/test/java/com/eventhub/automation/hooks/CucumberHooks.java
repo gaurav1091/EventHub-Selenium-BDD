@@ -2,6 +2,7 @@ package com.eventhub.automation.hooks;
 
 import com.eventhub.automation.drivers.DriverManager;
 import com.eventhub.automation.utils.ScreenshotUtils;
+import com.eventhub.automation.config.ConfigReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -36,6 +37,7 @@ public class CucumberHooks {
             byte[] screenshot = ScreenshotUtils.captureBytes();
             scenario.attach(screenshot, "image/png", "failure screenshot");
             Allure.addAttachment("failure screenshot", "image/png", new ByteArrayInputStream(screenshot), ".png");
+            Allure.addAttachment("failure metadata", "text/plain", failureMetadata(scenario));
         }
         DriverManager.quitDriver();
     }
@@ -44,5 +46,17 @@ public class CucumberHooks {
     public void unlockStatefulScenario(Scenario scenario) {
         LOGGER.info("Released shared state lock: {}", scenario.getName());
         STATEFUL_SCENARIO_LOCK.unlock();
+    }
+
+    private String failureMetadata(Scenario scenario) {
+        return "scenario=" + scenario.getName()
+                + System.lineSeparator()
+                + "tags=" + scenario.getSourceTagNames()
+                + System.lineSeparator()
+                + "browser=" + ConfigReader.getRequired("browser")
+                + System.lineSeparator()
+                + "environment=" + ConfigReader.getRequired("environment")
+                + System.lineSeparator()
+                + "url=" + DriverManager.getDriver().getCurrentUrl();
     }
 }

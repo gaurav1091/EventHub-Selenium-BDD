@@ -2,6 +2,7 @@ package com.eventhub.automation.utils;
 
 import com.eventhub.automation.config.ConfigReader;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -27,6 +28,28 @@ public final class Waits {
     public static boolean textPresent(WebDriver driver, String text) {
         return wait(driver).until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//*[contains(normalize-space(.),'" + text + "')]"))).isDisplayed();
+    }
+
+    public static boolean pageContains(WebDriver driver, String text) {
+        return wait(driver).until(webDriver -> webDriver.getPageSource().contains(text));
+    }
+
+    public static boolean pageReady(WebDriver driver) {
+        return wait(driver).until(webDriver -> "complete".equals(((JavascriptExecutor) webDriver)
+                .executeScript("return document.readyState")));
+    }
+
+    public static boolean loadingComplete(WebDriver driver) {
+        return wait(driver).until(webDriver -> {
+            String source = webDriver.getPageSource();
+            return !source.contains("animate-pulse")
+                    && !source.contains("animate-spin")
+                    && !source.toLowerCase().contains("loading");
+        });
+    }
+
+    public static boolean textToContain(WebDriver driver, By locator, String expectedText) {
+        return wait(driver).until(ExpectedConditions.textToBePresentInElementLocated(locator, expectedText));
     }
 
     public static boolean until(WebDriver driver, ExpectedCondition<Boolean> condition) {

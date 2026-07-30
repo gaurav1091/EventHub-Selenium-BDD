@@ -60,6 +60,18 @@ mvn allure:serve
 
 Extent report is generated at `target/extent-report/EventHub-Cucumber-Report.html`.
 
+Quality gates:
+
+```bash
+mvn -Pquality -DskipTests verify
+```
+
+Dependency vulnerability scan:
+
+```bash
+mvn -Psecurity org.owasp:dependency-check-maven:check
+```
+
 ## Browser Helpers
 
 You do not need to manually install ChromeDriver or GeckoDriver. The framework uses WebDriverManager, which downloads and wires the correct driver binary for your installed Chrome or Firefox.
@@ -88,7 +100,7 @@ USER_EMAIL=you@example.com USER_PASSWORD=secret mvn test
 ```
 
 The tag and suite strategy is documented in `docs/test-strategy.md`.
-GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix automatically, while manual dispatch still lets you choose one browser, suite, parallel mode, and thread count.
+GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix automatically. Scheduled runs execute a broader nightly regression matrix, while manual dispatch still lets you choose one browser, suite, parallel mode, and thread count.
 
 ## Docker
 
@@ -123,3 +135,11 @@ CUCUMBER_FILTER_TAGS="@bookings and not @stateful" docker compose run --rm event
 ```
 
 The container reads credentials and environment defaults from `.env` through Docker Compose. Reports and failure screenshots are mounted back to `target/`, `logs/`, and `screenshots/` on your machine.
+
+## Troubleshooting
+
+- If VS Code shows Maven project warnings after `pom.xml` changes, reload the Maven project from the Maven sidebar.
+- If a browser test fails before opening a page, confirm Chrome/Firefox is installed and rerun with `-Dheadless=true` for CI-like behavior.
+- If driver setup fails, delete the WebDriverManager cache or rerun after confirming network access.
+- If parallel tests fail only with `@stateful`, run them serially with `-Dparallel=none`.
+- If Allure does not open locally, install the Allure CLI or use the generated `target/allure-results` artifact in CI.

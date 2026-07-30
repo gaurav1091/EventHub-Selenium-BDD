@@ -1,0 +1,40 @@
+name: Static Quality
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 21 * * 0"
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Run Maven quality gates
+        run: mvn -Pquality -DskipTests verify
+
+  dependency-scan:
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Run dependency vulnerability scan
+        run: mvn -Psecurity org.owasp:dependency-check-maven:check
+      - name: Upload dependency-check report
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: dependency-check-report
+          path: target/dependency-check-report.*

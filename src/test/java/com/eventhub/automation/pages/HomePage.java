@@ -1,14 +1,12 @@
 package com.eventhub.automation.pages;
 
-import com.eventhub.automation.utils.Waits;
 import org.openqa.selenium.By;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
 
 public class HomePage extends BasePage {
     public void assertLoaded() {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("Featured Events"));
-        assertThat(driver().getPageSource()).containsIgnoringCase("Featured Events");
+        assertPageContains(driver(), "Featured Events");
     }
 
     public void browseEvents() {

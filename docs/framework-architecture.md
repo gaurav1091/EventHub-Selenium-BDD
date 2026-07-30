@@ -11,5 +11,6 @@ The framework separates responsibilities into small, testable layers:
 - `hooks`: Cucumber browser lifecycle and failure attachments.
 - `listeners`: TestNG suite lifecycle and screenshot cleanup.
 - `runners`: Cucumber-TestNG bridge with parallel DataProvider.
+- `utils`: waits, screenshots, and reusable UI assertion helpers.
 
 The reference projects were used for EventHub flows, selectors, endpoint routes, scenario coverage, tagging strategy, and report expectations.

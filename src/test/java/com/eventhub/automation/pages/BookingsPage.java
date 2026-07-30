@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
 
 public class BookingsPage extends BasePage {
     public BookingsPage openBookingsPage() {
@@ -13,19 +14,15 @@ public class BookingsPage extends BasePage {
     }
 
     public void assertLoaded() {
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
-                && !webDriver.getPageSource().contains("animate-pulse")
-                && !webDriver.getPageSource().contains("animate-spin"));
-        assertThat(driver().getPageSource()).contains("My Bookings");
+        Waits.loadingComplete(driver());
+        assertPageContains(driver(), "My Bookings");
     }
 
     public void assertBookingVisible(String eventName) {
         assertThat(eventName).as("expected booking text").isNotBlank();
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("My Bookings")
-                && !webDriver.getPageSource().contains("animate-pulse")
-                && !webDriver.getPageSource().contains("animate-spin")
-                && webDriver.getPageSource().contains(eventName));
-        assertThat(driver().getPageSource()).contains(eventName);
+        Waits.loadingComplete(driver());
+        assertPageContains(driver(), "My Bookings");
+        assertPageContains(driver(), eventName);
     }
 
     public void assertBookingNotVisible(String eventName) {

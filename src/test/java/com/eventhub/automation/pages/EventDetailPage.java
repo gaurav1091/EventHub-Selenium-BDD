@@ -1,8 +1,10 @@
 package com.eventhub.automation.pages;
 
 import com.eventhub.automation.models.BookingRequest;
+import com.eventhub.automation.utils.Waits;
 import org.openqa.selenium.By;
 
+import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class EventDetailPage extends BasePage {
@@ -14,14 +16,13 @@ public class EventDetailPage extends BasePage {
     private static final By CONFIRM_BOOKING = By.xpath("//button[normalize-space()='Confirm Booking']");
 
     public void assertLoaded(String eventName) {
-        com.eventhub.automation.utils.Waits.until(driver(), webDriver -> webDriver.getPageSource().contains(eventName));
-        assertThat(driver().getPageSource()).contains(eventName);
-        assertThat(driver().getPageSource()).contains("Book Tickets", "Confirm Booking");
+        assertPageContains(driver(), eventName);
+        assertPageContains(driver(), "Book Tickets");
+        assertPageContains(driver(), "Confirm Booking");
     }
 
     public void assertMetadataFor(String eventName) {
-        com.eventhub.automation.utils.Waits.until(driver(), webDriver -> webDriver.getPageSource().contains(eventName));
-        assertThat(driver().getPageSource()).contains(eventName);
+        assertPageContains(driver(), eventName);
         assertThat(driver().getPageSource()).containsPattern("\\d+\\s+seats");
     }
 
@@ -83,19 +84,21 @@ public class EventDetailPage extends BasePage {
     }
 
     public void assertBookingConfirmed() {
-        com.eventhub.automation.utils.Waits.until(driver(), webDriver -> {
+        Waits.until(driver(), webDriver -> {
             String source = webDriver.getPageSource();
             return source.contains("Booking Confirmed") || source.contains("Booking Ref");
         });
-        assertThat(driver().getPageSource()).contains("Booking Confirmed", "Booking Ref", "Customer");
+        assertPageContains(driver(), "Booking Ref");
+        assertPageContains(driver(), "Customer");
     }
 
     public void assertBookingPanelVisible() {
-        com.eventhub.automation.utils.Waits.until(driver(), webDriver -> {
+        Waits.until(driver(), webDriver -> {
             String source = webDriver.getPageSource();
             return source.contains("Book Tickets") && source.contains("Confirm Booking");
         });
-        assertThat(driver().getPageSource()).contains("Book Tickets", "Confirm Booking");
+        assertPageContains(driver(), "Book Tickets");
+        assertPageContains(driver(), "Confirm Booking");
     }
 
     public void openMyBookingsFromConfirmation() {
