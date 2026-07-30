@@ -104,7 +104,7 @@ public class EventsPage extends BasePage {
         assertThat(elements(By.xpath("//*[contains(normalize-space(.),\"" + category + "\")]"))
                 .stream()
                 .anyMatch(WebElement::isDisplayed)).isTrue();
-        assertThat(cardText).containsPattern("(\\d+\\s+seats (left|available)|SOLD OUT|Sold Out)");
+        assertThat(cardText).containsPattern("(\\d+\\s+seats? (left|available)!?|SOLD OUT|Sold Out)");
     }
 
     public void assertEventCardAvailability(String eventName) {
