@@ -7,6 +7,11 @@ ENVIRONMENT="${ENVIRONMENT:-qa}"
 SUITE="${SUITE:-smoke}"
 PARALLEL="${PARALLEL:-false}"
 THREAD_COUNT="${THREAD_COUNT:-2}"
+RETRY_COUNT="${RETRY_COUNT:-0}"
+RETRY_TAGS="${RETRY_TAGS:-@retryable}"
+PREFLIGHT_ENABLED="${PREFLIGHT_ENABLED:-true}"
+CLEANUP_BEFORE_RUN="${CLEANUP_BEFORE_RUN:-false}"
+RUN_ID="${RUN_ID:-}"
 
 if [[ -n "${CUCUMBER_FILTER_TAGS:-}" ]]; then
   TAG_EXPRESSION="${CUCUMBER_FILTER_TAGS}"
@@ -20,7 +25,15 @@ MVN_ARGS=(
   "-Dbrowser=${BROWSER}"
   "-Dheadless=${HEADLESS}"
   "-Denvironment=${ENVIRONMENT}"
+  "-Dretry.count=${RETRY_COUNT}"
+  "-Dretry.tags=${RETRY_TAGS}"
+  "-Dpreflight.enabled=${PREFLIGHT_ENABLED}"
+  "-Dcleanup.before.run=${CLEANUP_BEFORE_RUN}"
 )
+
+if [[ -n "${RUN_ID}" ]]; then
+  MVN_ARGS+=("-Drun.id=${RUN_ID}")
+fi
 
 if [[ "${PARALLEL}" == "true" ]]; then
   if [[ -z "${TAG_EXPRESSION}" ]]; then

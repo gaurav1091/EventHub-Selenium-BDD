@@ -7,6 +7,7 @@ import com.eventhub.automation.models.BookingRequest;
 import com.eventhub.automation.pages.BookingsPage;
 import com.eventhub.automation.pages.EventDetailPage;
 import com.eventhub.automation.pages.EventsPage;
+import com.eventhub.automation.support.CleanupService;
 import com.eventhub.automation.support.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -137,9 +138,8 @@ public class BookingSteps {
 
     @When("I clean Selenium-created bookings through the API")
     public void iCleanSeleniumCreatedBookingsThroughTheApi() {
-        Response response = context.apiClient().bookings();
-        response.jsonPath().getList("data.findAll { it.customerName.startsWith('" + ConfigReader.getRequired("booking.customer.prefix") + "') }.id", String.class)
-                .forEach(id -> context.apiClient().deleteBooking(id));
+        new CleanupService(context.apiClient())
+                .deleteBookingsByCustomerPrefix(ConfigReader.getRequired("booking.customer.prefix"));
     }
 
     @Then("I should see the booking confirmation")

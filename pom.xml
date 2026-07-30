@@ -39,6 +39,10 @@
         <environment>qa</environment>
         <parallel>none</parallel>
         <thread.count>2</thread.count>
+        <retry.count>0</retry.count>
+        <retry.tags>@retryable</retry.tags>
+        <preflight.enabled>true</preflight.enabled>
+        <cleanup.before.run>false</cleanup.before.run>
         <suite.xml.file>target/test-classes/suites/testng.xml</suite.xml.file>
         <cucumber.filter.tags>not @wip</cucumber.filter.tags>
     </properties>
@@ -220,6 +224,10 @@
                         <environment>${environment}</environment>
                         <parallel>${parallel}</parallel>
                         <thread.count>${thread.count}</thread.count>
+                        <retry.count>${retry.count}</retry.count>
+                        <retry.tags>${retry.tags}</retry.tags>
+                        <preflight.enabled>${preflight.enabled}</preflight.enabled>
+                        <cleanup.before.run>${cleanup.before.run}</cleanup.before.run>
                         <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
                     </systemPropertyVariables>
                 </configuration>

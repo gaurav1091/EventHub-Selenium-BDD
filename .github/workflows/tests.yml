@@ -116,7 +116,7 @@ jobs:
             MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
           fi
 
-          mvn test "${MVN_ARGS[@]}"
+          bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -127,6 +127,9 @@ jobs:
             target/extent-report
             target/allure-results
             target/axe-reports
+            target/run-summary
+            target/run-logs
+            target/surefire-reports
             screenshots
 
   nightly-regression:
@@ -175,7 +178,7 @@ jobs:
             MVN_ARGS+=(-Dparallel=none)
           fi
 
-          mvn test "${MVN_ARGS[@]}"
+          bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -186,6 +189,9 @@ jobs:
             target/extent-report
             target/allure-results
             target/axe-reports
+            target/run-summary
+            target/run-logs
+            target/surefire-reports
             screenshots
 
   selected-tests:
@@ -230,7 +236,7 @@ jobs:
             MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
           fi
 
-          mvn test "${MVN_ARGS[@]}"
+          bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -241,4 +247,7 @@ jobs:
             target/extent-report
             target/allure-results
             target/axe-reports
+            target/run-summary
+            target/run-logs
+            target/surefire-reports
             screenshots

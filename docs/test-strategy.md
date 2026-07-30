@@ -28,6 +28,7 @@ Execution-purpose tags:
 - Use `@smoke` only for fast release-confidence checks.
 - Use `@regression` for deeper coverage that can run nightly or before larger releases.
 - Use `@negative` with `@regression` for invalid input or authorization/error-path checks.
+- Use `@retryable` sparingly for scenarios that have a documented transient infrastructure/UI-rendering failure mode.
 
 Parallel-state tags:
 
@@ -68,6 +69,7 @@ Manual GitHub Actions dispatch supports these choices:
 
 Reusable expected data lives in `src/test/resources/test-data/eventhub-test-data.json`.
 Dynamic stateful records should be created through factories with unique names and cleaned through API helpers.
+Generated stateful test data includes the run ID from `run.id` when provided, or an automatic timestamp-based run ID.
 
 ## CI Policy
 

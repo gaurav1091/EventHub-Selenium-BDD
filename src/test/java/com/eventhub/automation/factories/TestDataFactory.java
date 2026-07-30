@@ -1,8 +1,8 @@
 package com.eventhub.automation.factories;
 
-import com.eventhub.automation.config.ConfigReader;
 import com.eventhub.automation.models.BookingRequest;
 import com.eventhub.automation.models.EventRequest;
+import com.eventhub.automation.support.RunContext;
 
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -16,7 +16,7 @@ public final class TestDataFactory {
     public static BookingRequest booking(String eventId, int quantity) {
         String token = UUID.randomUUID().toString().substring(0, 8);
         return bookingBuilder(eventId)
-                .customerName(ConfigReader.getRequired("booking.customer.prefix") + " " + token)
+                .customerName(RunContext.bookingCustomerPrefix() + " " + token)
                 .customerEmail("selenium." + token + "@" + TestData.text("booking.emailDomain"))
                 .quantity(quantity)
                 .build();
@@ -34,7 +34,7 @@ public final class TestDataFactory {
     public static EventRequest event(String titlePrefix, int seats) {
         String token = UUID.randomUUID().toString().substring(0, 8);
         OffsetDateTime eventDate = OffsetDateTime.now(ZoneOffset.UTC).plusDays(30);
-        return eventBuilder(titlePrefix + " " + token)
+        return eventBuilder(RunContext.eventTitlePrefix(titlePrefix) + " " + token)
                 .eventDate(eventDate)
                 .totalSeats(seats)
                 .build();
@@ -50,7 +50,7 @@ public final class TestDataFactory {
 
     public static final class BookingRequestBuilder {
         private final String eventId;
-        private String customerName = ConfigReader.getRequired("booking.customer.prefix");
+        private String customerName = RunContext.bookingCustomerPrefix();
         private String customerEmail = "selenium.booking@" + TestData.text("booking.emailDomain");
         private String customerPhone = TestData.text("booking.phone");
         private int quantity = 1;

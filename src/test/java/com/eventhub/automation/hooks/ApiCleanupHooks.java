@@ -1,5 +1,6 @@
 package com.eventhub.automation.hooks;
 
+import com.eventhub.automation.support.CleanupService;
 import com.eventhub.automation.support.TestContext;
 import io.cucumber.java.After;
 import org.apache.logging.log4j.LogManager;
@@ -15,29 +16,12 @@ public class ApiCleanupHooks {
 
     @After(value = "@api-cleanup", order = 100)
     public void cleanApiCreatedData() {
-        deleteBooking(context.get("createdBookingId", String.class));
-        deleteEvent(context.get("createdEventId", String.class));
-    }
-
-    private void deleteBooking(String bookingId) {
-        if (bookingId == null || bookingId.isBlank()) {
-            return;
-        }
+        CleanupService cleanup = new CleanupService(context.apiClient());
         try {
-            context.apiClient().deleteBooking(bookingId);
+            cleanup.deleteBooking(context.get("createdBookingId", String.class));
+            cleanup.deleteEvent(context.get("createdEventId", String.class));
         } catch (RuntimeException exception) {
-            LOGGER.warn("Unable to clean API-created booking {}", bookingId, exception);
-        }
-    }
-
-    private void deleteEvent(String eventId) {
-        if (eventId == null || eventId.isBlank()) {
-            return;
-        }
-        try {
-            context.apiClient().deleteEvent(eventId);
-        } catch (RuntimeException exception) {
-            LOGGER.warn("Unable to clean API-created event {}", eventId, exception);
+            LOGGER.warn("Unable to clean API-created scenario data", exception);
         }
     }
 }

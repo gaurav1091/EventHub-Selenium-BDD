@@ -50,7 +50,10 @@ public final class ConfigReader {
     public static String getRequired(String key) {
         String value = get(key);
         if (value == null || value.isBlank()) {
-            throw new FrameworkException("Missing required configuration: " + key);
+            String envKey = key.toUpperCase(Locale.ROOT).replace('.', '_');
+            throw new FrameworkException("Missing required configuration: " + key
+                    + ". Provide it as -D" + key + "=value, " + envKey + ", EVENTHUB_" + envKey
+                    + ", or in .env.");
         }
         return value.trim();
     }

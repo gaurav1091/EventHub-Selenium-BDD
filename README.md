@@ -46,6 +46,13 @@ Parallel tuning:
 mvn test -Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=4 -Dcucumber.filter.tags="@parallel-safe"
 ```
 
+Run observability and reliability controls:
+
+```bash
+mvn test -Drun.id=local-001 -Dpreflight.enabled=true -Dcleanup.before.run=false
+mvn test -Dretry.count=1 -Dretry.tags="@retryable" -Dcucumber.filter.tags="@retryable"
+```
+
 API only:
 
 ```bash
@@ -136,6 +143,7 @@ CUCUMBER_FILTER_TAGS="@bookings and not @stateful" docker compose run --rm event
 ```
 
 The container reads credentials and environment defaults from `.env` through Docker Compose. Reports and failure screenshots are mounted back to `target/`, `logs/`, and `screenshots/` on your machine.
+Run summaries are written to `target/run-summary/eventhub-run-summary.json`.
 
 ## Troubleshooting
 

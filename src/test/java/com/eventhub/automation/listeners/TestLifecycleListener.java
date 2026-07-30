@@ -1,5 +1,11 @@
 package com.eventhub.automation.listeners;
 
+import com.eventhub.automation.api.EventHubApiClient;
+import com.eventhub.automation.config.ConfigReader;
+import com.eventhub.automation.support.CleanupService;
+import com.eventhub.automation.support.EnvironmentHealthCheck;
+import com.eventhub.automation.support.RunContext;
+import com.eventhub.automation.support.RunSummary;
 import com.eventhub.automation.utils.ScreenshotUtils;
 import io.qameta.allure.Attachment;
 import org.apache.logging.log4j.LogManager;
@@ -8,19 +14,34 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Properties;
 
 public class TestLifecycleListener implements ITestListener {
     private static final Logger LOGGER = LogManager.getLogger(TestLifecycleListener.class);
 
     @Override
     public void onStart(ITestContext context) {
+        EnvironmentHealthCheck.verify();
         ScreenshotUtils.cleanScreenshotsDirectory();
-        LOGGER.info("Starting suite: {}", context.getName());
+        writeAllureEnvironmentFile();
+        if (ConfigReader.getBoolean("cleanup.before.run")) {
+            new CleanupService(new EventHubApiClient(ConfigReader.getRequired("api.base.url"))).cleanCurrentRunData();
+        }
+        LOGGER.info("Starting suite: {} with run id {}", context.getName(), RunContext.id());
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        RunSummary.passed();
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
+        RunSummary.failed();
         Path screenshot = ScreenshotUtils.captureFailureScreenshot(result.getName());
         if (screenshot != null) {
             attachScreenshotToAllure();
@@ -28,8 +49,33 @@ public class TestLifecycleListener implements ITestListener {
         }
     }
 
+    @Override
+    public void onFinish(ITestContext context) {
+        RunSummary.write();
+    }
+
     @Attachment(value = "Failure screenshot", type = "image/png")
     private byte[] attachScreenshotToAllure() {
         return ScreenshotUtils.captureBytes();
+    }
+
+    private void writeAllureEnvironmentFile() {
+        Properties environment = new Properties();
+        environment.setProperty("Run ID", RunContext.id());
+        environment.setProperty("Environment", ConfigReader.getRequired("environment"));
+        environment.setProperty("Browser", ConfigReader.getRequired("browser"));
+        environment.setProperty("Headless", ConfigReader.getRequired("headless"));
+        environment.setProperty("Parallel", ConfigReader.getRequired("parallel"));
+        environment.setProperty("Thread Count", ConfigReader.getRequired("thread.count"));
+        environment.setProperty("Tags", ConfigReader.getRequired("cucumber.filter.tags"));
+        try {
+            Files.createDirectories(Path.of("target", "allure-results"));
+            try (OutputStream outputStream = Files.newOutputStream(
+                    Path.of("target", "allure-results", "environment.properties"))) {
+                environment.store(outputStream, "EventHub run metadata");
+            }
+        } catch (IOException exception) {
+            LOGGER.warn("Unable to write Allure environment metadata", exception);
+        }
     }
 }
