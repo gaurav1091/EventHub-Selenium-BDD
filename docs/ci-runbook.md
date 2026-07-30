@@ -62,5 +62,6 @@ mvn -Psecurity org.owasp:dependency-check-maven:check
 - Check the failed scenario and tag first. If it is `@stateful`, reproduce serially.
 - Download artifacts for Extent, Allure, Cucumber JSON, Surefire XML, logs, and screenshots.
 - For UI failures, inspect the Allure failure metadata attachment for browser, URL, scenario, and tags.
+- For accessibility smoke, inspect `target/axe-reports` or the Allure Axe advisory attachment. Axe findings are advisory and do not fail CI by default.
 - For parallel-only failures, rerun `@parallel-safe` with the same thread count before changing code.
 - Treat browser CDP warnings as non-fatal unless a Selenium command also fails.

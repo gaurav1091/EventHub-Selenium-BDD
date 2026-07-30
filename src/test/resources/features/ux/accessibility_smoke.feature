@@ -8,6 +8,7 @@ Feature: Accessibility smoke
   Scenario Outline: Key pages expose basic accessibility semantics
     When I open UX smoke page "<page>"
     Then the page should expose basic accessibility semantics
+    And the page should generate an Axe accessibility advisory report
 
     Examples:
       | page         |
