@@ -65,7 +65,7 @@ Reports:
 mvn allure:serve
 ```
 
-Extent report is generated at `target/extent-report/EventHub-Cucumber-Report.html`.
+Extent report is generated at `target/extent-report/EventHub-Cucumber-Report.html` with run ID, environment, browser, headless, parallel, thread count, and tag metadata.
 
 Quality gates:
 

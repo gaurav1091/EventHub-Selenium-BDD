@@ -7,6 +7,7 @@ import com.eventhub.automation.support.EnvironmentHealthCheck;
 import com.eventhub.automation.support.RunContext;
 import com.eventhub.automation.support.RunSummary;
 import com.eventhub.automation.utils.ScreenshotUtils;
+import com.aventstack.extentreports.service.ExtentService;
 import io.qameta.allure.Attachment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,6 +29,7 @@ public class TestLifecycleListener implements ITestListener {
         EnvironmentHealthCheck.verify();
         ScreenshotUtils.cleanScreenshotsDirectory();
         writeAllureEnvironmentFile();
+        writeExtentSystemInfo();
         if (ConfigReader.getBoolean("cleanup.before.run")) {
             new CleanupService(new EventHubApiClient(ConfigReader.getRequired("api.base.url"))).cleanCurrentRunData();
         }
@@ -77,5 +79,15 @@ public class TestLifecycleListener implements ITestListener {
         } catch (IOException exception) {
             LOGGER.warn("Unable to write Allure environment metadata", exception);
         }
+    }
+
+    private void writeExtentSystemInfo() {
+        ExtentService.getInstance().setSystemInfo("Run ID", RunContext.id());
+        ExtentService.getInstance().setSystemInfo("Environment", ConfigReader.getRequired("environment"));
+        ExtentService.getInstance().setSystemInfo("Browser", ConfigReader.getRequired("browser"));
+        ExtentService.getInstance().setSystemInfo("Headless", ConfigReader.getRequired("headless"));
+        ExtentService.getInstance().setSystemInfo("Parallel", ConfigReader.getRequired("parallel"));
+        ExtentService.getInstance().setSystemInfo("Thread Count", ConfigReader.getRequired("thread.count"));
+        ExtentService.getInstance().setSystemInfo("Tags", ConfigReader.getRequired("cucumber.filter.tags"));
     }
 }
