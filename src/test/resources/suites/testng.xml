@@ -3,7 +3,6 @@
        data-provider-thread-count="${thread.count}" verbose="1">
     <listeners>
         <listener class-name="com.eventhub.automation.listeners.TestLifecycleListener"/>
-        <listener class-name="com.eventhub.automation.listeners.RetryAnnotationTransformer"/>
     </listeners>
     <test name="Cucumber BDD Tests">
         <classes>
