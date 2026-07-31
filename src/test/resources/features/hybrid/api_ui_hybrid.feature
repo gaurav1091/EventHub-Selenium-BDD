@@ -1,4 +1,4 @@
-@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration
 Feature: API and UI hybrid coverage
 
   Background:

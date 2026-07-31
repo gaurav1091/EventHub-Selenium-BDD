@@ -1,4 +1,4 @@
-@auth @ui @owner-platform @risk-auth @intent-auth
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth
 Feature: EventHub authentication
 
   @p0 @smoke @parallel-safe @critical @intent-session
@@ -55,3 +55,16 @@ Feature: EventHub authentication
     Given I am signed in to EventHub
     When I directly open protected route "/bookings"
     Then the My Bookings page should be loaded
+
+  @p1 @regression @parallel-safe @intent-session
+  Scenario Outline: Authenticated session survives refresh on protected pages
+    Given I am signed in to EventHub
+    When I directly open protected route "<route>"
+    And I refresh the current page
+    Then protected page "<page>" should remain loaded
+
+    Examples:
+      | route         | page         |
+      | /events       | events       |
+      | /bookings     | bookings     |
+      | /admin/events | admin events |

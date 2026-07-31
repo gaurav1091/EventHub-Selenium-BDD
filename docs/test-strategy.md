@@ -12,10 +12,12 @@ This framework uses Cucumber tags as the primary test selection contract for loc
 - `@stateful`: scenarios that create, mutate, cancel, or clear server-side data.
 - `@parallel-safe`: scenarios designed to run concurrently without sharing mutable test state.
 - `@negative`: invalid input, unauthorized, or error-path API/UI coverage.
+- `@visual`: visual sanity smoke for key screens.
 - `@p0`, `@p1`, `@p2`, `@p3`: priority from release-blocking to low-risk supporting coverage.
 - `@owner-*`: accountable team or module owner, for example `@owner-platform`.
 - `@risk-*`: business or technical risk area, for example `@risk-auth`.
 - `@intent-*`: why the scenario exists, for example `@intent-security`.
+- `@impact-*`: impact-selection tag for faster targeted CI, for example `@impact-auth`.
 
 ## Tag Governance
 
@@ -73,7 +75,7 @@ SUITE=ui-critical docker compose run --rm eventhub-tests
 Manual GitHub Actions dispatch supports these choices:
 
 - Browser: `chrome`, `firefox`
-- Suite: `smoke`, `ui`, `api`, `regression`, `admin`, `auth`, `bookings`, `events`, `navigation`, `hybrid`, `stateful`, `parallel-safe`, `p0-smoke`, `p1-regression`, `api-contract`, `ui-critical`, `nightly-stateful`, `accessibility`, `docker-smoke`, `all`
+- Suite: `smoke`, `ui`, `api`, `regression`, `admin`, `auth`, `bookings`, `events`, `navigation`, `hybrid`, `stateful`, `parallel-safe`, `p0-smoke`, `p1-regression`, `api-contract`, `ui-critical`, `nightly-stateful`, `accessibility`, `visual`, `impact-auth`, `impact-events`, `impact-bookings`, `impact-admin`, `impact-api`, `impact-ux`, `docker-smoke`, `all`
 - Parallel: `true`, `false`
 - Thread count: `2`, `3`, `4`, `5`
 
@@ -111,4 +113,14 @@ Manual workflow dispatch runs exactly one selected browser/suite/parallel combin
 | `ui-critical` | `@ui and @critical` |
 | `nightly-stateful` | `@stateful and @regression` |
 | `accessibility` | `@accessibility` |
+| `visual` | `@visual` |
+| `impact-*` | matching `@impact-*` tag |
 | `docker-smoke` | `@docker-smoke or (@p0 and @smoke)` |
+
+## Accessibility Thresholds
+
+Axe accessibility scenarios are advisory by default. Enable threshold enforcement when the product baseline is ready:
+
+```bash
+mvn test -Dheadless=true -Dcucumber.filter.tags="@accessibility" -Daccessibility.threshold.enabled=true -Daccessibility.max.violations=0
+```

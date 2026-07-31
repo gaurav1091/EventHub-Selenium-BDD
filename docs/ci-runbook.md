@@ -84,6 +84,8 @@ mvn -Psecurity org.owasp:dependency-check-maven:check
 - Inspect `target/governance/scenario-governance.json` before merging broad test additions.
 - For UI failures, inspect the Allure failure metadata attachment for browser, URL, scenario, and tags.
 - For accessibility smoke, inspect `target/axe-reports` or the Allure Axe advisory attachment. Axe findings are advisory and do not fail CI by default.
+- For thresholded accessibility runs, set `accessibility.threshold.enabled=true` and inspect `target/axe-reports` on failure.
+- For visual sanity, inspect `target/visual-sanity` and the Allure screenshot attachment.
 - For parallel-only failures, rerun `@parallel-safe` with the same thread count before changing code.
 - If CI reran automatically, inspect `target/run-logs` to confirm it was an infrastructure retry and not a test retry.
 - Treat browser CDP warnings as non-fatal unless a Selenium command also fails.

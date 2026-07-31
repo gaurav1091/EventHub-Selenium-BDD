@@ -1,4 +1,4 @@
-@events @ui @owner-platform @risk-discovery @intent-discovery
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events
 Feature: Event discovery
 
   Background:
@@ -48,6 +48,15 @@ Feature: Event discovery
     When I open the Events page
     And I search events for "Dilli Diwali Mela"
     And I refresh the current page
+    Then event filters should be reset
+    And I should see seeded upcoming events
+
+  @p1 @regression @parallel-safe
+  Scenario: Event filters reset after navigating away and back
+    When I open the Events page
+    And I search events for "Dilli Diwali Mela"
+    And I filter events by city "Delhi"
+    And I navigate away from event discovery and return
     Then event filters should be reset
     And I should see seeded upcoming events
 

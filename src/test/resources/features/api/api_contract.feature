@@ -1,4 +1,4 @@
-@api @contract @owner-platform @risk-contract @intent-api-contract
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api
 Feature: EventHub API contract
 
   @p0 @smoke @parallel-safe @intent-health

@@ -1,4 +1,4 @@
-@bookings @ui @owner-platform @risk-revenue @intent-booking
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings
 Feature: Event booking lifecycle
 
   Background:

@@ -1,4 +1,4 @@
-@accessibility @ui @owner-platform @risk-ux @intent-accessibility
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux
 Feature: Accessibility smoke
 
   Background:
@@ -9,6 +9,7 @@ Feature: Accessibility smoke
     When I open UX smoke page "<page>"
     Then the page should expose basic accessibility semantics
     And the page should generate an Axe accessibility advisory report
+    And the page should satisfy the configured accessibility threshold
 
     Examples:
       | page         |

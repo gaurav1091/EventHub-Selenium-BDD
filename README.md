@@ -109,6 +109,7 @@ USER_EMAIL=you@example.com USER_PASSWORD=secret mvn test
 The tag and suite strategy is documented in `docs/test-strategy.md`.
 Scenario coverage and governance conventions are documented in `docs/test-catalog.md`.
 CI usage and failure triage are documented in `docs/ci-runbook.md`.
+Developer contribution, debugging, and add-new-test guides live under `docs/`.
 GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix automatically. Scheduled runs execute a broader nightly regression matrix, while manual dispatch still lets you choose one browser, suite, parallel mode, and thread count.
 
 ## Docker
@@ -141,6 +142,14 @@ Run a custom Cucumber tag expression:
 
 ```bash
 CUCUMBER_FILTER_TAGS="@bookings and not @stateful" docker compose run --rm eventhub-tests
+```
+
+Run visual or accessibility smoke:
+
+```bash
+make visual
+make accessibility
+ACCESSIBILITY_THRESHOLD_ENABLED=true ACCESSIBILITY_MAX_VIOLATIONS=0 make accessibility
 ```
 
 The container reads credentials and environment defaults from `.env` through Docker Compose. Reports and failure screenshots are mounted back to `target/`, `logs/`, and `screenshots/` on your machine.

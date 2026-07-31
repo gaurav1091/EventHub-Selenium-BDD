@@ -1,4 +1,4 @@
-@responsive @ui @owner-platform @risk-ux @intent-responsive
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux
 Feature: Responsive smoke
 
   Background:

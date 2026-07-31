@@ -1,4 +1,4 @@
-@admin @ui @owner-platform @risk-admin @intent-admin
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin
 Feature: Admin event management
 
   Background:

@@ -3,6 +3,7 @@ package com.eventhub.automation.steps;
 import com.deque.html.axecore.results.Results;
 import com.deque.html.axecore.results.Rule;
 import com.deque.html.axecore.selenium.AxeBuilder;
+import com.eventhub.automation.config.ConfigReader;
 import com.eventhub.automation.drivers.DriverManager;
 import com.eventhub.automation.pages.AdminEventsPage;
 import com.eventhub.automation.pages.BookingsPage;
@@ -21,6 +22,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -37,6 +39,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UxSmokeSteps {
     private static final ObjectMapper MAPPER = new ObjectMapper();
     private static final Path AXE_REPORTS_DIR = Path.of("target", "axe-reports");
+    private static final Path VISUAL_SANITY_DIR = Path.of("target", "visual-sanity");
 
     @When("I use viewport {int} by {int}")
     public void iUseViewportBy(int width, int height) {
@@ -75,6 +78,47 @@ public class UxSmokeSteps {
         writeAxeReport(driver, json);
         Allure.addAttachment("Axe accessibility advisory", "application/json", json, ".json");
         assertThat(results).as("Expected Axe to return an accessibility result").isNotNull();
+    }
+
+    @Then("the page should satisfy the configured accessibility threshold")
+    public void thePageShouldSatisfyTheConfiguredAccessibilityThreshold() {
+        WebDriver driver = DriverManager.getDriver();
+        Results results = new AxeBuilder().analyze(driver);
+        int violationCount = results.getViolations().size();
+        int maxViolations = ConfigReader.getInt("accessibility.max.violations");
+        Map<String, Object> report = axeReport(driver, results);
+        report.put("mode", thresholdEnabled() ? "threshold" : "advisory-threshold-disabled");
+        report.put("maxViolations", maxViolations);
+        String json = toJson(report);
+        writeAxeReport(driver, json);
+        Allure.addAttachment("Axe accessibility threshold", "application/json", json, ".json");
+        if (thresholdEnabled()) {
+            assertThat(violationCount)
+                    .as("Expected Axe violation count for %s to be <= configured threshold",
+                            driver.getCurrentUrl())
+                    .isLessThanOrEqualTo(maxViolations);
+        }
+    }
+
+    @Then("the page should have a visual sanity screenshot")
+    public void thePageShouldHaveAVisualSanityScreenshot() {
+        WebDriver driver = DriverManager.getDriver();
+        Waits.pageReady(driver);
+        Waits.loadingComplete(driver);
+        assertThat(hasVisibleHeadingOrLandmark(driver))
+                .as("Expected page to be visually non-blank: %s", driver.getCurrentUrl())
+                .isTrue();
+        try {
+            Files.createDirectories(VISUAL_SANITY_DIR);
+            byte[] screenshot = ((org.openqa.selenium.TakesScreenshot) driver)
+                    .getScreenshotAs(org.openqa.selenium.OutputType.BYTES);
+            Path screenshotPath = VISUAL_SANITY_DIR.resolve(visualFileName(driver));
+            Files.write(screenshotPath, screenshot);
+            Allure.addAttachment("Visual sanity screenshot", "image/png",
+                    new ByteArrayInputStream(screenshot), ".png");
+        } catch (IOException exception) {
+            throw new IllegalStateException("Unable to write visual sanity screenshot", exception);
+        }
     }
 
     @Then("the page should fit the viewport without horizontal overflow")
@@ -146,6 +190,10 @@ public class UxSmokeSteps {
         return report;
     }
 
+    private boolean thresholdEnabled() {
+        return Boolean.parseBoolean(ConfigReader.getRequired("accessibility.threshold.enabled"));
+    }
+
     private Map<String, Object> violation(Rule rule) {
         Map<String, Object> violation = new LinkedHashMap<>();
         violation.put("id", rule.getId());
@@ -182,6 +230,14 @@ public class UxSmokeSteps {
                 .replaceAll("[^a-zA-Z0-9._-]", "_");
         return "axe-" + path + "-" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-SSS"))
                 + ".json";
+    }
+
+    private String visualFileName(WebDriver driver) {
+        String path = driver.getCurrentUrl()
+                .replaceFirst("^https?://", "")
+                .replaceAll("[^a-zA-Z0-9._-]", "_");
+        return "visual-" + path + "-" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-SSS"))
+                + ".png";
     }
 
     private String toJson(Map<String, Object> report) {

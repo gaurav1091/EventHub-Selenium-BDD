@@ -14,6 +14,8 @@ services:
       PARALLEL: ${PARALLEL:-false}
       THREAD_COUNT: ${THREAD_COUNT:-2}
       CUCUMBER_FILTER_TAGS: ${CUCUMBER_FILTER_TAGS:-}
+      ACCESSIBILITY_THRESHOLD_ENABLED: ${ACCESSIBILITY_THRESHOLD_ENABLED:-false}
+      ACCESSIBILITY_MAX_VIOLATIONS: ${ACCESSIBILITY_MAX_VIOLATIONS:-0}
     volumes:
       - ./target:/eventhub/target
       - ./screenshots:/eventhub/screenshots

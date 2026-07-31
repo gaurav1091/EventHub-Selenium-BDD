@@ -11,7 +11,7 @@
 Example tags:
 
 ```gherkin
-@p1 @regression @parallel-safe @critical @intent-discovery
+@p1 @regression @parallel-safe @critical @intent-discovery @impact-events
 Scenario: Event detail deep link loads correct metadata
 ```
 

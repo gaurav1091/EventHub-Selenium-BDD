@@ -31,6 +31,7 @@ public class TestLifecycleListener implements ITestListener {
         EnvironmentHealthCheck.verify();
         ScreenshotUtils.cleanScreenshotsDirectory();
         writeAllureEnvironmentFile();
+        writeAllureCategoriesFile();
         writeExtentSystemInfo();
         if (ConfigReader.getBoolean("cleanup.before.run")) {
             new CleanupService(new EventHubApiClient(ConfigReader.getRequired("api.base.url"))).cleanCurrentRunData();
@@ -82,6 +83,22 @@ public class TestLifecycleListener implements ITestListener {
             }
         } catch (IOException exception) {
             LOGGER.warn("Unable to write Allure environment metadata", exception);
+        }
+    }
+
+    private void writeAllureCategoriesFile() {
+        try {
+            Files.createDirectories(Path.of("target", "allure-results"));
+            try (var inputStream = getClass().getClassLoader().getResourceAsStream("allure/categories.json")) {
+                if (inputStream == null) {
+                    LOGGER.warn("Allure categories template was not found on the classpath.");
+                    return;
+                }
+                Files.copy(inputStream, Path.of("target", "allure-results", "categories.json"),
+                        java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            }
+        } catch (IOException exception) {
+            LOGGER.warn("Unable to write Allure categories metadata", exception);
         }
     }
 

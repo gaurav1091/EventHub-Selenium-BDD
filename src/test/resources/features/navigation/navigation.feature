@@ -1,4 +1,4 @@
-@navigation @ui @owner-platform @risk-navigation @intent-navigation
+@navigation @ui @owner-platform @risk-navigation @intent-navigation @impact-navigation
 Feature: EventHub navigation
 
   Background:

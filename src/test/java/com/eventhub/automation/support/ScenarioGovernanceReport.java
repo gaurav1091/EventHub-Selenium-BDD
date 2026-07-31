@@ -80,13 +80,14 @@ public final class ScenarioGovernanceReport {
 
     private static List<String> missingRecommendedTags(List<String> tags) {
         List<String> missing = new ArrayList<>();
-        requireAny(tags, missing, "@smoke", "@regression", "@contract", "@accessibility", "@responsive");
+        requireAny(tags, missing, "@smoke", "@regression", "@contract", "@accessibility", "@responsive", "@visual");
         requireAny(tags, missing, "@api", "@ui", "@hybrid", "@accessibility", "@responsive");
         requireAny(tags, missing, "@parallel-safe", "@stateful");
         requirePriority(tags, missing);
         requirePrefix(tags, missing, "@owner-");
         requirePrefix(tags, missing, "@risk-");
         requirePrefix(tags, missing, "@intent-");
+        requirePrefix(tags, missing, "@impact-");
         return missing;
     }
 

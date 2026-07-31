@@ -16,13 +16,14 @@ output_path = Pathname.new(ARGV.fetch(1))
 fail_mode = ARGV.fetch(2).casecmp("true").zero?
 
 rules = {
-  "suite" => ->(tags) { tags.any? { |tag| %w[@smoke @regression @contract @accessibility @responsive].include?(tag) } },
+  "suite" => ->(tags) { tags.any? { |tag| %w[@smoke @regression @contract @accessibility @responsive @visual].include?(tag) } },
   "surface" => ->(tags) { tags.any? { |tag| %w[@api @ui @hybrid @accessibility @responsive].include?(tag) } },
   "data_safety" => ->(tags) { tags.any? { |tag| %w[@parallel-safe @stateful].include?(tag) } },
   "priority" => ->(tags) { tags.any? { |tag| tag.match?(/^@p[0-3]$/) } },
   "owner" => ->(tags) { tags.any? { |tag| tag.start_with?("@owner-") } },
   "risk" => ->(tags) { tags.any? { |tag| tag.start_with?("@risk-") } },
-  "intent" => ->(tags) { tags.any? { |tag| tag.start_with?("@intent-") } }
+  "intent" => ->(tags) { tags.any? { |tag| tag.start_with?("@intent-") } },
+  "impact" => ->(tags) { tags.any? { |tag| tag.start_with?("@impact-") } }
 }
 
 scenarios = []

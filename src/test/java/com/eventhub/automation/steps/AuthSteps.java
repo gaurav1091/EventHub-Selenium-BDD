@@ -3,6 +3,9 @@ package com.eventhub.automation.steps;
 import com.eventhub.automation.config.ConfigReader;
 import com.eventhub.automation.drivers.DriverManager;
 import com.eventhub.automation.pages.LoginPage;
+import com.eventhub.automation.pages.AdminEventsPage;
+import com.eventhub.automation.pages.BookingsPage;
+import com.eventhub.automation.pages.EventsPage;
 import com.eventhub.automation.pages.NavigationBar;
 import com.eventhub.automation.utils.Waits;
 import io.cucumber.java.en.Given;
@@ -110,5 +113,23 @@ public class AuthSteps {
     @Then("I should be on the registration page")
     public void iShouldBeOnTheRegistrationPage() {
         assertThat(DriverManager.getDriver().getCurrentUrl()).contains("/register");
+    }
+
+    @Then("protected page {string} should remain loaded")
+    public void protectedPageShouldRemainLoaded(String page) {
+        switch (page.toLowerCase()) {
+            case "events":
+                new EventsPage().assertLoaded();
+                break;
+            case "bookings":
+                new BookingsPage().assertLoaded();
+                break;
+            case "admin events":
+                new AdminEventsPage().assertLoaded();
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported protected page: " + page);
+        }
+        navigationBar.assertAuthenticated(ConfigReader.getRequired("user.email"));
     }
 }
