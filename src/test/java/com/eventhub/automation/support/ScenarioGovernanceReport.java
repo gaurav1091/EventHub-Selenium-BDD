@@ -80,9 +80,13 @@ public final class ScenarioGovernanceReport {
 
     private static List<String> missingRecommendedTags(List<String> tags) {
         List<String> missing = new ArrayList<>();
-        requireAny(tags, missing, "@smoke", "@regression");
+        requireAny(tags, missing, "@smoke", "@regression", "@contract", "@accessibility", "@responsive");
         requireAny(tags, missing, "@api", "@ui", "@hybrid", "@accessibility", "@responsive");
         requireAny(tags, missing, "@parallel-safe", "@stateful");
+        requirePriority(tags, missing);
+        requirePrefix(tags, missing, "@owner-");
+        requirePrefix(tags, missing, "@risk-");
+        requirePrefix(tags, missing, "@intent-");
         return missing;
     }
 
@@ -93,5 +97,19 @@ public final class ScenarioGovernanceReport {
             }
         }
         missing.add(String.join(" or ", expected));
+    }
+
+    private static void requirePrefix(List<String> tags, List<String> missing, String prefix) {
+        if (tags.stream().anyMatch(tag -> tag.startsWith(prefix))) {
+            return;
+        }
+        missing.add(prefix + "*");
+    }
+
+    private static void requirePriority(List<String> tags, List<String> missing) {
+        if (tags.stream().anyMatch(tag -> tag.matches("@p[0-3]"))) {
+            return;
+        }
+        missing.add("@p0 or @p1 or @p2 or @p3");
     }
 }

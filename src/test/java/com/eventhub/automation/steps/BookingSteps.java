@@ -38,6 +38,7 @@ public class BookingSteps {
         BookingRequest booking = TestDataFactory.booking(eventId, quantity);
         context.setLastBookingRequest(booking);
         context.put("selectedEventTitle", eventName);
+        context.put("selectedEventId", eventId);
         if (quantity > 1) {
             detailPage.increaseTickets(quantity - 1);
         }
@@ -47,12 +48,14 @@ public class BookingSteps {
 
     @When("I book {int} ticket(s) for a bookable event")
     public void iBookTicketsForABookableEvent(int quantity) {
+        String eventTitle = context.apiClient().findBookableEventTitleWithSeatsAtLeast(quantity);
+        String eventId = context.apiClient().findEventIdByTitle(eventTitle);
         eventsPage.openEventsPage();
-        eventsPage.bookFirstAvailableEvent();
-        String eventId = context.apiClient().findFirstBookableEventId();
+        eventsPage.bookEvent(eventTitle);
         BookingRequest booking = TestDataFactory.booking(eventId, quantity);
         context.setLastBookingRequest(booking);
-        context.put("selectedEventTitle", context.apiClient().findEventTitleById(eventId));
+        context.put("selectedEventId", eventId);
+        context.put("selectedEventTitle", eventTitle);
         if (quantity > 1) {
             detailPage.increaseTickets(quantity - 1);
         }
@@ -123,6 +126,7 @@ public class BookingSteps {
         String eventId = context.apiClient().findFirstBookableEventId();
         BookingRequest booking = TestDataFactory.booking(eventId, 1);
         context.setLastBookingRequest(booking);
+        context.put("selectedEventId", eventId);
         detailPage.fillBookingForm(booking);
     }
 
@@ -131,6 +135,7 @@ public class BookingSteps {
         String eventId = context.apiClient().findFirstBookableEventId();
         BookingRequest booking = TestDataFactory.booking(eventId, 1);
         context.setLastBookingRequest(booking);
+        context.put("selectedEventId", eventId);
         context.put("selectedEventTitle", context.apiClient().findEventTitleById(eventId));
         Response response = context.apiClient().createBooking(booking);
         ApiAssertions.assertSuccess(response);
@@ -151,6 +156,16 @@ public class BookingSteps {
     public void iShouldSeeABookingConfirmationWithTotal(String total) {
         detailPage.assertBookingConfirmed();
         detailPage.assertTotalContains(total);
+    }
+
+    @Then("the booking confirmation should show the selected event, customer, quantity, and total")
+    public void theBookingConfirmationShouldShowTheSelectedEventCustomerQuantityAndTotal() {
+        BookingRequest booking = context.lastBookingRequest();
+        int unitPrice = context.apiClient().findEventPriceById(context.get("selectedEventId", String.class));
+        detailPage.assertBookingConfirmationDetails(
+                booking,
+                context.get("selectedEventTitle", String.class),
+                unitPrice * booking.quantity());
     }
 
     @Then("I should see booking for event {string}")
@@ -177,6 +192,11 @@ public class BookingSteps {
     public void noBookingsForTheCurrentSeleniumCustomerShouldRemain() {
         bookingsPage.openBookingsPage();
         bookingsPage.assertBookingNotVisible(ConfigReader.getRequired("booking.customer.prefix"));
+    }
+
+    @Then("My Bookings should show an empty state")
+    public void myBookingsShouldShowAnEmptyState() {
+        bookingsPage.assertEmptyStateVisible();
     }
 
     @Then("I should see the event detail booking panel for {string}")

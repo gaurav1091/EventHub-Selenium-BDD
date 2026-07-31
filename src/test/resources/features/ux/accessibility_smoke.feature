@@ -1,10 +1,10 @@
-@accessibility @ui
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility
 Feature: Accessibility smoke
 
   Background:
     Given I am signed in to EventHub
 
-  @regression @parallel-safe
+  @p1 @regression @parallel-safe
   Scenario Outline: Key pages expose basic accessibility semantics
     When I open UX smoke page "<page>"
     Then the page should expose basic accessibility semantics

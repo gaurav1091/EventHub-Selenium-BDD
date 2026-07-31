@@ -1,10 +1,10 @@
-@responsive @ui
+@responsive @ui @owner-platform @risk-ux @intent-responsive
 Feature: Responsive smoke
 
   Background:
     Given I am signed in to EventHub
 
-  @regression @parallel-safe
+  @p1 @regression @parallel-safe
   Scenario Outline: Key authenticated pages fit common viewport sizes
     When I use viewport <width> by <height>
     And I open UX smoke page "<page>"

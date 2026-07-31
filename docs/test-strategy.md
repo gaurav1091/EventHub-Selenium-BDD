@@ -12,6 +12,10 @@ This framework uses Cucumber tags as the primary test selection contract for loc
 - `@stateful`: scenarios that create, mutate, cancel, or clear server-side data.
 - `@parallel-safe`: scenarios designed to run concurrently without sharing mutable test state.
 - `@negative`: invalid input, unauthorized, or error-path API/UI coverage.
+- `@p0`, `@p1`, `@p2`, `@p3`: priority from release-blocking to low-risk supporting coverage.
+- `@owner-*`: accountable team or module owner, for example `@owner-platform`.
+- `@risk-*`: business or technical risk area, for example `@risk-auth`.
+- `@intent-*`: why the scenario exists, for example `@intent-security`.
 
 ## Tag Governance
 
@@ -38,9 +42,10 @@ Parallel-state tags:
 
 Coverage governance:
 
-- Keep every scenario covered by a suite tag, surface tag, domain tag, and data-safety tag.
+- Keep every scenario covered by a suite tag, surface tag, domain tag, data-safety tag, priority tag, owner tag, risk tag, and intent tag.
 - Use `docs/test-catalog.md` as the human-readable coverage map for business and risk traceability.
 - Review `target/governance/scenario-governance.json` after local or CI runs when adding broad new coverage.
+- Run `TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh` or `make tag-audit` before pushing tag changes.
 
 ## Parallel Policy
 
@@ -62,12 +67,13 @@ Docker examples:
 ```bash
 SUITE=smoke docker compose run --rm eventhub-tests
 SUITE=parallel-safe PARALLEL=true THREAD_COUNT=4 docker compose run --rm eventhub-tests
+SUITE=ui-critical docker compose run --rm eventhub-tests
 ```
 
 Manual GitHub Actions dispatch supports these choices:
 
 - Browser: `chrome`, `firefox`
-- Suite: `smoke`, `ui`, `api`, `regression`, `admin`, `auth`, `bookings`, `events`, `navigation`, `hybrid`, `stateful`, `parallel-safe`, `all`
+- Suite: `smoke`, `ui`, `api`, `regression`, `admin`, `auth`, `bookings`, `events`, `navigation`, `hybrid`, `stateful`, `parallel-safe`, `p0-smoke`, `p1-regression`, `api-contract`, `ui-critical`, `nightly-stateful`, `accessibility`, `docker-smoke`, `all`
 - Parallel: `true`, `false`
 - Thread count: `2`, `3`, `4`, `5`
 
@@ -94,3 +100,15 @@ Nightly scheduled runs execute a broader matrix:
 - Stateful regression serial.
 
 Manual workflow dispatch runs exactly one selected browser/suite/parallel combination from the GitHub Actions inputs.
+
+## Suite Aliases
+
+| Suite alias | Cucumber expression |
+| --- | --- |
+| `p0-smoke` | `@p0 and @smoke` |
+| `p1-regression` | `@p1 and @regression` |
+| `api-contract` | `@api and @contract` |
+| `ui-critical` | `@ui and @critical` |
+| `nightly-stateful` | `@stateful and @regression` |
+| `accessibility` | `@accessibility` |
+| `docker-smoke` | `@docker-smoke or (@p0 and @smoke)` |

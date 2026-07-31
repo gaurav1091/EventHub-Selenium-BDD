@@ -45,6 +45,13 @@ public class EventsPage extends BasePage {
         click(CLEAR_FILTERS);
     }
 
+    public void assertFiltersReset() {
+        Waits.loadingComplete(driver());
+        assertThat(visible(SEARCH).getAttribute("value")).isBlank();
+        elements(SELECTS).forEach(select -> assertThat(select.getAttribute("value"))
+                .matches(value -> value == null || value.isBlank() || "all".equalsIgnoreCase(value)));
+    }
+
     public void openEventByTitle(String eventName) {
         WebElement article = articleFor(eventName);
         scrollIntoView(article);

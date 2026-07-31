@@ -98,6 +98,14 @@ public class EventDetailPage extends BasePage {
         assertPageContains(driver(), "Customer");
     }
 
+    public void assertBookingConfirmationDetails(BookingRequest booking, String eventTitle, int expectedTotal) {
+        assertBookingConfirmed();
+        assertPageContains(driver(), eventTitle);
+        assertPageContains(driver(), booking.customerName());
+        assertPageContains(driver(), String.valueOf(booking.quantity()));
+        assertPageContains(driver(), "$" + expectedTotal);
+    }
+
     public void assertBookingPanelVisible() {
         visible(BOOK_TICKETS);
         visible(CONFIRM_BOOKING);

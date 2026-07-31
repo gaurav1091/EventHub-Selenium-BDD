@@ -5,8 +5,11 @@ import com.eventhub.automation.utils.XpathUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 
+import com.eventhub.automation.config.ConfigReader;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
+import static com.eventhub.automation.utils.UiAssertions.assertPageContainsAnyOf;
 
 public class BookingsPage extends BasePage {
     public BookingsPage openBookingsPage() {
@@ -32,6 +35,21 @@ public class BookingsPage extends BasePage {
                         + XpathUtils.literal(eventName) + ")]")))
                 .as("Expected booking text to be absent: %s", eventName)
                 .isEmpty();
+    }
+
+    public void assertEmptyStateVisible() {
+        assertLoaded();
+        boolean emptyStateVisible = !driver().findElements(By.xpath(
+                        "//*[contains(normalize-space(.),'No bookings') "
+                                + "or contains(normalize-space(.),'no bookings') "
+                                + "or contains(normalize-space(.),'booked yet') "
+                                + "or contains(normalize-space(.),'empty')]"))
+                .isEmpty();
+        if (emptyStateVisible) {
+            assertPageContainsAnyOf(driver(), "No bookings", "no bookings", "booked yet", "empty");
+            return;
+        }
+        assertBookingNotVisible(ConfigReader.getRequired("booking.customer.prefix"));
     }
 
     public void openDetails() {

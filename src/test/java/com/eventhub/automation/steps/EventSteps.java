@@ -1,13 +1,21 @@
 package com.eventhub.automation.steps;
 
+import com.eventhub.automation.config.ConfigReader;
+import com.eventhub.automation.drivers.DriverManager;
 import com.eventhub.automation.pages.EventDetailPage;
 import com.eventhub.automation.pages.EventsPage;
+import com.eventhub.automation.support.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class EventSteps {
+    private final TestContext context;
     private final EventsPage eventsPage = new EventsPage();
     private final EventDetailPage eventDetailPage = new EventDetailPage();
+
+    public EventSteps(TestContext context) {
+        this.context = context;
+    }
 
     @When("I open the Events page")
     public void iOpenTheEventsPage() {
@@ -52,6 +60,12 @@ public class EventSteps {
         eventsPage.bookFirstAvailableEvent();
     }
 
+    @When("I directly open event detail for event {string}")
+    public void iDirectlyOpenEventDetailForEvent(String eventName) {
+        String eventId = context.apiClient().findEventIdByTitle(eventName);
+        DriverManager.getDriver().get(ConfigReader.getRequired("base.url") + "/events/" + eventId);
+    }
+
     @Then("I should see seeded upcoming events")
     public void iShouldSeeSeededUpcomingEvents() {
         eventsPage.assertSeededEventsVisible();
@@ -81,5 +95,11 @@ public class EventSteps {
     @Then("I should see metadata for event {string}")
     public void iShouldSeeMetadataForEvent(String eventName) {
         eventDetailPage.assertMetadataFor(eventName);
+    }
+
+    @Then("event filters should be reset")
+    public void eventFiltersShouldBeReset() {
+        eventsPage.assertLoaded();
+        eventsPage.assertFiltersReset();
     }
 }

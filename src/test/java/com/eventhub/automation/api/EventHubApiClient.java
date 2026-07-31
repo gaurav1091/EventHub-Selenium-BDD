@@ -124,6 +124,25 @@ public class EventHubApiClient {
                 .orElseThrow(() -> new IllegalArgumentException("No event found for id: " + eventId));
     }
 
+    public int findEventPriceById(String eventId) {
+        Response response = events();
+        List<Map<String, Object>> events = response.jsonPath().getList("data");
+        return events.stream()
+                .filter(event -> Objects.equals(String.valueOf(event.get("id")), eventId))
+                .map(event -> event.get("price"))
+                .map(EventHubApiClient::integerValue)
+                .filter(Objects::nonNull)
+                .findFirst()
+                .orElseGet(() -> {
+                    Object price = event(eventId).jsonPath().get("data.price");
+                    Integer parsedPrice = integerValue(price);
+                    if (parsedPrice == null) {
+                        throw new IllegalArgumentException("No event price found for id: " + eventId);
+                    }
+                    return parsedPrice;
+                });
+    }
+
     public String findFirstBookableEventId() {
         Response response = events();
         List<Map<String, Object>> events = response.jsonPath().getList("data");
@@ -171,5 +190,16 @@ public class EventHubApiClient {
             return ((Number) availableSeats).intValue();
         }
         return 0;
+    }
+
+    private static Integer integerValue(Object value) {
+        if (value instanceof Number number) {
+            return number.intValue();
+        }
+        if (value instanceof String text && !text.isBlank()) {
+            String digits = text.replaceAll("[^0-9]", "");
+            return digits.isBlank() ? null : Integer.parseInt(digits);
+        }
+        return null;
     }
 }

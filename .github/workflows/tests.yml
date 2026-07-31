@@ -33,6 +33,13 @@ on:
           - hybrid
           - stateful
           - parallel-safe
+          - p0-smoke
+          - p1-regression
+          - api-contract
+          - ui-critical
+          - nightly-stateful
+          - accessibility
+          - docker-smoke
           - all
       parallel:
         description: Run scenarios in parallel
@@ -93,11 +100,17 @@ jobs:
           PARALLEL="${{ matrix.parallel }}"
           THREAD_COUNT="${{ matrix['thread-count'] }}"
 
-          if [[ "$SUITE" == "all" ]]; then
-            TAG_EXPRESSION=""
-          else
-            TAG_EXPRESSION="@$SUITE"
-          fi
+          case "$SUITE" in
+            all) TAG_EXPRESSION="" ;;
+            p0-smoke) TAG_EXPRESSION="@p0 and @smoke" ;;
+            p1-regression) TAG_EXPRESSION="@p1 and @regression" ;;
+            api-contract) TAG_EXPRESSION="@api and @contract" ;;
+            ui-critical) TAG_EXPRESSION="@ui and @critical" ;;
+            nightly-stateful) TAG_EXPRESSION="@stateful and @regression" ;;
+            accessibility) TAG_EXPRESSION="@accessibility" ;;
+            docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
+            *) TAG_EXPRESSION="@$SUITE" ;;
+          esac
 
           MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
 
@@ -229,11 +242,17 @@ jobs:
           PARALLEL="${{ github.event.inputs.parallel }}"
           THREAD_COUNT="${{ github.event.inputs['thread-count'] }}"
 
-          if [[ "$SUITE" == "all" ]]; then
-            TAG_EXPRESSION=""
-          else
-            TAG_EXPRESSION="@$SUITE"
-          fi
+          case "$SUITE" in
+            all) TAG_EXPRESSION="" ;;
+            p0-smoke) TAG_EXPRESSION="@p0 and @smoke" ;;
+            p1-regression) TAG_EXPRESSION="@p1 and @regression" ;;
+            api-contract) TAG_EXPRESSION="@api and @contract" ;;
+            ui-critical) TAG_EXPRESSION="@ui and @critical" ;;
+            nightly-stateful) TAG_EXPRESSION="@stateful and @regression" ;;
+            accessibility) TAG_EXPRESSION="@accessibility" ;;
+            docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
+            *) TAG_EXPRESSION="@$SUITE" ;;
+          esac
 
           MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
 

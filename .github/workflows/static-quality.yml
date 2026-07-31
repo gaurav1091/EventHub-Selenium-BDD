@@ -19,6 +19,8 @@ jobs:
           cache: maven
       - name: Run Maven quality gates
         run: mvn -Pquality -DskipTests verify
+      - name: Run tag governance audit
+        run: TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh
 
   dependency-scan:
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'

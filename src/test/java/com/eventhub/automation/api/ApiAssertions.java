@@ -6,6 +6,8 @@ import com.eventhub.automation.models.LoginResponse;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
+import java.util.Arrays;
+
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -55,6 +57,31 @@ public final class ApiAssertions {
         assertThat(booking.bookingRef()).matches("[A-Z]-[A-Z0-9]{6}");
         String reference = response.jsonPath().getString("data.bookingRef");
         assertThat(reference).matches("[A-Z]-[A-Z0-9]{6}");
+    }
+
+    public static void assertBookingsInclude(Response response, String bookingId, String customerEmail) {
+        assertSuccess(response);
+        BookingResponse[] bookings = response.jsonPath().getObject("data", BookingResponse[].class);
+        assertThat(bookings)
+                .as("Expected bookings API response to map to BookingResponse[]")
+                .isNotEmpty();
+        assertThat(Arrays.asList(bookings))
+                .anySatisfy(booking -> {
+                    assertThat(booking.id()).isEqualTo(bookingId);
+                    assertThat(booking.customerEmail()).isEqualToIgnoringCase(customerEmail);
+                    assertThat(booking.bookingRef()).matches("[A-Z]-[A-Z0-9]{6}");
+                });
+        assertThat(response.jsonPath().getList("data.customerEmail", String.class))
+                .anySatisfy(email -> assertThat(email).isEqualToIgnoringCase(customerEmail));
+    }
+
+    public static void assertBookingCreateOrBusinessRejection(Response response) {
+        assertThat(response.statusCode()).isBetween(200, 409);
+        if (response.statusCode() < 400) {
+            assertBookingReference(response);
+        } else {
+            assertMatchesSchema(response, "schemas/error-response.schema.json");
+        }
     }
 
     public static void assertMatchesSchema(Response response, String schemaPath) {

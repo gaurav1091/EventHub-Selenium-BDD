@@ -1,10 +1,10 @@
-@hybrid @ui @stateful
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid
 Feature: API and UI hybrid coverage
 
   Background:
     Given I am signed in to EventHub
 
-  @regression
+  @p1 @regression
   Scenario: Booking created through API is visible in My Bookings
     When I create a booking through the API for cleanup
     And I directly open protected route "/bookings"

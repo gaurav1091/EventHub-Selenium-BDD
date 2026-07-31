@@ -12,6 +12,10 @@ Use these tag groups when adding or reviewing scenarios:
 | Surface | `@ui`, `@api`, `@hybrid`, `@accessibility`, `@responsive` | Identifies the automation layer. |
 | Domain | `@auth`, `@events`, `@bookings`, `@admin`, `@navigation` | Maps tests to product area. |
 | Data safety | `@parallel-safe`, `@stateful` | Separates isolated tests from shared-state tests. |
+| Priority | `@p0`, `@p1`, `@p2`, `@p3` | Communicates release impact and triage order. |
+| Owner | `@owner-platform` | Identifies accountable team/module. |
+| Risk area | `@risk-auth`, `@risk-revenue`, `@risk-contract`, `@risk-ux` | Maps scenarios to business/technical risk. |
+| Intent | `@intent-security`, `@intent-booking`, `@intent-discovery` | Captures why the scenario exists. |
 | Risk path | `@negative`, `@api-cleanup`, `@retryable` | Marks error-path, cleanup, and controlled retry scenarios. |
 
 Every run writes `target/governance/scenario-governance.json` with scenario names, effective tags, and missing recommended tag groups.
@@ -20,11 +24,11 @@ Every run writes `target/governance/scenario-governance.json` with scenario name
 
 | Area | Current automated coverage |
 | --- | --- |
-| Authentication | Login/logout, invalid credentials, required fields, protected route redirect, session refresh persistence. |
-| Events | Listing, title/venue/city search, category/city filtering, clear filters, empty search result, event detail metadata. |
-| Bookings | Creation, confirmation, details, cancel, clear all, invalid email/phone, required customer validation, quantity controls, overbooking prevention. |
-| Admin | Admin page rendering, required-field validation, API-created admin event visible in UI, sold-out event behavior. |
-| API Contract | Health, login, current user, events, event detail, bookings, error responses, unauthorized access, invalid payloads, repeated cancellation behavior. |
+| Authentication | Login/logout, invalid credentials, required fields, protected route and admin route redirects, session refresh persistence. |
+| Events | Listing, title/venue/city search, category/city filtering, clear filters, filter reset after refresh, empty search result, event detail metadata, deep link metadata. |
+| Bookings | Creation, confirmation data accuracy, details, cancel, clear all, empty state after cleanup, invalid email/phone, required customer validation, quantity controls, overbooking prevention. |
+| Admin | Admin page rendering, required-field validation, API-created admin event visible in UI, cleanup verification, sold-out event behavior. |
+| API Contract | Health, login, current user, events, event detail, bookings, booking list POJO mapping, duplicate booking behavior, capacity boundary, error responses, unauthorized access, invalid payloads, repeated cancellation behavior. |
 | UX Resilience | Responsive smoke for key authenticated pages and Axe accessibility advisory reports. |
 
 ## Observability Artifacts
@@ -37,3 +41,4 @@ Every run writes `target/governance/scenario-governance.json` with scenario name
 | `target/run-summary/environment-health.json` | Preflight UI/API/credential health result. |
 | `target/run-summary/github-step-summary.md` | Markdown summary published in GitHub Actions. |
 | `target/governance/scenario-governance.json` | Scenario tag governance and traceability report. |
+| `target/governance/tag-audit.json` | Standalone tag audit output; can fail CI with `TAG_AUDIT_FAIL=true`. |

@@ -45,6 +45,11 @@ public class AdminSteps {
         context.put("createdEventId", response.jsonPath().getString("data.id"));
     }
 
+    @When("I create a one-seat event through the API")
+    public void iCreateAOneSeatEventThroughTheApi() {
+        iCreateAOneSeatAdminEventThroughTheApi();
+    }
+
     @When("I create a sold-out one-seat admin event through the API")
     public void iCreateASoldOutOneSeatAdminEventThroughTheApi() {
         iCreateAOneSeatAdminEventThroughTheApi();
@@ -66,6 +71,11 @@ public class AdminSteps {
         String title = context.get("createdEventTitle", String.class);
         eventsPage.openEventsPage();
         eventsPage.bookEvent(title);
+    }
+
+    @When("I clean up the created admin event through API")
+    public void iCleanUpTheCreatedAdminEventThroughApi() {
+        context.apiClient().deleteEvent(context.get("createdEventId", String.class));
     }
 
     @Then("the Admin Events page should show the create form and events table")
@@ -107,5 +117,13 @@ public class AdminSteps {
         eventsPage.openEventsPage();
         eventsPage.search(context.get("createdEventTitle", String.class));
         eventsPage.assertEventUnavailableForBooking(context.get("createdEventTitle", String.class));
+    }
+
+    @Then("the created admin event should not appear through API or discovery")
+    public void theCreatedAdminEventShouldNotAppearThroughApiOrDiscovery() {
+        String eventTitle = context.get("createdEventTitle", String.class);
+        eventsPage.openEventsPage();
+        eventsPage.search(eventTitle);
+        eventsPage.assertEventNotVisible(eventTitle);
     }
 }

@@ -21,6 +21,7 @@ Scheduled nightly runs execute broader regression coverage:
 The static quality workflow in `.github/workflows/static-quality.yml` runs:
 
 - Maven Enforcer and Spotless quality gates on push and pull request.
+- Tag governance audit on push and pull request.
 - OWASP dependency-check on manual or scheduled runs.
 
 Every test run writes `target/run-summary/eventhub-run-summary.json` with run ID, browser, tags, parallel settings, pass/fail counts, retry count, and slowest scenario data.
@@ -39,6 +40,8 @@ Recommended choices:
 - `browser=chrome`, `suite=api`, `parallel=true`, `thread-count=3` for API-only validation.
 - `browser=chrome`, `suite=parallel-safe`, `parallel=true`, `thread-count=4` for parallel UI/API readiness.
 - `browser=chrome`, `suite=stateful`, `parallel=false` for booking/admin mutation scenarios.
+- `browser=chrome`, `suite=ui-critical`, `parallel=false` for critical browser paths.
+- `browser=chrome`, `suite=api-contract`, `parallel=true`, `thread-count=2` for API contract coverage.
 
 ## Local Equivalents
 
@@ -55,6 +58,7 @@ Reliability controls:
 ```bash
 mvn test -Dpreflight.enabled=true -Dcleanup.before.run=true -Drun.id=ci-debug-001 -Dcucumber.filter.tags="@stateful"
 mvn test -Dretry.count=1 -Dretry.tags="@retryable" -Dcucumber.filter.tags="@retryable"
+TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh
 ```
 
 Retries are disabled by default. Only scenarios tagged with the configured `retry.tags` value are retried. Use retries for known transient UI/infrastructure noise only, and do not tag deterministic assertion failures as retryable.

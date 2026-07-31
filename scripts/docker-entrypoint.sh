@@ -13,12 +13,24 @@ PREFLIGHT_ENABLED="${PREFLIGHT_ENABLED:-true}"
 CLEANUP_BEFORE_RUN="${CLEANUP_BEFORE_RUN:-false}"
 RUN_ID="${RUN_ID:-}"
 
+suite_tags() {
+  case "$1" in
+    all) echo "" ;;
+    p0-smoke) echo "@p0 and @smoke" ;;
+    p1-regression) echo "@p1 and @regression" ;;
+    api-contract) echo "@api and @contract" ;;
+    ui-critical) echo "@ui and @critical" ;;
+    nightly-stateful) echo "@stateful and @regression" ;;
+    accessibility) echo "@accessibility" ;;
+    docker-smoke) echo "@docker-smoke or (@p0 and @smoke)" ;;
+    *) echo "@$1" ;;
+  esac
+}
+
 if [[ -n "${CUCUMBER_FILTER_TAGS:-}" ]]; then
   TAG_EXPRESSION="${CUCUMBER_FILTER_TAGS}"
-elif [[ "${SUITE}" == "all" ]]; then
-  TAG_EXPRESSION=""
 else
-  TAG_EXPRESSION="@${SUITE}"
+  TAG_EXPRESSION="$(suite_tags "${SUITE}")"
 fi
 
 MVN_ARGS=(

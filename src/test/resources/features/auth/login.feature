@@ -1,7 +1,7 @@
-@auth @ui
+@auth @ui @owner-platform @risk-auth @intent-auth
 Feature: EventHub authentication
 
-  @smoke @parallel-safe
+  @p0 @smoke @parallel-safe @critical @intent-session
   Scenario: Registered user can sign in and sign out
     Given I am on the EventHub login page
     When I sign in with valid registered credentials
@@ -9,19 +9,19 @@ Feature: EventHub authentication
     When I sign out
     Then I should be returned to the login page
 
-  @regression @parallel-safe
+  @p1 @regression @parallel-safe @critical @intent-session
   Scenario: Authenticated session survives page refresh
     Given I am signed in to EventHub
     When I refresh the current page
     Then I should see the authenticated navigation
 
-  @regression @parallel-safe
+  @p1 @regression @parallel-safe @intent-validation
   Scenario: Login form validates required credentials
     Given I am on the EventHub login page
     When I submit the login form without credentials
     Then the login form should show required field validation
 
-  @regression @parallel-safe
+  @p1 @regression @parallel-safe @negative @intent-validation
   Scenario Outline: Invalid credentials are rejected
     Given I am on the EventHub login page
     When I sign in with password "<password>"
@@ -32,19 +32,25 @@ Feature: EventHub authentication
       | WrongPassword@123 |
       | Test@12345        |
 
-  @regression @parallel-safe
+  @p2 @regression @parallel-safe @intent-navigation
   Scenario: Register link opens account registration
     Given I am on the EventHub login page
     When I open the registration page from login
     Then I should be on the registration page
 
-  @regression @parallel-safe
+  @p0 @regression @parallel-safe @critical @intent-security
   Scenario: Anonymous user is redirected from protected route
     Given I am an anonymous visitor
     When I directly open protected route "/bookings"
     Then I should be returned to the login page
 
-  @regression @parallel-safe
+  @p0 @regression @parallel-safe @critical @intent-security
+  Scenario: Anonymous user is redirected from the admin route
+    Given I am an anonymous visitor
+    When I directly open protected route "/admin/events"
+    Then I should be returned to the login page
+
+  @p1 @regression @parallel-safe @intent-session
   Scenario: Authenticated user can directly open a protected route
     Given I am signed in to EventHub
     When I directly open protected route "/bookings"

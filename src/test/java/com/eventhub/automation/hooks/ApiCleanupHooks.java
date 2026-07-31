@@ -19,6 +19,7 @@ public class ApiCleanupHooks {
         CleanupService cleanup = new CleanupService(context.apiClient());
         try {
             cleanup.deleteBooking(context.get("createdBookingId", String.class));
+            cleanup.deleteBookingsByCustomerPrefix(com.eventhub.automation.support.RunContext.bookingCustomerPrefix());
             cleanup.deleteEvent(context.get("createdEventId", String.class));
         } catch (RuntimeException exception) {
             LOGGER.warn("Unable to clean API-created scenario data", exception);

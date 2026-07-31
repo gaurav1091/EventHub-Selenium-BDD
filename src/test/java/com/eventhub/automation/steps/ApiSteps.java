@@ -58,6 +58,37 @@ public class ApiSteps {
         context.put("createdBookingId", context.get("response", Response.class).jsonPath().getString("data.id"));
     }
 
+    @When("I request bookings through the API")
+    public void iRequestBookingsThroughTheApi() {
+        context.put("response", context.apiClient().bookings());
+    }
+
+    @When("I create the same booking through the API twice")
+    public void iCreateTheSameBookingThroughTheApiTwice() {
+        String eventId = context.apiClient().findFirstBookableEventId();
+        BookingRequest booking = TestDataFactory.booking(eventId, 1);
+        context.setLastBookingRequest(booking);
+        Response firstResponse = context.apiClient().createBooking(booking);
+        ApiAssertions.assertSuccess(firstResponse);
+        context.put("createdBookingId", firstResponse.jsonPath().getString("data.id"));
+        context.put("response", context.apiClient().createBooking(booking));
+    }
+
+    @When("I book the full API event capacity")
+    public void iBookTheFullApiEventCapacity() {
+        BookingRequest booking = TestDataFactory.booking(context.get("createdEventId", String.class), 1);
+        context.setLastBookingRequest(booking);
+        Response response = context.apiClient().createBooking(booking);
+        ApiAssertions.assertSuccess(response);
+        context.put("createdBookingId", response.jsonPath().getString("data.id"));
+    }
+
+    @When("I create one more booking for the capacity-bound event")
+    public void iCreateOneMoreBookingForTheCapacityBoundEvent() {
+        BookingRequest booking = TestDataFactory.booking(context.get("createdEventId", String.class), 1);
+        context.put("response", context.apiClient().createBooking(booking));
+    }
+
     @When("I cancel the API-created booking")
     public void iCancelTheApiCreatedBooking() {
         context.put("response", context.apiClient().deleteBooking(context.get("createdBookingId", String.class)));
@@ -148,6 +179,19 @@ public class ApiSteps {
         Response response = context.get("response", Response.class);
         ApiAssertions.assertSuccess(response);
         ApiAssertions.assertBookingReference(response);
+    }
+
+    @Then("the API bookings response should map to booking POJOs for the created booking")
+    public void theApiBookingsResponseShouldMapToBookingPojosForTheCreatedBooking() {
+        ApiAssertions.assertBookingsInclude(
+                context.get("response", Response.class),
+                context.get("createdBookingId", String.class),
+                context.lastBookingRequest().customerEmail());
+    }
+
+    @Then("the duplicate booking response should follow the booking API contract")
+    public void theDuplicateBookingResponseShouldFollowTheBookingApiContract() {
+        ApiAssertions.assertBookingCreateOrBusinessRejection(context.get("response", Response.class));
     }
 
     @Then("the API booking cancellation should be successful")
