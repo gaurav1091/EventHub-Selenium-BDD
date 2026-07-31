@@ -4,6 +4,7 @@ import com.eventhub.automation.api.EventHubApiClient;
 import com.eventhub.automation.config.ConfigReader;
 import com.eventhub.automation.support.CleanupService;
 import com.eventhub.automation.support.EnvironmentHealthCheck;
+import com.eventhub.automation.support.ReportIndex;
 import com.eventhub.automation.support.RunContext;
 import com.eventhub.automation.support.RunSummary;
 import com.eventhub.automation.support.ScenarioGovernanceReport;
@@ -59,6 +60,7 @@ public class TestLifecycleListener implements ITestListener {
         ScenarioTelemetry.writeArtifacts();
         ScenarioGovernanceReport.write();
         RunSummary.write();
+        ReportIndex.write();
     }
 
     @Attachment(value = "Failure screenshot", type = "image/png")

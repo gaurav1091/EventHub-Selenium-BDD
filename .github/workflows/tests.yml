@@ -142,6 +142,7 @@ jobs:
           fi
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
+          bash scripts/assert-scenarios-executed.sh
       - name: Publish run summary
         if: always()
         shell: bash
@@ -213,6 +214,7 @@ jobs:
           fi
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
+          bash scripts/assert-scenarios-executed.sh
       - name: Publish run summary
         if: always()
         shell: bash
@@ -291,6 +293,7 @@ jobs:
           fi
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
+          bash scripts/assert-scenarios-executed.sh
       - name: Publish run summary
         if: always()
         shell: bash

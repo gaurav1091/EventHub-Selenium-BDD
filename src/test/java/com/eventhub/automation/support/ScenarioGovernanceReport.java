@@ -25,6 +25,7 @@ public final class ScenarioGovernanceReport {
             Files.createDirectories(Path.of("target", "governance"));
             MAPPER.writerWithDefaultPrettyPrinter()
                     .writeValue(Path.of("target", "governance", "scenario-governance.json").toFile(), scenarios);
+            Files.writeString(Path.of("target", "governance", "test-catalog.md"), markdownCatalog(scenarios));
         } catch (IOException exception) {
             throw new IllegalStateException("Unable to write scenario governance report", exception);
         }
@@ -48,7 +49,7 @@ public final class ScenarioGovernanceReport {
                     String scenarioName = line.substring(line.indexOf(':') + 1).trim();
                     List<String> tags = new ArrayList<>(featureTags);
                     tags.addAll(pendingTags);
-                    scenarios.add(entry(featureFile, index + 1, scenarioName, tags));
+                    scenarios.add(entry(featureFile, index + 1, featureName(lines), scenarioName, tags));
                     pendingTags = new ArrayList<>();
                 }
             }
@@ -68,14 +69,59 @@ public final class ScenarioGovernanceReport {
         return "";
     }
 
-    private static Map<String, Object> entry(Path featureFile, int line, String scenarioName, List<String> tags) {
+    private static String featureName(List<String> lines) {
+        return lines.stream()
+                .map(String::trim)
+                .filter(line -> line.startsWith("Feature:"))
+                .map(line -> line.substring(line.indexOf(':') + 1).trim())
+                .findFirst()
+                .orElse("Unknown feature");
+    }
+
+    private static Map<String, Object> entry(
+            Path featureFile, int line, String featureName, String scenarioName, List<String> tags) {
         Map<String, Object> entry = new LinkedHashMap<>();
         entry.put("featureFile", featureFile.toString());
         entry.put("line", line);
+        entry.put("feature", featureName);
         entry.put("scenario", scenarioName);
         entry.put("tags", tags);
         entry.put("missingRecommendedTags", missingRecommendedTags(tags));
         return entry;
+    }
+
+    private static String markdownCatalog(List<Map<String, Object>> scenarios) {
+        StringBuilder builder = new StringBuilder("# Generated EventHub Test Catalog")
+                .append(System.lineSeparator())
+                .append(System.lineSeparator())
+                .append("| Feature | Scenario | File | Tags |")
+                .append(System.lineSeparator())
+                .append("| --- | --- | --- | --- |")
+                .append(System.lineSeparator());
+        for (Map<String, Object> scenario : scenarios) {
+            builder.append("| ")
+                    .append(escapePipes(String.valueOf(scenario.get("feature"))))
+                    .append(" | ")
+                    .append(escapePipes(String.valueOf(scenario.get("scenario"))))
+                    .append(" | ")
+                    .append(scenario.get("featureFile"))
+                    .append(":")
+                    .append(scenario.get("line"))
+                    .append(" | `")
+                    .append(String.join(" ", tags(scenario)))
+                    .append("` |")
+                    .append(System.lineSeparator());
+        }
+        return builder.toString();
+    }
+
+    @SuppressWarnings("unchecked")
+    private static List<String> tags(Map<String, Object> scenario) {
+        return (List<String>) scenario.get("tags");
+    }
+
+    private static String escapePipes(String value) {
+        return value.replace("|", "\\|");
     }
 
     private static List<String> missingRecommendedTags(List<String> tags) {

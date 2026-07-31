@@ -30,7 +30,7 @@ Every run writes `target/governance/scenario-governance.json` with scenario name
 | Bookings | Creation, confirmation data accuracy, details, cancel, clear all, empty state after cleanup, invalid email/phone, required customer validation, quantity controls, overbooking prevention. |
 | Admin | Admin page rendering, required-field validation, API-created admin event visible in UI, cleanup verification, sold-out event behavior. |
 | API Contract | Health, login, current user, events, event detail, bookings, booking list POJO mapping, duplicate booking behavior, capacity boundary, error responses, unauthorized access, invalid payloads, repeated cancellation behavior. |
-| Hybrid | API-created booking visible in UI, API-created event searchable/deep-linkable in UI, UI booking visible through API, API cleanup reflected in UI, API-created sold-out event unavailable in UI. |
+| Hybrid | API-created booking visible in UI, API-created event searchable/deep-linkable in UI, API-created event visible in admin/discovery, UI booking visible through API, API cleanup reflected in UI, API-created booking details open in UI, API-created sold-out event unavailable in UI. |
 | UX Resilience | Responsive smoke, visual sanity screenshots, Axe advisory reports, and optional Axe threshold enforcement for key pages. |
 
 ## Observability Artifacts
@@ -42,7 +42,9 @@ Every run writes `target/governance/scenario-governance.json` with scenario name
 | `target/run-summary/slow-scenarios.json` | Slowest scenarios for runtime triage. |
 | `target/run-summary/environment-health.json` | Preflight UI/API/credential health result. |
 | `target/run-summary/github-step-summary.md` | Markdown summary published in GitHub Actions. |
+| `target/run-summary/report-index.html` | One-page local index linking to major reports and artifacts. |
 | `target/axe-reports` | Axe accessibility advisory and threshold report data. |
 | `target/visual-sanity` | Visual sanity screenshots for key browser pages. |
 | `target/governance/scenario-governance.json` | Scenario tag governance and traceability report. |
+| `target/governance/test-catalog.md` | Generated scenario-by-scenario catalog with tags and source locations. |
 | `target/governance/tag-audit.json` | Standalone tag audit output; can fail CI with `TAG_AUDIT_FAIL=true`. |

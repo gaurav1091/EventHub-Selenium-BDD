@@ -28,5 +28,6 @@ Scenario: Event detail deep link loads correct metadata
 ```bash
 make tag-audit
 mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@your-tag"
+bash scripts/assert-scenarios-executed.sh
 make quality
 ```

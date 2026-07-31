@@ -20,6 +20,13 @@ Feature: API and UI hybrid coverage
     Then I should see metadata for the created admin event
 
   @p1 @regression @api-cleanup
+  Scenario: API-created event appears in admin management and discovery
+    When I create a one-seat admin event through the API
+    And I open the Admin Events page
+    Then the created admin event should appear in the admin table
+    And the created admin event should appear in event discovery
+
+  @p1 @regression @api-cleanup
   Scenario: UI booking for API-created event is visible through the API
     When I create a one-seat admin event through the API
     And I book 1 ticket for the created admin event
@@ -35,6 +42,14 @@ Feature: API and UI hybrid coverage
     When I clean Selenium-created bookings through the API
     And I directly open protected route "/bookings"
     Then no bookings for the current Selenium customer should remain
+
+  @p1 @regression
+  Scenario: API-created booking details can be opened in the UI
+    When I create a booking through the API for cleanup
+    And I directly open protected route "/bookings"
+    And I open the booking details
+    Then I should see booking for the selected event
+    When I clean Selenium-created bookings through the API
 
   @p1 @regression @negative @api-cleanup
   Scenario: API-created sold-out event is unavailable in event discovery

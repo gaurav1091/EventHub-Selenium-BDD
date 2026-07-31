@@ -47,6 +47,7 @@ Coverage governance:
 - Keep every scenario covered by a suite tag, surface tag, domain tag, data-safety tag, priority tag, owner tag, risk tag, and intent tag.
 - Use `docs/test-catalog.md` as the human-readable coverage map for business and risk traceability.
 - Review `target/governance/scenario-governance.json` after local or CI runs when adding broad new coverage.
+- Review `target/governance/test-catalog.md` for the generated scenario-by-scenario catalog.
 - Run `TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh` or `make tag-audit` before pushing tag changes.
 
 ## Parallel Policy
@@ -57,6 +58,7 @@ The GitHub Actions workflow and Docker entrypoint automatically add `not @statef
 This keeps booking/admin data mutation tests serial unless a scenario is explicitly redesigned to be isolated.
 Manual or Docker runs fail fast when `parallel=true` is combined with `hybrid`, `stateful`, or `nightly-stateful`, because those suites currently depend on stateful shared-data coverage.
 Hybrid coverage intentionally stays serial because it validates API-created or UI-created state across layers before cleanup.
+CI and Docker also run `scripts/assert-scenarios-executed.sh` after Maven to fail runs that accidentally match zero scenarios.
 
 ## Recommended Runs
 
@@ -73,6 +75,7 @@ SUITE=smoke docker compose run --rm eventhub-tests
 SUITE=parallel-safe PARALLEL=true THREAD_COUNT=4 docker compose run --rm eventhub-tests
 SUITE=ui-critical docker compose run --rm eventhub-tests
 SUITE=hybrid PARALLEL=false docker compose run --rm eventhub-tests
+SUITE=impact-auth docker compose run --rm eventhub-tests
 ```
 
 Manual GitHub Actions dispatch supports these choices:

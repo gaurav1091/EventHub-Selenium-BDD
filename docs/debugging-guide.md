@@ -21,7 +21,9 @@ make parallel BROWSER=chrome THREAD_COUNT=2
 | `target/allure-results` | Allure result data and attachments. |
 | `target/run-summary/eventhub-run-summary.json` | Browser, tags, retries, counts, and slowest scenarios. |
 | `target/run-summary/environment-health.json` | UI/API/credential preflight status. |
+| `target/run-summary/report-index.html` | One-page report navigation index. |
 | `target/governance/tag-audit.json` | Scenario tag compliance from the audit script. |
+| `target/governance/test-catalog.md` | Generated scenario-level traceability catalog. |
 | `screenshots` | Failure screenshots for the latest run only. |
 
 ## Triage Patterns

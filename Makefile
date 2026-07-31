@@ -1,7 +1,8 @@
-.PHONY: smoke api ui-critical visual accessibility p0 p1 parallel quality tag-audit docker-smoke clean-reports
+.PHONY: smoke api ui-critical visual accessibility p0 p1 impact parallel quality tag-audit docker-smoke clean-reports
 
 BROWSER ?= chrome
 THREAD_COUNT ?= 2
+AREA ?= auth
 
 smoke:
 	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@smoke"
@@ -23,6 +24,9 @@ p0:
 
 p1:
 	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@p1 and @regression"
+
+impact:
+	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@impact-$(AREA)"
 
 parallel:
 	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=$(THREAD_COUNT) -Dcucumber.filter.tags="(@parallel-safe) and not @stateful"

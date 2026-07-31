@@ -72,12 +72,16 @@ if [[ -n "${TAG_EXPRESSION}" ]]; then
 fi
 
 if [[ "$#" -gt 0 ]]; then
-  exec "$@"
+  "$@"
+  exit $?
 fi
 
 if [[ "${HEADLESS}" == "true" ]]; then
-  exec mvn test "${MVN_ARGS[@]}"
+  mvn test "${MVN_ARGS[@]}"
+  bash scripts/assert-scenarios-executed.sh
+  exit $?
 fi
 
-exec xvfb-run --auto-servernum --server-args="-screen 0 ${WINDOW_WIDTH:-1440}x${WINDOW_HEIGHT:-1000}x24" \
+xvfb-run --auto-servernum --server-args="-screen 0 ${WINDOW_WIDTH:-1440}x${WINDOW_HEIGHT:-1000}x24" \
   mvn test "${MVN_ARGS[@]}"
+bash scripts/assert-scenarios-executed.sh
