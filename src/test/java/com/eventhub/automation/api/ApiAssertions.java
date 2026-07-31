@@ -75,6 +75,18 @@ public final class ApiAssertions {
                 .anySatisfy(email -> assertThat(email).isEqualToIgnoringCase(customerEmail));
     }
 
+    public static void assertBookingsIncludeCustomer(Response response, String customerEmail, String customerName) {
+        assertSuccess(response);
+        BookingResponse[] bookings = response.jsonPath().getObject("data", BookingResponse[].class);
+        assertThat(Arrays.asList(bookings))
+                .as("Expected API booking list to include customer %s", customerEmail)
+                .anySatisfy(booking -> {
+                    assertThat(booking.customerEmail()).isEqualToIgnoringCase(customerEmail);
+                    assertThat(booking.customerName()).isEqualTo(customerName);
+                    assertThat(booking.bookingRef()).matches("[A-Z]-[A-Z0-9]{6}");
+                });
+    }
+
     public static void assertBookingCreateOrBusinessRejection(Response response) {
         assertThat(response.statusCode()).isBetween(200, 409);
         if (response.statusCode() < 400) {

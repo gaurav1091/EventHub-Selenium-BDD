@@ -139,6 +139,7 @@ public class BookingSteps {
         context.put("selectedEventTitle", context.apiClient().findEventTitleById(eventId));
         Response response = context.apiClient().createBooking(booking);
         ApiAssertions.assertSuccess(response);
+        context.put("createdBookingId", response.jsonPath().getString("data.id"));
     }
 
     @When("I clean Selenium-created bookings through the API")

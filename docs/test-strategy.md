@@ -55,6 +55,8 @@ Parallel runs should execute `@parallel-safe` scenarios, or should exclude `@sta
 
 The GitHub Actions workflow and Docker entrypoint automatically add `not @stateful` when `parallel=true`.
 This keeps booking/admin data mutation tests serial unless a scenario is explicitly redesigned to be isolated.
+Manual or Docker runs fail fast when `parallel=true` is combined with `hybrid`, `stateful`, or `nightly-stateful`, because those suites currently depend on stateful shared-data coverage.
+Hybrid coverage intentionally stays serial because it validates API-created or UI-created state across layers before cleanup.
 
 ## Recommended Runs
 
@@ -70,6 +72,7 @@ Docker examples:
 SUITE=smoke docker compose run --rm eventhub-tests
 SUITE=parallel-safe PARALLEL=true THREAD_COUNT=4 docker compose run --rm eventhub-tests
 SUITE=ui-critical docker compose run --rm eventhub-tests
+SUITE=hybrid PARALLEL=false docker compose run --rm eventhub-tests
 ```
 
 Manual GitHub Actions dispatch supports these choices:

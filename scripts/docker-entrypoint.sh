@@ -33,6 +33,11 @@ else
   TAG_EXPRESSION="$(suite_tags "${SUITE}")"
 fi
 
+if [[ "${PARALLEL}" == "true" && "${SUITE}" =~ ^(hybrid|stateful|nightly-stateful)$ ]]; then
+  echo "ERROR: Suite '${SUITE}' is stateful and must run with PARALLEL=false. Parallel mode adds 'not @stateful', which would execute zero scenarios." >&2
+  exit 1
+fi
+
 MVN_ARGS=(
   "-Dbrowser=${BROWSER}"
   "-Dheadless=${HEADLESS}"

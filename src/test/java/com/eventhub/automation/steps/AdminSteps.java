@@ -2,8 +2,10 @@ package com.eventhub.automation.steps;
 
 import com.eventhub.automation.api.ApiAssertions;
 import com.eventhub.automation.factories.TestDataFactory;
+import com.eventhub.automation.models.BookingRequest;
 import com.eventhub.automation.models.EventRequest;
 import com.eventhub.automation.pages.AdminEventsPage;
+import com.eventhub.automation.pages.EventDetailPage;
 import com.eventhub.automation.pages.EventsPage;
 import com.eventhub.automation.support.TestContext;
 import io.cucumber.java.en.Then;
@@ -14,6 +16,7 @@ public class AdminSteps {
     private final TestContext context;
     private final AdminEventsPage adminEventsPage = new AdminEventsPage();
     private final EventsPage eventsPage = new EventsPage();
+    private final EventDetailPage eventDetailPage = new EventDetailPage();
 
     public AdminSteps(TestContext context) {
         this.context = context;
@@ -62,8 +65,15 @@ public class AdminSteps {
     @When("I book {int} ticket for the created admin event")
     public void iBookTicketForTheCreatedAdminEvent(int quantity) {
         String title = context.get("createdEventTitle", String.class);
+        String eventId = context.get("createdEventId", String.class);
         eventsPage.openEventsPage();
         eventsPage.bookEvent(title);
+        BookingRequest booking = TestDataFactory.booking(eventId, quantity);
+        context.setLastBookingRequest(booking);
+        context.put("selectedEventId", eventId);
+        context.put("selectedEventTitle", title);
+        eventDetailPage.fillBookingForm(booking);
+        eventDetailPage.confirmBooking();
     }
 
     @When("I open booking details for the created admin event")

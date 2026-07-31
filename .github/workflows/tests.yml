@@ -119,6 +119,11 @@ jobs:
             *) TAG_EXPRESSION="@$SUITE" ;;
           esac
 
+          if [[ "$PARALLEL" == "true" && "$SUITE" =~ ^(hybrid|stateful|nightly-stateful)$ ]]; then
+            echo "::error::Suite '$SUITE' is stateful and must run with parallel=false. Parallel mode adds 'not @stateful', which would execute zero scenarios."
+            exit 1
+          fi
+
           MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
 
           if [[ "$PARALLEL" == "true" ]]; then
@@ -262,6 +267,11 @@ jobs:
             docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
             *) TAG_EXPRESSION="@$SUITE" ;;
           esac
+
+          if [[ "$PARALLEL" == "true" && "$SUITE" =~ ^(hybrid|stateful|nightly-stateful)$ ]]; then
+            echo "::error::Suite '$SUITE' is stateful and must run with parallel=false. Parallel mode adds 'not @stateful', which would execute zero scenarios."
+            exit 1
+          fi
 
           MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
 

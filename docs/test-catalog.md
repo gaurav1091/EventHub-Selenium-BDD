@@ -30,6 +30,7 @@ Every run writes `target/governance/scenario-governance.json` with scenario name
 | Bookings | Creation, confirmation data accuracy, details, cancel, clear all, empty state after cleanup, invalid email/phone, required customer validation, quantity controls, overbooking prevention. |
 | Admin | Admin page rendering, required-field validation, API-created admin event visible in UI, cleanup verification, sold-out event behavior. |
 | API Contract | Health, login, current user, events, event detail, bookings, booking list POJO mapping, duplicate booking behavior, capacity boundary, error responses, unauthorized access, invalid payloads, repeated cancellation behavior. |
+| Hybrid | API-created booking visible in UI, API-created event searchable/deep-linkable in UI, UI booking visible through API, API cleanup reflected in UI, API-created sold-out event unavailable in UI. |
 | UX Resilience | Responsive smoke, visual sanity screenshots, Axe advisory reports, and optional Axe threshold enforcement for key pages. |
 
 ## Observability Artifacts

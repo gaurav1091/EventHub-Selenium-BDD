@@ -68,6 +68,12 @@ public class EventSteps {
         DriverManager.getDriver().get(ConfigReader.getRequired("base.url") + "/events/" + eventId);
     }
 
+    @When("I directly open event detail for the created admin event")
+    public void iDirectlyOpenEventDetailForTheCreatedAdminEvent() {
+        DriverManager.getDriver().get(ConfigReader.getRequired("base.url")
+                + "/events/" + context.get("createdEventId", String.class));
+    }
+
     @When("I navigate away from event discovery and return")
     public void iNavigateAwayFromEventDiscoveryAndReturn() {
         navigationBar.openHome();
@@ -103,6 +109,11 @@ public class EventSteps {
     @Then("I should see metadata for event {string}")
     public void iShouldSeeMetadataForEvent(String eventName) {
         eventDetailPage.assertMetadataFor(eventName);
+    }
+
+    @Then("I should see metadata for the created admin event")
+    public void iShouldSeeMetadataForTheCreatedAdminEvent() {
+        eventDetailPage.assertMetadataFor(context.get("createdEventTitle", String.class));
     }
 
     @Then("event filters should be reset")

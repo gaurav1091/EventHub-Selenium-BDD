@@ -189,6 +189,14 @@ public class ApiSteps {
                 context.lastBookingRequest().customerEmail());
     }
 
+    @Then("the API bookings response should include the UI-created booking")
+    public void theApiBookingsResponseShouldIncludeTheUiCreatedBooking() {
+        ApiAssertions.assertBookingsIncludeCustomer(
+                context.get("response", Response.class),
+                context.lastBookingRequest().customerEmail(),
+                context.lastBookingRequest().customerName());
+    }
+
     @Then("the duplicate booking response should follow the booking API contract")
     public void theDuplicateBookingResponseShouldFollowTheBookingApiContract() {
         ApiAssertions.assertBookingCreateOrBusinessRejection(context.get("response", Response.class));

@@ -40,6 +40,7 @@ Recommended choices:
 - `browser=chrome`, `suite=api`, `parallel=true`, `thread-count=3` for API-only validation.
 - `browser=chrome`, `suite=parallel-safe`, `parallel=true`, `thread-count=4` for parallel UI/API readiness.
 - `browser=chrome`, `suite=stateful`, `parallel=false` for booking/admin mutation scenarios.
+- `browser=chrome`, `suite=hybrid`, `parallel=false` for API setup plus UI verification scenarios.
 - `browser=chrome`, `suite=ui-critical`, `parallel=false` for critical browser paths.
 - `browser=chrome`, `suite=api-contract`, `parallel=true`, `thread-count=2` for API contract coverage.
 
@@ -87,5 +88,6 @@ mvn -Psecurity org.owasp:dependency-check-maven:check
 - For thresholded accessibility runs, set `accessibility.threshold.enabled=true` and inspect `target/axe-reports` on failure.
 - For visual sanity, inspect `target/visual-sanity` and the Allure screenshot attachment.
 - For parallel-only failures, rerun `@parallel-safe` with the same thread count before changing code.
+- If a selected run fails before Maven with a stateful-suite/parallel message, rerun with `parallel=false`; this prevents green zero-scenario runs.
 - If CI reran automatically, inspect `target/run-logs` to confirm it was an infrastructure retry and not a test retry.
 - Treat browser CDP warnings as non-fatal unless a Selenium command also fails.
