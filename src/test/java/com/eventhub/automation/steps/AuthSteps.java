@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -81,14 +82,19 @@ public class AuthSteps {
     public void iShouldBeReturnedToTheLoginPage() {
         Waits.until(DriverManager.getDriver(), webDriver -> {
             String currentUrl = webDriver.getCurrentUrl();
-            String pageSource = webDriver.getPageSource();
-            return (currentUrl.endsWith("/") || currentUrl.contains("/login") || pageSource.contains("Sign In"))
-                    && !pageSource.contains("Logout");
+            boolean loginVisible = !webDriver.findElements(By.xpath("//*[contains(normalize-space(.),'Sign In')]")).isEmpty();
+            boolean logoutAbsent = webDriver.findElements(By.xpath("//*[contains(normalize-space(.),'Logout')]")).isEmpty();
+            return (currentUrl.endsWith("/") || currentUrl.contains("/login") || loginVisible) && logoutAbsent;
         });
         String currentUrl = DriverManager.getDriver().getCurrentUrl();
-        String pageSource = DriverManager.getDriver().getPageSource();
-        assertThat(currentUrl.endsWith("/") || currentUrl.contains("/login") || pageSource.contains("Sign In")).isTrue();
-        assertThat(pageSource).doesNotContain("Logout");
+        boolean loginVisible = !DriverManager.getDriver()
+                .findElements(By.xpath("//*[contains(normalize-space(.),'Sign In')]"))
+                .isEmpty();
+        boolean logoutAbsent = DriverManager.getDriver()
+                .findElements(By.xpath("//*[contains(normalize-space(.),'Logout')]"))
+                .isEmpty();
+        assertThat(currentUrl.endsWith("/") || currentUrl.contains("/login") || loginVisible).isTrue();
+        assertThat(logoutAbsent).isTrue();
     }
 
     @Then("the login form should show required field validation")

@@ -26,12 +26,12 @@ public final class Waits {
     }
 
     public static boolean textPresent(WebDriver driver, String text) {
-        return wait(driver).until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//*[contains(normalize-space(.),'" + text + "')]"))).isDisplayed();
+        return visibleTextContains(driver, text).isDisplayed();
     }
 
-    public static boolean pageContains(WebDriver driver, String text) {
-        return wait(driver).until(webDriver -> webDriver.getPageSource().contains(text));
+    public static WebElement visibleTextContains(WebDriver driver, String text) {
+        return wait(driver).until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//*[contains(normalize-space(.)," + XpathUtils.literal(text) + ")]")));
     }
 
     public static boolean pageReady(WebDriver driver) {
@@ -41,10 +41,12 @@ public final class Waits {
 
     public static boolean loadingComplete(WebDriver driver) {
         return wait(driver).until(webDriver -> {
-            String source = webDriver.getPageSource();
-            return !source.contains("animate-pulse")
-                    && !source.contains("animate-spin")
-                    && !source.toLowerCase().contains("loading");
+            boolean hasLoadingClass = !webDriver.findElements(By.cssSelector("[class*='animate-pulse'], [class*='animate-spin']")).isEmpty();
+            boolean hasVisibleLoadingText = webDriver.findElements(By.xpath("//*[contains(translate(normalize-space(.),"
+                            + "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'loading')]"))
+                    .stream()
+                    .anyMatch(WebElement::isDisplayed);
+            return !hasLoadingClass && !hasVisibleLoadingText;
         });
     }
 

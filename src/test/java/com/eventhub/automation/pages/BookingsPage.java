@@ -1,6 +1,7 @@
 package com.eventhub.automation.pages;
 
 import com.eventhub.automation.utils.Waits;
+import com.eventhub.automation.utils.XpathUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 
@@ -27,7 +28,10 @@ public class BookingsPage extends BasePage {
 
     public void assertBookingNotVisible(String eventName) {
         assertLoaded();
-        assertThat(driver().getPageSource()).doesNotContain(eventName);
+        assertThat(driver().findElements(By.xpath("//*[contains(normalize-space(.),"
+                        + XpathUtils.literal(eventName) + ")]")))
+                .as("Expected booking text to be absent: %s", eventName)
+                .isEmpty();
     }
 
     public void openDetails() {

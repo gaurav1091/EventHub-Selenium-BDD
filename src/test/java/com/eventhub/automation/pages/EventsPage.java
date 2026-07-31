@@ -93,7 +93,9 @@ public class EventsPage extends BasePage {
 
     public void assertNoEventsFound() {
         Waits.until(driver(), webDriver -> webDriver.findElements(By.xpath("//article")).isEmpty()
-                || webDriver.getPageSource().toLowerCase().contains("no events")
+                || !webDriver.findElements(By.xpath(
+                                "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'no events')]"))
+                        .isEmpty()
                 || "No Selenium Event Should Match This".equals(visible(SEARCH).getAttribute("value")));
         assertThat(visible(SEARCH).getAttribute("value")).isEqualTo("No Selenium Event Should Match This");
     }

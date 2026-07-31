@@ -3,21 +3,25 @@ package com.eventhub.automation.pages;
 import com.eventhub.automation.utils.Waits;
 import org.openqa.selenium.By;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.eventhub.automation.utils.UiAssertions.assertElementTextContains;
+import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
 
 public class NavigationBar extends BasePage {
     private static final By LOGOUT = By.xpath("//button[normalize-space()='Logout']");
 
     public void assertAuthenticated(String email) {
         visible(LOGOUT);
-        String source = driver().getPageSource();
-        assertThat(source).contains("Home", "Events", "My Bookings", "Admin", "Logout");
-        assertThat(source).contains(email);
+        assertPageContains(driver(), "Home");
+        assertPageContains(driver(), "Events");
+        assertPageContains(driver(), "My Bookings");
+        assertPageContains(driver(), "Admin");
+        assertElementTextContains(driver(), LOGOUT, "Logout");
+        assertPageContains(driver(), email);
     }
 
     public void openHome() {
         click(By.xpath("//a[normalize-space()='Home' or @href='/']"));
-        Waits.until(driver(), webDriver -> webDriver.getPageSource().contains("Featured Events"));
+        Waits.visibleTextContains(driver(), "Featured Events");
     }
 
     public void openEvents() {

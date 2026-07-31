@@ -13,19 +13,23 @@ public final class UiAssertions {
     }
 
     public static void assertPageContains(WebDriver driver, String expectedText) {
-        Waits.pageContains(driver, expectedText);
-        assertThat(driver.getPageSource())
-                .as("Expected page source at %s to contain text: %s", driver.getCurrentUrl(), expectedText)
-                .contains(expectedText);
+        assertThat(Waits.visibleTextContains(driver, expectedText).isDisplayed())
+                .as("Expected visible page text at %s to contain: %s", driver.getCurrentUrl(), expectedText)
+                .isTrue();
     }
 
     public static void assertPageContainsAnyOf(WebDriver driver, String... expectedTexts) {
         Waits.until(driver, webDriver -> Arrays.stream(expectedTexts)
-                .anyMatch(expectedText -> webDriver.getPageSource().contains(expectedText)));
-        assertThat(driver.getPageSource())
-                .as("Expected page source at %s to contain one of: %s",
+                .anyMatch(expectedText -> !webDriver.findElements(By.xpath("//*[contains(normalize-space(.),"
+                                + XpathUtils.literal(expectedText) + ")]"))
+                        .isEmpty()));
+        assertThat(Arrays.stream(expectedTexts)
+                .anyMatch(expectedText -> !driver.findElements(By.xpath("//*[contains(normalize-space(.),"
+                                + XpathUtils.literal(expectedText) + ")]"))
+                        .isEmpty()))
+                .as("Expected visible page text at %s to contain one of: %s",
                         driver.getCurrentUrl(), Arrays.toString(expectedTexts))
-                .containsAnyOf(expectedTexts);
+                .isTrue();
     }
 
     public static void assertElementTextContains(WebDriver driver, By locator, String expectedText) {

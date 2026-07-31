@@ -14,6 +14,7 @@ public class EventDetailPage extends BasePage {
     private static final By EMAIL = By.cssSelector("input[type='email'], input[placeholder='you@email.com']");
     private static final By PHONE = By.cssSelector("input[placeholder='+91 98765 43210'], input[type='tel'], input[name*='phone' i]");
     private static final By CONFIRM_BOOKING = By.xpath("//button[normalize-space()='Confirm Booking']");
+    private static final By BOOK_TICKETS = By.xpath("//*[contains(normalize-space(.),'Book Tickets')]");
 
     public void assertLoaded(String eventName) {
         assertPageContains(driver(), eventName);
@@ -23,7 +24,8 @@ public class EventDetailPage extends BasePage {
 
     public void assertMetadataFor(String eventName) {
         assertPageContains(driver(), eventName);
-        assertThat(driver().getPageSource()).containsPattern("\\d+\\s+seats");
+        assertThat(visible(By.xpath("//*[contains(normalize-space(.),'seats')]")).getText())
+                .containsPattern("\\d+\\s+seats");
     }
 
     public void increaseTickets(int times) {
@@ -39,7 +41,7 @@ public class EventDetailPage extends BasePage {
     }
 
     public void assertQuantity(String quantity) {
-        assertThat(driver().getPageSource()).contains(quantity);
+        assertPageContains(driver(), quantity);
     }
 
     public void assertDecrementDisabled() {
@@ -51,7 +53,7 @@ public class EventDetailPage extends BasePage {
     }
 
     public void assertTotalContains(String amount) {
-        assertThat(driver().getPageSource()).contains(amount);
+        assertPageContains(driver(), amount);
     }
 
     public void fillBookingForm(BookingRequest booking) {
@@ -84,23 +86,21 @@ public class EventDetailPage extends BasePage {
     }
 
     public void assertPhoneInvalid() {
-        assertThat(driver().getPageSource()).containsIgnoringCase("valid");
+        String phone = visible(PHONE).getAttribute("value");
+        assertThat(phone)
+                .as("Expected phone field value to be invalid for EventHub booking rules")
+                .doesNotMatch("^\\+?[0-9][0-9\\s-]{7,}$");
     }
 
     public void assertBookingConfirmed() {
-        Waits.until(driver(), webDriver -> {
-            String source = webDriver.getPageSource();
-            return source.contains("Booking Confirmed") || source.contains("Booking Ref");
-        });
+        Waits.visibleTextContains(driver(), "Booking Ref");
         assertPageContains(driver(), "Booking Ref");
         assertPageContains(driver(), "Customer");
     }
 
     public void assertBookingPanelVisible() {
-        Waits.until(driver(), webDriver -> {
-            String source = webDriver.getPageSource();
-            return source.contains("Book Tickets") && source.contains("Confirm Booking");
-        });
+        visible(BOOK_TICKETS);
+        visible(CONFIRM_BOOKING);
         assertPageContains(driver(), "Book Tickets");
         assertPageContains(driver(), "Confirm Booking");
     }

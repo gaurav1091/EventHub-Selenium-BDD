@@ -2,6 +2,7 @@ package com.eventhub.automation.pages;
 
 import org.openqa.selenium.By;
 
+import static com.eventhub.automation.utils.UiAssertions.assertPageContainsAnyOf;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginPage extends BasePage {
@@ -47,12 +48,18 @@ public class LoginPage extends BasePage {
 
     public void assertLoginErrorVisible() {
         com.eventhub.automation.utils.Waits.until(driver(), webDriver -> {
-            String source = webDriver.getPageSource().toLowerCase();
             boolean stillOnLogin = webDriver.getCurrentUrl().contains("/login");
-            boolean loginFinished = !source.contains("signing in");
-            boolean hasErrorText = source.contains("invalid") || source.contains("incorrect") || source.contains("rejected");
+            boolean loginFinished = webDriver.findElements(By.xpath(
+                            "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'signing in')]"))
+                    .isEmpty();
+            boolean hasErrorText = !webDriver.findElements(By.xpath(
+                            "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'invalid') "
+                                    + "or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'incorrect') "
+                                    + "or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'rejected')]"))
+                    .isEmpty();
             return hasErrorText || (stillOnLogin && loginFinished);
         });
         assertThat(driver().getCurrentUrl()).contains("/login");
+        assertPageContainsAnyOf(driver(), "Invalid", "invalid", "Incorrect", "incorrect", "rejected", "Sign In");
     }
 }
