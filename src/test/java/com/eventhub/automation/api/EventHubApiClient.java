@@ -63,6 +63,10 @@ public class EventHubApiClient {
         return authenticatedRequest().body(payload).post("/api/events");
     }
 
+    public Response createEvent(Map<String, ?> payload) {
+        return authenticatedRequest().body(payload).post("/api/events");
+    }
+
     public Response deleteEvent(String eventId) {
         return authenticatedRequest().delete("/api/events/{eventId}", eventId);
     }
@@ -93,6 +97,10 @@ public class EventHubApiClient {
 
     public Response anonymousCreateBooking(BookingRequest booking) {
         return baseRequest().body(booking).post("/api/bookings");
+    }
+
+    public Response anonymousCurrentUser() {
+        return baseRequest().get("/api/auth/me");
     }
 
     public void ensureAuthenticated() {

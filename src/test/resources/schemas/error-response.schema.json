@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "success": {"type": ["boolean", "null"]},
+    "message": {"type": ["string", "null"]},
+    "error": {"type": ["string", "object", "array", "null"]},
+    "errors": {"type": ["array", "object", "null"]},
+    "status": {"type": ["integer", "string", "null"]},
+    "statusCode": {"type": ["integer", "string", "null"]}
+  },
+  "anyOf": [
+    {"required": ["success"]},
+    {"required": ["message"]},
+    {"required": ["error"]},
+    {"required": ["errors"]},
+    {"required": ["status"]},
+    {"required": ["statusCode"]}
+  ]
+}

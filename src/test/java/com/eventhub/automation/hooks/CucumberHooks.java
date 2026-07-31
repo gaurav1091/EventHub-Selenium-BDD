@@ -7,6 +7,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
+import com.eventhub.automation.support.ScenarioTelemetry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +23,11 @@ public class CucumberHooks {
         LOGGER.info("Waiting for shared state lock: {}", scenario.getName());
         STATEFUL_SCENARIO_LOCK.lock();
         LOGGER.info("Acquired shared state lock: {}", scenario.getName());
+    }
+
+    @Before(order = -200)
+    public void startScenarioTelemetry(Scenario scenario) {
+        ScenarioTelemetry.start(scenario);
     }
 
     @Before(value = "not @api", order = 0)
@@ -46,6 +52,11 @@ public class CucumberHooks {
     public void unlockStatefulScenario(Scenario scenario) {
         LOGGER.info("Released shared state lock: {}", scenario.getName());
         STATEFUL_SCENARIO_LOCK.unlock();
+    }
+
+    @After(order = 200)
+    public void finishScenarioTelemetry(Scenario scenario) {
+        ScenarioTelemetry.finish(scenario);
     }
 
     private String failureMetadata(Scenario scenario) {

@@ -23,8 +23,10 @@ The static quality workflow in `.github/workflows/static-quality.yml` runs:
 - Maven Enforcer and Spotless quality gates on push and pull request.
 - OWASP dependency-check on manual or scheduled runs.
 
-Every test run writes `target/run-summary/eventhub-run-summary.json` with run ID, browser, tags, parallel settings, pass/fail counts, and retry count.
+Every test run writes `target/run-summary/eventhub-run-summary.json` with run ID, browser, tags, parallel settings, pass/fail counts, retry count, and slowest scenario data.
+Runs also write scenario duration, slow-scenario, environment-health, and governance artifacts under `target/run-summary` and `target/governance`.
 CI test jobs run Maven through `scripts/run-maven-with-infra-retry.sh`, which retries once only when the Maven log matches infrastructure or dependency-transfer failures.
+GitHub Actions publishes `target/run-summary/github-step-summary.md` into the workflow step summary when it exists.
 
 ## Manual Dispatch
 
@@ -74,6 +76,8 @@ mvn -Psecurity org.owasp:dependency-check-maven:check
 - Check the failed scenario and tag first. If it is `@stateful`, reproduce serially.
 - Download artifacts for Extent, Allure, Cucumber JSON, Surefire XML, logs, and screenshots.
 - Inspect `target/run-summary/eventhub-run-summary.json` for run metadata and retry count.
+- Inspect `target/run-summary/slow-scenarios.json` when the suite passes but runtime increases.
+- Inspect `target/governance/scenario-governance.json` before merging broad test additions.
 - For UI failures, inspect the Allure failure metadata attachment for browser, URL, scenario, and tags.
 - For accessibility smoke, inspect `target/axe-reports` or the Allure Axe advisory attachment. Axe findings are advisory and do not fail CI by default.
 - For parallel-only failures, rerun `@parallel-safe` with the same thread count before changing code.

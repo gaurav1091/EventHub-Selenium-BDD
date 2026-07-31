@@ -46,12 +46,26 @@ public final class RunSummary {
         summary.put("passedScenarios", PASSED.get());
         summary.put("failedScenarios", FAILED.get());
         summary.put("retriedScenarios", RETRIED.get());
+        summary.put("slowestScenarios", ScenarioTelemetry.slowest(5));
         try {
             Files.createDirectories(Path.of("target", "run-summary"));
             MAPPER.writerWithDefaultPrettyPrinter()
                     .writeValue(Path.of("target", "run-summary", "eventhub-run-summary.json").toFile(), summary);
+            Files.writeString(Path.of("target", "run-summary", "github-step-summary.md"), markdownSummary(summary));
         } catch (IOException exception) {
             throw new IllegalStateException("Unable to write EventHub run summary", exception);
         }
+    }
+
+    private static String markdownSummary(Map<String, Object> summary) {
+        return "## EventHub Test Run Summary" + System.lineSeparator()
+                + System.lineSeparator()
+                + "- Run ID: `" + summary.get("runId") + "`" + System.lineSeparator()
+                + "- Environment: `" + summary.get("environment") + "`" + System.lineSeparator()
+                + "- Browser: `" + summary.get("browser") + "`" + System.lineSeparator()
+                + "- Tags: `" + summary.get("tags") + "`" + System.lineSeparator()
+                + "- Passed scenarios: `" + summary.get("passedScenarios") + "`" + System.lineSeparator()
+                + "- Failed scenarios: `" + summary.get("failedScenarios") + "`" + System.lineSeparator()
+                + "- Retried scenarios: `" + summary.get("retriedScenarios") + "`" + System.lineSeparator();
     }
 }

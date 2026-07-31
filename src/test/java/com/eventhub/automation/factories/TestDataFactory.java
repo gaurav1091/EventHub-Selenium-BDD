@@ -7,6 +7,7 @@ import com.eventhub.automation.support.RunContext;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.UUID;
 
 public final class TestDataFactory {
@@ -38,6 +39,19 @@ public final class TestDataFactory {
                 .eventDate(eventDate)
                 .totalSeats(seats)
                 .build();
+    }
+
+    public static Map<String, Object> invalidApiEvent() {
+        return Map.of(
+                "title", TestData.text("invalidApiEvent.title"),
+                "description", TestData.text("invalidApiEvent.description"),
+                "category", TestData.text("invalidApiEvent.category"),
+                "venue", TestData.text("invalidApiEvent.venue"),
+                "city", TestData.text("invalidApiEvent.city"),
+                "eventDate", TestData.text("invalidApiEvent.eventDate"),
+                "price", TestData.integer("invalidApiEvent.price"),
+                "totalSeats", TestData.integer("invalidApiEvent.totalSeats")
+        );
     }
 
     public static BookingRequestBuilder bookingBuilder(String eventId) {

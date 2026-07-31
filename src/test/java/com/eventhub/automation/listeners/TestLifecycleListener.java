@@ -6,6 +6,8 @@ import com.eventhub.automation.support.CleanupService;
 import com.eventhub.automation.support.EnvironmentHealthCheck;
 import com.eventhub.automation.support.RunContext;
 import com.eventhub.automation.support.RunSummary;
+import com.eventhub.automation.support.ScenarioGovernanceReport;
+import com.eventhub.automation.support.ScenarioTelemetry;
 import com.eventhub.automation.utils.ScreenshotUtils;
 import com.aventstack.extentreports.service.ExtentService;
 import io.qameta.allure.Attachment;
@@ -53,6 +55,8 @@ public class TestLifecycleListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
+        ScenarioTelemetry.writeArtifacts();
+        ScenarioGovernanceReport.write();
         RunSummary.write();
     }
 

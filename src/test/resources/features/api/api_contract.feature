@@ -42,6 +42,15 @@ Feature: EventHub API contract
     When I cancel the API-created booking
     Then the API booking cancellation should be successful
 
+  @regression @stateful
+  Scenario: Booking cancellation is not silently repeatable
+    When I create a booking through the API
+    Then the API booking response should include a booking reference
+    When I cancel the API-created booking
+    Then the API booking cancellation should be successful
+    When I cancel the API-created booking again
+    Then the API should reject the request with an error response
+
   @regression @negative @parallel-safe
   Scenario Outline: Protected API rejects invalid or anonymous requests
     When I <operation>
@@ -50,8 +59,21 @@ Feature: EventHub API contract
     Examples:
       | operation                                                 | status |
       | authenticate through the API with invalid credentials      | 400    |
+      | request the current user profile through the API without authentication | 401    |
       | request bookings through the API without authentication    | 401    |
       | create a booking through the API without authentication    | 401    |
       | request unknown event detail through the API               | 500    |
       | cancel an unknown booking through the API                  | 500    |
       | create a booking through the API with invalid payload      | 400    |
+
+  @regression @negative @parallel-safe
+  Scenario Outline: API error responses follow the error contract
+    When I <operation>
+    Then the API should reject the request with an error response
+
+    Examples:
+      | operation                                                 |
+      | authenticate through the API with invalid credentials      |
+      | request bookings through the API without authentication    |
+      | create a booking through the API with invalid payload      |
+      | create an event through the API with invalid payload       |

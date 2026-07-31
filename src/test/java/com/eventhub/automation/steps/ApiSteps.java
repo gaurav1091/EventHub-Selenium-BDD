@@ -55,13 +55,17 @@ public class ApiSteps {
         BookingRequest booking = TestDataFactory.booking(eventId, 1);
         context.setLastBookingRequest(booking);
         context.put("response", context.apiClient().createBooking(booking));
+        context.put("createdBookingId", context.get("response", Response.class).jsonPath().getString("data.id"));
     }
 
     @When("I cancel the API-created booking")
     public void iCancelTheApiCreatedBooking() {
-        Response previous = context.get("response", Response.class);
-        String bookingId = previous.jsonPath().getString("data.id");
-        context.put("response", context.apiClient().deleteBooking(bookingId));
+        context.put("response", context.apiClient().deleteBooking(context.get("createdBookingId", String.class)));
+    }
+
+    @When("I cancel the API-created booking again")
+    public void iCancelTheApiCreatedBookingAgain() {
+        context.put("response", context.apiClient().deleteBooking(context.get("createdBookingId", String.class)));
     }
 
     @When("I request bookings through the API without authentication")
@@ -88,6 +92,16 @@ public class ApiSteps {
     @When("I create a booking through the API with invalid payload")
     public void iCreateABookingThroughTheApiWithInvalidPayload() {
         context.put("response", context.apiClient().createBooking(TestDataFactory.invalidApiBooking()));
+    }
+
+    @When("I create an event through the API with invalid payload")
+    public void iCreateAnEventThroughTheApiWithInvalidPayload() {
+        context.put("response", context.apiClient().createEvent(TestDataFactory.invalidApiEvent()));
+    }
+
+    @When("I request the current user profile through the API without authentication")
+    public void iRequestTheCurrentUserProfileThroughTheApiWithoutAuthentication() {
+        context.put("response", context.apiClient().anonymousCurrentUser());
     }
 
     @Then("the API health response should be successful")
@@ -144,6 +158,13 @@ public class ApiSteps {
     @Then("the API should reject the request with status {int}")
     public void theApiShouldRejectTheRequestWithStatus(int status) {
         ApiAssertions.assertStatus(context.get("response", Response.class), status);
+    }
+
+    @Then("the API should reject the request with an error response")
+    public void theApiShouldRejectTheRequestWithAnErrorResponse() {
+        Response response = context.get("response", Response.class);
+        ApiAssertions.assertClientOrServerError(response);
+        ApiAssertions.assertMatchesSchema(response, "schemas/error-response.schema.json");
     }
 
     @Then("the API response should match schema {string}")

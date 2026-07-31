@@ -117,6 +117,13 @@ jobs:
           fi
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
+      - name: Publish run summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f target/run-summary/github-step-summary.md ]]; then
+            cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -127,6 +134,7 @@ jobs:
             target/extent-report
             target/allure-results
             target/axe-reports
+            target/governance
             target/run-summary
             target/run-logs
             target/surefire-reports
@@ -179,6 +187,13 @@ jobs:
           fi
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
+      - name: Publish run summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f target/run-summary/github-step-summary.md ]]; then
+            cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -189,6 +204,7 @@ jobs:
             target/extent-report
             target/allure-results
             target/axe-reports
+            target/governance
             target/run-summary
             target/run-logs
             target/surefire-reports
@@ -237,6 +253,13 @@ jobs:
           fi
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
+      - name: Publish run summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f target/run-summary/github-step-summary.md ]]; then
+            cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -247,6 +270,7 @@ jobs:
             target/extent-report
             target/allure-results
             target/axe-reports
+            target/governance
             target/run-summary
             target/run-logs
             target/surefire-reports

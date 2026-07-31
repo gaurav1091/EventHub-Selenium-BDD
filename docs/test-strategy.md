@@ -36,6 +36,12 @@ Parallel-state tags:
 - Use `@stateful` when the scenario creates, updates, cancels, or clears bookings/events/users on the shared EventHub environment.
 - Do not combine `@stateful` and `@parallel-safe` unless the data is isolated by run ID and the cleanup path is proven independent.
 
+Coverage governance:
+
+- Keep every scenario covered by a suite tag, surface tag, domain tag, and data-safety tag.
+- Use `docs/test-catalog.md` as the human-readable coverage map for business and risk traceability.
+- Review `target/governance/scenario-governance.json` after local or CI runs when adding broad new coverage.
+
 ## Parallel Policy
 
 Parallel runs should execute `@parallel-safe` scenarios, or should exclude `@stateful`.
