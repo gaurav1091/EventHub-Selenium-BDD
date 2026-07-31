@@ -24,8 +24,9 @@ public class EventDetailPage extends BasePage {
 
     public void assertMetadataFor(String eventName) {
         assertPageContains(driver(), eventName);
-        assertThat(visible(By.xpath("//*[contains(normalize-space(.),'seats')]")).getText())
-                .containsPattern("\\d+\\s+seats");
+        assertThat(visible(By.xpath("//*[contains(translate(normalize-space(.),"
+                        + "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'seat')]")).getText())
+                .containsPattern("\\d+\\s+seats?");
     }
 
     public void increaseTickets(int times) {

@@ -12,6 +12,8 @@ import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
 import static com.eventhub.automation.utils.UiAssertions.assertPageContainsAnyOf;
 
 public class BookingsPage extends BasePage {
+    private static final By BOOKINGS_HEADING = By.xpath("//*[contains(normalize-space(.),'My Bookings')]");
+
     public BookingsPage openBookingsPage() {
         open("/bookings");
         return this;
@@ -20,6 +22,10 @@ public class BookingsPage extends BasePage {
     public void assertLoaded() {
         Waits.loadingComplete(driver());
         assertPageContains(driver(), "My Bookings");
+    }
+
+    public boolean isLoadedMarkerVisible() {
+        return hasElements(BOOKINGS_HEADING);
     }
 
     public void assertBookingVisible(String eventName) {

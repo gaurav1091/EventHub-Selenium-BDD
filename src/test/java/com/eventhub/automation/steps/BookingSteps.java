@@ -2,15 +2,20 @@ package com.eventhub.automation.steps;
 
 import com.eventhub.automation.api.ApiAssertions;
 import com.eventhub.automation.config.ConfigReader;
+import com.eventhub.automation.drivers.DriverManager;
 import com.eventhub.automation.factories.TestDataFactory;
 import com.eventhub.automation.models.BookingRequest;
 import com.eventhub.automation.pages.BookingsPage;
 import com.eventhub.automation.pages.EventDetailPage;
 import com.eventhub.automation.pages.EventsPage;
+import com.eventhub.automation.pages.LoginPage;
+import com.eventhub.automation.pages.NavigationBar;
 import com.eventhub.automation.support.CleanupService;
 import com.eventhub.automation.support.TestContext;
+import com.eventhub.automation.utils.Waits;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import io.restassured.response.Response;
 
 public class BookingSteps {
@@ -18,6 +23,8 @@ public class BookingSteps {
     private final EventsPage eventsPage = new EventsPage();
     private final EventDetailPage detailPage = new EventDetailPage();
     private final BookingsPage bookingsPage = new BookingsPage();
+    private final LoginPage loginPage = new LoginPage();
+    private final NavigationBar navigationBar = new NavigationBar();
 
     public BookingSteps(TestContext context) {
         this.context = context;
@@ -192,6 +199,14 @@ public class BookingSteps {
     @Then("no bookings for the current Selenium customer should remain")
     public void noBookingsForTheCurrentSeleniumCustomerShouldRemain() {
         bookingsPage.openBookingsPage();
+        Waits.until(DriverManager.getDriver(),
+                webDriver -> bookingsPage.isLoadedMarkerVisible()
+                        || !webDriver.findElements(By.cssSelector("input[type='email'], input[placeholder='you@email.com']")).isEmpty());
+        if (!bookingsPage.isLoadedMarkerVisible() && loginPage.isLoginFormVisible()) {
+            loginPage.login(ConfigReader.getRequired("user.email"), ConfigReader.getRequired("user.password"));
+            navigationBar.assertAuthenticated(ConfigReader.getRequired("user.email"));
+            bookingsPage.openBookingsPage();
+        }
         bookingsPage.assertBookingNotVisible(ConfigReader.getRequired("booking.customer.prefix"));
     }
 

@@ -23,6 +23,10 @@ public class LoginPage extends BasePage {
         assertThat(isDisplayed(PASSWORD)).isTrue();
     }
 
+    public boolean isLoginFormVisible() {
+        return hasElements(EMAIL) && hasElements(PASSWORD) && hasElements(SIGN_IN);
+    }
+
     public void login(String email, String password) {
         type(EMAIL, email);
         type(PASSWORD, password);
