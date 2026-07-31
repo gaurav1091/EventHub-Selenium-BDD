@@ -54,6 +54,92 @@ public final class TestDataFactory {
         );
     }
 
+    public static Map<String, Object> malformedBooking(String caseName, String validEventId) {
+        Map<String, Object> validPayload = Map.of(
+                "eventId", validEventId,
+                "customerName", RunContext.bookingCustomerPrefix(),
+                "customerEmail", "selenium.contract@" + TestData.text("booking.emailDomain"),
+                "customerPhone", TestData.text("booking.phone"),
+                "quantity", 1
+        );
+        return switch (caseName.toLowerCase()) {
+            case "missing event id" -> Map.of(
+                    "customerName", validPayload.get("customerName"),
+                    "customerEmail", validPayload.get("customerEmail"),
+                    "customerPhone", validPayload.get("customerPhone"),
+                    "quantity", validPayload.get("quantity")
+            );
+            case "invalid quantity type" -> Map.of(
+                    "eventId", validEventId,
+                    "customerName", validPayload.get("customerName"),
+                    "customerEmail", validPayload.get("customerEmail"),
+                    "customerPhone", validPayload.get("customerPhone"),
+                    "quantity", "two"
+            );
+            case "negative quantity" -> Map.of(
+                    "eventId", validEventId,
+                    "customerName", validPayload.get("customerName"),
+                    "customerEmail", validPayload.get("customerEmail"),
+                    "customerPhone", validPayload.get("customerPhone"),
+                    "quantity", -1
+            );
+            default -> throw new IllegalArgumentException("Unsupported malformed booking case: " + caseName);
+        };
+    }
+
+    public static Map<String, Object> malformedEvent(String caseName) {
+        String title = RunContext.eventTitlePrefix("Malformed Contract");
+        String eventDate = OffsetDateTime.now(ZoneOffset.UTC)
+                .plusDays(30)
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm"));
+        Map<String, Object> validPayload = Map.of(
+                "title", title,
+                "description", TestData.text("adminEvent.description"),
+                "category", TestData.text("adminEvent.category"),
+                "venue", TestData.text("adminEvent.venue"),
+                "city", TestData.text("adminEvent.city"),
+                "eventDate", eventDate,
+                "price", TestData.integer("adminEvent.price"),
+                "totalSeats", 2,
+                "imageUrl", TestData.text("adminEvent.imageUrl")
+        );
+        return switch (caseName.toLowerCase()) {
+            case "missing title" -> Map.of(
+                    "description", validPayload.get("description"),
+                    "category", validPayload.get("category"),
+                    "venue", validPayload.get("venue"),
+                    "city", validPayload.get("city"),
+                    "eventDate", validPayload.get("eventDate"),
+                    "price", validPayload.get("price"),
+                    "totalSeats", validPayload.get("totalSeats"),
+                    "imageUrl", validPayload.get("imageUrl")
+            );
+            case "invalid price type" -> Map.of(
+                    "title", title,
+                    "description", validPayload.get("description"),
+                    "category", validPayload.get("category"),
+                    "venue", validPayload.get("venue"),
+                    "city", validPayload.get("city"),
+                    "eventDate", validPayload.get("eventDate"),
+                    "price", "free",
+                    "totalSeats", validPayload.get("totalSeats"),
+                    "imageUrl", validPayload.get("imageUrl")
+            );
+            case "negative seats" -> Map.of(
+                    "title", title,
+                    "description", validPayload.get("description"),
+                    "category", validPayload.get("category"),
+                    "venue", validPayload.get("venue"),
+                    "city", validPayload.get("city"),
+                    "eventDate", validPayload.get("eventDate"),
+                    "price", validPayload.get("price"),
+                    "totalSeats", -1,
+                    "imageUrl", validPayload.get("imageUrl")
+            );
+            default -> throw new IllegalArgumentException("Unsupported malformed event case: " + caseName);
+        };
+    }
+
     public static BookingRequestBuilder bookingBuilder(String eventId) {
         return new BookingRequestBuilder(eventId);
     }

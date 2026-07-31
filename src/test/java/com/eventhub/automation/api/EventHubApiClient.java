@@ -83,6 +83,10 @@ public class EventHubApiClient {
         return authenticatedRequest().body(booking).post("/api/bookings");
     }
 
+    public Response createBooking(Map<String, ?> payload) {
+        return authenticatedRequest().body(payload).post("/api/bookings");
+    }
+
     public Response deleteBooking(String bookingId) {
         return authenticatedRequest().delete("/api/bookings/{bookingId}", bookingId);
     }

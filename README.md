@@ -152,11 +152,13 @@ make visual
 make accessibility
 ACCESSIBILITY_THRESHOLD_ENABLED=true ACCESSIBILITY_MAX_VIOLATIONS=0 make accessibility
 make impact AREA=auth
+make impact-select AREA=api
 ```
 
 The container reads credentials and environment defaults from `.env` through Docker Compose. Reports and failure screenshots are mounted back to `target/`, `logs/`, and `screenshots/` on your machine.
 Run summaries are written to `target/run-summary/eventhub-run-summary.json`.
 Open `target/run-summary/report-index.html` after a run for one-page links to Extent, Cucumber, Allure results, Axe reports, visual sanity screenshots, governance files, and summaries.
+Impact-selected runs also write `target/run-summary/impact-selection.json`.
 
 ## Troubleshooting
 

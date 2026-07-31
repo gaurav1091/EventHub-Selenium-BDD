@@ -125,9 +125,20 @@ public class ApiSteps {
         context.put("response", context.apiClient().createBooking(TestDataFactory.invalidApiBooking()));
     }
 
+    @When("I create a booking through the API with malformed payload {string}")
+    public void iCreateABookingThroughTheApiWithMalformedPayload(String caseName) {
+        String eventId = context.apiClient().findFirstBookableEventId();
+        context.put("response", context.apiClient().createBooking(TestDataFactory.malformedBooking(caseName, eventId)));
+    }
+
     @When("I create an event through the API with invalid payload")
     public void iCreateAnEventThroughTheApiWithInvalidPayload() {
         context.put("response", context.apiClient().createEvent(TestDataFactory.invalidApiEvent()));
+    }
+
+    @When("I create an event through the API with malformed payload {string}")
+    public void iCreateAnEventThroughTheApiWithMalformedPayload(String caseName) {
+        context.put("response", context.apiClient().createEvent(TestDataFactory.malformedEvent(caseName)));
     }
 
     @When("I request the current user profile through the API without authentication")
@@ -168,10 +179,20 @@ public class ApiSteps {
         ApiAssertions.assertEventsInclude(response, "World Tech Summit");
     }
 
+    @Then("the API events response should map to event list POJOs with business fields")
+    public void theApiEventsResponseShouldMapToEventListPojosWithBusinessFields() {
+        ApiAssertions.assertEventsMapToPojoList(context.get("response", Response.class));
+    }
+
     @Then("the API event detail response should describe {string}")
     public void theApiEventDetailResponseShouldDescribe(String eventName) {
         ApiAssertions.assertSuccess(context.get("response", Response.class));
         ApiAssertions.assertEventDetail(context.get("response", Response.class), eventName);
+    }
+
+    @Then("the API event detail response should map to an event POJO for {string}")
+    public void theApiEventDetailResponseShouldMapToAnEventPojoFor(String eventName) {
+        ApiAssertions.assertEventDetailMapsToPojo(context.get("response", Response.class), eventName);
     }
 
     @Then("the API booking response should include a booking reference")
@@ -183,6 +204,7 @@ public class ApiSteps {
 
     @Then("the API bookings response should map to booking POJOs for the created booking")
     public void theApiBookingsResponseShouldMapToBookingPojosForTheCreatedBooking() {
+        ApiAssertions.assertBookingListBusinessFields(context.get("response", Response.class));
         ApiAssertions.assertBookingsInclude(
                 context.get("response", Response.class),
                 context.get("createdBookingId", String.class),

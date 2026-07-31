@@ -48,6 +48,20 @@ on:
           - impact-ux
           - docker-smoke
           - all
+      impact-area:
+        description: Optional impact area override for faster targeted CI
+        required: true
+        default: none
+        type: choice
+        options:
+          - none
+          - auth
+          - events
+          - bookings
+          - admin
+          - api
+          - ux
+          - integration
       parallel:
         description: Run scenarios in parallel
         required: true
@@ -119,8 +133,8 @@ jobs:
             *) TAG_EXPRESSION="@$SUITE" ;;
           esac
 
-          if [[ "$PARALLEL" == "true" && "$SUITE" =~ ^(hybrid|stateful|nightly-stateful)$ ]]; then
-            echo "::error::Suite '$SUITE' is stateful and must run with parallel=false. Parallel mode adds 'not @stateful', which would execute zero scenarios."
+          if [[ "$PARALLEL" == "true" && ("$SUITE" =~ ^(hybrid|stateful|nightly-stateful)$ || "$IMPACT_AREA" == "integration") ]]; then
+            echo "::error::Selected coverage is stateful and must run with parallel=false. Parallel mode adds 'not @stateful', which would execute zero scenarios."
             exit 1
           fi
 
@@ -149,6 +163,9 @@ jobs:
         run: |
           if [[ -f target/run-summary/github-step-summary.md ]]; then
             cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ -f target/run-summary/impact-selection.md ]]; then
+            cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Upload reports
         if: always()
@@ -222,6 +239,9 @@ jobs:
           if [[ -f target/run-summary/github-step-summary.md ]]; then
             cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
           fi
+          if [[ -f target/run-summary/impact-selection.md ]]; then
+            cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -255,20 +275,25 @@ jobs:
         run: |
           BROWSER="${{ github.event.inputs.browser }}"
           SUITE="${{ github.event.inputs.suite }}"
+          IMPACT_AREA="${{ github.event.inputs['impact-area'] }}"
           PARALLEL="${{ github.event.inputs.parallel }}"
           THREAD_COUNT="${{ github.event.inputs['thread-count'] }}"
 
-          case "$SUITE" in
-            all) TAG_EXPRESSION="" ;;
-            p0-smoke) TAG_EXPRESSION="@p0 and @smoke" ;;
-            p1-regression) TAG_EXPRESSION="@p1 and @regression" ;;
-            api-contract) TAG_EXPRESSION="@api and @contract" ;;
-            ui-critical) TAG_EXPRESSION="@ui and @critical" ;;
-            nightly-stateful) TAG_EXPRESSION="@stateful and @regression" ;;
-            accessibility) TAG_EXPRESSION="@accessibility" ;;
-            docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
-            *) TAG_EXPRESSION="@$SUITE" ;;
-          esac
+          if [[ "$IMPACT_AREA" != "none" ]]; then
+            TAG_EXPRESSION="$(bash scripts/select-impact-tags.sh --area "$IMPACT_AREA")"
+          else
+            case "$SUITE" in
+              all) TAG_EXPRESSION="" ;;
+              p0-smoke) TAG_EXPRESSION="@p0 and @smoke" ;;
+              p1-regression) TAG_EXPRESSION="@p1 and @regression" ;;
+              api-contract) TAG_EXPRESSION="@api and @contract" ;;
+              ui-critical) TAG_EXPRESSION="@ui and @critical" ;;
+              nightly-stateful) TAG_EXPRESSION="@stateful and @regression" ;;
+              accessibility) TAG_EXPRESSION="@accessibility" ;;
+              docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
+              *) TAG_EXPRESSION="@$SUITE" ;;
+            esac
+          fi
 
           if [[ "$PARALLEL" == "true" && "$SUITE" =~ ^(hybrid|stateful|nightly-stateful)$ ]]; then
             echo "::error::Suite '$SUITE' is stateful and must run with parallel=false. Parallel mode adds 'not @stateful', which would execute zero scenarios."
@@ -300,6 +325,9 @@ jobs:
         run: |
           if [[ -f target/run-summary/github-step-summary.md ]]; then
             cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ -f target/run-summary/impact-selection.md ]]; then
+            cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Upload reports
         if: always()

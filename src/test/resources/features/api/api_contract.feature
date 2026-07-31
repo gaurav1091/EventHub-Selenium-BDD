@@ -29,9 +29,21 @@ Feature: EventHub API contract
     And the API response should match schema "schemas/events-response.schema.json"
 
   @p1 @regression @parallel-safe @intent-discovery
+  Scenario: Event list maps to POJO responses with required business fields
+    When I request events through the API
+    Then the API events response should map to event list POJOs with business fields
+    And the API response should match schema "schemas/events-response.schema.json"
+
+  @p1 @regression @parallel-safe @intent-discovery
   Scenario: Authenticated user can retrieve an event detail through API
     When I request event "World Tech Summit" through the API
     Then the API event detail response should describe "World Tech Summit"
+    And the API response should match schema "schemas/event-detail-response.schema.json"
+
+  @p1 @regression @parallel-safe @intent-discovery
+  Scenario: Event detail maps to a POJO with required business fields
+    When I request event "World Tech Summit" through the API
+    Then the API event detail response should map to an event POJO for "World Tech Summit"
     And the API response should match schema "schemas/event-detail-response.schema.json"
 
   @p0 @smoke @stateful @intent-booking
@@ -77,6 +89,28 @@ Feature: EventHub API contract
       | request bookings through the API without authentication    |
       | create a booking through the API with invalid payload      |
       | create an event through the API with invalid payload       |
+
+  @p1 @regression @negative @parallel-safe @intent-contract
+  Scenario Outline: Malformed booking payloads are rejected by the API contract
+    When I create a booking through the API with malformed payload "<payloadCase>"
+    Then the API should reject the request with an error response
+
+    Examples:
+      | payloadCase           |
+      | missing event id      |
+      | invalid quantity type |
+      | negative quantity     |
+
+  @p1 @regression @negative @parallel-safe @intent-contract
+  Scenario Outline: Malformed event payloads are rejected by the API contract
+    When I create an event through the API with malformed payload "<payloadCase>"
+    Then the API should reject the request with an error response
+
+    Examples:
+      | payloadCase        |
+      | missing title      |
+      | invalid price type |
+      | negative seats     |
 
   @p1 @regression @stateful @api-cleanup @intent-booking
   Scenario: Booking list maps to POJO responses after API booking creation

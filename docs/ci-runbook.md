@@ -45,6 +45,7 @@ Recommended choices:
 - `browser=chrome`, `suite=hybrid`, `parallel=false` for API setup plus UI verification scenarios.
 - `browser=chrome`, `suite=ui-critical`, `parallel=false` for critical browser paths.
 - `browser=chrome`, `suite=api-contract`, `parallel=true`, `thread-count=2` for API contract coverage.
+- `impact-area=auth/events/bookings/admin/api/ux/integration` to override `suite` with a targeted `@impact-*` run.
 
 ## Local Equivalents
 
@@ -61,6 +62,8 @@ Reliability controls:
 ```bash
 mvn test -Dpreflight.enabled=true -Dcleanup.before.run=true -Drun.id=ci-debug-001 -Dcucumber.filter.tags="@stateful"
 mvn test -Dretry.count=1 -Dretry.tags="@retryable" -Dcucumber.filter.tags="@retryable"
+make impact-select AREA=api
+bash scripts/select-impact-tags.sh --area bookings
 TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh
 bash scripts/assert-scenarios-executed.sh
 ```
@@ -84,6 +87,7 @@ mvn -Psecurity org.owasp:dependency-check-maven:check
 - Check the failed scenario and tag first. If it is `@stateful`, reproduce serially.
 - Download artifacts for Extent, Allure, Cucumber JSON, Surefire XML, logs, and screenshots.
 - Inspect `target/run-summary/eventhub-run-summary.json` for run metadata and retry count.
+- Inspect `target/run-summary/impact-selection.json` when an impact-area run selected scenarios.
 - Inspect `target/run-summary/slow-scenarios.json` when the suite passes but runtime increases.
 - Inspect `target/governance/scenario-governance.json` before merging broad test additions.
 - Inspect `target/governance/test-catalog.md` for generated scenario-level traceability.

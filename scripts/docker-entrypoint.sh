@@ -12,6 +12,7 @@ RETRY_TAGS="${RETRY_TAGS:-@retryable}"
 PREFLIGHT_ENABLED="${PREFLIGHT_ENABLED:-true}"
 CLEANUP_BEFORE_RUN="${CLEANUP_BEFORE_RUN:-false}"
 RUN_ID="${RUN_ID:-}"
+IMPACT_AREA="${IMPACT_AREA:-none}"
 
 suite_tags() {
   case "$1" in
@@ -29,6 +30,8 @@ suite_tags() {
 
 if [[ -n "${CUCUMBER_FILTER_TAGS:-}" ]]; then
   TAG_EXPRESSION="${CUCUMBER_FILTER_TAGS}"
+elif [[ "${IMPACT_AREA}" != "none" ]]; then
+  TAG_EXPRESSION="$(bash scripts/select-impact-tags.sh --area "${IMPACT_AREA}")"
 else
   TAG_EXPRESSION="$(suite_tags "${SUITE}")"
 fi

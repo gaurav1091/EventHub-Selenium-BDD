@@ -76,12 +76,14 @@ SUITE=parallel-safe PARALLEL=true THREAD_COUNT=4 docker compose run --rm eventhu
 SUITE=ui-critical docker compose run --rm eventhub-tests
 SUITE=hybrid PARALLEL=false docker compose run --rm eventhub-tests
 SUITE=impact-auth docker compose run --rm eventhub-tests
+IMPACT_AREA=api docker compose run --rm eventhub-tests
 ```
 
 Manual GitHub Actions dispatch supports these choices:
 
 - Browser: `chrome`, `firefox`
 - Suite: `smoke`, `ui`, `api`, `regression`, `admin`, `auth`, `bookings`, `events`, `navigation`, `hybrid`, `stateful`, `parallel-safe`, `p0-smoke`, `p1-regression`, `api-contract`, `ui-critical`, `nightly-stateful`, `accessibility`, `visual`, `impact-auth`, `impact-events`, `impact-bookings`, `impact-admin`, `impact-api`, `impact-ux`, `docker-smoke`, `all`
+- Impact area override: `none`, `auth`, `events`, `bookings`, `admin`, `api`, `ux`, `integration`
 - Parallel: `true`, `false`
 - Thread count: `2`, `3`, `4`, `5`
 
@@ -122,6 +124,8 @@ Manual workflow dispatch runs exactly one selected browser/suite/parallel combin
 | `visual` | `@visual` |
 | `impact-*` | matching `@impact-*` tag |
 | `docker-smoke` | `@docker-smoke or (@p0 and @smoke)` |
+
+`scripts/select-impact-tags.sh` can generate a targeted impact expression explicitly by area or infer it from changed files when a base ref is available. It writes `target/run-summary/impact-selection.json` and `target/run-summary/impact-selection.md` for local and CI triage.
 
 ## Accessibility Thresholds
 
