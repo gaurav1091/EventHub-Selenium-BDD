@@ -26,6 +26,7 @@ public final class ScenarioGovernanceReport {
             MAPPER.writerWithDefaultPrettyPrinter()
                     .writeValue(Path.of("target", "governance", "scenario-governance.json").toFile(), scenarios);
             Files.writeString(Path.of("target", "governance", "test-catalog.md"), markdownCatalog(scenarios));
+            Files.writeString(Path.of("target", "governance", "test-catalog-summary.md"), markdownSummary(scenarios));
         } catch (IOException exception) {
             throw new IllegalStateException("Unable to write scenario governance report", exception);
         }
@@ -86,6 +87,13 @@ public final class ScenarioGovernanceReport {
         entry.put("feature", featureName);
         entry.put("scenario", scenarioName);
         entry.put("tags", tags);
+        entry.put("type", firstPresent(tags, "@api", "@ui", "@hybrid", "@accessibility", "@responsive", "@visual"));
+        entry.put("priority", firstMatching(tags, "@p[0-3]"));
+        entry.put("owner", firstWithPrefix(tags, "@owner-"));
+        entry.put("risk", firstWithPrefix(tags, "@risk-"));
+        entry.put("intent", firstWithPrefix(tags, "@intent-"));
+        entry.put("impact", firstWithPrefix(tags, "@impact-"));
+        entry.put("statefulness", tags.contains("@stateful") ? "@stateful" : "@parallel-safe");
         entry.put("missingRecommendedTags", missingRecommendedTags(tags));
         return entry;
     }
@@ -94,9 +102,9 @@ public final class ScenarioGovernanceReport {
         StringBuilder builder = new StringBuilder("# Generated EventHub Test Catalog")
                 .append(System.lineSeparator())
                 .append(System.lineSeparator())
-                .append("| Feature | Scenario | File | Tags |")
+                .append("| Feature | Scenario | Type | Priority | Owner | Risk | Intent | Impact | State | File |")
                 .append(System.lineSeparator())
-                .append("| --- | --- | --- | --- |")
+                .append("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
                 .append(System.lineSeparator());
         for (Map<String, Object> scenario : scenarios) {
             builder.append("| ")
@@ -104,20 +112,68 @@ public final class ScenarioGovernanceReport {
                     .append(" | ")
                     .append(escapePipes(String.valueOf(scenario.get("scenario"))))
                     .append(" | ")
+                    .append(scenario.get("type"))
+                    .append(" | ")
+                    .append(scenario.get("priority"))
+                    .append(" | ")
+                    .append(scenario.get("owner"))
+                    .append(" | ")
+                    .append(scenario.get("risk"))
+                    .append(" | ")
+                    .append(scenario.get("intent"))
+                    .append(" | ")
+                    .append(scenario.get("impact"))
+                    .append(" | ")
+                    .append(scenario.get("statefulness"))
+                    .append(" | ")
                     .append(scenario.get("featureFile"))
                     .append(":")
                     .append(scenario.get("line"))
-                    .append(" | `")
-                    .append(String.join(" ", tags(scenario)))
-                    .append("` |")
+                    .append(" |")
                     .append(System.lineSeparator());
         }
         return builder.toString();
     }
 
+    private static String markdownSummary(List<Map<String, Object>> scenarios) {
+        StringBuilder builder = new StringBuilder("# EventHub Test Catalog Summary")
+                .append(System.lineSeparator())
+                .append(System.lineSeparator())
+                .append("- Scenario count: `")
+                .append(scenarios.size())
+                .append("`")
+                .append(System.lineSeparator())
+                .append("- Missing governance metadata: `")
+                .append(scenarios.stream().filter(scenario -> !missing(scenario).isEmpty()).count())
+                .append("`")
+                .append(System.lineSeparator())
+                .append(System.lineSeparator())
+                .append("## Coverage By Impact")
+                .append(System.lineSeparator())
+                .append(System.lineSeparator());
+        countsBy(scenarios, "impact").forEach((impact, count) -> builder
+                .append("- `").append(impact).append("`: `").append(count).append("`").append(System.lineSeparator()));
+        builder.append(System.lineSeparator())
+                .append("## Coverage By Priority")
+                .append(System.lineSeparator())
+                .append(System.lineSeparator());
+        countsBy(scenarios, "priority").forEach((priority, count) -> builder
+                .append("- `").append(priority).append("`: `").append(count).append("`").append(System.lineSeparator()));
+        return builder.toString();
+    }
+
+    private static Map<String, Long> countsBy(List<Map<String, Object>> scenarios, String key) {
+        Map<String, Long> counts = new LinkedHashMap<>();
+        scenarios.stream()
+                .map(scenario -> String.valueOf(scenario.get(key)))
+                .sorted()
+                .forEach(value -> counts.put(value, counts.getOrDefault(value, 0L) + 1));
+        return counts;
+    }
+
     @SuppressWarnings("unchecked")
-    private static List<String> tags(Map<String, Object> scenario) {
-        return (List<String>) scenario.get("tags");
+    private static List<String> missing(Map<String, Object> scenario) {
+        return (List<String>) scenario.get("missingRecommendedTags");
     }
 
     private static String escapePipes(String value) {
@@ -158,5 +214,28 @@ public final class ScenarioGovernanceReport {
             return;
         }
         missing.add("@p0 or @p1 or @p2 or @p3");
+    }
+
+    private static String firstPresent(List<String> tags, String... expected) {
+        for (String tag : expected) {
+            if (tags.contains(tag)) {
+                return tag;
+            }
+        }
+        return "";
+    }
+
+    private static String firstMatching(List<String> tags, String pattern) {
+        return tags.stream()
+                .filter(tag -> tag.matches(pattern))
+                .findFirst()
+                .orElse("");
+    }
+
+    private static String firstWithPrefix(List<String> tags, String prefix) {
+        return tags.stream()
+                .filter(tag -> tag.startsWith(prefix))
+                .findFirst()
+                .orElse("");
     }
 }

@@ -31,12 +31,16 @@ public final class ReportIndex {
         links.put("GitHub Step Summary", "github-step-summary.md");
         links.put("Scenario Durations", "scenario-durations.json");
         links.put("Slow Scenarios", "slow-scenarios.json");
+        links.put("Retry Governance", "retry-governance.json");
+        links.put("Impact Selection", "impact-selection.json");
         links.put("Environment Health", "environment-health.json");
         links.put("Scenario Governance JSON", "../governance/scenario-governance.json");
         links.put("Generated Test Catalog", "../governance/test-catalog.md");
+        links.put("Generated Test Catalog Summary", "../governance/test-catalog-summary.md");
         links.put("Tag Audit", "../governance/tag-audit.json");
         links.put("Axe Reports", "../axe-reports/");
         links.put("Visual Sanity Screenshots", "../visual-sanity/");
+        links.put("Visual Baseline Diff Reports", "../visual-diff/");
         links.put("Allure Results", "../allure-results/");
         links.put("Surefire Reports", "../surefire-reports/");
 

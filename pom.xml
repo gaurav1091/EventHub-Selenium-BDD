@@ -41,8 +41,15 @@
         <thread.count>2</thread.count>
         <retry.count>0</retry.count>
         <retry.tags>@retryable</retry.tags>
+        <retry.max.allowed>0</retry.max.allowed>
         <preflight.enabled>true</preflight.enabled>
         <cleanup.before.run>false</cleanup.before.run>
+        <accessibility.threshold.enabled>false</accessibility.threshold.enabled>
+        <accessibility.max.violations>0</accessibility.max.violations>
+        <visual.baseline.enabled>false</visual.baseline.enabled>
+        <visual.baseline.update>false</visual.baseline.update>
+        <visual.baseline.dir>src/test/resources/visual-baselines</visual.baseline.dir>
+        <visual.diff.max.bytes>0</visual.diff.max.bytes>
         <suite.xml.file>target/test-classes/suites/testng.xml</suite.xml.file>
         <cucumber.filter.tags>not @wip</cucumber.filter.tags>
     </properties>
@@ -226,8 +233,15 @@
                         <thread.count>${thread.count}</thread.count>
                         <retry.count>${retry.count}</retry.count>
                         <retry.tags>${retry.tags}</retry.tags>
+                        <retry.max.allowed>${retry.max.allowed}</retry.max.allowed>
                         <preflight.enabled>${preflight.enabled}</preflight.enabled>
                         <cleanup.before.run>${cleanup.before.run}</cleanup.before.run>
+                        <accessibility.threshold.enabled>${accessibility.threshold.enabled}</accessibility.threshold.enabled>
+                        <accessibility.max.violations>${accessibility.max.violations}</accessibility.max.violations>
+                        <visual.baseline.enabled>${visual.baseline.enabled}</visual.baseline.enabled>
+                        <visual.baseline.update>${visual.baseline.update}</visual.baseline.update>
+                        <visual.baseline.dir>${visual.baseline.dir}</visual.baseline.dir>
+                        <visual.diff.max.bytes>${visual.diff.max.bytes}</visual.diff.max.bytes>
                         <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
                     </systemPropertyVariables>
                 </configuration>
@@ -337,6 +351,23 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>accessibility-strict</id>
+            <properties>
+                <headless>true</headless>
+                <cucumber.filter.tags>@accessibility</cucumber.filter.tags>
+                <accessibility.threshold.enabled>true</accessibility.threshold.enabled>
+                <accessibility.max.violations>0</accessibility.max.violations>
+            </properties>
+        </profile>
+        <profile>
+            <id>visual-baseline</id>
+            <properties>
+                <headless>true</headless>
+                <cucumber.filter.tags>@visual</cucumber.filter.tags>
+                <visual.baseline.enabled>true</visual.baseline.enabled>
+            </properties>
         </profile>
     </profiles>
 </project>

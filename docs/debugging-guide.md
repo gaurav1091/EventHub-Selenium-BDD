@@ -21,9 +21,13 @@ make parallel BROWSER=chrome THREAD_COUNT=2
 | `target/allure-results` | Allure result data and attachments. |
 | `target/run-summary/eventhub-run-summary.json` | Browser, tags, retries, counts, and slowest scenarios. |
 | `target/run-summary/environment-health.json` | UI/API/credential preflight status. |
+| `target/run-summary/retry-governance.json` | Retry count, threshold status, and retried scenario metadata. |
+| `target/run-summary/impact-selection.json` | Impact-area selection summary. |
 | `target/run-summary/report-index.html` | One-page report navigation index. |
 | `target/governance/tag-audit.json` | Scenario tag compliance from the audit script. |
 | `target/governance/test-catalog.md` | Generated scenario-level traceability catalog. |
+| `target/governance/test-catalog-summary.md` | Generated coverage summary by priority and impact. |
+| `target/visual-diff` | Optional visual baseline comparison reports. |
 | `screenshots` | Failure screenshots for the latest run only. |
 
 ## Triage Patterns
@@ -33,3 +37,5 @@ make parallel BROWSER=chrome THREAD_COUNT=2
 - UI-only failure: run headed once and check the final URL in the report metadata.
 - API contract failure: compare response body with `src/test/resources/schemas`.
 - CI infrastructure failure: check `target/run-logs` for Maven transfer or browser startup errors.
+- Retry governance failure: inspect `target/run-summary/retry-governance.json` and remove retries from deterministic failures.
+- Visual baseline failure: inspect `target/visual-diff`; refresh baselines only after intentional UI changes.

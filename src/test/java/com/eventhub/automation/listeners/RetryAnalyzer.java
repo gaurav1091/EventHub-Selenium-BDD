@@ -19,7 +19,7 @@ public class RetryAnalyzer implements IRetryAnalyzer {
             return false;
         }
         attempts++;
-        RunSummary.retried();
+        RunSummary.retried(scenarioName(result), attempts, maxRetries, scenarioTags(result));
         LOGGER.warn("Retrying scenario after failure. attempt={} maxRetries={} scenario={}",
                 attempts, maxRetries, scenarioName(result));
         return true;
@@ -45,5 +45,13 @@ public class RetryAnalyzer implements IRetryAnalyzer {
             return ((PickleWrapper) parameters[0]).getPickle().getName();
         }
         return result.getName();
+    }
+
+    private String scenarioTags(ITestResult result) {
+        Object[] parameters = result.getParameters();
+        if (parameters.length > 0 && parameters[0] instanceof PickleWrapper) {
+            return String.join(" ", ((PickleWrapper) parameters[0]).getPickle().getTags());
+        }
+        return "";
     }
 }

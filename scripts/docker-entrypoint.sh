@@ -9,10 +9,16 @@ PARALLEL="${PARALLEL:-false}"
 THREAD_COUNT="${THREAD_COUNT:-2}"
 RETRY_COUNT="${RETRY_COUNT:-0}"
 RETRY_TAGS="${RETRY_TAGS:-@retryable}"
+RETRY_MAX_ALLOWED="${RETRY_MAX_ALLOWED:-0}"
 PREFLIGHT_ENABLED="${PREFLIGHT_ENABLED:-true}"
 CLEANUP_BEFORE_RUN="${CLEANUP_BEFORE_RUN:-false}"
 RUN_ID="${RUN_ID:-}"
 IMPACT_AREA="${IMPACT_AREA:-none}"
+ACCESSIBILITY_THRESHOLD_ENABLED="${ACCESSIBILITY_THRESHOLD_ENABLED:-false}"
+ACCESSIBILITY_MAX_VIOLATIONS="${ACCESSIBILITY_MAX_VIOLATIONS:-0}"
+VISUAL_BASELINE_ENABLED="${VISUAL_BASELINE_ENABLED:-false}"
+VISUAL_BASELINE_UPDATE="${VISUAL_BASELINE_UPDATE:-false}"
+VISUAL_DIFF_MAX_BYTES="${VISUAL_DIFF_MAX_BYTES:-0}"
 
 suite_tags() {
   case "$1" in
@@ -47,8 +53,14 @@ MVN_ARGS=(
   "-Denvironment=${ENVIRONMENT}"
   "-Dretry.count=${RETRY_COUNT}"
   "-Dretry.tags=${RETRY_TAGS}"
+  "-Dretry.max.allowed=${RETRY_MAX_ALLOWED}"
   "-Dpreflight.enabled=${PREFLIGHT_ENABLED}"
   "-Dcleanup.before.run=${CLEANUP_BEFORE_RUN}"
+  "-Daccessibility.threshold.enabled=${ACCESSIBILITY_THRESHOLD_ENABLED}"
+  "-Daccessibility.max.violations=${ACCESSIBILITY_MAX_VIOLATIONS}"
+  "-Dvisual.baseline.enabled=${VISUAL_BASELINE_ENABLED}"
+  "-Dvisual.baseline.update=${VISUAL_BASELINE_UPDATE}"
+  "-Dvisual.diff.max.bytes=${VISUAL_DIFF_MAX_BYTES}"
 )
 
 if [[ -n "${RUN_ID}" ]]; then

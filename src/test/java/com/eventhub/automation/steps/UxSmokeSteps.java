@@ -40,6 +40,7 @@ public class UxSmokeSteps {
     private static final ObjectMapper MAPPER = new ObjectMapper();
     private static final Path AXE_REPORTS_DIR = Path.of("target", "axe-reports");
     private static final Path VISUAL_SANITY_DIR = Path.of("target", "visual-sanity");
+    private static final Path VISUAL_DIFF_DIR = Path.of("target", "visual-diff");
 
     @When("I use viewport {int} by {int}")
     public void iUseViewportBy(int width, int height) {
@@ -114,6 +115,7 @@ public class UxSmokeSteps {
                     .getScreenshotAs(org.openqa.selenium.OutputType.BYTES);
             Path screenshotPath = VISUAL_SANITY_DIR.resolve(visualFileName(driver));
             Files.write(screenshotPath, screenshot);
+            assertVisualBaseline(driver, screenshot);
             Allure.addAttachment("Visual sanity screenshot", "image/png",
                     new ByteArrayInputStream(screenshot), ".png");
         } catch (IOException exception) {
@@ -238,6 +240,70 @@ public class UxSmokeSteps {
                 .replaceAll("[^a-zA-Z0-9._-]", "_");
         return "visual-" + path + "-" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-SSS"))
                 + ".png";
+    }
+
+    private void assertVisualBaseline(WebDriver driver, byte[] screenshot) throws IOException {
+        if (!ConfigReader.getBoolean("visual.baseline.enabled")) {
+            return;
+        }
+        Path baselineDir = Path.of(ConfigReader.getRequired("visual.baseline.dir"));
+        Path baseline = baselineDir.resolve(stableVisualBaselineName(driver));
+        if (ConfigReader.getBoolean("visual.baseline.update")) {
+            Files.createDirectories(baselineDir);
+            Files.write(baseline, screenshot);
+            writeVisualDiffReport(driver, baseline, 0, "baseline-updated");
+            return;
+        }
+        if (!Files.exists(baseline)) {
+            writeVisualDiffReport(driver, baseline, Long.MAX_VALUE, "missing-baseline");
+            throw new AssertionError("Missing visual baseline: " + baseline
+                    + ". Run with -Dvisual.baseline.update=true after intentional UI changes.");
+        }
+
+        byte[] expected = Files.readAllBytes(baseline);
+        long difference = byteDifference(expected, screenshot);
+        writeVisualDiffReport(driver, baseline, difference, "compared");
+        Allure.addAttachment("Visual baseline comparison", "application/json",
+                Files.newInputStream(VISUAL_DIFF_DIR.resolve(stableVisualBaselineName(driver).replace(".png", ".json"))),
+                ".json");
+        assertThat(difference)
+                .as("Expected visual baseline difference for %s to be <= visual.diff.max.bytes",
+                        driver.getCurrentUrl())
+                .isLessThanOrEqualTo(ConfigReader.getInt("visual.diff.max.bytes"));
+    }
+
+    private void writeVisualDiffReport(WebDriver driver, Path baseline, long difference, String mode) throws IOException {
+        Files.createDirectories(VISUAL_DIFF_DIR);
+        Map<String, Object> report = new LinkedHashMap<>();
+        report.put("mode", mode);
+        report.put("url", driver.getCurrentUrl());
+        report.put("baseline", baseline.toString());
+        report.put("differenceBytes", difference);
+        report.put("maxDifferenceBytes", ConfigReader.getInt("visual.diff.max.bytes"));
+        report.put("timestamp", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        Files.writeString(
+                VISUAL_DIFF_DIR.resolve(stableVisualBaselineName(driver).replace(".png", ".json")),
+                toJson(report),
+                StandardCharsets.UTF_8
+        );
+    }
+
+    private long byteDifference(byte[] expected, byte[] actual) {
+        long difference = Math.abs(expected.length - actual.length);
+        int comparableLength = Math.min(expected.length, actual.length);
+        for (int index = 0; index < comparableLength; index++) {
+            if (expected[index] != actual[index]) {
+                difference++;
+            }
+        }
+        return difference;
+    }
+
+    private String stableVisualBaselineName(WebDriver driver) {
+        String path = driver.getCurrentUrl()
+                .replaceFirst("^https?://", "")
+                .replaceAll("[^a-zA-Z0-9._-]", "_");
+        return "baseline-" + path + ".png";
     }
 
     private String toJson(Map<String, Object> report) {

@@ -1,4 +1,4 @@
-.PHONY: smoke api ui-critical visual accessibility p0 p1 impact impact-select parallel quality tag-audit docker-smoke clean-reports
+.PHONY: smoke api ui-critical visual accessibility accessibility-strict visual-baseline p0 p1 impact impact-select parallel quality governance-check tag-audit docker-smoke clean-reports
 
 BROWSER ?= chrome
 THREAD_COUNT ?= 2
@@ -19,6 +19,12 @@ visual:
 accessibility:
 	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@accessibility"
 
+accessibility-strict:
+	mvn test -Paccessibility-strict -Dbrowser=$(BROWSER)
+
+visual-baseline:
+	mvn test -Pvisual-baseline -Dbrowser=$(BROWSER)
+
 p0:
 	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@p0"
 
@@ -36,6 +42,9 @@ parallel:
 
 quality:
 	mvn -Pquality -DskipTests verify
+
+governance-check:
+	bash scripts/governance-check.sh
 
 tag-audit:
 	TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh

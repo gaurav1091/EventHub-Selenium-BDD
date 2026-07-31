@@ -95,12 +95,14 @@ Generated stateful test data includes the run ID from `run.id` when provided, or
 
 ## CI Policy
 
-Push and pull request runs execute a fast matrix:
+Push runs execute a fast matrix:
 
 - Chrome smoke, serial.
 - Firefox smoke, serial.
 - Chrome API, parallel.
 - Chrome `@parallel-safe`, parallel with four threads.
+
+Pull requests run PR-diff-aware impact selection instead of the fixed push matrix. Changed files are mapped to `@impact-*` tags through `scripts/select-impact-tags.sh`, and the generated selection is published under `target/run-summary`.
 
 Nightly scheduled runs execute a broader matrix:
 
@@ -133,4 +135,16 @@ Axe accessibility scenarios are advisory by default. Enable threshold enforcemen
 
 ```bash
 mvn test -Dheadless=true -Dcucumber.filter.tags="@accessibility" -Daccessibility.threshold.enabled=true -Daccessibility.max.violations=0
+mvn -Paccessibility-strict test
 ```
+
+## Visual Baselines
+
+Visual sanity screenshots are always generated for `@visual` scenarios. Baseline comparison is optional and disabled by default:
+
+```bash
+mvn -Pvisual-baseline test
+mvn -Pvisual-baseline test -Dvisual.baseline.update=true
+```
+
+Comparison reports are written under `target/visual-diff`. Keep this advisory until the UI has stable, committed baselines.

@@ -50,7 +50,7 @@ Run observability and reliability controls:
 
 ```bash
 mvn test -Drun.id=local-001 -Dpreflight.enabled=true -Dcleanup.before.run=false
-mvn test -Dretry.count=1 -Dretry.tags="@retryable" -Dcucumber.filter.tags="@retryable"
+mvn test -Dretry.count=1 -Dretry.tags="@retryable" -Dretry.max.allowed=1 -Dcucumber.filter.tags="@retryable"
 bash scripts/assert-scenarios-executed.sh
 ```
 
@@ -72,6 +72,7 @@ Quality gates:
 
 ```bash
 mvn -Pquality -DskipTests verify
+bash scripts/governance-check.sh
 ```
 
 Dependency vulnerability scan:
@@ -111,7 +112,7 @@ The tag and suite strategy is documented in `docs/test-strategy.md`.
 Scenario coverage and governance conventions are documented in `docs/test-catalog.md`.
 CI usage and failure triage are documented in `docs/ci-runbook.md`.
 Developer contribution, debugging, and add-new-test guides live under `docs/`.
-GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix automatically. Scheduled runs execute a broader nightly regression matrix, while manual dispatch still lets you choose one browser, suite, parallel mode, and thread count.
+GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix on push. Pull requests run PR-diff-aware impact selection. Scheduled runs execute a broader nightly regression matrix, while manual dispatch lets you choose browser, suite, impact area, parallel mode, and thread count.
 
 ## Docker
 
@@ -151,6 +152,8 @@ Run visual or accessibility smoke:
 make visual
 make accessibility
 ACCESSIBILITY_THRESHOLD_ENABLED=true ACCESSIBILITY_MAX_VIOLATIONS=0 make accessibility
+make accessibility-strict
+make visual-baseline
 make impact AREA=auth
 make impact-select AREA=api
 ```
@@ -159,6 +162,8 @@ The container reads credentials and environment defaults from `.env` through Doc
 Run summaries are written to `target/run-summary/eventhub-run-summary.json`.
 Open `target/run-summary/report-index.html` after a run for one-page links to Extent, Cucumber, Allure results, Axe reports, visual sanity screenshots, governance files, and summaries.
 Impact-selected runs also write `target/run-summary/impact-selection.json`.
+Retry governance writes `target/run-summary/retry-governance.json`.
+Visual baseline comparison writes `target/visual-diff` when `visual.baseline.enabled=true`.
 
 ## Troubleshooting
 

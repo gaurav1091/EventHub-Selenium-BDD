@@ -8,7 +8,7 @@ on:
     - cron: "15 21 * * 0"
 
 jobs:
-  quality:
+  governance-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -17,10 +17,16 @@ jobs:
           distribution: temurin
           java-version: "17"
           cache: maven
-      - name: Run Maven quality gates
-        run: mvn -Pquality -DskipTests verify
-      - name: Run tag governance audit
-        run: TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh
+      - name: Run governance checks
+        run: bash scripts/governance-check.sh
+      - name: Upload governance artifacts
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: static-governance-artifacts
+          path: |
+            target/governance
+            target/run-summary
 
   dependency-scan:
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
