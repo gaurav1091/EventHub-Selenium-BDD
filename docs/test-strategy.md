@@ -147,4 +147,4 @@ mvn -Pvisual-baseline test
 mvn -Pvisual-baseline test -Dvisual.baseline.update=true
 ```
 
-Comparison reports are written under `target/visual-diff`. Keep this advisory until the UI has stable, committed baselines.
+PNG diff images and JSON comparison reports are written under `target/visual-diff`. Keep this advisory until the UI has stable, committed baselines. Use `-Dvisual.diff.max.pixels=<count>` to set the enforcement tolerance.

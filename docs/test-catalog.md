@@ -47,7 +47,7 @@ Every run writes `target/governance/scenario-governance.json` with scenario name
 | `target/run-summary/report-index.html` | One-page local index linking to major reports and artifacts. |
 | `target/axe-reports` | Axe accessibility advisory and threshold report data. |
 | `target/visual-sanity` | Visual sanity screenshots for key browser pages. |
-| `target/visual-diff` | Optional visual baseline comparison reports. |
+| `target/visual-diff` | Optional visual baseline PNG diff images and JSON comparison reports. |
 | `target/governance/scenario-governance.json` | Scenario tag governance and traceability report. |
 | `target/governance/test-catalog.md` | Generated scenario-by-scenario catalog with tags and source locations. |
 | `target/governance/test-catalog-summary.md` | Generated human summary of coverage by impact and priority. |

@@ -105,7 +105,7 @@ mvn -Psecurity org.owasp:dependency-check-maven:check
 - For accessibility smoke, inspect `target/axe-reports` or the Allure Axe advisory attachment. Axe findings are advisory and do not fail CI by default.
 - For thresholded accessibility runs, set `accessibility.threshold.enabled=true` and inspect `target/axe-reports` on failure.
 - For visual sanity, inspect `target/visual-sanity` and the Allure screenshot attachment.
-- For visual baseline comparison, inspect `target/visual-diff`; use `-Dvisual.baseline.update=true` only for intentional UI changes.
+- For visual baseline comparison, inspect PNG diff images and JSON reports in `target/visual-diff`; use `-Dvisual.baseline.update=true` only for intentional UI changes.
 - For parallel-only failures, rerun `@parallel-safe` with the same thread count before changing code.
 - If a selected run fails before Maven with a stateful-suite/parallel message, rerun with `parallel=false`; this prevents green zero-scenario runs.
 - If CI reran automatically, inspect `target/run-logs` to confirm it was an infrastructure retry and not a test retry.

@@ -22,6 +22,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -251,35 +253,40 @@ public class UxSmokeSteps {
         if (ConfigReader.getBoolean("visual.baseline.update")) {
             Files.createDirectories(baselineDir);
             Files.write(baseline, screenshot);
-            writeVisualDiffReport(driver, baseline, 0, "baseline-updated");
+            writeVisualDiffReport(driver, baseline, 0, null, "baseline-updated");
             return;
         }
         if (!Files.exists(baseline)) {
-            writeVisualDiffReport(driver, baseline, Long.MAX_VALUE, "missing-baseline");
+            writeVisualDiffReport(driver, baseline, Long.MAX_VALUE, null, "missing-baseline");
             throw new AssertionError("Missing visual baseline: " + baseline
                     + ". Run with -Dvisual.baseline.update=true after intentional UI changes.");
         }
 
         byte[] expected = Files.readAllBytes(baseline);
-        long difference = byteDifference(expected, screenshot);
-        writeVisualDiffReport(driver, baseline, difference, "compared");
+        VisualDiff visualDiff = writeVisualDiffImage(driver, expected, screenshot);
+        writeVisualDiffReport(driver, baseline, visualDiff.differentPixels(), visualDiff.diffImage(), "compared");
         Allure.addAttachment("Visual baseline comparison", "application/json",
                 Files.newInputStream(VISUAL_DIFF_DIR.resolve(stableVisualBaselineName(driver).replace(".png", ".json"))),
                 ".json");
-        assertThat(difference)
-                .as("Expected visual baseline difference for %s to be <= visual.diff.max.bytes",
+        Allure.addAttachment("Visual baseline diff image", "image/png",
+                Files.newInputStream(visualDiff.diffImage()),
+                ".png");
+        assertThat(visualDiff.differentPixels())
+                .as("Expected visual baseline difference for %s to be <= visual.diff.max.pixels",
                         driver.getCurrentUrl())
-                .isLessThanOrEqualTo(ConfigReader.getInt("visual.diff.max.bytes"));
+                .isLessThanOrEqualTo(ConfigReader.getInt("visual.diff.max.pixels"));
     }
 
-    private void writeVisualDiffReport(WebDriver driver, Path baseline, long difference, String mode) throws IOException {
+    private void writeVisualDiffReport(WebDriver driver, Path baseline, long difference, Path diffImage, String mode)
+            throws IOException {
         Files.createDirectories(VISUAL_DIFF_DIR);
         Map<String, Object> report = new LinkedHashMap<>();
         report.put("mode", mode);
         report.put("url", driver.getCurrentUrl());
         report.put("baseline", baseline.toString());
-        report.put("differenceBytes", difference);
-        report.put("maxDifferenceBytes", ConfigReader.getInt("visual.diff.max.bytes"));
+        report.put("diffImage", diffImage == null ? "" : diffImage.toString());
+        report.put("differentPixels", difference);
+        report.put("maxDifferentPixels", ConfigReader.getInt("visual.diff.max.pixels"));
         report.put("timestamp", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         Files.writeString(
                 VISUAL_DIFF_DIR.resolve(stableVisualBaselineName(driver).replace(".png", ".json")),
@@ -288,15 +295,38 @@ public class UxSmokeSteps {
         );
     }
 
-    private long byteDifference(byte[] expected, byte[] actual) {
-        long difference = Math.abs(expected.length - actual.length);
-        int comparableLength = Math.min(expected.length, actual.length);
-        for (int index = 0; index < comparableLength; index++) {
-            if (expected[index] != actual[index]) {
-                difference++;
+    private VisualDiff writeVisualDiffImage(WebDriver driver, byte[] expectedBytes, byte[] actualBytes) throws IOException {
+        BufferedImage expected = ImageIO.read(new ByteArrayInputStream(expectedBytes));
+        BufferedImage actual = ImageIO.read(new ByteArrayInputStream(actualBytes));
+        if (expected == null || actual == null) {
+            throw new AssertionError("Unable to read visual baseline or actual screenshot as PNG.");
+        }
+
+        int width = Math.max(expected.getWidth(), actual.getWidth());
+        int height = Math.max(expected.getHeight(), actual.getHeight());
+        BufferedImage diff = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        long difference = 0;
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                boolean inExpected = x < expected.getWidth() && y < expected.getHeight();
+                boolean inActual = x < actual.getWidth() && y < actual.getHeight();
+                if (!inExpected || !inActual || expected.getRGB(x, y) != actual.getRGB(x, y)) {
+                    difference++;
+                    diff.setRGB(x, y, 0xB0FF0000);
+                } else {
+                    diff.setRGB(x, y, 0x22000000);
+                }
             }
         }
-        return difference;
+
+        Files.createDirectories(VISUAL_DIFF_DIR);
+        Path diffImage = VISUAL_DIFF_DIR.resolve(stableVisualBaselineName(driver).replace("baseline-", "diff-"));
+        ImageIO.write(diff, "png", diffImage.toFile());
+        return new VisualDiff(diffImage, difference);
+    }
+
+    private record VisualDiff(Path diffImage, long differentPixels) {
     }
 
     private String stableVisualBaselineName(WebDriver driver) {

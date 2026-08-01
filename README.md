@@ -163,7 +163,7 @@ Run summaries are written to `target/run-summary/eventhub-run-summary.json`.
 Open `target/run-summary/report-index.html` after a run for one-page links to Extent, Cucumber, Allure results, Axe reports, visual sanity screenshots, governance files, and summaries.
 Impact-selected runs also write `target/run-summary/impact-selection.json`.
 Retry governance writes `target/run-summary/retry-governance.json`.
-Visual baseline comparison writes `target/visual-diff` when `visual.baseline.enabled=true`.
+Visual baseline comparison writes PNG diff images and JSON summaries under `target/visual-diff` when `visual.baseline.enabled=true`.
 
 ## Troubleshooting
 

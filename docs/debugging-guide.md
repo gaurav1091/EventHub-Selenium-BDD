@@ -27,7 +27,7 @@ make parallel BROWSER=chrome THREAD_COUNT=2
 | `target/governance/tag-audit.json` | Scenario tag compliance from the audit script. |
 | `target/governance/test-catalog.md` | Generated scenario-level traceability catalog. |
 | `target/governance/test-catalog-summary.md` | Generated coverage summary by priority and impact. |
-| `target/visual-diff` | Optional visual baseline comparison reports. |
+| `target/visual-diff` | Optional visual baseline PNG diff images and JSON comparison reports. |
 | `screenshots` | Failure screenshots for the latest run only. |
 
 ## Triage Patterns
@@ -38,4 +38,4 @@ make parallel BROWSER=chrome THREAD_COUNT=2
 - API contract failure: compare response body with `src/test/resources/schemas`.
 - CI infrastructure failure: check `target/run-logs` for Maven transfer or browser startup errors.
 - Retry governance failure: inspect `target/run-summary/retry-governance.json` and remove retries from deterministic failures.
-- Visual baseline failure: inspect `target/visual-diff`; refresh baselines only after intentional UI changes.
+- Visual baseline failure: inspect PNG diff images and JSON reports in `target/visual-diff`; refresh baselines only after intentional UI changes.
