@@ -558,10 +558,12 @@ jobs:
         shell: bash
         run: |
           PAGE_URL="${{ steps.deploy-pages.outputs.page_url }}"
+          RUN_REPORT_URL="${PAGE_URL}runs/${{ github.run_id }}-attempt-${{ github.run_attempt }}/"
           {
             echo "### EventHub GitHub Pages Report"
             echo
-            echo "- Report dashboard: [${PAGE_URL}](${PAGE_URL})"
+            echo "- This workflow run: [${RUN_REPORT_URL}](${RUN_REPORT_URL})"
+            echo "- All reports dashboard: [${PAGE_URL}](${PAGE_URL})"
             echo "- Latest dashboard: [${PAGE_URL}latest/](${PAGE_URL}latest/)"
             echo
           } >> "$GITHUB_STEP_SUMMARY"
