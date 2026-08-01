@@ -57,7 +57,10 @@ public final class ReportIndex {
                 .append("</p><ul>")
                 .append("<li>Run ID: <code>").append(RunContext.id()).append("</code></li>")
                 .append("<li>Environment: <code>").append(ConfigReader.getRequired("environment")).append("</code></li>")
+                .append("<li>Suite: <code>").append(ConfigReader.getRequired("suite.name")).append("</code></li>")
                 .append("<li>Browser: <code>").append(ConfigReader.getRequired("browser")).append("</code></li>")
+                .append("<li>Parallel: <code>").append(ConfigReader.getRequired("parallel")).append("</code></li>")
+                .append("<li>Threads: <code>").append(ConfigReader.getRequired("thread.count")).append("</code></li>")
                 .append("<li>Tags: <code>").append(escape(ConfigReader.getRequired("cucumber.filter.tags"))).append("</code></li>")
                 .append("</ul><table><thead><tr><th>Artifact</th><th>Link</th></tr></thead><tbody>");
         links.forEach((name, href) -> builder.append("<tr><td>")

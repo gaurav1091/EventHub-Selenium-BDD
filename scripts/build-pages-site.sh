@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SITE_ROOT="${SITE_ROOT:-target/pages-site}"
+CURRENT_RUN_KEY="${GITHUB_RUN_ID:-local}-attempt-${GITHUB_RUN_ATTEMPT:-1}"
+
+mkdir -p "${SITE_ROOT}"
+
+ruby -rjson -rcgi -e '
+site = ARGV.fetch(0)
+current_run = ARGV.fetch(1)
+metadata_files = Dir.glob(File.join(site, "runs", "*", "*", "metadata.json")).sort
+entries = metadata_files.map do |file|
+  data = JSON.parse(File.read(file))
+  data["relativeIndex"] = File.join(File.dirname(file).delete_prefix(site + "/"), "index.html")
+  data
+end
+current_entries = entries.select { |entry| entry["runKey"] == current_run }
+latest_path = File.join(site, "latest")
+Dir.mkdir(latest_path) unless Dir.exist?(latest_path)
+
+def row(entry)
+  link = "<a href=\"#{CGI.escapeHTML(entry["relativeIndex"])}\">Open report</a>"
+  cells = [
+    entry["browser"],
+    entry["suite"],
+    entry["parallel"],
+    entry["threads"],
+    entry["testCount"],
+    entry["jobName"],
+    entry["runKey"],
+    entry["generatedAtUtc"]
+  ]
+  "<tr><td>#{link}</td>" + cells.map { |cell| "<td>#{CGI.escapeHTML(cell.to_s)}</td>" }.join + "</tr>"
+end
+
+rows = entries.reverse.map { |entry| row(entry) }.join("\n")
+current_rows = current_entries.map { |entry| row(entry) }.join("\n")
+current_rows = "<tr><td colspan=\"9\">No current run report bundles were found.</td></tr>" if current_rows.empty?
+rows = "<tr><td colspan=\"9\">No report bundles were found.</td></tr>" if rows.empty?
+style = "body{font-family:Arial,sans-serif;margin:32px;color:#17202a;line-height:1.5;background:#f8fafc}main{max-width:1200px;margin:0 auto;background:#fff;border:1px solid #d7dee8;border-radius:8px;padding:28px}table{border-collapse:collapse;width:100%;margin-top:12px}th,td{border:1px solid #d9e2ec;padding:10px;text-align:left}th{background:#f1f5f9}a{color:#0f5ea8}"
+headers = "<tr><th>Report</th><th>Browser</th><th>Suite</th><th>Parallel</th><th>Threads</th><th>Tests</th><th>Job</th><th>Run</th><th>Generated UTC</th></tr>"
+index = <<~HTML
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EventHub Selenium BDD Reports</title>
+    <style>#{style}</style>
+  </head>
+  <body>
+    <main>
+      <h1>EventHub Selenium BDD Reports</h1>
+      <p>Unique report links are grouped by GitHub run id, run attempt, browser, suite, parallel mode, and thread count.</p>
+      <h2>This Workflow Run</h2>
+      <table><thead>#{headers}</thead><tbody>#{current_rows}</tbody></table>
+      <h2>Available Runs</h2>
+      <table><thead>#{headers}</thead><tbody>#{rows}</tbody></table>
+    </main>
+  </body>
+</html>
+HTML
+File.write(File.join(site, "index.html"), index)
+File.write(File.join(latest_path, "index.html"), index)
+
+summary = ["### EventHub Published Report Links", ""]
+current_entries.each do |entry|
+  summary << "- [#{entry["browser"]} / #{entry["suite"]} / parallel=#{entry["parallel"]} / threads=#{entry["threads"]} / tests=#{entry["testCount"]}](#{entry["relativeIndex"]})"
+end
+summary << "- No current run report bundles were found." if current_entries.empty?
+File.write(File.join(site, "pages-summary.md"), summary.join("\n") + "\n")
+' "${SITE_ROOT}" "${CURRENT_RUN_KEY}"
+
+echo "Pages site prepared at ${SITE_ROOT}"

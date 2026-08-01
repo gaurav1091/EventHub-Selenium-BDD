@@ -36,6 +36,35 @@ CI test jobs run Maven through `scripts/run-maven-with-infra-retry.sh`, which re
 CI test jobs run `scripts/assert-scenarios-executed.sh` after Maven so a bad tag expression cannot pass with zero scenarios.
 GitHub Actions publishes `target/run-summary/github-step-summary.md` into the workflow step summary when it exists.
 
+## GitHub Pages Reports
+
+The test workflow publishes a static report dashboard through GitHub Pages after trusted CI runs. Each test leg first
+packages its own reports under:
+
+```text
+target/pages-report/runs/<github-run-id>-attempt-<attempt>/<job-browser-suite-parallel-threads>/
+```
+
+The final `publish-pages` job restores the previous published site from the Actions cache, merges the current run's
+report bundles, writes a dashboard index, and deploys the site with GitHub Pages. The workflow summary then includes:
+
+- The overall Pages dashboard link.
+- The latest dashboard link.
+- One unique report link per job/browser/suite combination.
+
+Each job page includes browser, suite name, parallel mode, thread count, test count, tag expression, run id, run attempt,
+branch, commit SHA, and links to Extent, Cucumber, Allure, Axe, visual, governance, Surefire, log, and screenshot
+artifacts when those files exist.
+
+Pages setup required in GitHub:
+
+- Repository `Settings` -> `Pages` -> `Build and deployment` -> `Source` must be `GitHub Actions`.
+- No branch/folder source is required.
+- If the `github-pages` environment has protection rules, approve the first deployment or adjust those rules.
+
+Pull requests from forks do not deploy Pages for security reasons; they still upload normal report artifacts. Pull
+requests from the same repository can publish the run dashboard.
+
 ## Manual Dispatch
 
 Use manual dispatch when you want one targeted run.

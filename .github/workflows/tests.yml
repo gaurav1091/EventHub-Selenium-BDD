@@ -81,6 +81,16 @@ on:
           - "4"
           - "5"
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: eventhub-selenium-bdd-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   impact-tests:
     if: github.event_name == 'pull_request'
@@ -100,15 +110,31 @@ jobs:
         run: |
           git fetch origin "${{ github.base_ref }}" --depth=1
           TAG_EXPRESSION="$(bash scripts/select-impact-tags.sh --base "origin/${{ github.base_ref }}" --head HEAD)"
+          BROWSER="chrome"
+          SUITE="pr-impact"
+          PARALLEL="false"
+          THREAD_COUNT="1"
 
-          MVN_ARGS=(-Dheadless=true -Dbrowser=chrome)
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE")
 
           if [[ "$TAG_EXPRESSION" == *"@impact-integration"* ]]; then
             MVN_ARGS+=(-Dparallel=none "-Dcucumber.filter.tags=$TAG_EXPRESSION")
           else
+            PARALLEL="true"
+            THREAD_COUNT="2"
             MVN_ARGS+=(-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=2)
-            MVN_ARGS+=("-Dcucumber.filter.tags=($TAG_EXPRESSION) and not @stateful")
+            TAG_EXPRESSION="($TAG_EXPRESSION) and not @stateful"
+            MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
           fi
+
+          {
+            echo "REPORT_BROWSER=$BROWSER"
+            echo "REPORT_SUITE=$SUITE"
+            echo "REPORT_PARALLEL=$PARALLEL"
+            echo "REPORT_THREAD_COUNT=$THREAD_COUNT"
+            echo "REPORT_JOB_NAME=pr-impact"
+            echo "REPORT_TAG_EXPRESSION=$TAG_EXPRESSION"
+          } >> "$GITHUB_ENV"
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
           bash scripts/assert-scenarios-executed.sh
@@ -122,6 +148,10 @@ jobs:
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Build Pages report bundle
+        if: always()
+        shell: bash
+        run: bash scripts/build-pages-report.sh
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -139,6 +169,12 @@ jobs:
             target/run-logs
             target/surefire-reports
             screenshots
+      - name: Upload Pages report bundle
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: pages-report-pr-impact
+          path: target/pages-report
 
   matrix-tests:
     if: github.event_name == 'push'
@@ -196,7 +232,7 @@ jobs:
             exit 1
           fi
 
-          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE")
 
           if [[ "$PARALLEL" == "true" ]]; then
             if [[ -z "$TAG_EXPRESSION" ]]; then
@@ -213,6 +249,15 @@ jobs:
             MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
           fi
 
+          {
+            echo "REPORT_BROWSER=$BROWSER"
+            echo "REPORT_SUITE=$SUITE"
+            echo "REPORT_PARALLEL=$PARALLEL"
+            echo "REPORT_THREAD_COUNT=$THREAD_COUNT"
+            echo "REPORT_JOB_NAME=matrix-$BROWSER-$SUITE"
+            echo "REPORT_TAG_EXPRESSION=$TAG_EXPRESSION"
+          } >> "$GITHUB_ENV"
+
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
           bash scripts/assert-scenarios-executed.sh
       - name: Publish run summary
@@ -225,6 +270,10 @@ jobs:
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Build Pages report bundle
+        if: always()
+        shell: bash
+        run: bash scripts/build-pages-report.sh
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -242,6 +291,12 @@ jobs:
             target/run-logs
             target/surefire-reports
             screenshots
+      - name: Upload Pages report bundle
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: pages-report-matrix-${{ matrix.browser }}-${{ matrix.suite }}-parallel-${{ matrix.parallel }}-threads-${{ matrix['thread-count'] }}
+          path: target/pages-report
 
   nightly-regression:
     if: github.event_name == 'schedule'
@@ -281,7 +336,16 @@ jobs:
       - name: Run nightly regression
         shell: bash
         run: |
-          MVN_ARGS=(-Dheadless=true -Dbrowser="${{ matrix.browser }}" "-Dcucumber.filter.tags=${{ matrix['tag-expression'] }}")
+          {
+            echo "REPORT_BROWSER=${{ matrix.browser }}"
+            echo "REPORT_SUITE=${{ matrix.suite }}"
+            echo "REPORT_PARALLEL=${{ matrix.parallel }}"
+            echo "REPORT_THREAD_COUNT=${{ matrix['thread-count'] }}"
+            echo "REPORT_JOB_NAME=nightly-${{ matrix.browser }}-${{ matrix.suite }}"
+            echo "REPORT_TAG_EXPRESSION=${{ matrix['tag-expression'] }}"
+          } >> "$GITHUB_ENV"
+
+          MVN_ARGS=(-Dheadless=true -Dbrowser="${{ matrix.browser }}" -Dsuite.name="${{ matrix.suite }}" "-Dcucumber.filter.tags=${{ matrix['tag-expression'] }}")
 
           if [[ "${{ matrix.parallel }}" == "true" ]]; then
             MVN_ARGS+=(-Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count="${{ matrix['thread-count'] }}")
@@ -301,6 +365,10 @@ jobs:
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Build Pages report bundle
+        if: always()
+        shell: bash
+        run: bash scripts/build-pages-report.sh
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -318,6 +386,12 @@ jobs:
             target/run-logs
             target/surefire-reports
             screenshots
+      - name: Upload Pages report bundle
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: pages-report-nightly-${{ matrix.browser }}-${{ matrix.suite }}-parallel-${{ matrix.parallel }}-threads-${{ matrix['thread-count'] }}
+          path: target/pages-report
 
   selected-tests:
     if: github.event_name == 'workflow_dispatch'
@@ -360,7 +434,7 @@ jobs:
             exit 1
           fi
 
-          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER")
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE")
 
           if [[ "$PARALLEL" == "true" ]]; then
             if [[ -z "$TAG_EXPRESSION" ]]; then
@@ -377,6 +451,15 @@ jobs:
             MVN_ARGS+=("-Dcucumber.filter.tags=$TAG_EXPRESSION")
           fi
 
+          {
+            echo "REPORT_BROWSER=$BROWSER"
+            echo "REPORT_SUITE=$SUITE"
+            echo "REPORT_PARALLEL=$PARALLEL"
+            echo "REPORT_THREAD_COUNT=$THREAD_COUNT"
+            echo "REPORT_JOB_NAME=selected-$BROWSER-$SUITE"
+            echo "REPORT_TAG_EXPRESSION=$TAG_EXPRESSION"
+          } >> "$GITHUB_ENV"
+
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
           bash scripts/assert-scenarios-executed.sh
       - name: Publish run summary
@@ -389,6 +472,10 @@ jobs:
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Build Pages report bundle
+        if: always()
+        shell: bash
+        run: bash scripts/build-pages-report.sh
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
@@ -406,3 +493,83 @@ jobs:
             target/run-logs
             target/surefire-reports
             screenshots
+      - name: Upload Pages report bundle
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: pages-report-selected-${{ github.event.inputs.browser }}-${{ github.event.inputs.suite }}-parallel-${{ github.event.inputs.parallel }}-threads-${{ github.event.inputs['thread-count'] }}
+          path: target/pages-report
+
+  publish-pages:
+    if: ${{ always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    needs:
+      - impact-tests
+      - matrix-tests
+      - nightly-regression
+      - selected-tests
+    runs-on: ubuntu-latest
+    name: publish / github-pages report
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      actions: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Restore published report site
+        uses: actions/cache/restore@v4
+        with:
+          path: target/pages-site
+          key: eventhub-selenium-pages-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            eventhub-selenium-pages-
+
+      - name: Download Pages report bundles
+        uses: actions/download-artifact@v5
+        with:
+          pattern: pages-report-*
+          path: target/pages-site
+          merge-multiple: true
+
+      - name: Build Pages site index
+        shell: bash
+        run: bash scripts/build-pages-site.sh
+
+      - name: Save published report site
+        uses: actions/cache/save@v4
+        with:
+          path: target/pages-site
+          key: eventhub-selenium-pages-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload report site for GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: target/pages-site
+
+      - name: Deploy report site to GitHub Pages
+        id: deploy-pages
+        uses: actions/deploy-pages@v4
+
+      - name: Add report links to workflow summary
+        if: always()
+        shell: bash
+        run: |
+          PAGE_URL="${{ steps.deploy-pages.outputs.page_url }}"
+          {
+            echo "### EventHub GitHub Pages Report"
+            echo
+            echo "- Report dashboard: [${PAGE_URL}](${PAGE_URL})"
+            echo "- Latest dashboard: [${PAGE_URL}latest/](${PAGE_URL}latest/)"
+            echo
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [[ -f target/pages-site/pages-summary.md ]]; then
+            sed "s#](runs/#](${PAGE_URL}runs/#g" target/pages-site/pages-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi

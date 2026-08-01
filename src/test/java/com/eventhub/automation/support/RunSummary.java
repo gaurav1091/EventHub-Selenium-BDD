@@ -53,6 +53,7 @@ public final class RunSummary {
         summary.put("runId", RunContext.id());
         summary.put("timestamp", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         summary.put("environment", ConfigReader.getRequired("environment"));
+        summary.put("suiteName", ConfigReader.getRequired("suite.name"));
         summary.put("browser", ConfigReader.getRequired("browser"));
         summary.put("headless", ConfigReader.getRequired("headless"));
         summary.put("parallel", ConfigReader.getRequired("parallel"));
@@ -60,6 +61,7 @@ public final class RunSummary {
         summary.put("tags", ConfigReader.getRequired("cucumber.filter.tags"));
         summary.put("passedScenarios", PASSED.get());
         summary.put("failedScenarios", FAILED.get());
+        summary.put("totalScenarios", PASSED.get() + FAILED.get());
         summary.put("retriedScenarios", RETRIED.get());
         summary.put("maxAllowedRetries", ConfigReader.getInt("retry.max.allowed"));
         summary.put("retryThresholdPassed", RETRIED.get() <= ConfigReader.getInt("retry.max.allowed"));
@@ -101,8 +103,12 @@ public final class RunSummary {
                 + System.lineSeparator()
                 + "- Run ID: `" + summary.get("runId") + "`" + System.lineSeparator()
                 + "- Environment: `" + summary.get("environment") + "`" + System.lineSeparator()
+                + "- Suite: `" + summary.get("suiteName") + "`" + System.lineSeparator()
                 + "- Browser: `" + summary.get("browser") + "`" + System.lineSeparator()
+                + "- Parallel: `" + summary.get("parallel") + "`" + System.lineSeparator()
+                + "- Threads: `" + summary.get("threadCount") + "`" + System.lineSeparator()
                 + "- Tags: `" + summary.get("tags") + "`" + System.lineSeparator()
+                + "- Total scenarios: `" + summary.get("totalScenarios") + "`" + System.lineSeparator()
                 + "- Passed scenarios: `" + summary.get("passedScenarios") + "`" + System.lineSeparator()
                 + "- Failed scenarios: `" + summary.get("failedScenarios") + "`" + System.lineSeparator()
                 + "- Retried scenarios: `" + summary.get("retriedScenarios") + "`" + System.lineSeparator()

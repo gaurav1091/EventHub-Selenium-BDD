@@ -37,6 +37,7 @@
         <browser>chrome</browser>
         <headless>false</headless>
         <environment>qa</environment>
+        <suite.name>local</suite.name>
         <parallel>none</parallel>
         <thread.count>2</thread.count>
         <retry.count>0</retry.count>
@@ -229,6 +230,7 @@
                         <browser>${browser}</browser>
                         <headless>${headless}</headless>
                         <environment>${environment}</environment>
+                        <suite.name>${suite.name}</suite.name>
                         <parallel>${parallel}</parallel>
                         <thread.count>${thread.count}</thread.count>
                         <retry.count>${retry.count}</retry.count>
