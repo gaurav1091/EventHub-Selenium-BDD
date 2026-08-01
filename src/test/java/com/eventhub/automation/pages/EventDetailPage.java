@@ -5,6 +5,7 @@ import com.eventhub.automation.utils.Waits;
 import org.openqa.selenium.By;
 
 import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
+import static com.eventhub.automation.utils.UiAssertions.assertPageContainsAnyOf;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class EventDetailPage extends BasePage {
@@ -104,7 +105,7 @@ public class EventDetailPage extends BasePage {
         assertPageContains(driver(), eventTitle);
         assertPageContains(driver(), booking.customerName());
         assertPageContains(driver(), String.valueOf(booking.quantity()));
-        assertPageContains(driver(), "$" + expectedTotal);
+        assertPageContainsAnyOf(driver(), "$" + expectedTotal, "$" + String.format("%,d", expectedTotal));
     }
 
     public void assertBookingPanelVisible() {
