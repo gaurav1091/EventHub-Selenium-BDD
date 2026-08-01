@@ -88,7 +88,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: eventhub-selenium-bdd-${{ github.workflow }}-${{ github.ref }}
+  group: eventhub-selenium-bdd-pages
   cancel-in-progress: false
 
 jobs:
@@ -510,7 +510,7 @@ jobs:
     runs-on: ubuntu-latest
     name: publish / github-pages report
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
       actions: read
@@ -520,13 +520,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Restore published report site
-        uses: actions/cache/restore@v4
-        with:
-          path: target/pages-site
-          key: eventhub-selenium-pages-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: |
-            eventhub-selenium-pages-
+      - name: Restore persistent report history
+        shell: bash
+        run: bash scripts/restore-pages-history.sh
 
       - name: Download Pages report bundles
         uses: actions/download-artifact@v5
@@ -539,11 +535,11 @@ jobs:
         shell: bash
         run: bash scripts/build-pages-site.sh
 
-      - name: Save published report site
-        uses: actions/cache/save@v4
-        with:
-          path: target/pages-site
-          key: eventhub-selenium-pages-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Persist report history
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/persist-pages-history.sh
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

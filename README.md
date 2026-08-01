@@ -117,7 +117,8 @@ GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix on push. Pul
 CI publishes a GitHub Pages report dashboard for every trusted workflow run. Each job gets a unique URL under
 `runs/<github-run-id>-attempt-<attempt>/<browser-suite-parallel-threads>/` and the page includes browser, suite,
 parallel mode, thread count, tag expression, and executed scenario count. The workflow summary prints the dashboard
-link after the Pages deployment completes.
+link after the Pages deployment completes. Historical report folders are persisted on the
+`eventhub-report-history` branch so older workflow report links remain available after later CI runs.
 
 ## Docker
 
@@ -169,7 +170,8 @@ Open `target/run-summary/report-index.html` after a run for one-page links to Ex
 Impact-selected runs also write `target/run-summary/impact-selection.json`.
 Retry governance writes `target/run-summary/retry-governance.json`.
 Visual baseline comparison writes PNG diff images and JSON summaries under `target/visual-diff` when `visual.baseline.enabled=true`.
-GitHub Pages publication is assembled by `scripts/build-pages-report.sh` and `scripts/build-pages-site.sh`.
+GitHub Pages publication is assembled by `scripts/build-pages-report.sh`, `scripts/build-pages-site.sh`,
+`scripts/restore-pages-history.sh`, and `scripts/persist-pages-history.sh`.
 
 ## Troubleshooting
 

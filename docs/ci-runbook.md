@@ -45,8 +45,9 @@ packages its own reports under:
 target/pages-report/runs/<github-run-id>-attempt-<attempt>/<job-browser-suite-parallel-threads>/
 ```
 
-The final `publish-pages` job restores the previous published site from the Actions cache, merges the current run's
-report bundles, writes a dashboard index, and deploys the site with GitHub Pages. The workflow summary then includes:
+The final `publish-pages` job restores the accumulated published site from the `eventhub-report-history` branch,
+merges the current run's report bundles, writes a dashboard index, persists the updated site back to that branch, and
+deploys the site with GitHub Pages. The workflow summary then includes:
 
 - The overall Pages dashboard link.
 - The latest dashboard link.
@@ -60,10 +61,14 @@ Pages setup required in GitHub:
 
 - Repository `Settings` -> `Pages` -> `Build and deployment` -> `Source` must be `GitHub Actions`.
 - No branch/folder source is required.
+- The workflow needs repository contents write permission so it can maintain the `eventhub-report-history` branch.
 - If the `github-pages` environment has protection rules, approve the first deployment or adjust those rules.
 
 Pull requests from forks do not deploy Pages for security reasons; they still upload normal report artifacts. Pull
 requests from the same repository can publish the run dashboard.
+
+The `eventhub-report-history` branch is intentionally used only as durable report storage. Do not set Pages to deploy
+from that branch; keep Pages source as GitHub Actions.
 
 ## Manual Dispatch
 
