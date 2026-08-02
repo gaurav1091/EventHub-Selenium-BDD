@@ -109,6 +109,23 @@ current_entries.each do |entry|
 end
 summary << "- No current run report bundles were found." if current_entries.empty?
 File.write(File.join(site, "pages-summary.md"), summary.join("\n") + "\n")
+
+manifest = {
+  "currentRun" => current_run,
+  "currentRunPath" => "runs/#{current_run}/",
+  "reports" => current_entries.map do |entry|
+    {
+      "browser" => entry["browser"],
+      "suite" => entry["suite"],
+      "parallel" => entry["parallel"],
+      "threads" => entry["threads"],
+      "testCount" => entry["testCount"],
+      "jobName" => entry["jobName"],
+      "path" => entry["relativeIndex"]
+    }
+  end
+}
+File.write(File.join(site, "pages-summary.json"), JSON.pretty_generate(manifest))
 ' "${SITE_ROOT}" "${CURRENT_RUN_KEY}"
 
 echo "Pages site prepared at ${SITE_ROOT}"

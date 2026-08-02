@@ -516,7 +516,7 @@ jobs:
       actions: read
     environment:
       name: github-pages
-      url: ${{ steps.deploy-pages.outputs.page_url }}
+      url: ${{ steps.report-url.outputs.url }}
     steps:
       - uses: actions/checkout@v5
 
@@ -553,12 +553,18 @@ jobs:
         id: deploy-pages
         uses: actions/deploy-pages@v4
 
+      - name: Set run-specific report URL
+        id: report-url
+        shell: bash
+        run: |
+          echo "url=${{ steps.deploy-pages.outputs.page_url }}runs/${{ github.run_id }}-attempt-${{ github.run_attempt }}/" >> "$GITHUB_OUTPUT"
+
       - name: Add report links to workflow summary
         if: always()
         shell: bash
         run: |
           PAGE_URL="${{ steps.deploy-pages.outputs.page_url }}"
-          RUN_REPORT_URL="${PAGE_URL}runs/${{ github.run_id }}-attempt-${{ github.run_attempt }}/"
+          RUN_REPORT_URL="${{ steps.report-url.outputs.url }}"
           {
             echo "### EventHub GitHub Pages Report"
             echo
