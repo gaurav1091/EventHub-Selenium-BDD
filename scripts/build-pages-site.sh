@@ -19,8 +19,8 @@ current_entries = entries.select { |entry| entry["runKey"] == current_run }
 latest_path = File.join(site, "latest")
 Dir.mkdir(latest_path) unless Dir.exist?(latest_path)
 
-def row(entry)
-  link = "<a href=\"#{CGI.escapeHTML(entry["relativeIndex"])}\">Open report</a>"
+def row(entry, href)
+  link = "<a href=\"#{CGI.escapeHTML(href)}\">Open report</a>"
   cells = [
     entry["browser"],
     entry["suite"],
@@ -34,10 +34,14 @@ def row(entry)
   "<tr><td>#{link}</td>" + cells.map { |cell| "<td>#{CGI.escapeHTML(cell.to_s)}</td>" }.join + "</tr>"
 end
 
-rows = entries.reverse.map { |entry| row(entry) }.join("\n")
-current_rows = current_entries.map { |entry| row(entry) }.join("\n")
+rows = entries.reverse.map { |entry| row(entry, entry["relativeIndex"]) }.join("\n")
+latest_rows = entries.reverse.map { |entry| row(entry, "../#{entry["relativeIndex"]}") }.join("\n")
+current_rows = current_entries.map { |entry| row(entry, entry["relativeIndex"]) }.join("\n")
+latest_current_rows = current_entries.map { |entry| row(entry, "../#{entry["relativeIndex"]}") }.join("\n")
 current_rows = "<tr><td colspan=\"9\">No current run report bundles were found.</td></tr>" if current_rows.empty?
+latest_current_rows = "<tr><td colspan=\"9\">No current run report bundles were found.</td></tr>" if latest_current_rows.empty?
 rows = "<tr><td colspan=\"9\">No report bundles were found.</td></tr>" if rows.empty?
+latest_rows = "<tr><td colspan=\"9\">No report bundles were found.</td></tr>" if latest_rows.empty?
 style = "body{font-family:Arial,sans-serif;margin:32px;color:#17202a;line-height:1.5;background:#f8fafc}main{max-width:1200px;margin:0 auto;background:#fff;border:1px solid #d7dee8;border-radius:8px;padding:28px}table{border-collapse:collapse;width:100%;margin-top:12px}th,td{border:1px solid #d9e2ec;padding:10px;text-align:left}th{background:#f1f5f9}a{color:#0f5ea8}"
 headers = "<tr><th>Report</th><th>Browser</th><th>Suite</th><th>Parallel</th><th>Threads</th><th>Tests</th><th>Job</th><th>Run</th><th>Generated UTC</th></tr>"
 
@@ -62,19 +66,20 @@ def page(title, intro, headers, rows, style)
   HTML
 end
 
-index = <<~HTML
+def dashboard(title, intro, headers, current_rows, rows, style)
+  <<~HTML
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EventHub Selenium BDD Reports</title>
+    <title>#{CGI.escapeHTML(title)}</title>
     <style>#{style}</style>
   </head>
   <body>
     <main>
-      <h1>EventHub Selenium BDD Reports</h1>
-      <p>Unique report links are grouped by GitHub run id, run attempt, browser, suite, parallel mode, and thread count.</p>
+      <h1>#{CGI.escapeHTML(title)}</h1>
+      <p>#{CGI.escapeHTML(intro)}</p>
       <h2>This Workflow Run</h2>
       <table><thead>#{headers}</thead><tbody>#{current_rows}</tbody></table>
       <h2>Available Runs</h2>
@@ -83,13 +88,33 @@ index = <<~HTML
   </body>
 </html>
 HTML
+end
+
+index = dashboard(
+  "EventHub Selenium BDD Reports",
+  "Unique report links are grouped by GitHub run id, run attempt, browser, suite, parallel mode, and thread count.",
+  headers,
+  current_rows,
+  rows,
+  style
+)
+
+latest_index = dashboard(
+  "EventHub Selenium BDD Reports",
+  "Unique report links are grouped by GitHub run id, run attempt, browser, suite, parallel mode, and thread count.",
+  headers,
+  latest_current_rows,
+  latest_rows,
+  style
+)
+
 File.write(File.join(site, "index.html"), index)
-File.write(File.join(latest_path, "index.html"), index)
+File.write(File.join(latest_path, "index.html"), latest_index)
 
 entries.group_by { |entry| entry["runKey"] }.each do |run_key, run_entries|
   run_dir = File.join(site, "runs", run_key)
   FileUtils.mkdir_p(run_dir)
-  run_rows = run_entries.map { |entry| row(entry) }.join("\n")
+  run_rows = run_entries.map { |entry| row(entry, "#{entry["jobSlug"]}/index.html") }.join("\n")
   File.write(
     File.join(run_dir, "index.html"),
     page(
