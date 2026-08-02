@@ -1,15 +1,42 @@
 {
-  "currentRun": "30766367267-attempt-1",
-  "currentRunPath": "runs/30766367267-attempt-1/",
+  "currentRun": "30766677360-attempt-1",
+  "currentRunPath": "runs/30766677360-attempt-1/",
   "reports": [
     {
-      "browser": "firefox",
-      "suite": "impact-bookings",
+      "browser": "chrome",
+      "suite": "api",
       "parallel": "true",
-      "threads": "3",
-      "testCount": 6,
-      "jobName": "selected-firefox-impact-bookings",
-      "path": "runs/30766367267-attempt-1/selected-firefox-impact-bookings-firefox-impact-bookings-parallel-true-threads-3/index.html"
+      "threads": "2",
+      "testCount": 25,
+      "jobName": "matrix-chrome-api",
+      "path": "runs/30766677360-attempt-1/matrix-chrome-api-chrome-api-parallel-true-threads-2/index.html"
+    },
+    {
+      "browser": "chrome",
+      "suite": "parallel-safe",
+      "parallel": "true",
+      "threads": "4",
+      "testCount": 73,
+      "jobName": "matrix-chrome-parallel-safe",
+      "path": "runs/30766677360-attempt-1/matrix-chrome-parallel-safe-chrome-parallel-safe-parallel-true-threads-4/index.html"
+    },
+    {
+      "browser": "chrome",
+      "suite": "smoke",
+      "parallel": "false",
+      "threads": "2",
+      "testCount": 8,
+      "jobName": "matrix-chrome-smoke",
+      "path": "runs/30766677360-attempt-1/matrix-chrome-smoke-chrome-smoke-parallel-false-threads-2/index.html"
+    },
+    {
+      "browser": "firefox",
+      "suite": "smoke",
+      "parallel": "false",
+      "threads": "2",
+      "testCount": 8,
+      "jobName": "matrix-firefox-smoke",
+      "path": "runs/30766677360-attempt-1/matrix-firefox-smoke-firefox-smoke-parallel-false-threads-2/index.html"
     }
   ]
 }
