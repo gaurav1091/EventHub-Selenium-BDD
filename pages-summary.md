@@ -1,7 +1,4 @@
 ### EventHub Published Report Links
 
-- [This workflow run](runs/30766188474-attempt-1/)
-- [chrome / api / parallel=true / threads=2 / tests=25](runs/30766188474-attempt-1/matrix-chrome-api-chrome-api-parallel-true-threads-2/index.html)
-- [chrome / parallel-safe / parallel=true / threads=4 / tests=73](runs/30766188474-attempt-1/matrix-chrome-parallel-safe-chrome-parallel-safe-parallel-true-threads-4/index.html)
-- [chrome / smoke / parallel=false / threads=2 / tests=8](runs/30766188474-attempt-1/matrix-chrome-smoke-chrome-smoke-parallel-false-threads-2/index.html)
-- [firefox / smoke / parallel=false / threads=2 / tests=8](runs/30766188474-attempt-1/matrix-firefox-smoke-firefox-smoke-parallel-false-threads-2/index.html)
+- [This workflow run](runs/30766367267-attempt-1/)
+- [firefox / impact-bookings / parallel=true / threads=3 / tests=6](runs/30766367267-attempt-1/selected-firefox-impact-bookings-firefox-impact-bookings-parallel-true-threads-3/index.html)
