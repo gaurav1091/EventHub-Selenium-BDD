@@ -1,0 +1,68 @@
+{
+  "runId" : "run-20260802205836",
+  "timestamp" : "2026-08-02T21:00:31.98838861",
+  "environment" : "qa",
+  "suiteName" : "hybrid",
+  "browser" : "firefox",
+  "headless" : "true",
+  "parallel" : "none",
+  "threadCount" : "2",
+  "tags" : "@hybrid",
+  "passedScenarios" : 7,
+  "failedScenarios" : 0,
+  "totalScenarios" : 7,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "c9f1a1ba-f228-4f1f-9f79-5a5e9e2e34eb",
+    "name" : "Booking created through API is visible in My Bookings",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 26803,
+    "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "2730a83a-6453-4119-9435-eec76690917a",
+    "name" : "API cleanup of an API-created booking is reflected in the UI",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+    "line" : 38,
+    "status" : "PASSED",
+    "durationMs" : 14732,
+    "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "f53a62e8-c468-44c1-b0ad-19d38eda0362",
+    "name" : "UI booking for API-created event is visible through the API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+    "line" : 30,
+    "status" : "PASSED",
+    "durationMs" : 12870,
+    "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "70a700d1-4730-4c7a-9f73-741fb200791d",
+    "name" : "API-created booking details can be opened in the UI",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+    "line" : 47,
+    "status" : "PASSED",
+    "durationMs" : 11916,
+    "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "331e26a6-6138-45b9-9ab8-4d9d6aeee5c3",
+    "name" : "API-created event appears in admin management and discovery",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+    "line" : 23,
+    "status" : "PASSED",
+    "durationMs" : 11818,
+    "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  } ]
+}
