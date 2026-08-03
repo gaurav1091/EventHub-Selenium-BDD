@@ -1,0 +1,1407 @@
+<html>
+<head>
+<title>TestNG:  Parallel Cucumber BDD Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Parallel Cucumber BDD Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>54/19/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Aug 03 13:06:12 UTC 2026</td>
+</tr>
+<tr><td>Total time:</td><td>425 seconds (425208 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can open a bookable event detail page from Book Now", "Event discovery"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace526076249", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace526076249'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can open event details", "Event discovery"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1620554610", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1620554610'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1469044457", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1469044457'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event filters reset after refresh", "Event discovery"</td>
+<td><div><pre>java.lang.AssertionError: 
+Expecting blank but was: &quot;Dilli Diwali Mela&quot;
+	at com.eventhub.automation.pages.EventsPage.assertFiltersReset(EventsPage.java:51)
+	at com.eventhub.automation.steps.EventSteps.eventFiltersShouldBeReset(EventSteps.java:122)
+	at ✽.event filters should be reset(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:51)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1387789008", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1387789008'><pre>java.lang.AssertionError: 
+Expecting blank but was: &quot;Dilli Diwali Mela&quot;
+	at com.eventhub.automation.pages.EventsPage.assertFiltersReset(EventsPage.java:51)
+	at com.eventhub.automation.steps.EventSteps.eventFiltersShouldBeReset(EventSteps.java:122)
+	at ✽.event filters should be reset(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:51)
+</pre></div></td>
+<td>48</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace241157016", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace241157016'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated key pages have visual sanity screenshots", "Visual sanity smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace51338920", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace51338920'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event detail deep link loads correct metadata", "Event discovery"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1513302202", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1513302202'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1822724750", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1822724750'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated key pages have visual sanity screenshots", "Visual sanity smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1327638958", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1327638958'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace482314608", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace482314608'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace528777419", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace528777419'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace150568297", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace150568297'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login page visual sanity screenshot is captured", "Visual sanity smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace833739394", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace833739394'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace778818270", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace778818270'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event cards expose business-critical details", "Event discovery"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1973980766", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1973980766'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at jdk.internal.reflect.GeneratedMethodAccessor342.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at jdk.internal.reflect.GeneratedMethodAccessor282.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre></div></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1120057365", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1120057365'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated key pages have visual sanity screenshots", "Visual sanity smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1397262463", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1397262463'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1746692903", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1746692903'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can move across primary navigation", "EventHub navigation"</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace3337774", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace3337774'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {&quot;value&quot;:{&quot;message&quot;:&quot;Automate testing time expired.&quot;},&quot;sessionId&quot;:&quot;&quot;,&quot;status&quot;:13} 
+Host info: host: &apos;runnervmvrwv9&apos;, ip: &apos;10.1.0.17&apos;
+Build info: version: &apos;4.45.0&apos;, revision: &apos;cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1020-azure&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, bstack:options: {buildName: EventHub Selenium BDD-30816..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-firefox-all-parall...}, moz:firefoxOptions: {prefs: {dom.webnotifications.enabled: false, remote.active-protocols: 1, signon.rememberSignons: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackFirefoxDriver(DriverFactory.java:96)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:50)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+</pre></div></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for events by keyword", "Event discovery"</td>
+<td></td>
+<td>54</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid credentials are rejected", "EventHub authentication"</td>
+<td></td>
+<td>43</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Anonymous user is redirected from protected route", "EventHub authentication"</td>
+<td></td>
+<td>45</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event detail page shows booking form and event content", "Event booking lifecycle"</td>
+<td></td>
+<td>64</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can filter events by city and category", "Event discovery"</td>
+<td></td>
+<td>51</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event list maps to POJO responses with required business fields", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Registered user can sign in and sign out", "EventHub authentication"</td>
+<td></td>
+<td>50</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed event payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Anonymous user is redirected from the admin route", "EventHub authentication"</td>
+<td></td>
+<td>42</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can retrieve current user profile through API", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Registered user can authenticate through API", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed booking payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>3</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can view upcoming events", "Event discovery"</td>
+<td></td>
+<td>50</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User sees an empty state for unmatched search", "Event discovery"</td>
+<td></td>
+<td>45</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can clear filters and restore the event list", "Event discovery"</td>
+<td></td>
+<td>53</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can list events through API", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form validates invalid customer data", "Event booking lifecycle"</td>
+<td></td>
+<td>56</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form accepts generated valid customer data before submit", "Event booking lifecycle"</td>
+<td></td>
+<td>59</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives page refresh", "EventHub authentication"</td>
+<td></td>
+<td>55</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed event payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed booking payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Admin event form validates required fields", "Admin event management"</td>
+<td></td>
+<td>50</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for events by keyword", "Event discovery"</td>
+<td></td>
+<td>54</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can retrieve an event detail through API", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed event payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form validates invalid customer data", "Event booking lifecycle"</td>
+<td></td>
+<td>61</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event filters reset after navigating away and back", "Event discovery"</td>
+<td></td>
+<td>50</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API health endpoint is available", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives refresh on protected pages", "EventHub authentication"</td>
+<td></td>
+<td>59</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Internal API contract manifest documents automated endpoints", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Register link opens account registration", "EventHub authentication"</td>
+<td></td>
+<td>36</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for an event by title and exclude unrelated cards", "Event discovery"</td>
+<td></td>
+<td>47</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for events by keyword", "Event discovery"</td>
+<td></td>
+<td>47</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form validates required customer details", "Event booking lifecycle"</td>
+<td></td>
+<td>48</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed booking payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>3</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Admin Events page renders management controls", "Admin event management"</td>
+<td></td>
+<td>59</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Ticket quantity controls update the booking total", "Event booking lifecycle"</td>
+<td></td>
+<td>52</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can directly open a protected route", "EventHub authentication"</td>
+<td></td>
+<td>53</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event detail maps to a POJO with required business fields", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives refresh on protected pages", "EventHub authentication"</td>
+<td></td>
+<td>52</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives refresh on protected pages", "EventHub authentication"</td>
+<td></td>
+<td>71</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login form validates required credentials", "EventHub authentication"</td>
+<td></td>
+<td>32</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid credentials are rejected", "EventHub authentication"</td>
+<td></td>
+<td>45</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@35adf623</td></tr>
+</table><p>
+</body>
+</html>
