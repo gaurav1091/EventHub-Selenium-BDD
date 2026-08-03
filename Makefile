@@ -5,7 +5,7 @@ THREAD_COUNT ?= 2
 AREA ?= auth
 
 smoke:
-	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@smoke"
+	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@smoke and not @stateful"
 
 api:
 	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@api"
@@ -59,7 +59,7 @@ grid-down:
 	docker compose -f docker-compose.selenium-grid.yml down
 
 grid-smoke:
-	mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=$(BROWSER) -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+	mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=$(BROWSER) -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
 
 docker-smoke:
 	SUITE=docker-smoke BROWSER=$(BROWSER) docker compose run --rm eventhub-tests

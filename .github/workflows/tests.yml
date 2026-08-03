@@ -234,13 +234,14 @@ jobs:
 
           case "$SUITE" in
             all) TAG_EXPRESSION="" ;;
-            p0-smoke) TAG_EXPRESSION="@p0 and @smoke" ;;
+            smoke) TAG_EXPRESSION="@smoke and not @stateful" ;;
+            p0-smoke) TAG_EXPRESSION="@p0 and @smoke and not @stateful" ;;
             p1-regression) TAG_EXPRESSION="@p1 and @regression" ;;
             api-contract) TAG_EXPRESSION="@api and @contract" ;;
             ui-critical) TAG_EXPRESSION="@ui and @critical" ;;
             nightly-stateful) TAG_EXPRESSION="@stateful and @regression" ;;
             accessibility) TAG_EXPRESSION="@accessibility" ;;
-            docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
+            docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke and not @stateful)" ;;
             *) TAG_EXPRESSION="@$SUITE" ;;
           esac
 
@@ -457,7 +458,7 @@ jobs:
           SUITE="grid-smoke"
           PARALLEL="false"
           THREAD_COUNT="1"
-          TAG_EXPRESSION="@smoke"
+          TAG_EXPRESSION="@smoke and not @stateful"
 
           {
             echo "REPORT_BROWSER=$BROWSER"
@@ -545,14 +546,15 @@ jobs:
           else
             case "$SUITE" in
               all) TAG_EXPRESSION="" ;;
-              p0-smoke) TAG_EXPRESSION="@p0 and @smoke" ;;
+              smoke) TAG_EXPRESSION="@smoke and not @stateful" ;;
+              p0-smoke) TAG_EXPRESSION="@p0 and @smoke and not @stateful" ;;
               p1-regression) TAG_EXPRESSION="@p1 and @regression" ;;
               api-contract) TAG_EXPRESSION="@api and @contract" ;;
               ui-critical) TAG_EXPRESSION="@ui and @critical" ;;
               nightly-stateful) TAG_EXPRESSION="@stateful and @regression" ;;
               accessibility) TAG_EXPRESSION="@accessibility" ;;
-              docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
-              grid-smoke) TAG_EXPRESSION="@smoke" ;;
+              docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke and not @stateful)" ;;
+              grid-smoke) TAG_EXPRESSION="@smoke and not @stateful" ;;
               *) TAG_EXPRESSION="@$SUITE" ;;
             esac
           fi

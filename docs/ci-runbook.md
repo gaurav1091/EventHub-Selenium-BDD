@@ -97,8 +97,8 @@ Recommended choices:
 ## Local Equivalents
 
 ```bash
-mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@smoke"
-mvn test -Dheadless=true -Dbrowser=firefox -Dcucumber.filter.tags="@smoke"
+mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@smoke and not @stateful"
+mvn test -Dheadless=true -Dbrowser=firefox -Dcucumber.filter.tags="@smoke and not @stateful"
 mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@api"
 mvn test -Dheadless=true -Dbrowser=chrome -Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=4 -Dcucumber.filter.tags="(@parallel-safe) and not @stateful"
 mvn test -Dheadless=true -Dbrowser=chrome -Dparallel=none -Dcucumber.filter.tags="@stateful"
@@ -108,8 +108,8 @@ Selenium Grid local smoke:
 
 ```bash
 make grid-up
-mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
-mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
 make grid-down
 ```
 

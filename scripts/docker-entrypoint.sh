@@ -26,13 +26,15 @@ VISUAL_DIFF_MAX_PIXELS="${VISUAL_DIFF_MAX_PIXELS:-0}"
 suite_tags() {
   case "$1" in
     all) echo "" ;;
-    p0-smoke) echo "@p0 and @smoke" ;;
+    smoke) echo "@smoke and not @stateful" ;;
+    p0-smoke) echo "@p0 and @smoke and not @stateful" ;;
     p1-regression) echo "@p1 and @regression" ;;
     api-contract) echo "@api and @contract" ;;
     ui-critical) echo "@ui and @critical" ;;
     nightly-stateful) echo "@stateful and @regression" ;;
     accessibility) echo "@accessibility" ;;
-    docker-smoke) echo "@docker-smoke or (@p0 and @smoke)" ;;
+    docker-smoke) echo "@docker-smoke or (@p0 and @smoke and not @stateful)" ;;
+    grid-smoke) echo "@smoke and not @stateful" ;;
     *) echo "@$1" ;;
   esac
 }

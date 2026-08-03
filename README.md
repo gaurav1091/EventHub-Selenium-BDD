@@ -25,7 +25,7 @@ mvn test
 Smoke tests:
 
 ```bash
-mvn test -Dcucumber.filter.tags="@smoke"
+mvn test -Dcucumber.filter.tags="@smoke and not @stateful"
 ```
 
 Firefox:
@@ -124,7 +124,7 @@ The Pages dashboard also publishes cross-run quality trends in `trend-dashboard.
 
 ## Docker
 
-Run the default Docker suite, which uses Chrome, headless mode, and `@smoke`:
+Run the default Docker suite, which uses Chrome, headless mode, and stable smoke coverage:
 
 ```bash
 docker compose up --build
@@ -158,12 +158,12 @@ Run through Selenium Grid:
 
 ```bash
 make grid-up
-mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
-mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
 make grid-down
 ```
 
-GitHub Actions runs Selenium Grid smoke coverage for Chrome and Firefox on push. Grid execution metadata is included in the run summary and report bundle.
+GitHub Actions runs Selenium Grid smoke coverage for Chrome and Firefox on push using `@smoke and not @stateful`. Grid execution metadata is included in the run summary and report bundle.
 To run Grid manually from GitHub Actions, open `EventHub Selenium BDD`, choose `Run workflow`, set `suite=grid-smoke`, choose `browser=chrome` or `firefox`, and keep `parallel=false`.
 
 Run visual or accessibility smoke:

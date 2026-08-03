@@ -55,6 +55,7 @@ Coverage governance:
 Parallel runs should execute `@parallel-safe` scenarios, or should exclude `@stateful`.
 
 The GitHub Actions workflow and Docker entrypoint automatically add `not @stateful` when `parallel=true`.
+Default `smoke`, `p0-smoke`, `docker-smoke`, and `grid-smoke` suite aliases also exclude `@stateful` so push and Grid jobs stay deterministic when multiple browsers run at the same time.
 This keeps booking/admin data mutation tests serial unless a scenario is explicitly redesigned to be isolated.
 Manual or Docker runs fail fast when `parallel=true` is combined with `hybrid`, `stateful`, or `nightly-stateful`, because those suites currently depend on stateful shared-data coverage.
 Hybrid coverage intentionally stays serial because it validates API-created or UI-created state across layers before cleanup.
@@ -63,10 +64,10 @@ CI and Docker also run `scripts/assert-scenarios-executed.sh` after Maven to fai
 ## Recommended Runs
 
 ```bash
-mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@smoke"
+mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@smoke and not @stateful"
 mvn test -Dheadless=true -Dbrowser=firefox -Dcucumber.filter.tags="@api"
 mvn test -Dheadless=true -Dbrowser=chrome -Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=4 -Dcucumber.filter.tags="@parallel-safe"
-mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
 ```
 
 Docker examples:
@@ -122,7 +123,8 @@ Manual workflow dispatch runs exactly one selected browser/suite/parallel combin
 
 | Suite alias | Cucumber expression |
 | --- | --- |
-| `p0-smoke` | `@p0 and @smoke` |
+| `smoke` | `@smoke and not @stateful` |
+| `p0-smoke` | `@p0 and @smoke and not @stateful` |
 | `p1-regression` | `@p1 and @regression` |
 | `api-contract` | `@api and @contract` |
 | `ui-critical` | `@ui and @critical` |
@@ -130,7 +132,8 @@ Manual workflow dispatch runs exactly one selected browser/suite/parallel combin
 | `accessibility` | `@accessibility` |
 | `visual` | `@visual` |
 | `impact-*` | matching `@impact-*` tag |
-| `docker-smoke` | `@docker-smoke or (@p0 and @smoke)` |
+| `grid-smoke` | `@smoke and not @stateful` |
+| `docker-smoke` | `@docker-smoke or (@p0 and @smoke and not @stateful)` |
 
 `scripts/select-impact-tags.sh` can generate a targeted impact expression explicitly by area or infer it from changed files when a base ref is available. It writes `target/run-summary/impact-selection.json` and `target/run-summary/impact-selection.md` for local and CI triage.
 
