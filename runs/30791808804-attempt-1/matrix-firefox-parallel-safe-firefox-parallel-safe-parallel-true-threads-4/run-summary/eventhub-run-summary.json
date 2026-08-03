@@ -1,0 +1,68 @@
+{
+  "runId" : "run-20260803065619",
+  "timestamp" : "2026-08-03T06:59:26.255070861",
+  "environment" : "qa",
+  "suiteName" : "parallel-safe",
+  "browser" : "firefox",
+  "headless" : "true",
+  "parallel" : "methods",
+  "threadCount" : "4",
+  "tags" : "(@parallel-safe) and not @stateful",
+  "passedScenarios" : 73,
+  "failedScenarios" : 0,
+  "totalScenarios" : 73,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "d83c144d-3a72-42dc-b701-78eccc5e9450",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 18,
+    "status" : "PASSED",
+    "durationMs" : 19580,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "a8a22432-f0aa-4598-bf9c-03eaff761a9f",
+    "name" : "Admin event form validates required fields",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 13,
+    "status" : "PASSED",
+    "durationMs" : 19177,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@intent-validation" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "3dbf7b1f-31e9-4ce8-b549-de5d590f2431",
+    "name" : "Admin Events page renders management controls",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 18641,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "89365f45-6df6-4126-a500-1df57197c10f",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 17,
+    "status" : "PASSED",
+    "durationMs" : 17482,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "00d36416-000c-48e3-9f22-926afef54e7f",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 16,
+    "status" : "PASSED",
+    "durationMs" : 17132,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  } ]
+}

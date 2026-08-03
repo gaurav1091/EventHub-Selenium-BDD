@@ -1,0 +1,68 @@
+{
+  "runId" : "run-20260803065620",
+  "timestamp" : "2026-08-03T06:56:43.651211424",
+  "environment" : "qa",
+  "suiteName" : "api",
+  "browser" : "chrome",
+  "headless" : "true",
+  "parallel" : "methods",
+  "threadCount" : "2",
+  "tags" : "(@api) and not @stateful",
+  "passedScenarios" : 25,
+  "failedScenarios" : 0,
+  "totalScenarios" : 25,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "ad52ea88-ec27-4c95-8c59-d1a3ebb2aff8",
+    "name" : "Event detail maps to a POJO with required business fields",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 44,
+    "status" : "PASSED",
+    "durationMs" : 3925,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "2a810ccf-00cd-4f6f-a7e4-e06e2717a74c",
+    "name" : "Authenticated user can retrieve an event detail through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 38,
+    "status" : "PASSED",
+    "durationMs" : 3674,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "9584ae32-67c1-448e-844d-f3ab3a20605f",
+    "name" : "Malformed booking payloads are rejected by the API contract",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 100,
+    "status" : "PASSED",
+    "durationMs" : 3301,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "49beba95-34c0-4227-94d9-b0ca81ba2a8b",
+    "name" : "Malformed booking payloads are rejected by the API contract",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 101,
+    "status" : "PASSED",
+    "durationMs" : 2961,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "9a0408f0-9b16-4b27-b2b7-981907f1a61e",
+    "name" : "Malformed booking payloads are rejected by the API contract",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 102,
+    "status" : "PASSED",
+    "durationMs" : 2363,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ]
+}
