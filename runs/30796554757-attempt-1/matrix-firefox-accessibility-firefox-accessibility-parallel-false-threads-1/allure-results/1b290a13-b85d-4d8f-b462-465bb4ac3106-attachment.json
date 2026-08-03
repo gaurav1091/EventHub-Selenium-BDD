@@ -1,0 +1,21 @@
+{
+  "mode" : "advisory",
+  "url" : "https://eventhub.rahulshettyacademy.com/admin/events",
+  "title" : "EventHub — Discover & Book Events",
+  "timestamp" : "2026-08-03T08:15:26.27748022",
+  "violationCount" : 1,
+  "violations" : [ {
+    "id" : "page-has-heading-one",
+    "impact" : "moderate",
+    "description" : "Ensure that the page, or at least one of its frames contains a level-one heading",
+    "help" : "Page should contain a level-one heading",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/page-has-heading-one?application=axeAPI",
+    "tags" : [ "cat.semantics", "best-practice" ],
+    "nodeCount" : 1,
+    "nodes" : [ {
+      "target" : [ "html" ],
+      "html" : "<html lang=\"en\" class=\"scroll-smooth\">",
+      "failureSummary" : "Fix all of the following:\n  Page must have a level-one heading"
+    } ]
+  } ]
+}
