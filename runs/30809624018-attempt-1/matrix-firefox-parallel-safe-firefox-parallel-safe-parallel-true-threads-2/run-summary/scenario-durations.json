@@ -1,0 +1,731 @@
+[ {
+  "id" : "84b3f16d-8bb0-46b5-81e0-f9b470a4f80a",
+  "name" : "Admin Events page renders management controls",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+  "line" : 8,
+  "status" : "PASSED",
+  "durationMs" : 21835,
+  "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "dca4dc38-cdec-48f1-b3bf-274b20b88d09",
+  "name" : "Admin event form validates required fields",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+  "line" : 13,
+  "status" : "PASSED",
+  "durationMs" : 21832,
+  "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "524802a5-dafb-4dd3-99f1-4b4f2ae48221",
+  "name" : "Internal API contract manifest documents automated endpoints",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 10,
+  "status" : "PASSED",
+  "durationMs" : 3,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-documentation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "db7317ea-299a-4f2c-b439-34eeec996e39",
+  "name" : "API health endpoint is available",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 5,
+  "status" : "PASSED",
+  "durationMs" : 771,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-health" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "63f2d941-fa92-4def-84a4-584e0cdcc80d",
+  "name" : "Registered user can authenticate through API",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 14,
+  "status" : "PASSED",
+  "durationMs" : 1228,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-auth" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "e4ce4965-8321-46d2-b473-c939454377a0",
+  "name" : "Authenticated user can retrieve current user profile through API",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 20,
+  "status" : "PASSED",
+  "durationMs" : 1612,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-auth" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "bd9f468a-ff09-4c30-b5de-54c20c86bd19",
+  "name" : "Authenticated user can list events through API",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 26,
+  "status" : "PASSED",
+  "durationMs" : 1799,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-discovery" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "82ad2461-e4d5-4f4e-8994-bf2bf8ea8e34",
+  "name" : "Event list maps to POJO responses with required business fields",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 32,
+  "status" : "PASSED",
+  "durationMs" : 1699,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "3b7ecdf0-8914-44a6-8832-597e7c88d900",
+  "name" : "Authenticated user can retrieve an event detail through API",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 38,
+  "status" : "PASSED",
+  "durationMs" : 2397,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "b13f04b3-8947-40f5-abe7-48cb496384f7",
+  "name" : "Protected API rejects invalid or anonymous requests",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 73,
+  "status" : "PASSED",
+  "durationMs" : 881,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "0157e283-0fe4-45af-a96b-14946b01b740",
+  "name" : "Event detail maps to a POJO with required business fields",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 44,
+  "status" : "PASSED",
+  "durationMs" : 2423,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "6d298c26-0ed3-49be-a9f1-1971a786011a",
+  "name" : "Protected API rejects invalid or anonymous requests",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 74,
+  "status" : "PASSED",
+  "durationMs" : 680,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "1cf4fb8c-670b-40f1-bc17-1bba93666f8f",
+  "name" : "Protected API rejects invalid or anonymous requests",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 75,
+  "status" : "PASSED",
+  "durationMs" : 732,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "1feace38-af91-453f-ab59-555c60b98980",
+  "name" : "Protected API rejects invalid or anonymous requests",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 76,
+  "status" : "PASSED",
+  "durationMs" : 709,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "cb83bdcc-ff8f-409c-8fc6-7ba0c31dd5f6",
+  "name" : "Protected API rejects invalid or anonymous requests",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 77,
+  "status" : "PASSED",
+  "durationMs" : 1491,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "158a5015-3694-46ac-9aaf-fcf5b627d3c7",
+  "name" : "Protected API rejects invalid or anonymous requests",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 78,
+  "status" : "PASSED",
+  "durationMs" : 1553,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "5957473a-6131-4001-9131-73dce433cfc1",
+  "name" : "API error responses follow the error contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 88,
+  "status" : "PASSED",
+  "durationMs" : 784,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "1125f04a-ec70-4393-be32-937bb0881f0e",
+  "name" : "Protected API rejects invalid or anonymous requests",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 79,
+  "status" : "PASSED",
+  "durationMs" : 1526,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "5e75eefa-b691-4704-afec-baf44160ab15",
+  "name" : "API error responses follow the error contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 89,
+  "status" : "PASSED",
+  "durationMs" : 699,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "12630eab-9abd-4625-808d-869e9d806e1c",
+  "name" : "API error responses follow the error contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 90,
+  "status" : "PASSED",
+  "durationMs" : 1493,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "0d0685dc-dabf-488e-9678-793912993e4f",
+  "name" : "API error responses follow the error contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 91,
+  "status" : "PASSED",
+  "durationMs" : 1781,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "638e3de7-ae73-4269-8404-eb06cbe8ff45",
+  "name" : "Malformed booking payloads are rejected by the API contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 100,
+  "status" : "PASSED",
+  "durationMs" : 2309,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "c37a75c8-8f4a-4e82-9b6f-9823f31f7f1a",
+  "name" : "Malformed booking payloads are rejected by the API contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 101,
+  "status" : "PASSED",
+  "durationMs" : 2405,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "f17d1c2e-00c6-414c-bf1f-043b40d787c5",
+  "name" : "Malformed booking payloads are rejected by the API contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 102,
+  "status" : "PASSED",
+  "durationMs" : 2433,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "4ab8bb82-8b1f-4e17-a27f-58916f1701ec",
+  "name" : "Malformed event payloads are rejected by the API contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 111,
+  "status" : "PASSED",
+  "durationMs" : 1652,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "144d6626-20c1-4e20-aa2a-ac57fc8a9dc2",
+  "name" : "Malformed event payloads are rejected by the API contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 112,
+  "status" : "PASSED",
+  "durationMs" : 1491,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "61ca619f-219a-4581-8b04-c9db00f9f94f",
+  "name" : "Malformed event payloads are rejected by the API contract",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 113,
+  "status" : "PASSED",
+  "durationMs" : 1602,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "0355eb0f-4b1a-44eb-82a8-86d9c000a1e4",
+  "name" : "Registered user can sign in and sign out",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 5,
+  "status" : "PASSED",
+  "durationMs" : 7148,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@smoke", "@parallel-safe", "@critical", "@intent-session" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "7c6f2ea7-2d5e-4cc2-88dd-fc7595c76243",
+  "name" : "Authenticated session survives page refresh",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 13,
+  "status" : "PASSED",
+  "durationMs" : 12023,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@critical", "@intent-session" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "a48cf46e-1e41-4ac2-a5c5-b0efe3741524",
+  "name" : "Login form validates required credentials",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 19,
+  "status" : "PASSED",
+  "durationMs" : 5587,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "21269e0d-df0f-4bb7-b18d-3fe704831882",
+  "name" : "Invalid credentials are rejected",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 32,
+  "status" : "PASSED",
+  "durationMs" : 6900,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "0e69e375-fb41-4bd1-88fa-dd5a9323d8b0",
+  "name" : "Invalid credentials are rejected",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 33,
+  "status" : "PASSED",
+  "durationMs" : 7047,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "44567dd9-7f9a-407f-af83-e5e9f85e17c0",
+  "name" : "Register link opens account registration",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 36,
+  "status" : "PASSED",
+  "durationMs" : 5790,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p2", "@regression", "@parallel-safe", "@intent-navigation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "852200eb-6787-460c-9adb-4688afc65f0a",
+  "name" : "Anonymous user is redirected from protected route",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 42,
+  "status" : "PASSED",
+  "durationMs" : 6245,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@regression", "@parallel-safe", "@critical", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "c82d016e-952f-4a7c-b628-ab0748d15560",
+  "name" : "Anonymous user is redirected from the admin route",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 48,
+  "status" : "PASSED",
+  "durationMs" : 5498,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@regression", "@parallel-safe", "@critical", "@intent-security" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "ec717e98-efbe-43a7-886f-1f61a3d23f7b",
+  "name" : "Authenticated user can directly open a protected route",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 54,
+  "status" : "PASSED",
+  "durationMs" : 9155,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-session" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "01b3cae8-fd67-49c2-bb3a-aae171cb6997",
+  "name" : "Authenticated session survives refresh on protected pages",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 68,
+  "status" : "PASSED",
+  "durationMs" : 12624,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-session" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "b171972b-858d-4e10-ae59-b8197cf70da3",
+  "name" : "Authenticated session survives refresh on protected pages",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 69,
+  "status" : "PASSED",
+  "durationMs" : 11423,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-session" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "e56b3955-1c98-4f46-bf7f-f1c088591041",
+  "name" : "Authenticated session survives refresh on protected pages",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+  "line" : 70,
+  "status" : "PASSED",
+  "durationMs" : 12098,
+  "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-session" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "93aa246e-a77f-4f77-bb32-5f279be2ef9a",
+  "name" : "Event detail page shows booking form and event content",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 51,
+  "status" : "PASSED",
+  "durationMs" : 9973,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "4373fd9d-fa91-421a-9eb2-76239666ac29",
+  "name" : "Ticket quantity controls update the booking total",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 56,
+  "status" : "PASSED",
+  "durationMs" : 12488,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "291dacab-0e86-46ec-9fe1-8140fafa7891",
+  "name" : "Booking form validates invalid customer data",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 81,
+  "status" : "PASSED",
+  "durationMs" : 10942,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "72c5e3c7-54fc-44ea-a2dc-056138183057",
+  "name" : "Booking form validates invalid customer data",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 82,
+  "status" : "PASSED",
+  "durationMs" : 10324,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "d14c25ec-1167-4bad-b53f-7e680ecb3c25",
+  "name" : "Booking form validates required customer details",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 85,
+  "status" : "PASSED",
+  "durationMs" : 12098,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "37c62ec7-40e6-4723-a687-fba78733e41b",
+  "name" : "Booking form accepts generated valid customer data before submit",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 91,
+  "status" : "PASSED",
+  "durationMs" : 10069,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p2", "@regression", "@parallel-safe", "@intent-validation" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "7fbe8a67-4b86-4979-beb6-1a896e58c032",
+  "name" : "User can view upcoming events",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 8,
+  "status" : "PASSED",
+  "durationMs" : 9278,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "7ae07703-caf7-4f58-a675-511f99185164",
+  "name" : "User can search for events by keyword",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 20,
+  "status" : "PASSED",
+  "durationMs" : 9396,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "3dd05c83-0bde-4a8d-a32f-dfc26ec8fde9",
+  "name" : "User can search for events by keyword",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 21,
+  "status" : "PASSED",
+  "durationMs" : 8957,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "fce20f71-6b41-46f6-b201-3e6aba20d219",
+  "name" : "User can search for events by keyword",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 22,
+  "status" : "PASSED",
+  "durationMs" : 10092,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "5fb8a946-f0e0-49b9-8b2d-39404f9e6374",
+  "name" : "User can search for an event by title and exclude unrelated cards",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 25,
+  "status" : "PASSED",
+  "durationMs" : 10408,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "c581fcaa-3337-472c-8b18-b1c8d1c49f3e",
+  "name" : "User can filter events by city and category",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 32,
+  "status" : "PASSED",
+  "durationMs" : 8769,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "7c9e7ff1-1ab5-4978-b6ed-9becacc47e68",
+  "name" : "User can clear filters and restore the event list",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 39,
+  "status" : "PASSED",
+  "durationMs" : 10153,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "0489d417-d00f-4b0f-9f79-733f2f09acbf",
+  "name" : "Event filters reset after refresh",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 47,
+  "status" : "PASSED",
+  "durationMs" : 11479,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "d13a954a-18b7-4462-abb3-7ecdd038f667",
+  "name" : "Event filters reset after navigating away and back",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 55,
+  "status" : "PASSED",
+  "durationMs" : 9086,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "2a54912c-4e9d-4075-9b5f-698069e04715",
+  "name" : "User sees an empty state for unmatched search",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 64,
+  "status" : "PASSED",
+  "durationMs" : 9712,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe", "@negative" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "ced7b56f-7552-4d2f-bfc3-54cc12cf0c3b",
+  "name" : "Event cards expose business-critical details",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 70,
+  "status" : "PASSED",
+  "durationMs" : 9463,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "611ab93c-b230-4bf0-9c0d-971d250c6b46",
+  "name" : "User can open event details",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 81,
+  "status" : "PASSED",
+  "durationMs" : 10651,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "171b3529-f03b-4519-ac6c-08197b429054",
+  "name" : "Event detail deep link loads correct metadata",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 84,
+  "status" : "PASSED",
+  "durationMs" : 10984,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe", "@critical" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "9d06239b-3a07-434f-9127-f20d4be6f427",
+  "name" : "Authenticated user can move across primary navigation",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/navigation/navigation.feature",
+  "line" : 8,
+  "status" : "PASSED",
+  "durationMs" : 8809,
+  "tags" : [ "@navigation", "@ui", "@owner-platform", "@risk-navigation", "@intent-navigation", "@impact-navigation", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "e2850f28-29a0-479a-aff1-7eeff071aef1",
+  "name" : "User can open a bookable event detail page from Book Now",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+  "line" : 89,
+  "status" : "PASSED",
+  "durationMs" : 11181,
+  "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe", "@critical" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "fd8c0782-e178-426f-aa51-fe684bdd5d48",
+  "name" : "Key pages expose basic accessibility semantics",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+  "line" : 16,
+  "status" : "PASSED",
+  "durationMs" : 10560,
+  "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "80959bfc-230b-4eeb-ac9e-1cd7f44a9889",
+  "name" : "Key pages expose basic accessibility semantics",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+  "line" : 17,
+  "status" : "PASSED",
+  "durationMs" : 13885,
+  "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "02b624dd-38ff-42f0-bf39-3377ec7dcb5a",
+  "name" : "Key pages expose basic accessibility semantics",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+  "line" : 18,
+  "status" : "PASSED",
+  "durationMs" : 13406,
+  "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "9eb31bfa-8f9d-4e95-8f1d-a87557a3fcd0",
+  "name" : "Key pages expose basic accessibility semantics",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+  "line" : 19,
+  "status" : "PASSED",
+  "durationMs" : 10572,
+  "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "5b636454-36f4-40db-a0c4-5be8a8d001e3",
+  "name" : "Key authenticated pages fit common viewport sizes",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/responsive_smoke.feature",
+  "line" : 15,
+  "status" : "PASSED",
+  "durationMs" : 7867,
+  "tags" : [ "@responsive", "@ui", "@owner-platform", "@risk-ux", "@intent-responsive", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "eb1f8059-18bc-4d77-bdb7-4ee3c2372020",
+  "name" : "Key authenticated pages fit common viewport sizes",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/responsive_smoke.feature",
+  "line" : 16,
+  "status" : "PASSED",
+  "durationMs" : 9639,
+  "tags" : [ "@responsive", "@ui", "@owner-platform", "@risk-ux", "@intent-responsive", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "c4c268fc-f3f3-478b-8aa1-dc56f5988b4b",
+  "name" : "Key authenticated pages fit common viewport sizes",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/responsive_smoke.feature",
+  "line" : 17,
+  "status" : "PASSED",
+  "durationMs" : 9126,
+  "tags" : [ "@responsive", "@ui", "@owner-platform", "@risk-ux", "@intent-responsive", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "2027ea14-a283-4994-ae25-0e3532d17454",
+  "name" : "Key authenticated pages fit common viewport sizes",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/responsive_smoke.feature",
+  "line" : 18,
+  "status" : "PASSED",
+  "durationMs" : 8748,
+  "tags" : [ "@responsive", "@ui", "@owner-platform", "@risk-ux", "@intent-responsive", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "89e646ed-3670-47f4-9bae-c19cbda0bdc6",
+  "name" : "Login page visual sanity screenshot is captured",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/visual_sanity.feature",
+  "line" : 5,
+  "status" : "PASSED",
+  "durationMs" : 5070,
+  "tags" : [ "@visual", "@ui", "@owner-platform", "@risk-ux", "@intent-visual", "@impact-ux", "@p2", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "fc413d8f-940a-4740-a6ea-d0d164c9978a",
+  "name" : "Key authenticated pages fit common viewport sizes",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/responsive_smoke.feature",
+  "line" : 19,
+  "status" : "PASSED",
+  "durationMs" : 8876,
+  "tags" : [ "@responsive", "@ui", "@owner-platform", "@risk-ux", "@intent-responsive", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "48a30724-2c30-4ded-a484-bd8749b42373",
+  "name" : "Authenticated key pages have visual sanity screenshots",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/visual_sanity.feature",
+  "line" : 17,
+  "status" : "PASSED",
+  "durationMs" : 10235,
+  "tags" : [ "@visual", "@ui", "@owner-platform", "@risk-ux", "@intent-visual", "@impact-ux", "@p2", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "b2bf5390-8ec5-4f38-bc4a-532b5e20ebcc",
+  "name" : "Authenticated key pages have visual sanity screenshots",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/visual_sanity.feature",
+  "line" : 18,
+  "status" : "PASSED",
+  "durationMs" : 10234,
+  "tags" : [ "@visual", "@ui", "@owner-platform", "@risk-ux", "@intent-visual", "@impact-ux", "@p2", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+}, {
+  "id" : "5613ab61-52d3-4b0d-9dd2-8e422166838e",
+  "name" : "Authenticated key pages have visual sanity screenshots",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/visual_sanity.feature",
+  "line" : 19,
+  "status" : "PASSED",
+  "durationMs" : 8397,
+  "tags" : [ "@visual", "@ui", "@owner-platform", "@risk-ux", "@intent-visual", "@impact-ux", "@p2", "@regression", "@parallel-safe" ],
+  "browser" : "firefox",
+  "environment" : "qa"
+} ]
