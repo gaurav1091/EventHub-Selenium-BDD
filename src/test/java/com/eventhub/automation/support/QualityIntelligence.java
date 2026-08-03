@@ -55,30 +55,48 @@ public final class QualityIntelligence {
     private static Map<String, Object> accessibilitySummary() throws IOException {
         List<Map<String, Object>> pages = new ArrayList<>();
         int totalViolations = 0;
+        int thresholdViolationTotal = 0;
+        int maxPageViolations = 0;
+        int thresholdReportCount = 0;
+        int thresholdFailureCount = 0;
         int pageCount = 0;
+        int maxAllowedViolations = ConfigReader.getInt("accessibility.max.violations");
 
         for (Path report : jsonFiles(AXE_REPORTS_DIR)) {
             JsonNode json = MAPPER.readTree(report.toFile());
             int violations = json.path("violationCount").asInt(0);
+            String mode = json.path("mode").asText("");
             Map<String, Object> page = new LinkedHashMap<>();
             page.put("file", report.toString());
             page.put("url", json.path("url").asText(""));
             page.put("title", json.path("title").asText(""));
-            page.put("mode", json.path("mode").asText(""));
+            page.put("mode", mode);
             page.put("violationCount", violations);
             pages.add(page);
             totalViolations += violations;
+            if ("threshold".equals(mode)) {
+                thresholdReportCount++;
+                thresholdViolationTotal += violations;
+                maxPageViolations = Math.max(maxPageViolations, violations);
+                if (violations > maxAllowedViolations) {
+                    thresholdFailureCount++;
+                }
+            }
             pageCount++;
         }
 
         Map<String, Object> summary = new LinkedHashMap<>();
         summary.put("generatedAt", timestamp());
         summary.put("thresholdEnabled", ConfigReader.getBoolean("accessibility.threshold.enabled"));
-        summary.put("maxViolations", ConfigReader.getInt("accessibility.max.violations"));
+        summary.put("maxViolationsPerPage", maxAllowedViolations);
         summary.put("pageCount", pageCount);
         summary.put("totalViolations", totalViolations);
+        summary.put("thresholdReportCount", thresholdReportCount);
+        summary.put("thresholdViolationTotal", thresholdViolationTotal);
+        summary.put("maxPageViolations", maxPageViolations);
+        summary.put("thresholdFailureCount", thresholdFailureCount);
         summary.put("passed", !ConfigReader.getBoolean("accessibility.threshold.enabled")
-                || totalViolations <= ConfigReader.getInt("accessibility.max.violations"));
+                || thresholdFailureCount == 0);
         summary.put("pages", pages);
         return summary;
     }

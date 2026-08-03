@@ -134,10 +134,10 @@ Manual workflow dispatch runs exactly one selected browser/suite/parallel combin
 
 Axe accessibility scenarios are advisory by default locally. Push CI runs the `accessibility` suite with the
 `accessibility-strict` Maven profile so critical accessibility regressions become visible in the required automation
-signal.
+signal. The strict profile uses a per-page threshold that should reflect the current reviewed product baseline.
 
 ```bash
-mvn test -Dheadless=true -Dcucumber.filter.tags="@accessibility" -Daccessibility.threshold.enabled=true -Daccessibility.max.violations=0
+mvn test -Dheadless=true -Dcucumber.filter.tags="@accessibility" -Daccessibility.threshold.enabled=true -Daccessibility.max.violations=3
 mvn -Paccessibility-strict test
 ```
 

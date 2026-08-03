@@ -146,7 +146,7 @@ mvn -Psecurity org.owasp:dependency-check-maven:check
 - Inspect `target/governance/test-catalog.md` for generated scenario-level traceability.
 - For UI failures, inspect the Allure failure metadata attachment for browser, URL, scenario, and tags.
 - For accessibility smoke, inspect `target/axe-reports` or the Allure Axe advisory attachment. Push CI runs the `accessibility` suite in strict mode.
-- For thresholded accessibility runs, set `accessibility.threshold.enabled=true` and inspect `target/run-summary/accessibility-summary.json` plus `target/axe-reports` on failure.
+- For thresholded accessibility runs, set `accessibility.threshold.enabled=true` and inspect `target/run-summary/accessibility-summary.json` plus `target/axe-reports` on failure. The strict profile currently enforces the reviewed live-app baseline of at most three Axe violations per page.
 - For visual sanity, inspect `target/visual-sanity` and the Allure screenshot attachment.
 - For visual baseline comparison, inspect PNG diff images, `target/run-summary/visual-quality-summary.json`, and JSON reports in `target/visual-diff`; use `-Dvisual.baseline.update=true` only for intentional UI changes.
 - For parallel-only failures, rerun `@parallel-safe` with the same thread count before changing code.

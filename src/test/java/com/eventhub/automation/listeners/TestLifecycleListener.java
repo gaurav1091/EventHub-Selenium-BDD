@@ -23,13 +23,16 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Comparator;
 import java.util.Properties;
+import java.util.stream.Stream;
 
 public class TestLifecycleListener implements ITestListener {
     private static final Logger LOGGER = LogManager.getLogger(TestLifecycleListener.class);
 
     @Override
     public void onStart(ITestContext context) {
+        cleanTransientReportDirectories();
         EnvironmentHealthCheck.verify();
         ScreenshotUtils.cleanScreenshotsDirectory();
         writeAllureEnvironmentFile();
@@ -114,5 +117,31 @@ public class TestLifecycleListener implements ITestListener {
         ExtentService.getInstance().setSystemInfo("Parallel", ConfigReader.getRequired("parallel"));
         ExtentService.getInstance().setSystemInfo("Thread Count", ConfigReader.getRequired("thread.count"));
         ExtentService.getInstance().setSystemInfo("Tags", ConfigReader.getRequired("cucumber.filter.tags"));
+    }
+
+    private void cleanTransientReportDirectories() {
+        deleteDirectory(Path.of("target", "axe-reports"));
+        deleteDirectory(Path.of("target", "visual-sanity"));
+        deleteDirectory(Path.of("target", "visual-diff"));
+        deleteDirectory(Path.of("target", "run-summary"));
+        deleteDirectory(Path.of("target", "governance"));
+    }
+
+    private void deleteDirectory(Path directory) {
+        if (!Files.exists(directory)) {
+            return;
+        }
+        try (Stream<Path> paths = Files.walk(directory)) {
+            paths.sorted(Comparator.reverseOrder())
+                    .forEach(path -> {
+                        try {
+                            Files.deleteIfExists(path);
+                        } catch (IOException exception) {
+                            LOGGER.warn("Unable to delete stale report artifact: {}", path, exception);
+                        }
+                    });
+        } catch (IOException exception) {
+            LOGGER.warn("Unable to clean stale report directory: {}", directory, exception);
+        }
     }
 }
