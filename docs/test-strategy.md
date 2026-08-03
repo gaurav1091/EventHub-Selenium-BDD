@@ -101,6 +101,7 @@ Push runs execute a fast matrix:
 - Firefox smoke, serial.
 - Chrome API, parallel.
 - Chrome `@parallel-safe`, parallel with four threads.
+- Chrome accessibility, serial, with strict threshold enforcement.
 
 Pull requests run PR-diff-aware impact selection instead of the fixed push matrix. Changed files are mapped to `@impact-*` tags through `scripts/select-impact-tags.sh`, and the generated selection is published under `target/run-summary`.
 
@@ -131,12 +132,20 @@ Manual workflow dispatch runs exactly one selected browser/suite/parallel combin
 
 ## Accessibility Thresholds
 
-Axe accessibility scenarios are advisory by default. Enable threshold enforcement when the product baseline is ready:
+Axe accessibility scenarios are advisory by default locally. Push CI runs the `accessibility` suite with the
+`accessibility-strict` Maven profile so critical accessibility regressions become visible in the required automation
+signal.
 
 ```bash
 mvn test -Dheadless=true -Dcucumber.filter.tags="@accessibility" -Daccessibility.threshold.enabled=true -Daccessibility.max.violations=0
 mvn -Paccessibility-strict test
 ```
+
+Accessibility artifacts:
+
+- `target/axe-reports`
+- `target/run-summary/accessibility-summary.json`
+- `target/run-summary/release-readiness.json`
 
 ## Visual Baselines
 
@@ -148,3 +157,39 @@ mvn -Pvisual-baseline test -Dvisual.baseline.update=true
 ```
 
 PNG diff images and JSON comparison reports are written under `target/visual-diff`. Keep this advisory until the UI has stable, committed baselines. Use `-Dvisual.diff.max.pixels=<count>` to set the enforcement tolerance.
+
+Managed baselines live under `src/test/resources/visual-baselines`.
+Update baselines only after intentional UI changes and code review:
+
+```bash
+mvn -Pvisual-baseline test -Dvisual.baseline.update=true
+mvn -Pvisual-baseline test
+```
+
+## Quarantine Governance
+
+Quarantine is tracked in `src/test/resources/governance/quarantine.json`.
+Every entry must include scenario, owner, reason, expiry date, and issue/risk reference.
+Run the audit before pushing quarantine changes:
+
+```bash
+make quarantine-audit
+QUARANTINE_AUDIT_FAIL=true bash scripts/audit-quarantine.sh
+```
+
+Expired or incomplete quarantine entries fail `scripts/governance-check.sh`.
+
+## Quality Intelligence
+
+Every run writes a release-readiness summary that combines:
+
+- scenario pass/fail totals
+- retry threshold status
+- accessibility threshold status
+- visual baseline status
+- quarantine governance status
+- slowest scenario signals
+
+CI publishes this summary to GitHub Step Summary and copies the JSON/Markdown into each Pages report bundle.
+The Pages dashboard also generates `trend-dashboard.html` and `trend-summary.json` from persisted report history so
+teams can review cross-run movement in tests, failures, retries, accessibility findings, visual diffs, and quarantine.

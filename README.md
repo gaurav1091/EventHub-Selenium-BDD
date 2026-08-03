@@ -73,6 +73,7 @@ Quality gates:
 ```bash
 mvn -Pquality -DskipTests verify
 bash scripts/governance-check.sh
+make quarantine-audit
 ```
 
 Dependency vulnerability scan:
@@ -119,6 +120,7 @@ CI publishes a GitHub Pages report dashboard for every trusted workflow run. Eac
 parallel mode, thread count, tag expression, and executed scenario count. The workflow summary prints the dashboard
 link after the Pages deployment completes. Historical report folders are persisted on the
 `eventhub-report-history` branch so older workflow report links remain available after later CI runs.
+The Pages dashboard also publishes cross-run quality trends in `trend-dashboard.html` and `trend-summary.json`.
 
 ## Docker
 
@@ -160,6 +162,7 @@ make accessibility
 ACCESSIBILITY_THRESHOLD_ENABLED=true ACCESSIBILITY_MAX_VIOLATIONS=0 make accessibility
 make accessibility-strict
 make visual-baseline
+make quarantine-audit
 make impact AREA=auth
 make impact-select AREA=api
 ```
@@ -169,6 +172,9 @@ Run summaries are written to `target/run-summary/eventhub-run-summary.json`.
 Open `target/run-summary/report-index.html` after a run for one-page links to Extent, Cucumber, Allure results, Axe reports, visual sanity screenshots, governance files, and summaries.
 Impact-selected runs also write `target/run-summary/impact-selection.json`.
 Retry governance writes `target/run-summary/retry-governance.json`.
+Release readiness writes `target/run-summary/release-readiness.json` and `.md`.
+Accessibility aggregation writes `target/run-summary/accessibility-summary.json`.
+Quarantine governance writes `target/run-summary/quarantine-dashboard.md` and `quarantine-summary.json`.
 Visual baseline comparison writes PNG diff images and JSON summaries under `target/visual-diff` when `visual.baseline.enabled=true`.
 GitHub Pages publication is assembled by `scripts/build-pages-report.sh`, `scripts/build-pages-site.sh`,
 `scripts/restore-pages-history.sh`, and `scripts/persist-pages-history.sh`.

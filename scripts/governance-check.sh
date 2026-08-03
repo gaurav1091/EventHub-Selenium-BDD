@@ -4,6 +4,9 @@ set -euo pipefail
 echo "Running tag governance audit..."
 TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh
 
+echo "Running quarantine governance audit..."
+QUARANTINE_AUDIT_FAIL=true bash scripts/audit-quarantine.sh
+
 echo "Checking workflow YAML syntax..."
 ruby -e 'require "yaml"; YAML.load_file(".github/workflows/tests.yml"); puts "workflow yaml ok"'
 if [[ -f ".github/workflows/static-quality.yml" ]]; then

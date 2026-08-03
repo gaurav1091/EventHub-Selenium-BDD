@@ -1,4 +1,4 @@
-.PHONY: smoke api ui-critical visual accessibility accessibility-strict visual-baseline p0 p1 impact impact-select parallel quality governance-check tag-audit docker-smoke clean-reports
+.PHONY: smoke api ui-critical visual accessibility accessibility-strict visual-baseline p0 p1 impact impact-select parallel quality governance-check tag-audit quarantine-audit docker-smoke clean-reports
 
 BROWSER ?= chrome
 THREAD_COUNT ?= 2
@@ -48,6 +48,9 @@ governance-check:
 
 tag-audit:
 	TAG_AUDIT_FAIL=true bash scripts/audit-tags.sh
+
+quarantine-audit:
+	QUARANTINE_AUDIT_FAIL=true bash scripts/audit-quarantine.sh
 
 docker-smoke:
 	SUITE=docker-smoke BROWSER=$(BROWSER) docker compose run --rm eventhub-tests

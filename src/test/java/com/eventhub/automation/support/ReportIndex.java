@@ -32,6 +32,12 @@ public final class ReportIndex {
         links.put("Scenario Durations", "scenario-durations.json");
         links.put("Slow Scenarios", "slow-scenarios.json");
         links.put("Retry Governance", "retry-governance.json");
+        links.put("Release Readiness", "release-readiness.md");
+        links.put("Release Readiness JSON", "release-readiness.json");
+        links.put("Accessibility Summary", "accessibility-summary.json");
+        links.put("Visual Quality Summary", "visual-quality-summary.json");
+        links.put("Quarantine Dashboard", "quarantine-dashboard.md");
+        links.put("Quarantine Summary", "quarantine-summary.json");
         links.put("Impact Selection", "impact-selection.json");
         links.put("Environment Health", "environment-health.json");
         links.put("Scenario Governance JSON", "../governance/scenario-governance.json");

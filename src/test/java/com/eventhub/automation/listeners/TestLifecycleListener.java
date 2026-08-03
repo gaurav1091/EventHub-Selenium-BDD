@@ -4,6 +4,7 @@ import com.eventhub.automation.api.EventHubApiClient;
 import com.eventhub.automation.config.ConfigReader;
 import com.eventhub.automation.support.CleanupService;
 import com.eventhub.automation.support.EnvironmentHealthCheck;
+import com.eventhub.automation.support.QualityIntelligence;
 import com.eventhub.automation.support.ReportIndex;
 import com.eventhub.automation.support.RunContext;
 import com.eventhub.automation.support.RunSummary;
@@ -60,6 +61,7 @@ public class TestLifecycleListener implements ITestListener {
         ScenarioTelemetry.writeArtifacts();
         ScenarioGovernanceReport.write();
         RunSummary.write();
+        QualityIntelligence.writeArtifacts();
         ReportIndex.write();
     }
 

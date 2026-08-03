@@ -145,6 +145,9 @@ jobs:
           if [[ -f target/run-summary/github-step-summary.md ]]; then
             cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
           fi
+          if [[ -f target/run-summary/release-readiness.md ]]; then
+            cat target/run-summary/release-readiness.md >> "$GITHUB_STEP_SUMMARY"
+          fi
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
@@ -199,6 +202,10 @@ jobs:
             suite: parallel-safe
             parallel: "true"
             thread-count: "4"
+          - browser: chrome
+            suite: accessibility
+            parallel: "false"
+            thread-count: "1"
     name: matrix / ${{ matrix.browser }} / ${{ matrix.suite }} / parallel=${{ matrix.parallel }}
     steps:
       - uses: actions/checkout@v5
@@ -214,6 +221,7 @@ jobs:
           SUITE="${{ matrix.suite }}"
           PARALLEL="${{ matrix.parallel }}"
           THREAD_COUNT="${{ matrix['thread-count'] }}"
+          IMPACT_AREA="none"
 
           case "$SUITE" in
             all) TAG_EXPRESSION="" ;;
@@ -233,6 +241,9 @@ jobs:
           fi
 
           MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE")
+          if [[ "$SUITE" == "accessibility" ]]; then
+            MVN_ARGS+=(-Paccessibility-strict)
+          fi
 
           if [[ "$PARALLEL" == "true" ]]; then
             if [[ -z "$TAG_EXPRESSION" ]]; then
@@ -266,6 +277,9 @@ jobs:
         run: |
           if [[ -f target/run-summary/github-step-summary.md ]]; then
             cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ -f target/run-summary/release-readiness.md ]]; then
+            cat target/run-summary/release-readiness.md >> "$GITHUB_STEP_SUMMARY"
           fi
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
@@ -362,6 +376,9 @@ jobs:
           if [[ -f target/run-summary/github-step-summary.md ]]; then
             cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
           fi
+          if [[ -f target/run-summary/release-readiness.md ]]; then
+            cat target/run-summary/release-readiness.md >> "$GITHUB_STEP_SUMMARY"
+          fi
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
           fi
@@ -435,6 +452,9 @@ jobs:
           fi
 
           MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE")
+          if [[ "$SUITE" == "accessibility" ]]; then
+            MVN_ARGS+=(-Paccessibility-strict)
+          fi
 
           if [[ "$PARALLEL" == "true" ]]; then
             if [[ -z "$TAG_EXPRESSION" ]]; then
@@ -468,6 +488,9 @@ jobs:
         run: |
           if [[ -f target/run-summary/github-step-summary.md ]]; then
             cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ -f target/run-summary/release-readiness.md ]]; then
+            cat target/run-summary/release-readiness.md >> "$GITHUB_STEP_SUMMARY"
           fi
           if [[ -f target/run-summary/impact-selection.md ]]; then
             cat target/run-summary/impact-selection.md >> "$GITHUB_STEP_SUMMARY"
