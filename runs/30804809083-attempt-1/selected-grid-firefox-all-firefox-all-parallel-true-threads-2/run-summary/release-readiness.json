@@ -1,0 +1,77 @@
+{
+  "generatedAt" : "2026-08-03T10:20:14.481307125",
+  "status" : "ready",
+  "runId" : "run-20260803101559",
+  "environment" : "qa",
+  "suiteName" : "all",
+  "browser" : "firefox",
+  "parallel" : "methods",
+  "threadCount" : "2",
+  "totalScenarios" : 73,
+  "passedScenarios" : 73,
+  "failedScenarios" : 0,
+  "retriedScenarios" : 0,
+  "accessibilityViolations" : 16,
+  "visualDiffPixels" : 0,
+  "visualMissingBaselines" : 0,
+  "quarantineCount" : 0,
+  "expiredQuarantineCount" : 0,
+  "slowestScenarios" : [ {
+    "id" : "9ab7f276-60b1-4fd5-9a0d-267af19b4f8c",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 18,
+    "status" : "PASSED",
+    "durationMs" : 17020,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "bf2cb99f-ec08-4c6d-97af-2ec1a2a8dd1f",
+    "name" : "Authenticated session survives refresh on protected pages",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 68,
+    "status" : "PASSED",
+    "durationMs" : 14101,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-session" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "30081fa7-ba7c-4ccf-b624-7c3098cfe854",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 17,
+    "status" : "PASSED",
+    "durationMs" : 13627,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "3cfd6495-ba77-42c9-b9a4-7601efd3449b",
+    "name" : "Admin Events page renders management controls",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 12963,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "b9141027-76f7-46d6-a21c-11e0330254ba",
+    "name" : "Authenticated session survives refresh on protected pages",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 69,
+    "status" : "PASSED",
+    "durationMs" : 12805,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-session" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  } ],
+  "checks" : {
+    "visual" : true,
+    "retry" : true,
+    "accessibility" : true,
+    "quarantine" : true,
+    "tests" : true
+  }
+}
