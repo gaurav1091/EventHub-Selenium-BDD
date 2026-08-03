@@ -145,7 +145,6 @@ public final class DriverFactory {
         browserStackOptions.put("projectName", ConfigReader.getRequired("browserstack.project.name"));
         browserStackOptions.put("buildName", ConfigReader.getRequired("browserstack.build.name"));
         browserStackOptions.put("sessionName", browserStackSessionName());
-        browserStackOptions.put("seleniumVersion", "4.23.1");
         browserStackOptions.put("debug", ConfigReader.getBoolean("browserstack.debug"));
         browserStackOptions.put("networkLogs", ConfigReader.getBoolean("browserstack.network.logs"));
         browserStackOptions.put("local", ConfigReader.getBoolean("browserstack.local"));
