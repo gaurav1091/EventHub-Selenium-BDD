@@ -1,0 +1,4512 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>EventHub Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">EventHub Selenium Java BDD Results</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Aug 3, 2026 09:42:46 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@admin</a><a class="dropdown-item" href="#">@risk-revenue</a><a class="dropdown-item" href="#">@risk-integration</a><a class="dropdown-item" href="#">@intent-api-contract</a><a class="dropdown-item" href="#">@impact-admin</a><a class="dropdown-item" href="#">@bookings</a><a class="dropdown-item" href="#">@impact-bookings</a><a class="dropdown-item" href="#">@impact-integration</a><a class="dropdown-item" href="#">@p1</a><a class="dropdown-item" href="#">@stateful</a><a class="dropdown-item" href="#">@ui</a><a class="dropdown-item" href="#">@impact-api</a><a class="dropdown-item" href="#">@api</a><a class="dropdown-item" href="#">@owner-platform</a><a class="dropdown-item" href="#">@api-cleanup</a><a class="dropdown-item" href="#">@intent-booking</a><a class="dropdown-item" href="#">@p0</a><a class="dropdown-item" href="#">@hybrid</a><a class="dropdown-item" href="#">@intent-admin</a><a class="dropdown-item" href="#">@risk-admin</a><a class="dropdown-item" href="#">@critical</a><a class="dropdown-item" href="#">@intent-capacity</a><a class="dropdown-item" href="#">@intent-cleanup</a><a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@negative</a><a class="dropdown-item" href="#">@intent-hybrid</a><a class="dropdown-item" href="#">@contract</a><a class="dropdown-item" href="#">@smoke</a><a class="dropdown-item" href="#">@risk-contract</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Admin event management</p>
+            <p class="text-sm">
+              <span>9:42:48 PM</span> / <span>00:00:35:201</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Admin event management</h5>
+<span class='badge badge-success'>08.03.2026 9:42:48 PM</span>
+<span class='badge badge-danger'>08.03.2026 9:43:23 PM</span>
+<span class='badge badge-default'>00:00:35:201</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Admin can create a disposable event and find it in discovery</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()">
+                <span>When I create a one-seat admin event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()">
+                <span>And I open the Admin Events page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInTheAdminTable()">
+                <span>Then the created admin event should appear in the admin table</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()">
+                <span>And the created admin event should appear in event discovery</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCleanUpTheCreatedAdminEventThroughApi()">
+                <span>When I clean up the created admin event through API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldNotAppearThroughApiOrDiscovery()">
+                <span>Then the created admin event should not appear through API or discovery</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>Sold-out admin event is unavailable from discovery</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateASoldOutOneSeatAdminEventThroughTheApi()">
+                <span>When I create a sold-out one-seat admin event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking()">
+                <span>Then the created admin event should show no remaining seats or be unavailable for booking</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="28"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">EventHub API contract</p>
+            <p class="text-sm">
+              <span>9:43:23 PM</span> / <span>00:00:23:667</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">EventHub API contract</h5>
+<span class='badge badge-success'>08.03.2026 9:43:23 PM</span>
+<span class='badge badge-danger'>08.03.2026 9:43:47 PM</span>
+<span class='badge badge-default'>00:00:23:667</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Authenticated user can create and cancel a booking through API</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()">
+                <span>When I create a booking through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()">
+                <span>Then the API booking response should include a booking reference</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)">
+                <span>And the API response should match schema "schemas/booking-response.schema.json"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()">
+                <span>When I cancel the API-created booking</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()">
+                <span>Then the API booking cancellation should be successful</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="39"><span class="badge log pass-bg mr-2">Pass</span>Booking cancellation is not silently repeatable</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()">
+                <span>When I create a booking through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()">
+                <span>Then the API booking response should include a booking reference</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()">
+                <span>When I cancel the API-created booking</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()">
+                <span>Then the API booking cancellation should be successful</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBookingAgain()">
+                <span>When I cancel the API-created booking again</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()">
+                <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Booking list maps to POJO responses after API booking creation</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()">
+                <span>When I create a booking through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApi()">
+                <span>And I request bookings through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingsResponseShouldMapToBookingPojosForTheCreatedBooking()">
+                <span>Then the API bookings response should map to booking POJOs for the created booking</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="59"><span class="badge log pass-bg mr-2">Pass</span>Duplicate booking attempts are handled consistently</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateTheSameBookingThroughTheApiTwice()">
+                <span>When I create the same booking through the API twice</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theDuplicateBookingResponseShouldFollowTheBookingApiContract()">
+                <span>Then the duplicate booking response should follow the booking API contract</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="67"><span class="badge log pass-bg mr-2">Pass</span>Event capacity boundary rejects booking beyond available seats</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatEventThroughTheApi()">
+                <span>When I create a one-seat event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iBookTheFullApiEventCapacity()">
+                <span>And I book the full API event capacity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateOneMoreBookingForTheCapacityBoundEvent()">
+                <span>And I create one more booking for the capacity-bound event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()">
+                <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="77"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Event booking lifecycle</p>
+            <p class="text-sm">
+              <span>9:43:47 PM</span> / <span>00:01:38:357</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Event booking lifecycle</h5>
+<span class='badge badge-success'>08.03.2026 9:43:47 PM</span>
+<span class='badge badge-danger'>08.03.2026 9:45:25 PM</span>
+<span class='badge badge-default'>00:01:38:357</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=77</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="78"><span class="badge log pass-bg mr-2">Pass</span>User can book a ticket and view it under My Bookings</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)">
+                <span>When I book 1 ticket for a bookable event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()">
+                <span>Then I should see the booking confirmation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()">
+                <span>When I open My Bookings from the confirmation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()">
+                <span>Then I should see booking for the selected event</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="90"><span class="badge log pass-bg mr-2">Pass</span>User can book tickets and see confirmation</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="91"><span class="badge log pass-bg mr-2">Pass</span>User can book tickets and see confirmation</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When I book 1 tickets for a bookable event</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I should see the booking confirmation</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="101"><span class="badge log pass-bg mr-2">Pass</span>User can book tickets and see confirmation</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When I book 2 tickets for a bookable event</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I should see the booking confirmation</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="111"><span class="badge log pass-bg mr-2">Pass</span>Booking confirmation shows customer, quantity, event, and total</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)">
+                <span>When I book 2 tickets for a bookable event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.theBookingConfirmationShouldShowTheSelectedEventCustomerQuantityAndTotal()">
+                <span>Then the booking confirmation should show the selected event, customer, quantity, and total</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="121"><span class="badge log pass-bg mr-2">Pass</span>User can view booking details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)">
+                <span>When I book 1 ticket for a bookable event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()">
+                <span>And I open My Bookings from the confirmation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iOpenTheBookingDetails()">
+                <span>And I open the booking details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()">
+                <span>Then I should see booking for the selected event</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="133"><span class="badge log pass-bg mr-2">Pass</span>User can cancel a booking</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)">
+                <span>When I book 1 ticket for a bookable event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()">
+                <span>And I open My Bookings from the confirmation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCancelTheBooking()">
+                <span>And I cancel the booking</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()">
+                <span>Then no bookings for the current Selenium customer should remain</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="145"><span class="badge log pass-bg mr-2">Pass</span>User can clear all bookings</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)">
+                <span>When I book 1 ticket for a bookable event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()">
+                <span>And I open My Bookings from the confirmation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iClearAllBookings()">
+                <span>And I clear all bookings</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()">
+                <span>Then no bookings for the current Selenium customer should remain</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="157"><span class="badge log pass-bg mr-2">Pass</span>Booking cannot exceed available tickets</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()">
+                <span>When I create a one-seat admin event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iOpenBookingDetailsForTheCreatedAdminEvent()">
+                <span>And I open booking details for the created admin event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)">
+                <span>Then the ticket quantity should be 1</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.theTicketDecrementControlShouldBeDisabled()">
+                <span>And the ticket decrement control should be disabled</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.theTicketIncrementControlShouldBeDisabled()">
+                <span>And the ticket increment control should be disabled</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="171"><span class="badge log pass-bg mr-2">Pass</span>Selenium-created bookings can be cleaned through API</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()">
+                <span>When I create a booking through the API for cleanup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()">
+                <span>And I clean Selenium-created bookings through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()">
+                <span>Then no bookings for the current Selenium customer should remain</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.myBookingsShouldShowAnEmptyState()">
+                <span>And My Bookings should show an empty state</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="183"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">API and UI hybrid coverage</p>
+            <p class="text-sm">
+              <span>9:45:25 PM</span> / <span>00:01:19:052</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">API and UI hybrid coverage</h5>
+<span class='badge badge-success'>08.03.2026 9:45:25 PM</span>
+<span class='badge badge-danger'>08.03.2026 9:46:44 PM</span>
+<span class='badge badge-default'>00:01:19:052</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=183</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="184"><span class="badge log pass-bg mr-2">Pass</span>Booking created through API is visible in My Bookings</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()">
+                <span>When I create a booking through the API for cleanup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)">
+                <span>And I directly open protected route "/bookings"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()">
+                <span>Then I should see booking for the selected event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()">
+                <span>When I clean Selenium-created bookings through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()">
+                <span>Then no bookings for the current Selenium customer should remain</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="197"><span class="badge log pass-bg mr-2">Pass</span>API-created event is searchable and deep-linkable in the UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()">
+                <span>When I create a one-seat admin event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()">
+                <span>Then the created admin event should appear in event discovery</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForTheCreatedAdminEvent()">
+                <span>When I directly open event detail for the created admin event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForTheCreatedAdminEvent()">
+                <span>Then I should see metadata for the created admin event</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="210"><span class="badge log pass-bg mr-2">Pass</span>API-created event appears in admin management and discovery</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()">
+                <span>When I create a one-seat admin event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()">
+                <span>And I open the Admin Events page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInTheAdminTable()">
+                <span>Then the created admin event should appear in the admin table</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()">
+                <span>And the created admin event should appear in event discovery</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="223"><span class="badge log pass-bg mr-2">Pass</span>UI booking for API-created event is visible through the API</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()">
+                <span>When I create a one-seat admin event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iBookTicketForTheCreatedAdminEvent(int)">
+                <span>And I book 1 ticket for the created admin event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()">
+                <span>Then I should see the booking confirmation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApi()">
+                <span>When I request bookings through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingsResponseShouldIncludeTheUiCreatedBooking()">
+                <span>Then the API bookings response should include the UI-created booking</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="237"><span class="badge log pass-bg mr-2">Pass</span>API cleanup of an API-created booking is reflected in the UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()">
+                <span>When I create a booking through the API for cleanup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)">
+                <span>And I directly open protected route "/bookings"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()">
+                <span>Then I should see booking for the selected event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()">
+                <span>When I clean Selenium-created bookings through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)">
+                <span>And I directly open protected route "/bookings"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()">
+                <span>Then no bookings for the current Selenium customer should remain</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="252"><span class="badge log pass-bg mr-2">Pass</span>API-created booking details can be opened in the UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()">
+                <span>When I create a booking through the API for cleanup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)">
+                <span>And I directly open protected route "/bookings"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iOpenTheBookingDetails()">
+                <span>And I open the booking details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()">
+                <span>Then I should see booking for the selected event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()">
+                <span>When I clean Selenium-created bookings through the API</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="265"><span class="badge log pass-bg mr-2">Pass</span>API-created sold-out event is unavailable in event discovery</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()">
+                <span>Given I am signed in to EventHub</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateASoldOutOneSeatAdminEventThroughTheApi()">
+                <span>When I create a sold-out one-seat admin event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking()">
+                <span>Then the created admin event should show no remaining seats or be unavailable for booking</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">29</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@admin</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@admin</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>9</span>
+</span>
+<p class="name">@risk-revenue</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@risk-revenue</h4>
+<span status="pass" class='badge log pass-bg'>9 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@risk-integration</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@risk-integration</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@intent-api-contract</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-api-contract</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@impact-admin</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@impact-admin</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>9</span>
+</span>
+<p class="name">@bookings</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@bookings</h4>
+<span status="pass" class='badge log pass-bg'>9 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>9</span>
+</span>
+<p class="name">@impact-bookings</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@impact-bookings</h4>
+<span status="pass" class='badge log pass-bg'>9 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@impact-integration</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@impact-integration</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>21</span>
+</span>
+<p class="name">@p1</p>
+<p class="duration text-sm">21 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@p1</h4>
+<span status="pass" class='badge log pass-bg'>21 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>23</span>
+</span>
+<p class="name">@stateful</p>
+<p class="duration text-sm">23 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@stateful</h4>
+<span status="pass" class='badge log pass-bg'>23 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>18</span>
+</span>
+<p class="name">@ui</p>
+<p class="duration text-sm">18 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ui</h4>
+<span status="pass" class='badge log pass-bg'>18 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@impact-api</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@impact-api</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@api</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@api</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>23</span>
+</span>
+<p class="name">@owner-platform</p>
+<p class="duration text-sm">23 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@owner-platform</h4>
+<span status="pass" class='badge log pass-bg'>23 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>11</span>
+</span>
+<p class="name">@api-cleanup</p>
+<p class="duration text-sm">11 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@api-cleanup</h4>
+<span status="pass" class='badge log pass-bg'>11 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>13</span>
+</span>
+<p class="name">@intent-booking</p>
+<p class="duration text-sm">13 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-booking</h4>
+<span status="pass" class='badge log pass-bg'>13 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@p0</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@p0</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@hybrid</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@hybrid</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@intent-admin</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-admin</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@risk-admin</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@risk-admin</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@critical</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@critical</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@intent-capacity</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-capacity</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@intent-cleanup</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-cleanup</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>21</span>
+</span>
+<p class="name">@regression</p>
+<p class="duration text-sm">21 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@regression</h4>
+<span status="pass" class='badge log pass-bg'>21 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:42:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Admin can create a disposable event and find it in discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Admin can create a disposable event and find it in discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='91'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='101'>User can book tickets and see confirmation</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book tickets and see confirmation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='111'>Booking confirmation shows customer, quantity, event, and total</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking confirmation shows customer, quantity, event, and total</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='121'>User can view booking details</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can view booking details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='133'>User can cancel a booking</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can cancel a booking</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:44:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='145'>User can clear all bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can clear all bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='171'>Selenium-created bookings can be cleaned through API</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Selenium-created bookings can be cleaned through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@negative</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@negative</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Sold-out admin event is unavailable from discovery</a>
+<div class="">
+<span class="badge badge-default">Admin event management.Sold-out admin event is unavailable from discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='157'>Booking cannot exceed available tickets</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.Booking cannot exceed available tickets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@intent-hybrid</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-hybrid</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='184'>Booking created through API is visible in My Bookings</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.Booking created through API is visible in My Bookings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='197'>API-created event is searchable and deep-linkable in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event is searchable and deep-linkable in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='210'>API-created event appears in admin management and discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created event appears in admin management and discovery</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='223'>UI booking for API-created event is visible through the API</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.UI booking for API-created event is visible through the API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='237'>API cleanup of an API-created booking is reflected in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API cleanup of an API-created booking is reflected in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='252'>API-created booking details can be opened in the UI</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created booking details can be opened in the UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:46:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='183' id='265'>API-created sold-out event is unavailable in event discovery</a>
+<div class="">
+<span class="badge badge-default">API and UI hybrid coverage.API-created sold-out event is unavailable in event discovery</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@contract</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@contract</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@smoke</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@smoke</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='77' id='78'>User can book a ticket and view it under My Bookings</a>
+<div class="">
+<span class="badge badge-default">Event booking lifecycle.User can book a ticket and view it under My Bookings</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@risk-contract</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@risk-contract</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='29'>Authenticated user can create and cancel a booking through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can create and cancel a booking through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='39'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='50'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='59'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:43:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='67'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Aug 3, 2026 09:42:46 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Aug 3, 2026 09:46:44 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>4</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>4</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>23</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>108</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Admin event management":35.201,"EventHub API contract":23.667,"Event booking lifecycle":98.357,"API and UI hybrid coverage":79.052
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@admin</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@risk-revenue</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@risk-integration</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-api-contract</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@impact-admin</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@bookings</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@impact-bookings</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@impact-integration</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@p1</td>
+<td>21</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@stateful</td>
+<td>23</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ui</td>
+<td>18</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@impact-api</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@api</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@owner-platform</td>
+<td>23</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@api-cleanup</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-booking</td>
+<td>13</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@p0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@hybrid</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-admin</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@risk-admin</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@critical</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-capacity</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-cleanup</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@regression</td>
+<td>21</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@negative</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-hybrid</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@contract</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@smoke</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@risk-contract</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Run ID</td>
+<td>run-20260803214246</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>qa</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>chrome</td>
+</tr>
+<tr>
+<td>Headless</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Parallel</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Thread Count</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>@stateful</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 4,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 23,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 108,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
