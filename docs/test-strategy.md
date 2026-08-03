@@ -103,7 +103,7 @@ Push runs execute a fast matrix:
 - Firefox smoke, serial.
 - Chrome API, parallel.
 - Chrome `@parallel-safe`, parallel with four threads.
-- Firefox `@parallel-safe`, parallel with four threads.
+- Firefox `@parallel-safe`, parallel with two threads for the default hosted-runner gate.
 - Chrome accessibility, serial, with strict threshold enforcement.
 - Firefox accessibility, serial, with strict threshold enforcement.
 - Selenium Grid smoke for Chrome and Firefox remote-driver readiness.

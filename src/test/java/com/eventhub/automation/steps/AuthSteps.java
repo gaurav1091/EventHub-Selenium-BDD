@@ -64,11 +64,13 @@ public class AuthSteps {
     @When("I directly open protected route {string}")
     public void iDirectlyOpenProtectedRoute(String route) {
         DriverManager.getDriver().get(ConfigReader.getRequired("base.url") + route);
+        Waits.appReady(DriverManager.getDriver());
     }
 
     @When("I refresh the current page")
     public void iRefreshTheCurrentPage() {
         DriverManager.getDriver().navigate().refresh();
+        Waits.appReady(DriverManager.getDriver());
     }
 
     @When("I sign out")

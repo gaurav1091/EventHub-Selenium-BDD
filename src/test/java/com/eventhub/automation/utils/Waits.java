@@ -3,6 +3,7 @@ package com.eventhub.automation.utils;
 import com.eventhub.automation.config.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -39,15 +40,30 @@ public final class Waits {
                 .executeScript("return document.readyState")));
     }
 
+    public static boolean appReady(WebDriver driver) {
+        pageReady(driver);
+        return loadingComplete(driver);
+    }
+
     public static boolean loadingComplete(WebDriver driver) {
         return wait(driver).until(webDriver -> {
-            boolean hasLoadingClass = !webDriver.findElements(By.cssSelector("[class*='animate-pulse'], [class*='animate-spin']")).isEmpty();
+            boolean hasVisibleLoadingClass = webDriver.findElements(By.cssSelector("[class*='animate-pulse'], [class*='animate-spin']"))
+                    .stream()
+                    .anyMatch(Waits::isVisible);
             boolean hasVisibleLoadingText = webDriver.findElements(By.xpath("//*[contains(translate(normalize-space(.),"
                             + "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'loading')]"))
                     .stream()
-                    .anyMatch(WebElement::isDisplayed);
-            return !hasLoadingClass && !hasVisibleLoadingText;
+                    .anyMatch(Waits::isVisible);
+            return !hasVisibleLoadingClass && !hasVisibleLoadingText;
         });
+    }
+
+    private static boolean isVisible(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (StaleElementReferenceException exception) {
+            return false;
+        }
     }
 
     public static boolean textToContain(WebDriver driver, By locator, String expectedText) {

@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public abstract class BasePage {
     protected void open(String path) {
         driver().get(ConfigReader.getRequired("base.url") + path);
-        Waits.pageReady(driver());
+        Waits.appReady(driver());
     }
 
     protected WebElement visible(By locator) {

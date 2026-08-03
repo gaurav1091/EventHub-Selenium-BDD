@@ -10,7 +10,7 @@ Push runs execute the fast test matrix in `.github/workflows/tests.yml`:
 - Firefox smoke, serial.
 - Chrome API, parallel.
 - Chrome `@parallel-safe`, parallel with four threads.
-- Firefox `@parallel-safe`, parallel with four threads.
+- Firefox `@parallel-safe`, parallel with two threads for hosted-runner stability.
 - Chrome accessibility, serial, with strict Axe threshold enforcement.
 - Firefox accessibility, serial, with strict Axe threshold enforcement.
 - Selenium Grid smoke on Chrome and Firefox.
@@ -88,6 +88,7 @@ Recommended choices:
 - `browser=firefox`, `suite=smoke`, `parallel=false` for cross-browser confidence.
 - `browser=chrome`, `suite=api`, `parallel=true`, `thread-count=3` for API-only validation.
 - `browser=chrome`, `suite=parallel-safe`, `parallel=true`, `thread-count=4` for parallel UI/API readiness.
+- `browser=firefox`, `suite=parallel-safe`, `parallel=true`, `thread-count=2` for stable Firefox parallel UI/API readiness.
 - `browser=chrome`, `suite=stateful`, `parallel=false` for booking/admin mutation scenarios.
 - `browser=chrome`, `suite=hybrid`, `parallel=false` for API setup plus UI verification scenarios.
 - `browser=chrome`, `suite=ui-critical`, `parallel=false` for critical browser paths.

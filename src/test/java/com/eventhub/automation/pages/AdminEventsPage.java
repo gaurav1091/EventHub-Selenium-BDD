@@ -1,6 +1,7 @@
 package com.eventhub.automation.pages;
 
 import com.eventhub.automation.models.EventRequest;
+import com.eventhub.automation.utils.Waits;
 import org.openqa.selenium.By;
 
 import static com.eventhub.automation.utils.UiAssertions.assertPageContains;
@@ -13,6 +14,7 @@ public class AdminEventsPage extends BasePage {
     }
 
     public void assertLoaded() {
+        Waits.loadingComplete(driver());
         assertPageContainsAnyOf(driver(), "All Events", "Add New Event", "Create Event", "Manage Events");
     }
 
