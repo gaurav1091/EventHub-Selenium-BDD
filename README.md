@@ -164,6 +164,7 @@ make grid-down
 ```
 
 GitHub Actions runs Selenium Grid smoke coverage for Chrome and Firefox on push. Grid execution metadata is included in the run summary and report bundle.
+To run Grid manually from GitHub Actions, open `EventHub Selenium BDD`, choose `Run workflow`, set `suite=grid-smoke`, choose `browser=chrome` or `firefox`, and keep `parallel=false`.
 
 Run visual or accessibility smoke:
 

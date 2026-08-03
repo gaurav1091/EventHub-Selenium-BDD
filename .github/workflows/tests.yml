@@ -40,6 +40,7 @@ on:
           - nightly-stateful
           - accessibility
           - visual
+          - grid-smoke
           - impact-auth
           - impact-events
           - impact-bookings
@@ -551,8 +552,14 @@ jobs:
               nightly-stateful) TAG_EXPRESSION="@stateful and @regression" ;;
               accessibility) TAG_EXPRESSION="@accessibility" ;;
               docker-smoke) TAG_EXPRESSION="@docker-smoke or (@p0 and @smoke)" ;;
+              grid-smoke) TAG_EXPRESSION="@smoke" ;;
               *) TAG_EXPRESSION="@$SUITE" ;;
             esac
+          fi
+
+          if [[ "$SUITE" == "grid-smoke" ]]; then
+            PARALLEL="false"
+            THREAD_COUNT="1"
           fi
 
           if [[ "$PARALLEL" == "true" && "$SUITE" =~ ^(hybrid|stateful|nightly-stateful)$ ]]; then
@@ -561,6 +568,20 @@ jobs:
           fi
 
           MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE")
+          if [[ "$SUITE" == "grid-smoke" ]]; then
+            docker compose -f docker-compose.selenium-grid.yml up -d
+            for attempt in {1..30}; do
+              if curl -fsS http://localhost:4444/status | grep -Eq '"ready"[[:space:]]*:[[:space:]]*true'; then
+                break
+              fi
+              if [[ "$attempt" == "30" ]]; then
+                docker compose -f docker-compose.selenium-grid.yml logs
+                exit 1
+              fi
+              sleep 2
+            done
+            MVN_ARGS+=(-Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub)
+          fi
           if [[ "$SUITE" == "accessibility" ]]; then
             MVN_ARGS+=(-Paccessibility-strict)
           fi
@@ -591,6 +612,10 @@ jobs:
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
           bash scripts/assert-scenarios-executed.sh
+      - name: Stop Selenium Grid
+        if: always() && github.event.inputs.suite == 'grid-smoke'
+        shell: bash
+        run: docker compose -f docker-compose.selenium-grid.yml down
       - name: Publish run summary
         if: always()
         shell: bash

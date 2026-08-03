@@ -113,6 +113,15 @@ mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://lo
 make grid-down
 ```
 
+Manual GitHub Actions Grid smoke:
+
+1. Open Actions.
+2. Select `EventHub Selenium BDD`.
+3. Click `Run workflow`.
+4. Set `suite` to `grid-smoke`.
+5. Choose `browser` as `chrome` or `firefox`.
+6. Keep `parallel=false`.
+
 Reliability controls:
 
 ```bash
