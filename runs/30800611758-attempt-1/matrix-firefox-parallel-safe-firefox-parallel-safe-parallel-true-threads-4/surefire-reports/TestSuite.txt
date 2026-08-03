@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 73, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 194.8 s <<< FAILURE! -- in TestSuite
+com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Event filters reset after refresh", "Event discovery"](56) -- Time elapsed: 2.945 s <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.tagName: h1 (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 152.0.6, moz:accessibilityChecks: false, moz:buildID: 20260713164047, moz:geckodriverVersion: 0.37.1, moz:headless: true, moz:platformVersion: 6.17.0-1020-azure, moz:processID: 12050, moz:profile: /tmp/rust_mozprofileGPmf4s, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Linux x86...}
+Session ID: a514cd51-e93d-4563-9c52-315207e1f0a0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.eventhub.automation.utils.Waits.visible(Waits.java:17)
+	at com.eventhub.automation.pages.BasePage.visible(BasePage.java:24)
+	at com.eventhub.automation.pages.BasePage.text(BasePage.java:96)
+	at com.eventhub.automation.pages.LoginPage.assertLoaded(LoginPage.java:21)
+	at com.eventhub.automation.pages.LoginPage.openLoginPage(LoginPage.java:16)
+	at com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub(AuthSteps.java:30)
+	at ✽.I am signed in to EventHub(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:5)
+
