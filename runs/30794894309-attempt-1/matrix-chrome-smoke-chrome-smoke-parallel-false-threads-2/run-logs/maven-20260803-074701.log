@@ -1,0 +1,233 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.eventhub:eventhub-selenium-bdd >-----------------
+[INFO] Building EventHub Selenium Java BDD Framework 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ eventhub-selenium-bdd ---
+[INFO] skip non existing resourceDirectory /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ eventhub-selenium-bdd ---
+[INFO] Copying 34 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 50 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.3.1:test (default-test) @ eventhub-selenium-bdd ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p0 @smoke @parallel-safe @critical
+Scenario: Admin Events page renders management controls                   # src/test/resources/features/admin/admin_event_management.feature:8
+Aug 03, 2026 7:47:26 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 7:47:26 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am signed in to EventHub                                        # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Admin Events page                                       # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  Then the Admin Events page should show the create form and events table # com.eventhub.automation.steps.AdminSteps.theAdminEventsPageShouldShowTheCreateFormAndEventsTable()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p0 @smoke @parallel-safe @intent-health
+Scenario: API health endpoint is available          # src/test/resources/features/api/api_contract.feature:5
+  When I request the API health endpoint            # com.eventhub.automation.steps.ApiSteps.iRequestTheApiHealthEndpoint()
+  Then the API health response should be successful # com.eventhub.automation.steps.ApiSteps.theApiHealthResponseShouldBeSuccessful()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p0 @smoke @parallel-safe @intent-auth
+Scenario: Registered user can authenticate through API                          # src/test/resources/features/api/api_contract.feature:14
+  When I authenticate through the API                                           # com.eventhub.automation.steps.ApiSteps.iAuthenticateThroughTheApi()
+  Then the API should return the registered user identity                       # com.eventhub.automation.steps.ApiSteps.theApiShouldReturnTheRegisteredUserIdentity()
+  And the API response should match schema "schemas/login-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p0 @smoke @parallel-safe @intent-discovery
+Scenario: Authenticated user can list events through API                         # src/test/resources/features/api/api_contract.feature:26
+  When I request events through the API                                          # com.eventhub.automation.steps.ApiSteps.iRequestEventsThroughTheApi()
+  Then the API events response should include seeded EventHub events             # com.eventhub.automation.steps.ApiSteps.theApiEventsResponseShouldIncludeSeededEventHubEvents()
+  And the API response should match schema "schemas/events-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p0 @smoke @stateful @intent-booking
+Scenario: Authenticated user can create and cancel a booking through API          # src/test/resources/features/api/api_contract.feature:50
+  When I create a booking through the API                                         # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()
+  Then the API booking response should include a booking reference                # com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()
+  And the API response should match schema "schemas/booking-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+  When I cancel the API-created booking                                           # com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()
+  Then the API booking cancellation should be successful                          # com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @smoke @parallel-safe @critical @intent-session
+Scenario: Registered user can sign in and sign out # src/test/resources/features/auth/login.feature:5
+Aug 03, 2026 7:47:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 7:47:39 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I sign in with valid registered credentials # com.eventhub.automation.steps.AuthSteps.iSignInWithValidRegisteredCredentials()
+  Then I should see the authenticated navigation   # com.eventhub.automation.steps.AuthSteps.iShouldSeeTheAuthenticatedNavigation()
+  When I sign out                                  # com.eventhub.automation.steps.AuthSteps.iSignOut()
+  Then I should be returned to the login page      # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p0 @smoke @stateful @critical
+Scenario: User can book a ticket and view it under My Bookings # src/test/resources/features/bookings/booking_lifecycle.feature:8
+Aug 03, 2026 7:47:44 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 7:47:44 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am signed in to EventHub                             # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event                    # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":".//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]"}
+  (Session info: chrome=150.0.7871.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [56c83856809582be64d1c99618263ab6, findChildElement {using=xpath, id=f.2C5F55D1DF4BC14EDE519268A9B6BFB6.d.8BFEDA622C48AE6240E40418DD25D886.e.60, value=.//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.128, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45041}, goog:processID: 2663, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45041/devtoo..., se:cdpVersion: 150.0.7871.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56c83856809582be64d1c99618263ab6
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:211)
+	at com.eventhub.automation.pages.EventsPage.bookEvent(EventsPage.java:65)
+	at com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(BookingSteps.java:61)
+	at ✽.I book 1 ticket for a bookable event(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature:9)
+
+  Then I should see the booking confirmation                   # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+  When I open My Bookings from the confirmation                # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  Then I should see booking for the selected event             # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+
+    Embedding failure screenshot [image/png 586656 bytes]
+
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p0 @smoke @parallel-safe @critical
+Scenario: User can view upcoming events    # src/test/resources/features/events/event_discovery.feature:8
+Aug 03, 2026 7:47:54 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 7:47:54 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am signed in to EventHub         # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page              # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  Then I should see seeded upcoming events # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+
+Failed scenarios:
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature:8 # User can book a ticket and view it under My Bookings
+
+8 Scenarios (1 failed, 7 passed)
+29 Steps (1 failed, 3 skipped, 25 passed)
+0m41.572s
+
+
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":".//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]"}
+  (Session info: chrome=150.0.7871.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [56c83856809582be64d1c99618263ab6, findChildElement {using=xpath, id=f.2C5F55D1DF4BC14EDE519268A9B6BFB6.d.8BFEDA622C48AE6240E40418DD25D886.e.60, value=.//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.128, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45041}, goog:processID: 2663, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45041/devtoo..., se:cdpVersion: 150.0.7871.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56c83856809582be64d1c99618263ab6
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:211)
+	at com.eventhub.automation.pages.EventsPage.bookEvent(EventsPage.java:65)
+	at com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(BookingSteps.java:61)
+	at ✽.I book 1 ticket for a bookable event(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature:9)
+
+
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 50.75 s <<< FAILURE! -- in TestSuite
+[ERROR] com.eventhub.automation.runners.CucumberTestRunner.runScenario["User can book a ticket and view it under My Bookings", "Event booking lifecycle"](7) -- Time elapsed: 10.41 s <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]"}
+  (Session info: chrome=150.0.7871.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [56c83856809582be64d1c99618263ab6, findChildElement {using=xpath, id=f.2C5F55D1DF4BC14EDE519268A9B6BFB6.d.8BFEDA622C48AE6240E40418DD25D886.e.60, value=.//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.128, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45041}, goog:processID: 2663, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45041/devtoo..., se:cdpVersion: 150.0.7871.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56c83856809582be64d1c99618263ab6
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:211)
+	at com.eventhub.automation.pages.EventsPage.bookEvent(EventsPage.java:65)
+	at com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(BookingSteps.java:61)
+	at ✽.I book 1 ticket for a bookable event(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature:9)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CucumberTestRunner.runScenario » NoSuchElement no such element: Unable to locate element: {"method":"xpath","selector":".//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]"}
+  (Session info: chrome=150.0.7871.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [56c83856809582be64d1c99618263ab6, findChildElement {using=xpath, id=f.2C5F55D1DF4BC14EDE519268A9B6BFB6.d.8BFEDA622C48AE6240E40418DD25D886.e.60, value=.//*[self::button or self::a][contains(normalize-space(.),'Book Now') and not(@aria-disabled='true')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.128, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45041}, goog:processID: 2663, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45041/devtoo..., se:cdpVersion: 150.0.7871.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56c83856809582be64d1c99618263ab6
+[INFO] 
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  57.915 s
+[INFO] Finished at: 2026-08-03T07:48:01Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.3.1:test (default-test) on project eventhub-selenium-bdd: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
