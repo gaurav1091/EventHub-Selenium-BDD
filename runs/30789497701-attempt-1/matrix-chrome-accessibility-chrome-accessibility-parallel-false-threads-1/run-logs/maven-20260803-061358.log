@@ -1,0 +1,250 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.eventhub:eventhub-selenium-bdd >-----------------
+[INFO] Building EventHub Selenium Java BDD Framework 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ eventhub-selenium-bdd ---
+[INFO] skip non existing resourceDirectory /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ eventhub-selenium-bdd ---
+[INFO] Copying 30 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 50 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.3.1:test (default-test) @ eventhub-selenium-bdd ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:16
+Aug 03, 2026 6:14:30 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 6:14:30 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "home"                                   # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+      java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/ to be <= configured threshold] 
+Expecting actual:
+  1
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+
+    Embedding failure screenshot [image/png 575967 bytes]
+
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:17
+Aug 03, 2026 6:14:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 6:14:39 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "events"                                 # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+      java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/events to be <= configured threshold] 
+Expecting actual:
+  3
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+
+    Embedding failure screenshot [image/png 456974 bytes]
+
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:18
+Aug 03, 2026 6:14:47 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 6:14:47 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "bookings"                               # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+      java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/bookings to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+
+    Embedding failure screenshot [image/png 81894 bytes]
+
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:19
+Aug 03, 2026 6:14:57 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 150
+Aug 03, 2026 6:14:57 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 150.0.7871.128. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "admin events"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+      java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/admin/events to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+
+    Embedding failure screenshot [image/png 59849 bytes]
+
+
+Failed scenarios:
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:16 # Key pages expose basic accessibility semantics
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:17 # Key pages expose basic accessibility semantics
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:18 # Key pages expose basic accessibility semantics
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:19 # Key pages expose basic accessibility semantics
+
+4 Scenarios (4 failed)
+20 Steps (4 failed, 16 passed)
+0m44.023s
+
+
+java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/ to be <= configured threshold] 
+Expecting actual:
+  1
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/events to be <= configured threshold] 
+Expecting actual:
+  3
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/bookings to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+java.lang.AssertionError: [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/admin/events to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+
+[ERROR] Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 53.14 s <<< FAILURE! -- in TestSuite
+[ERROR] com.eventhub.automation.runners.CucumberTestRunner.runScenario["Key pages expose basic accessibility semantics", "Accessibility smoke"](1) -- Time elapsed: 19.26 s <<< FAILURE!
+java.lang.AssertionError: 
+[Expected Axe violation count for https://eventhub.rahulshettyacademy.com/ to be <= configured threshold] 
+Expecting actual:
+  1
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+[ERROR] com.eventhub.automation.runners.CucumberTestRunner.runScenario["Key pages expose basic accessibility semantics", "Accessibility smoke"](2) -- Time elapsed: 8.145 s <<< FAILURE!
+java.lang.AssertionError: 
+[Expected Axe violation count for https://eventhub.rahulshettyacademy.com/events to be <= configured threshold] 
+Expecting actual:
+  3
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+[ERROR] com.eventhub.automation.runners.CucumberTestRunner.runScenario["Key pages expose basic accessibility semantics", "Accessibility smoke"](3) -- Time elapsed: 9.687 s <<< FAILURE!
+java.lang.AssertionError: 
+[Expected Axe violation count for https://eventhub.rahulshettyacademy.com/bookings to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+[ERROR] com.eventhub.automation.runners.CucumberTestRunner.runScenario["Key pages expose basic accessibility semantics", "Accessibility smoke"](4) -- Time elapsed: 6.784 s <<< FAILURE!
+java.lang.AssertionError: 
+[Expected Axe violation count for https://eventhub.rahulshettyacademy.com/admin/events to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+	at com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold(UxSmokeSteps.java:102)
+	at ✽.the page should satisfy the configured accessibility threshold(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature:12)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CucumberTestRunner.runScenario [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/ to be <= configured threshold] 
+Expecting actual:
+  1
+to be less than or equal to:
+  0 
+[ERROR]   CucumberTestRunner.runScenario [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/events to be <= configured threshold] 
+Expecting actual:
+  3
+to be less than or equal to:
+  0 
+[ERROR]   CucumberTestRunner.runScenario [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/bookings to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+[ERROR]   CucumberTestRunner.runScenario [Expected Axe violation count for https://eventhub.rahulshettyacademy.com/admin/events to be <= configured threshold] 
+Expecting actual:
+  2
+to be less than or equal to:
+  0 
+[INFO] 
+[ERROR] Tests run: 4, Failures: 4, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:02 min
+[INFO] Finished at: 2026-08-03T06:15:04Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.3.1:test (default-test) on project eventhub-selenium-bdd: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
