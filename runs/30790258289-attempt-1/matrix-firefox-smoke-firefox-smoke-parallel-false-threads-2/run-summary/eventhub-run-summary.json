@@ -1,0 +1,68 @@
+{
+  "runId" : "run-20260803062754",
+  "timestamp" : "2026-08-03T06:28:47.88942138",
+  "environment" : "qa",
+  "suiteName" : "smoke",
+  "browser" : "firefox",
+  "headless" : "true",
+  "parallel" : "none",
+  "threadCount" : "2",
+  "tags" : "@smoke",
+  "passedScenarios" : 8,
+  "failedScenarios" : 0,
+  "totalScenarios" : 8,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "35cf4ae6-62f4-4b3c-adef-8b5f2ca26034",
+    "name" : "Admin Events page renders management controls",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 15076,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "7e3b08fe-ccbd-466d-9cfe-164b1f8fbb3e",
+    "name" : "User can book a ticket and view it under My Bookings",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 12928,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p0", "@smoke", "@stateful", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "6f59a6c1-ed84-4285-8a6f-af66475e44e1",
+    "name" : "User can view upcoming events",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 7922,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "adaa1a39-2f4d-4d84-af78-a20bf37763ed",
+    "name" : "Registered user can sign in and sign out",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 5,
+    "status" : "PASSED",
+    "durationMs" : 6809,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@smoke", "@parallel-safe", "@critical", "@intent-session" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "0bbec6e8-5b45-4385-af96-d56b9b8ebe7f",
+    "name" : "Authenticated user can create and cancel a booking through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 50,
+    "status" : "PASSED",
+    "durationMs" : 2980,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@stateful", "@intent-booking" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  } ]
+}

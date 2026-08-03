@@ -1,0 +1,67 @@
+{
+  "generatedAt" : "2026-08-03T06:28:27.604242351",
+  "status" : "ready",
+  "runId" : "run-20260803062746",
+  "environment" : "qa",
+  "suiteName" : "accessibility",
+  "browser" : "chrome",
+  "parallel" : "none",
+  "threadCount" : "2",
+  "totalScenarios" : 4,
+  "passedScenarios" : 4,
+  "failedScenarios" : 0,
+  "retriedScenarios" : 0,
+  "accessibilityViolations" : 15,
+  "visualDiffPixels" : 0,
+  "visualMissingBaselines" : 0,
+  "quarantineCount" : 0,
+  "expiredQuarantineCount" : 0,
+  "slowestScenarios" : [ {
+    "id" : "a194ef3a-6018-4257-9294-99350288dc68",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 16,
+    "status" : "PASSED",
+    "durationMs" : 14857,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "65fbe695-2512-4efc-9b71-e7bee059e019",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 18,
+    "status" : "PASSED",
+    "durationMs" : 8550,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "ce34cda4-d18b-4faa-8423-c00aff01c27e",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 17,
+    "status" : "PASSED",
+    "durationMs" : 8236,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "df83e8be-bda4-4433-8a35-e8723824b8ab",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 19,
+    "status" : "PASSED",
+    "durationMs" : 7334,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ],
+  "checks" : {
+    "visual" : true,
+    "tests" : true,
+    "quarantine" : true,
+    "accessibility" : true,
+    "retry" : true
+  }
+}
