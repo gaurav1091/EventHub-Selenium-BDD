@@ -37,7 +37,7 @@ Every test run writes `target/run-summary/eventhub-run-summary.json` with run ID
 Runs also write scenario duration, slow-scenario, environment-health, and governance artifacts under `target/run-summary` and `target/governance`.
 Runs also write `target/run-summary/report-index.html` as a local index for report navigation.
 Runs also write release-readiness, accessibility, visual-quality, and quarantine summaries under `target/run-summary`.
-CI test jobs run Maven through `scripts/run-maven-with-infra-retry.sh`, which retries once only when the Maven log matches infrastructure or dependency-transfer failures.
+CI test jobs run Maven through `scripts/run-maven-with-infra-retry.sh`, which retries up to three attempts only when the Maven log matches infrastructure or dependency-transfer failures.
 CI test jobs run `scripts/assert-scenarios-executed.sh` after Maven so a bad tag expression cannot pass with zero scenarios.
 GitHub Actions publishes `target/run-summary/github-step-summary.md` and `target/run-summary/release-readiness.md` into the workflow step summary when they exist.
 
