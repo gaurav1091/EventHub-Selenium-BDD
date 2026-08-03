@@ -110,7 +110,10 @@ Push runs execute a fast matrix:
 
 Pull requests run PR-diff-aware impact selection instead of the fixed push matrix. Changed files are mapped to `@impact-*` tags through `scripts/select-impact-tags.sh`, and the generated selection is published under `target/run-summary`.
 
-Manual workflow dispatch treats Selenium Grid as an execution target. Set `execution-target=grid` with any supported suite alias to run that suite remotely through Grid. The `grid-smoke` suite remains only as a convenience shortcut for remote-driver readiness.
+Manual workflow dispatch treats Selenium Grid and BrowserStack as execution targets.
+Set `execution-target=grid` with any supported suite alias to run that suite remotely through Grid.
+Set `execution-target=browserstack` to run the same suite on BrowserStack desktop browsers.
+The `grid-smoke` suite remains only as a convenience shortcut for remote-driver readiness.
 
 Nightly scheduled runs execute a broader matrix:
 

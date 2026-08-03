@@ -23,6 +23,7 @@ on:
         options:
           - local
           - grid
+          - browserstack
       suite:
         description: Test suite/tag expression to run
         required: true
@@ -542,6 +543,11 @@ jobs:
           cache: maven
       - name: Run selected tests
         shell: bash
+        env:
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          BROWSERSTACK_BUILD_NAME: ${{ github.workflow }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
+          BROWSERSTACK_PROJECT_NAME: EventHub Selenium BDD
         run: |
           BROWSER="${{ github.event.inputs.browser }}"
           EXECUTION_TARGET="${{ github.event.inputs['execution-target'] }}"
@@ -593,6 +599,13 @@ jobs:
               sleep 2
             done
             MVN_ARGS+=(-Dselenium.remote.url=http://localhost:4444/wd/hub)
+          fi
+          if [[ "$EXECUTION_TARGET" == "browserstack" ]]; then
+            if [[ -z "${BROWSERSTACK_USERNAME:-}" || -z "${BROWSERSTACK_ACCESS_KEY:-}" ]]; then
+              echo "::error::BrowserStack execution requires GitHub Secrets BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY."
+              exit 1
+            fi
+            export BROWSERSTACK_SESSION_NAME="selected-$BROWSER-$SUITE-parallel-$PARALLEL-threads-$THREAD_COUNT"
           fi
           if [[ "$SUITE" == "accessibility" ]]; then
             MVN_ARGS+=(-Paccessibility-strict)

@@ -168,6 +168,16 @@ make grid-down
 GitHub Actions runs Selenium Grid smoke coverage for Chrome and Firefox on push using `@smoke and not @stateful`. Grid execution metadata is included in the run summary and report bundle.
 To run any suite on Grid manually from GitHub Actions, open `EventHub Selenium BDD`, choose `Run workflow`, set `execution-target=grid`, choose the browser and suite, and keep `parallel=false` for `stateful`, `hybrid`, or `nightly-stateful`. The `grid-smoke` suite remains as a shortcut and automatically switches execution to Grid.
 
+Run through BrowserStack:
+
+```bash
+make browserstack BROWSER=chrome TAGS="@smoke and not @stateful"
+make browserstack BROWSER=firefox TAGS="@ui and @critical"
+```
+
+For local BrowserStack runs, set `BROWSERSTACK_ACCESS_KEY` in `.env`. The username is already represented by `BROWSERSTACK_USERNAME`.
+For GitHub Actions, create repository secrets named `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY`, then run the workflow manually with `execution-target=browserstack`.
+
 Run visual or accessibility smoke:
 
 ```bash

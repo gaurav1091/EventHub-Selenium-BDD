@@ -94,6 +94,7 @@ Recommended choices:
 - `browser=chrome`, `suite=ui-critical`, `parallel=false` for critical browser paths.
 - `browser=chrome`, `suite=api-contract`, `parallel=true`, `thread-count=2` for API contract coverage.
 - `execution-target=grid` with any browser-backed suite to run the selected suite on Selenium Grid.
+- `execution-target=browserstack` with any browser-backed suite to run the selected suite on BrowserStack.
 - `suite=grid-smoke`, `execution-target=local`, `parallel=false` for the Grid smoke shortcut; this automatically switches execution to Grid.
 - `impact-area=auth/events/bookings/admin/api/ux/integration` to override `suite` with a targeted `@impact-*` run.
 
@@ -129,6 +130,23 @@ Manual GitHub Actions Grid runs:
 7. Keep `parallel=false` for `stateful`, `hybrid`, or `nightly-stateful`; use `parallel=true` only for isolated suites such as `parallel-safe`.
 
 The legacy `grid-smoke` suite is still available as a convenience shortcut and automatically switches the selected workflow run to Selenium Grid.
+
+Manual GitHub Actions BrowserStack runs:
+
+1. Create repository secrets `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY`.
+2. Open Actions.
+3. Select `EventHub Selenium BDD`.
+4. Click `Run workflow`.
+5. Set `execution-target` to `browserstack`.
+6. Select the browser and suite.
+7. Keep `parallel=false` unless your BrowserStack plan has enough parallel sessions for the selected `thread-count`.
+
+Local BrowserStack runs read credentials from `.env`:
+
+```bash
+make browserstack BROWSER=chrome TAGS="@smoke and not @stateful"
+make browserstack BROWSER=firefox TAGS="@ui and @critical"
+```
 
 Reliability controls:
 

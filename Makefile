@@ -1,4 +1,4 @@
-.PHONY: smoke api ui-critical visual accessibility accessibility-strict visual-baseline p0 p1 impact impact-select parallel quality governance-check tag-audit quarantine-audit grid-up grid-down grid grid-smoke docker-smoke clean-reports
+.PHONY: smoke api ui-critical visual accessibility accessibility-strict visual-baseline p0 p1 impact impact-select parallel quality governance-check tag-audit quarantine-audit grid-up grid-down grid grid-smoke browserstack docker-smoke clean-reports
 
 BROWSER ?= chrome
 THREAD_COUNT ?= 2
@@ -65,6 +65,9 @@ grid:
 
 grid-smoke:
 	mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=$(BROWSER) -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
+
+browserstack:
+	mvn test -Dheadless=false -Dexecution.target=browserstack -Dbrowser=$(BROWSER) -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="$(TAGS)"
 
 docker-smoke:
 	SUITE=docker-smoke BROWSER=$(BROWSER) docker compose run --rm eventhub-tests

@@ -12,6 +12,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Locale;
@@ -25,22 +27,32 @@ public final class DriverFactory {
         Browser browser = Browser.from(ConfigReader.getRequired("browser"));
         boolean headless = ConfigReader.getBoolean("headless");
         String executionTarget = ConfigReader.getRequired("execution.target").toLowerCase(Locale.ROOT);
-        if (!"local".equals(executionTarget) && !"grid".equals(executionTarget)) {
+        if (!"local".equals(executionTarget)
+                && !"grid".equals(executionTarget)
+                && !"browserstack".equals(executionTarget)) {
             throw new IllegalArgumentException("Unsupported execution.target: " + executionTarget
-                    + ". Supported values are local and grid.");
+                    + ". Supported values are local, grid, and browserstack.");
         }
 
         WebDriver driver;
         switch (browser) {
             case CHROME:
-                driver = "grid".equals(executionTarget)
-                        ? createRemoteChromeDriver(headless)
-                        : createChromeDriver(headless);
+                if ("browserstack".equals(executionTarget)) {
+                    driver = createBrowserStackChromeDriver();
+                } else {
+                    driver = "grid".equals(executionTarget)
+                            ? createRemoteChromeDriver(headless)
+                            : createChromeDriver(headless);
+                }
                 break;
             case FIREFOX:
-                driver = "grid".equals(executionTarget)
-                        ? createRemoteFirefoxDriver(headless)
-                        : createFirefoxDriver(headless);
+                if ("browserstack".equals(executionTarget)) {
+                    driver = createBrowserStackFirefoxDriver();
+                } else {
+                    driver = "grid".equals(executionTarget)
+                            ? createRemoteFirefoxDriver(headless)
+                            : createFirefoxDriver(headless);
+                }
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported browser: " + browser);
@@ -70,6 +82,18 @@ public final class DriverFactory {
 
     private static WebDriver createRemoteFirefoxDriver(boolean headless) {
         return new RemoteWebDriver(remoteUrl(), firefoxOptions(headless));
+    }
+
+    private static WebDriver createBrowserStackChromeDriver() {
+        ChromeOptions options = chromeOptions(false);
+        applyBrowserStackOptions(options);
+        return new RemoteWebDriver(browserStackUrl(), options);
+    }
+
+    private static WebDriver createBrowserStackFirefoxDriver() {
+        FirefoxOptions options = firefoxOptions(false);
+        applyBrowserStackOptions(options);
+        return new RemoteWebDriver(browserStackUrl(), options);
     }
 
     private static ChromeOptions chromeOptions(boolean headless) {
@@ -106,6 +130,46 @@ public final class DriverFactory {
         } catch (MalformedURLException exception) {
             throw new IllegalArgumentException("Invalid selenium.remote.url: "
                     + ConfigReader.getRequired("selenium.remote.url"), exception);
+        }
+    }
+
+    private static void applyBrowserStackOptions(org.openqa.selenium.MutableCapabilities options) {
+        String browserVersion = ConfigReader.getRequired("browserstack.browser.version");
+        if (!"latest".equalsIgnoreCase(browserVersion)) {
+            options.setCapability("browserVersion", browserVersion);
+        }
+
+        Map<String, Object> browserStackOptions = new HashMap<>();
+        browserStackOptions.put("os", ConfigReader.getRequired("browserstack.os"));
+        browserStackOptions.put("osVersion", ConfigReader.getRequired("browserstack.os.version"));
+        browserStackOptions.put("projectName", ConfigReader.getRequired("browserstack.project.name"));
+        browserStackOptions.put("buildName", ConfigReader.getRequired("browserstack.build.name"));
+        browserStackOptions.put("sessionName", browserStackSessionName());
+        browserStackOptions.put("seleniumVersion", "4.23.1");
+        browserStackOptions.put("debug", ConfigReader.getBoolean("browserstack.debug"));
+        browserStackOptions.put("networkLogs", ConfigReader.getBoolean("browserstack.network.logs"));
+        browserStackOptions.put("local", ConfigReader.getBoolean("browserstack.local"));
+        options.setCapability("bstack:options", browserStackOptions);
+    }
+
+    private static String browserStackSessionName() {
+        String configuredName = ConfigReader.get("browserstack.session.name");
+        if (configuredName != null && !configuredName.isBlank()) {
+            return configuredName.trim();
+        }
+        return ConfigReader.getRequired("suite.name") + " - " + ConfigReader.getRequired("browser");
+    }
+
+    private static URL browserStackUrl() {
+        String username = ConfigReader.getRequired("browserstack.username");
+        String accessKey = ConfigReader.getRequired("browserstack.access.key");
+        String remoteUrl = ConfigReader.getRequired("browserstack.remote.url");
+        String encodedUsername = URLEncoder.encode(username, StandardCharsets.UTF_8);
+        String encodedAccessKey = URLEncoder.encode(accessKey, StandardCharsets.UTF_8);
+        try {
+            return new URL(remoteUrl.replace("https://", "https://" + encodedUsername + ":" + encodedAccessKey + "@"));
+        } catch (MalformedURLException exception) {
+            throw new IllegalArgumentException("Invalid browserstack.remote.url: " + remoteUrl, exception);
         }
     }
 }
