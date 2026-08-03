@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260803113716",
+  "timestamp" : "2026-08-03T11:37:30.568023379",
+  "environment" : "qa",
+  "suiteName" : "impact-events",
+  "browser" : "chrome",
+  "headless" : "true",
+  "executionTarget" : "browserstack",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "2",
+  "tags" : "(@impact-events) and not @stateful",
+  "passedScenarios" : 0,
+  "failedScenarios" : 14,
+  "totalScenarios" : 14,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "47e1356b-8e7e-45f9-ab28-e89a8ed05149",
+    "name" : "User can search for events by keyword",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 22,
+    "status" : "FAILED",
+    "durationMs" : 2113,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "08256209-0251-4684-ac14-5fd79ecaf770",
+    "name" : "Event filters reset after navigating away and back",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 55,
+    "status" : "FAILED",
+    "durationMs" : 1805,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "c79dd621-2dc7-4b4e-891e-3758cf48eb67",
+    "name" : "User can open event details",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 81,
+    "status" : "FAILED",
+    "durationMs" : 1764,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "f98cee64-7332-4658-87bb-8bc6d3033a3a",
+    "name" : "User sees an empty state for unmatched search",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 64,
+    "status" : "FAILED",
+    "durationMs" : 1742,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe", "@negative" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "a1ca294b-113a-434e-b123-cb6c5ab72e12",
+    "name" : "User can search for events by keyword",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 21,
+    "status" : "FAILED",
+    "durationMs" : 1726,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ]
+}
