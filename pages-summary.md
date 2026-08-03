@@ -1,4 +1,4 @@
 ### EventHub Published Report Links
 
-- [This workflow run](runs/30811374028-attempt-1/)
-- [chrome / impact-events / parallel=true / threads=2 / tests=14](runs/30811374028-attempt-1/selected-browserstack-chrome-impact-events-chrome-impact-events-parallel-true-threads-2/index.html)
+- [This workflow run](runs/30811887079-attempt-1/)
+- [firefox / parallel-safe / parallel=true / threads=4 / tests=73](runs/30811887079-attempt-1/selected-browserstack-firefox-parallel-safe-firefox-parallel-safe-parallel-true-threads-4/index.html)
