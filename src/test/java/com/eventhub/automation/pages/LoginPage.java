@@ -1,6 +1,8 @@
 package com.eventhub.automation.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 import static com.eventhub.automation.utils.UiAssertions.assertPageContainsAnyOf;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,8 +31,14 @@ public class LoginPage extends BasePage {
 
     public void login(String email, String password) {
         type(EMAIL, email);
-        type(PASSWORD, password);
+        WebElement passwordField = visible(PASSWORD);
+        passwordField.clear();
+        passwordField.sendKeys(password);
         click(SIGN_IN);
+        if (isLoginFormVisible()) {
+            passwordField = visible(PASSWORD);
+            passwordField.sendKeys(Keys.ENTER);
+        }
     }
 
     public void submitEmpty() {
