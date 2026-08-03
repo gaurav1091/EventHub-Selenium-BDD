@@ -202,7 +202,15 @@ jobs:
             suite: parallel-safe
             parallel: "true"
             thread-count: "4"
+          - browser: firefox
+            suite: parallel-safe
+            parallel: "true"
+            thread-count: "4"
           - browser: chrome
+            suite: accessibility
+            parallel: "false"
+            thread-count: "1"
+          - browser: firefox
             suite: accessibility
             parallel: "false"
             thread-count: "1"

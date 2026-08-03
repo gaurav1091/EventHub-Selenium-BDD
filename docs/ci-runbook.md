@@ -10,7 +10,9 @@ Push runs execute the fast test matrix in `.github/workflows/tests.yml`:
 - Firefox smoke, serial.
 - Chrome API, parallel.
 - Chrome `@parallel-safe`, parallel with four threads.
+- Firefox `@parallel-safe`, parallel with four threads.
 - Chrome accessibility, serial, with strict Axe threshold enforcement.
+- Firefox accessibility, serial, with strict Axe threshold enforcement.
 
 Pull request runs execute PR-diff-aware impact selection. The workflow maps changed files to `@impact-*` tags, writes `target/run-summary/impact-selection.json`, and runs the impacted suite. Integration-impact changes run serially because those scenarios are stateful.
 

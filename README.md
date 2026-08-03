@@ -113,7 +113,7 @@ The tag and suite strategy is documented in `docs/test-strategy.md`.
 Scenario coverage and governance conventions are documented in `docs/test-catalog.md`.
 CI usage and failure triage are documented in `docs/ci-runbook.md`.
 Developer contribution, debugging, and add-new-test guides live under `docs/`.
-GitHub Actions runs a Chrome/Firefox smoke and parallel-safe matrix on push. Pull requests run PR-diff-aware impact selection. Scheduled runs execute a broader nightly regression matrix, while manual dispatch lets you choose browser, suite, impact area, parallel mode, and thread count.
+GitHub Actions runs Chrome and Firefox smoke, parallel-safe UI regression, and accessibility coverage on push, with API coverage running once because it is browser-neutral. Pull requests run PR-diff-aware impact selection. Scheduled runs execute a broader nightly regression matrix, while manual dispatch lets you choose browser, suite, impact area, parallel mode, and thread count.
 
 CI publishes a GitHub Pages report dashboard for every trusted workflow run. Each job gets a unique URL under
 `runs/<github-run-id>-attempt-<attempt>/<browser-suite-parallel-threads>/` and the page includes browser, suite,
