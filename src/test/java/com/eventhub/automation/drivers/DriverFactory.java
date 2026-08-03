@@ -8,9 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public final class DriverFactory {
@@ -20,14 +24,23 @@ public final class DriverFactory {
     public static WebDriver createDriver() {
         Browser browser = Browser.from(ConfigReader.getRequired("browser"));
         boolean headless = ConfigReader.getBoolean("headless");
+        String executionTarget = ConfigReader.getRequired("execution.target").toLowerCase(Locale.ROOT);
+        if (!"local".equals(executionTarget) && !"grid".equals(executionTarget)) {
+            throw new IllegalArgumentException("Unsupported execution.target: " + executionTarget
+                    + ". Supported values are local and grid.");
+        }
 
         WebDriver driver;
         switch (browser) {
             case CHROME:
-                driver = createChromeDriver(headless);
+                driver = "grid".equals(executionTarget)
+                        ? createRemoteChromeDriver(headless)
+                        : createChromeDriver(headless);
                 break;
             case FIREFOX:
-                driver = createFirefoxDriver(headless);
+                driver = "grid".equals(executionTarget)
+                        ? createRemoteFirefoxDriver(headless)
+                        : createFirefoxDriver(headless);
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported browser: " + browser);
@@ -43,6 +56,23 @@ public final class DriverFactory {
 
     private static WebDriver createChromeDriver(boolean headless) {
         WebDriverManager.chromedriver().setup();
+        return new ChromeDriver(chromeOptions(headless));
+    }
+
+    private static WebDriver createFirefoxDriver(boolean headless) {
+        WebDriverManager.firefoxdriver().setup();
+        return new FirefoxDriver(firefoxOptions(headless));
+    }
+
+    private static WebDriver createRemoteChromeDriver(boolean headless) {
+        return new RemoteWebDriver(remoteUrl(), chromeOptions(headless));
+    }
+
+    private static WebDriver createRemoteFirefoxDriver(boolean headless) {
+        return new RemoteWebDriver(remoteUrl(), firefoxOptions(headless));
+    }
+
+    private static ChromeOptions chromeOptions(boolean headless) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-popup-blocking");
@@ -57,17 +87,25 @@ public final class DriverFactory {
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
         options.setExperimentalOption("prefs", prefs);
-        return new ChromeDriver(options);
+        return options;
     }
 
-    private static WebDriver createFirefoxDriver(boolean headless) {
-        WebDriverManager.firefoxdriver().setup();
+    private static FirefoxOptions firefoxOptions(boolean headless) {
         FirefoxOptions options = new FirefoxOptions();
         options.addPreference("dom.webnotifications.enabled", false);
         options.addPreference("signon.rememberSignons", false);
         if (headless) {
             options.addArguments("-headless");
         }
-        return new FirefoxDriver(options);
+        return options;
+    }
+
+    private static URL remoteUrl() {
+        try {
+            return new URL(ConfigReader.getRequired("selenium.remote.url"));
+        } catch (MalformedURLException exception) {
+            throw new IllegalArgumentException("Invalid selenium.remote.url: "
+                    + ConfigReader.getRequired("selenium.remote.url"), exception);
+        }
     }
 }

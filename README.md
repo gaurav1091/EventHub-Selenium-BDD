@@ -154,6 +154,17 @@ Run a custom Cucumber tag expression:
 CUCUMBER_FILTER_TAGS="@bookings and not @stateful" docker compose run --rm eventhub-tests
 ```
 
+Run through Selenium Grid:
+
+```bash
+make grid-up
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+make grid-down
+```
+
+GitHub Actions runs Selenium Grid smoke coverage for Chrome and Firefox on push. Grid execution metadata is included in the run summary and report bundle.
+
 Run visual or accessibility smoke:
 
 ```bash

@@ -36,6 +36,8 @@
         <maven.deploy.version>3.1.4</maven.deploy.version>
         <browser>chrome</browser>
         <headless>false</headless>
+        <execution.target>local</execution.target>
+        <selenium.remote.url>http://localhost:4444/wd/hub</selenium.remote.url>
         <environment>qa</environment>
         <suite.name>local</suite.name>
         <parallel>none</parallel>
@@ -229,6 +231,8 @@
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <headless>${headless}</headless>
+                        <execution.target>${execution.target}</execution.target>
+                        <selenium.remote.url>${selenium.remote.url}</selenium.remote.url>
                         <environment>${environment}</environment>
                         <suite.name>${suite.name}</suite.name>
                         <parallel>${parallel}</parallel>

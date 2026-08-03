@@ -3,6 +3,8 @@ set -euo pipefail
 
 BROWSER="${BROWSER:-chrome}"
 HEADLESS="${HEADLESS:-true}"
+EXECUTION_TARGET="${EXECUTION_TARGET:-local}"
+SELENIUM_REMOTE_URL="${SELENIUM_REMOTE_URL:-http://localhost:4444/wd/hub}"
 ENVIRONMENT="${ENVIRONMENT:-qa}"
 SUITE="${SUITE:-smoke}"
 SUITE_NAME="${SUITE_NAME:-${SUITE}}"
@@ -51,6 +53,8 @@ fi
 MVN_ARGS=(
   "-Dbrowser=${BROWSER}"
   "-Dheadless=${HEADLESS}"
+  "-Dexecution.target=${EXECUTION_TARGET}"
+  "-Dselenium.remote.url=${SELENIUM_REMOTE_URL}"
   "-Denvironment=${ENVIRONMENT}"
   "-Dsuite.name=${SUITE_NAME}"
   "-Dretry.count=${RETRY_COUNT}"

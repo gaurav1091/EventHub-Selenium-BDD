@@ -56,6 +56,8 @@ public final class RunSummary {
         summary.put("suiteName", ConfigReader.getRequired("suite.name"));
         summary.put("browser", ConfigReader.getRequired("browser"));
         summary.put("headless", ConfigReader.getRequired("headless"));
+        summary.put("executionTarget", ConfigReader.getRequired("execution.target"));
+        summary.put("seleniumRemoteUrl", ConfigReader.getRequired("selenium.remote.url"));
         summary.put("parallel", ConfigReader.getRequired("parallel"));
         summary.put("threadCount", ConfigReader.getRequired("thread.count"));
         summary.put("tags", ConfigReader.getRequired("cucumber.filter.tags"));
@@ -105,6 +107,8 @@ public final class RunSummary {
                 + "- Environment: `" + summary.get("environment") + "`" + System.lineSeparator()
                 + "- Suite: `" + summary.get("suiteName") + "`" + System.lineSeparator()
                 + "- Browser: `" + summary.get("browser") + "`" + System.lineSeparator()
+                + "- Execution target: `" + summary.get("executionTarget") + "`" + System.lineSeparator()
+                + "- Selenium remote URL: `" + summary.get("seleniumRemoteUrl") + "`" + System.lineSeparator()
                 + "- Parallel: `" + summary.get("parallel") + "`" + System.lineSeparator()
                 + "- Threads: `" + summary.get("threadCount") + "`" + System.lineSeparator()
                 + "- Tags: `" + summary.get("tags") + "`" + System.lineSeparator()

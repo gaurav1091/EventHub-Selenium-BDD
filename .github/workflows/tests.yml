@@ -418,6 +418,107 @@ jobs:
           name: pages-report-nightly-${{ matrix.browser }}-${{ matrix.suite }}-parallel-${{ matrix.parallel }}-threads-${{ matrix['thread-count'] }}
           path: target/pages-report
 
+  grid-smoke:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser:
+          - chrome
+          - firefox
+    name: grid / ${{ matrix.browser }} / smoke
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Start Selenium Grid
+        shell: bash
+        run: docker compose -f docker-compose.selenium-grid.yml up -d
+      - name: Wait for Selenium Grid
+        shell: bash
+        run: |
+          for attempt in {1..30}; do
+            if curl -fsS http://localhost:4444/status | grep -Eq '"ready"[[:space:]]*:[[:space:]]*true'; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker compose -f docker-compose.selenium-grid.yml logs
+          exit 1
+      - name: Run Grid smoke
+        shell: bash
+        run: |
+          BROWSER="${{ matrix.browser }}"
+          SUITE="grid-smoke"
+          PARALLEL="false"
+          THREAD_COUNT="1"
+          TAG_EXPRESSION="@smoke"
+
+          {
+            echo "REPORT_BROWSER=$BROWSER"
+            echo "REPORT_SUITE=$SUITE"
+            echo "REPORT_PARALLEL=$PARALLEL"
+            echo "REPORT_THREAD_COUNT=$THREAD_COUNT"
+            echo "REPORT_JOB_NAME=grid-$BROWSER-smoke"
+            echo "REPORT_TAG_EXPRESSION=$TAG_EXPRESSION"
+          } >> "$GITHUB_ENV"
+
+          bash scripts/run-maven-with-infra-retry.sh mvn test \
+            -Dheadless=true \
+            -Dexecution.target=grid \
+            -Dselenium.remote.url=http://localhost:4444/wd/hub \
+            -Dbrowser="$BROWSER" \
+            -Dsuite.name="$SUITE" \
+            -Dparallel=none \
+            -Dthread.count=1 \
+            "-Dcucumber.filter.tags=$TAG_EXPRESSION"
+          bash scripts/assert-scenarios-executed.sh
+      - name: Publish run summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f target/run-summary/github-step-summary.md ]]; then
+            cat target/run-summary/github-step-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ -f target/run-summary/release-readiness.md ]]; then
+            cat target/run-summary/release-readiness.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Build Pages report bundle
+        if: always()
+        shell: bash
+        run: bash scripts/build-pages-report.sh
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: eventhub-grid-reports-${{ matrix.browser }}-smoke
+          path: |
+            target/cucumber-reports
+            target/extent-report
+            target/allure-results
+            target/axe-reports
+            target/visual-sanity
+            target/visual-diff
+            target/governance
+            target/run-summary
+            target/run-logs
+            target/surefire-reports
+            screenshots
+      - name: Upload Pages report bundle
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: pages-report-grid-${{ matrix.browser }}-smoke-parallel-false-threads-1
+          path: target/pages-report
+      - name: Stop Selenium Grid
+        if: always()
+        shell: bash
+        run: docker compose -f docker-compose.selenium-grid.yml down
+
   selected-tests:
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
@@ -537,6 +638,7 @@ jobs:
       - impact-tests
       - matrix-tests
       - nightly-regression
+      - grid-smoke
       - selected-tests
     runs-on: ubuntu-latest
     name: publish / github-pages report

@@ -9,6 +9,8 @@ services:
     environment:
       BROWSER: ${BROWSER:-chrome}
       HEADLESS: ${DOCKER_HEADLESS:-true}
+      EXECUTION_TARGET: ${EXECUTION_TARGET:-local}
+      SELENIUM_REMOTE_URL: ${SELENIUM_REMOTE_URL:-http://selenium-hub:4444/wd/hub}
       ENVIRONMENT: ${ENVIRONMENT:-qa}
       SUITE: ${SUITE:-smoke}
       PARALLEL: ${PARALLEL:-false}

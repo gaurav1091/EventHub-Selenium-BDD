@@ -66,6 +66,7 @@ CI and Docker also run `scripts/assert-scenarios-executed.sh` after Maven to fai
 mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@smoke"
 mvn test -Dheadless=true -Dbrowser=firefox -Dcucumber.filter.tags="@api"
 mvn test -Dheadless=true -Dbrowser=chrome -Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=4 -Dcucumber.filter.tags="@parallel-safe"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
 ```
 
 Docker examples:
@@ -104,6 +105,7 @@ Push runs execute a fast matrix:
 - Firefox `@parallel-safe`, parallel with four threads.
 - Chrome accessibility, serial, with strict threshold enforcement.
 - Firefox accessibility, serial, with strict threshold enforcement.
+- Selenium Grid smoke for Chrome and Firefox remote-driver readiness.
 
 Pull requests run PR-diff-aware impact selection instead of the fixed push matrix. Changed files are mapped to `@impact-*` tags through `scripts/select-impact-tags.sh`, and the generated selection is published under `target/run-summary`.
 

@@ -13,6 +13,7 @@ Push runs execute the fast test matrix in `.github/workflows/tests.yml`:
 - Firefox `@parallel-safe`, parallel with four threads.
 - Chrome accessibility, serial, with strict Axe threshold enforcement.
 - Firefox accessibility, serial, with strict Axe threshold enforcement.
+- Selenium Grid smoke on Chrome and Firefox.
 
 Pull request runs execute PR-diff-aware impact selection. The workflow maps changed files to `@impact-*` tags, writes `target/run-summary/impact-selection.json`, and runs the impacted suite. Integration-impact changes run serially because those scenarios are stateful.
 
@@ -101,6 +102,15 @@ mvn test -Dheadless=true -Dbrowser=firefox -Dcucumber.filter.tags="@smoke"
 mvn test -Dheadless=true -Dbrowser=chrome -Dcucumber.filter.tags="@api"
 mvn test -Dheadless=true -Dbrowser=chrome -Dsuite.xml.file=target/test-classes/suites/testng-parallel.xml -Dparallel=methods -Dthread.count=4 -Dcucumber.filter.tags="(@parallel-safe) and not @stateful"
 mvn test -Dheadless=true -Dbrowser=chrome -Dparallel=none -Dcucumber.filter.tags="@stateful"
+```
+
+Selenium Grid local smoke:
+
+```bash
+make grid-up
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke"
+make grid-down
 ```
 
 Reliability controls:
