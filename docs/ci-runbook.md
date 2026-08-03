@@ -92,6 +92,8 @@ Recommended choices:
 - `browser=chrome`, `suite=hybrid`, `parallel=false` for API setup plus UI verification scenarios.
 - `browser=chrome`, `suite=ui-critical`, `parallel=false` for critical browser paths.
 - `browser=chrome`, `suite=api-contract`, `parallel=true`, `thread-count=2` for API contract coverage.
+- `execution-target=grid` with any browser-backed suite to run the selected suite on Selenium Grid.
+- `suite=grid-smoke`, `execution-target=local`, `parallel=false` for the Grid smoke shortcut; this automatically switches execution to Grid.
 - `impact-area=auth/events/bookings/admin/api/ux/integration` to override `suite` with a targeted `@impact-*` run.
 
 ## Local Equivalents
@@ -104,23 +106,28 @@ mvn test -Dheadless=true -Dbrowser=chrome -Dsuite.xml.file=target/test-classes/s
 mvn test -Dheadless=true -Dbrowser=chrome -Dparallel=none -Dcucumber.filter.tags="@stateful"
 ```
 
-Selenium Grid local smoke:
+Selenium Grid local runs:
 
 ```bash
 make grid-up
 mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
 mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
+make grid BROWSER=chrome TAGS="@ui and @critical"
+make grid BROWSER=firefox TAGS="@regression and @parallel-safe"
 make grid-down
 ```
 
-Manual GitHub Actions Grid smoke:
+Manual GitHub Actions Grid runs:
 
 1. Open Actions.
 2. Select `EventHub Selenium BDD`.
 3. Click `Run workflow`.
-4. Set `suite` to `grid-smoke`.
-5. Choose `browser` as `chrome` or `firefox`.
-6. Keep `parallel=false`.
+4. Set `execution-target` to `grid`.
+5. Select any suite, for example `smoke`, `ui-critical`, `regression`, `bookings`, `hybrid`, or `stateful`.
+6. Choose `browser` as `chrome` or `firefox`.
+7. Keep `parallel=false` for `stateful`, `hybrid`, or `nightly-stateful`; use `parallel=true` only for isolated suites such as `parallel-safe`.
+
+The legacy `grid-smoke` suite is still available as a convenience shortcut and automatically switches the selected workflow run to Selenium Grid.
 
 Reliability controls:
 

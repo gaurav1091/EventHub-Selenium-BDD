@@ -15,6 +15,14 @@ on:
         options:
           - chrome
           - firefox
+      execution-target:
+        description: Where browser UI tests should execute
+        required: true
+        default: local
+        type: choice
+        options:
+          - local
+          - grid
       suite:
         description: Test suite/tag expression to run
         required: true
@@ -524,7 +532,7 @@ jobs:
   selected-tests:
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    name: selected / ${{ github.event.inputs.browser }} / ${{ github.event.inputs.suite }} / parallel=${{ github.event.inputs.parallel }}
+    name: selected / ${{ github.event.inputs['execution-target'] }} / ${{ github.event.inputs.browser }} / ${{ github.event.inputs.suite }} / parallel=${{ github.event.inputs.parallel }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-java@v5
@@ -536,6 +544,7 @@ jobs:
         shell: bash
         run: |
           BROWSER="${{ github.event.inputs.browser }}"
+          EXECUTION_TARGET="${{ github.event.inputs['execution-target'] }}"
           SUITE="${{ github.event.inputs.suite }}"
           IMPACT_AREA="${{ github.event.inputs['impact-area'] }}"
           PARALLEL="${{ github.event.inputs.parallel }}"
@@ -560,6 +569,7 @@ jobs:
           fi
 
           if [[ "$SUITE" == "grid-smoke" ]]; then
+            EXECUTION_TARGET="grid"
             PARALLEL="false"
             THREAD_COUNT="1"
           fi
@@ -569,8 +579,8 @@ jobs:
             exit 1
           fi
 
-          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE")
-          if [[ "$SUITE" == "grid-smoke" ]]; then
+          MVN_ARGS=(-Dheadless=true -Dbrowser="$BROWSER" -Dsuite.name="$SUITE" -Dexecution.target="$EXECUTION_TARGET")
+          if [[ "$EXECUTION_TARGET" == "grid" ]]; then
             docker compose -f docker-compose.selenium-grid.yml up -d
             for attempt in {1..30}; do
               if curl -fsS http://localhost:4444/status | grep -Eq '"ready"[[:space:]]*:[[:space:]]*true'; then
@@ -582,7 +592,7 @@ jobs:
               fi
               sleep 2
             done
-            MVN_ARGS+=(-Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub)
+            MVN_ARGS+=(-Dselenium.remote.url=http://localhost:4444/wd/hub)
           fi
           if [[ "$SUITE" == "accessibility" ]]; then
             MVN_ARGS+=(-Paccessibility-strict)
@@ -608,14 +618,14 @@ jobs:
             echo "REPORT_SUITE=$SUITE"
             echo "REPORT_PARALLEL=$PARALLEL"
             echo "REPORT_THREAD_COUNT=$THREAD_COUNT"
-            echo "REPORT_JOB_NAME=selected-$BROWSER-$SUITE"
+            echo "REPORT_JOB_NAME=selected-$EXECUTION_TARGET-$BROWSER-$SUITE"
             echo "REPORT_TAG_EXPRESSION=$TAG_EXPRESSION"
           } >> "$GITHUB_ENV"
 
           bash scripts/run-maven-with-infra-retry.sh mvn test "${MVN_ARGS[@]}"
           bash scripts/assert-scenarios-executed.sh
       - name: Stop Selenium Grid
-        if: always() && github.event.inputs.suite == 'grid-smoke'
+        if: always() && (github.event.inputs['execution-target'] == 'grid' || github.event.inputs.suite == 'grid-smoke')
         shell: bash
         run: docker compose -f docker-compose.selenium-grid.yml down
       - name: Publish run summary
@@ -639,7 +649,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v5
         with:
-          name: eventhub-test-reports-selected-${{ github.event.inputs.browser }}-${{ github.event.inputs.suite }}-parallel-${{ github.event.inputs.parallel }}
+          name: eventhub-test-reports-selected-${{ github.event.inputs['execution-target'] }}-${{ github.event.inputs.browser }}-${{ github.event.inputs.suite }}-parallel-${{ github.event.inputs.parallel }}
           path: |
             target/cucumber-reports
             target/extent-report

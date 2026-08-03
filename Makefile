@@ -1,8 +1,10 @@
-.PHONY: smoke api ui-critical visual accessibility accessibility-strict visual-baseline p0 p1 impact impact-select parallel quality governance-check tag-audit quarantine-audit grid-up grid-down grid-smoke docker-smoke clean-reports
+.PHONY: smoke api ui-critical visual accessibility accessibility-strict visual-baseline p0 p1 impact impact-select parallel quality governance-check tag-audit quarantine-audit grid-up grid-down grid grid-smoke docker-smoke clean-reports
 
 BROWSER ?= chrome
 THREAD_COUNT ?= 2
 AREA ?= auth
+SUITE ?= smoke
+TAGS ?= @smoke and not @stateful
 
 smoke:
 	mvn test -Dheadless=true -Dbrowser=$(BROWSER) -Dcucumber.filter.tags="@smoke and not @stateful"
@@ -57,6 +59,9 @@ grid-up:
 
 grid-down:
 	docker compose -f docker-compose.selenium-grid.yml down
+
+grid:
+	mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=$(BROWSER) -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="$(TAGS)"
 
 grid-smoke:
 	mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=$(BROWSER) -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"

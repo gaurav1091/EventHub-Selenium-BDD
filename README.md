@@ -160,11 +160,13 @@ Run through Selenium Grid:
 make grid-up
 mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=chrome -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
 mvn test -Dheadless=true -Dexecution.target=grid -Dselenium.remote.url=http://localhost:4444/wd/hub -Dbrowser=firefox -Dparallel=none -Dthread.count=1 -Dcucumber.filter.tags="@smoke and not @stateful"
+make grid BROWSER=chrome TAGS="@ui and @critical"
+make grid BROWSER=firefox TAGS="@regression and @parallel-safe"
 make grid-down
 ```
 
 GitHub Actions runs Selenium Grid smoke coverage for Chrome and Firefox on push using `@smoke and not @stateful`. Grid execution metadata is included in the run summary and report bundle.
-To run Grid manually from GitHub Actions, open `EventHub Selenium BDD`, choose `Run workflow`, set `suite=grid-smoke`, choose `browser=chrome` or `firefox`, and keep `parallel=false`.
+To run any suite on Grid manually from GitHub Actions, open `EventHub Selenium BDD`, choose `Run workflow`, set `execution-target=grid`, choose the browser and suite, and keep `parallel=false` for `stateful`, `hybrid`, or `nightly-stateful`. The `grid-smoke` suite remains as a shortcut and automatically switches execution to Grid.
 
 Run visual or accessibility smoke:
 
