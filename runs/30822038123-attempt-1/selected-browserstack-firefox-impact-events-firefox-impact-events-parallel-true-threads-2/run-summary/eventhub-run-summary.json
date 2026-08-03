@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260803141840",
+  "timestamp" : "2026-08-03T14:24:08.902284052",
+  "environment" : "qa",
+  "suiteName" : "impact-events",
+  "browser" : "firefox",
+  "headless" : "true",
+  "executionTarget" : "browserstack",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "2",
+  "tags" : "(@impact-events) and not @stateful",
+  "passedScenarios" : 14,
+  "failedScenarios" : 0,
+  "totalScenarios" : 14,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "7396009e-4f4d-465f-b0cb-5920237fcdac",
+    "name" : "User can view upcoming events",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 88651,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "5c0b9084-4df6-4dd5-ae36-11347012b670",
+    "name" : "Event detail deep link loads correct metadata",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 84,
+    "status" : "PASSED",
+    "durationMs" : 60016,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "477632e9-f405-4111-aba7-23ce3c1f8494",
+    "name" : "User can search for events by keyword",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 22,
+    "status" : "PASSED",
+    "durationMs" : 58023,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "553157ad-82d4-4530-86c0-a008d9e3ed89",
+    "name" : "User can open a bookable event detail page from Book Now",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 89,
+    "status" : "PASSED",
+    "durationMs" : 51653,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "851a9a3d-47fa-407f-9a65-878062dcfdfe",
+    "name" : "User can search for events by keyword",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 20,
+    "status" : "PASSED",
+    "durationMs" : 47709,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  } ]
+}
