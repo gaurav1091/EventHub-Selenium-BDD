@@ -1,0 +1,1188 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.eventhub:eventhub-selenium-bdd >-----------------
+[INFO] Building EventHub Selenium Java BDD Framework 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ eventhub-selenium-bdd ---
+[INFO] skip non existing resourceDirectory /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ eventhub-selenium-bdd ---
+[INFO] Copying 34 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 50 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.3.1:test (default-test) @ eventhub-selenium-bdd ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p0 @smoke @parallel-safe @critical
+Scenario: Admin Events page renders management controls                   # src/test/resources/features/admin/admin_event_management.feature:8
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @smoke @parallel-safe @critical @intent-session
+Scenario: Registered user can sign in and sign out # src/test/resources/features/auth/login.feature:5
+Aug 03, 2026 2:02:56 PM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
+INFO: Using OpenTelemetry for tracing
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I sign in with valid registered credentials # com.eventhub.automation.steps.AuthSteps.iSignInWithValidRegisteredCredentials()
+  Then I should see the authenticated navigation   # com.eventhub.automation.steps.AuthSteps.iShouldSeeTheAuthenticatedNavigation()
+  When I sign out                                  # com.eventhub.automation.steps.AuthSteps.iSignOut()
+  Then I should be returned to the login page      # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+  Given I am signed in to EventHub                                        # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Admin Events page                                       # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  Then the Admin Events page should show the create form and events table # com.eventhub.automation.steps.AdminSteps.theAdminEventsPageShouldShowTheCreateFormAndEventsTable()
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @critical @intent-session
+Scenario: Authenticated session survives page refresh # src/test/resources/features/auth/login.feature:13
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from protected route # src/test/resources/features/auth/login.feature:42
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+  Given I am signed in to EventHub                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I refresh the current page                     # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then I should see the authenticated navigation      # com.eventhub.automation.steps.AuthSteps.iShouldSeeTheAuthenticatedNavigation()
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  When I directly open protected route "/bookings"          # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from the admin route # src/test/resources/features/auth/login.feature:48
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p0 @smoke @parallel-safe @critical
+Scenario: User can view upcoming events    # src/test/resources/features/events/event_discovery.feature:8
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  When I directly open protected route "/admin/events"      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: Event detail deep link loads correct metadata           # src/test/resources/features/events/event_discovery.feature:84
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+  Given I am signed in to EventHub         # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page              # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  Then I should see seeded upcoming events # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: User can open a bookable event detail page from Book Now # src/test/resources/features/events/event_discovery.feature:89
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+  Given I am signed in to EventHub                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open event detail for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  Then I should see metadata for event "World Tech Summit"        # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+      org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details from Book Now for a bookable event           # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromBookNowForABookableEvent()
+  Then I should see the event detail booking panel                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheEventDetailBookingPanel()
+      com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+
+Failed scenarios:
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature:5 # Registered user can sign in and sign out
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature:8 # Admin Events page renders management controls
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature:13 # Authenticated session survives page refresh
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature:42 # Anonymous user is redirected from protected route
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature:48 # Anonymous user is redirected from the admin route
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:8 # User can view upcoming events
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:84 # Event detail deep link loads correct metadata
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:89 # User can open a bookable event detail page from Book Now
+
+8 Scenarios (8 failed)
+26 Steps (26 skipped)
+0m6.979s
+
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+com.eventhub.automation.exceptions.FrameworkException: WebDriver was not initialized for this thread.
+	at com.eventhub.automation.drivers.DriverManager.getDriver(DriverManager.java:21)
+	at com.eventhub.automation.utils.ScreenshotUtils.captureBytes(ScreenshotUtils.java:39)
+	at com.eventhub.automation.hooks.CucumberHooks.stopBrowser(CucumberHooks.java:43)
+
+
+[ERROR] Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 16.59 s <<< FAILURE! -- in TestSuite
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Registered user can sign in and sign out", "EventHub authentication"](1) -- Time elapsed: 1.583 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Admin Events page renders management controls", "Admin event management"](2) -- Time elapsed: 1.586 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+Caused by: org.openqa.selenium.WebDriverException: Automate testing time expired.
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: driver.version: RemoteWebDriver
+remote stacktrace: 
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:60)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:33)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:121)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.Streams$StreamBuilderImpl.tryAdvance(Streams.java:397)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:123)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario(ParallelCucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:81)
+	at org.testng.internal.thread.Async$AsyncTask.run(Async.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Authenticated session survives page refresh", "EventHub authentication"](3) -- Time elapsed: 1.737 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Anonymous user is redirected from protected route", "EventHub authentication"](4) -- Time elapsed: 0.040 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Anonymous user is redirected from the admin route", "EventHub authentication"](5) -- Time elapsed: 1.691 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["User can view upcoming events", "Event discovery"](6) -- Time elapsed: 0.043 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Event detail deep link loads correct metadata", "Event discovery"](7) -- Time elapsed: 1.666 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["User can open a bookable event detail page from Book Now", "Event discovery"](8) -- Time elapsed: 1.707 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:129)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:125)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:171)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:259)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:169)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:165)
+	at com.eventhub.automation.drivers.DriverFactory.createBrowserStackChromeDriver(DriverFactory.java:90)
+	at com.eventhub.automation.drivers.DriverFactory.createDriver(DriverFactory.java:41)
+	at com.eventhub.automation.drivers.DriverManager.initializeDriver(DriverManager.java:14)
+	at com.eventhub.automation.hooks.CucumberHooks.startBrowser(CucumberHooks.java:36)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+[ERROR]   ParallelCucumberTestRunner.runScenario » SessionNotCreated Could not start a new session. Handshake response does not match any supported protocol. Response payload: {"value":{"message":"Automate testing time expired."},"sessionId":"","status":13} 
+Host info: host: 'runnervmvrwv9', ip: '10.1.1.0'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}]}]
+Capabilities {browserName: chrome, bstack:options: {buildName: EventHub Selenium BDD-30820..., debug: true, local: false, networkLogs: true, os: Windows, osVersion: 11, projectName: EventHub Selenium BDD, sessionName: selected-chrome-ui-critical...}, goog:chromeOptions: {args: [--disable-notifications, --disable-popup-blocking, --remote-allow-origins=*, --no-sandbox, --disable-dev-shm-usage], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+[INFO] 
+[ERROR] Tests run: 8, Failures: 8, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.121 s
+[INFO] Finished at: 2026-08-03T14:03:04Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.3.1:test (default-test) on project eventhub-selenium-bdd: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
