@@ -1,0 +1,70 @@
+{
+  "mode" : "advisory",
+  "url" : "https://eventhub.rahulshettyacademy.com/admin/events",
+  "title" : "EventHub — Discover & Book Events",
+  "timestamp" : "2026-08-03T09:57:02.509303767",
+  "violationCount" : 2,
+  "violations" : [ {
+    "id" : "color-contrast",
+    "impact" : "serious",
+    "description" : "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help" : "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+    "tags" : [ "cat.color", "wcag2aa", "wcag143", "TTv5", "TT13.c", "EN-301-549", "EN-9.1.4.3", "ACT" ],
+    "nodeCount" : 10,
+    "nodes" : [ {
+      "target" : [ ".text-gray-400.text-sm" ],
+      "html" : "<span class=\"text-sm text-gray-400\">7 total</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(1) > td:nth-child(7) > .italic.text-gray-400.text-xs" ],
+      "html" : "<span class=\"text-xs text-gray-400 italic\">Read-only</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(2) > td:nth-child(6) > .text-amber-600.font-semibold" ],
+      "html" : "<span class=\"font-semibold text-amber-600\">7/3000</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(2) > td:nth-child(7) > .italic.text-gray-400.text-xs" ],
+      "html" : "<span class=\"text-xs text-gray-400 italic\">Read-only</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(3) > td:nth-child(6) > .text-amber-600.font-semibold" ],
+      "html" : "<span class=\"font-semibold text-amber-600\">8/500</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(3) > td:nth-child(7) > .italic.text-gray-400.text-xs" ],
+      "html" : "<span class=\"text-xs text-gray-400 italic\">Read-only</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(4) > td:nth-child(6) > .text-amber-600.font-semibold" ],
+      "html" : "<span class=\"font-semibold text-amber-600\">1/1</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(5) > td:nth-child(6) > .text-amber-600.font-semibold" ],
+      "html" : "<span class=\"font-semibold text-amber-600\">1/1</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(6) > td:nth-child(6) > .text-amber-600.font-semibold" ],
+      "html" : "<span class=\"font-semibold text-amber-600\">1/1</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".hover\\:bg-gray-50\\/70[data-testid=\"event-table-row\"]:nth-child(7) > td:nth-child(6) > .text-amber-600.font-semibold" ],
+      "html" : "<span class=\"font-semibold text-amber-600\">1/1</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    } ]
+  }, {
+    "id" : "page-has-heading-one",
+    "impact" : "moderate",
+    "description" : "Ensure that the page, or at least one of its frames contains a level-one heading",
+    "help" : "Page should contain a level-one heading",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/page-has-heading-one?application=axeAPI",
+    "tags" : [ "cat.semantics", "best-practice" ],
+    "nodeCount" : 1,
+    "nodes" : [ {
+      "target" : [ "html" ],
+      "html" : "<html lang=\"en\" class=\"scroll-smooth\">",
+      "failureSummary" : "Fix all of the following:\n  Page must have a level-one heading"
+    } ]
+  } ]
+}

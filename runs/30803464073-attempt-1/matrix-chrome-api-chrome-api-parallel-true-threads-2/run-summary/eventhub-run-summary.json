@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260803095618",
+  "timestamp" : "2026-08-03T09:56:42.320711984",
+  "environment" : "qa",
+  "suiteName" : "api",
+  "browser" : "chrome",
+  "headless" : "true",
+  "executionTarget" : "local",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "2",
+  "tags" : "(@api) and not @stateful",
+  "passedScenarios" : 25,
+  "failedScenarios" : 0,
+  "totalScenarios" : 25,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "15c4c2d3-7697-4a91-996c-92898538f029",
+    "name" : "Authenticated user can retrieve current user profile through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 20,
+    "status" : "PASSED",
+    "durationMs" : 4129,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-auth" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "6a0029d5-461b-458a-b466-e14158cef86d",
+    "name" : "Registered user can authenticate through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 14,
+    "status" : "PASSED",
+    "durationMs" : 3645,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-auth" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "1fba817e-03cb-4397-bdac-cdc97e3e5a3b",
+    "name" : "Authenticated user can list events through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 26,
+    "status" : "PASSED",
+    "durationMs" : 2890,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "4c0c0172-3e90-4f11-a177-9a3667710c5d",
+    "name" : "Authenticated user can retrieve an event detail through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 38,
+    "status" : "PASSED",
+    "durationMs" : 2517,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "675b30b5-0572-4780-b537-34f89351c390",
+    "name" : "Event detail maps to a POJO with required business fields",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 44,
+    "status" : "PASSED",
+    "durationMs" : 2485,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ]
+}

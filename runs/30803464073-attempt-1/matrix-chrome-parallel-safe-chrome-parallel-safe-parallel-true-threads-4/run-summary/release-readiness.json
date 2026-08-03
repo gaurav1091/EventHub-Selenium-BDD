@@ -1,0 +1,77 @@
+{
+  "generatedAt" : "2026-08-03T09:58:00.253795392",
+  "status" : "ready",
+  "runId" : "run-20260803095608",
+  "environment" : "qa",
+  "suiteName" : "parallel-safe",
+  "browser" : "chrome",
+  "parallel" : "methods",
+  "threadCount" : "4",
+  "totalScenarios" : 73,
+  "passedScenarios" : 73,
+  "failedScenarios" : 0,
+  "retriedScenarios" : 0,
+  "accessibilityViolations" : 16,
+  "visualDiffPixels" : 0,
+  "visualMissingBaselines" : 0,
+  "quarantineCount" : 0,
+  "expiredQuarantineCount" : 0,
+  "slowestScenarios" : [ {
+    "id" : "2ab15b44-ceec-46c5-bd51-eb5bbb6832c1",
+    "name" : "Admin event form validates required fields",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 13,
+    "status" : "PASSED",
+    "durationMs" : 18622,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "c1eba35b-45ed-4130-ac23-c28be3180edc",
+    "name" : "Admin Events page renders management controls",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 18250,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "117a61ef-7456-443e-809b-303b123da93f",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 18,
+    "status" : "PASSED",
+    "durationMs" : 12167,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "80667936-8cde-4b7a-a944-9de70cafa591",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 17,
+    "status" : "PASSED",
+    "durationMs" : 11649,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "e9859d52-82f5-4dea-ac58-fe6a85acf7a4",
+    "name" : "Booking form validates invalid customer data",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 81,
+    "status" : "PASSED",
+    "durationMs" : 11309,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ],
+  "checks" : {
+    "accessibility" : true,
+    "retry" : true,
+    "visual" : true,
+    "tests" : true,
+    "quarantine" : true
+  }
+}

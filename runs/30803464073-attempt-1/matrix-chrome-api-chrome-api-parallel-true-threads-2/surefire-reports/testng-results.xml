@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="25" passed="25" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-08-03T09:56:12 UTC" name="EventHub Parallel Automation Suite" finished-at="2026-08-03T09:56:42 UTC" duration-ms="29534">
+    <groups>
+      <group name="cucumber">
+        <method signature="ParallelCucumberTestRunner.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" name="runScenario" class="com.eventhub.automation.runners.ParallelCucumberTestRunner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2026-08-03T09:56:12 UTC" name="Parallel Cucumber BDD Tests" finished-at="2026-08-03T09:56:42 UTC" duration-ms="29534">
+      <class name="com.eventhub.automation.runners.ParallelCucumberTestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:18 UTC" name="setUpClass" finished-at="2026-08-03T09:56:19 UTC" duration-ms="639" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@56957f08]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:19 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:19 UTC" duration-ms="527" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Internal API contract manifest documents automated endpoints"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:19 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:21 UTC" duration-ms="1688" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API health endpoint is available"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:19 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:23 UTC" duration-ms="3675" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Registered user can authenticate through API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:21 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:25 UTC" duration-ms="4149" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Authenticated user can retrieve current user profile through API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:23 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:26 UTC" duration-ms="2911" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Authenticated user can list events through API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:25 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:27 UTC" duration-ms="1923" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Event list maps to POJO responses with required business fields"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:26 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:29 UTC" duration-ms="2528" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Authenticated user can retrieve an event detail through API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:27 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:29 UTC" duration-ms="2494" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Event detail maps to a POJO with required business fields"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:29 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:29 UTC" duration-ms="883" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Protected API rejects invalid or anonymous requests"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:29 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:30 UTC" duration-ms="718" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Protected API rejects invalid or anonymous requests"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:29 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:30 UTC" duration-ms="834" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Protected API rejects invalid or anonymous requests"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:30 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:31 UTC" duration-ms="730" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Protected API rejects invalid or anonymous requests"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:30 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:32 UTC" duration-ms="1548" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Protected API rejects invalid or anonymous requests"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:31 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:32 UTC" duration-ms="1557" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Protected API rejects invalid or anonymous requests"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:32 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:33 UTC" duration-ms="1612" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Protected API rejects invalid or anonymous requests"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:32 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:33 UTC" duration-ms="830" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API error responses follow the error contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:33 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:34 UTC" duration-ms="721" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API error responses follow the error contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:33 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:35 UTC" duration-ms="1791" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API error responses follow the error contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:34 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:36 UTC" duration-ms="2038" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API error responses follow the error contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:35 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:38 UTC" duration-ms="2281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Malformed booking payloads are rejected by the API contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:36 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:38 UTC" duration-ms="2285" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Malformed booking payloads are rejected by the API contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:38 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:40 UTC" duration-ms="2285" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Malformed booking payloads are rejected by the API contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:38 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:40 UTC" duration-ms="1550" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Malformed event payloads are rejected by the API contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:40 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:41 UTC" duration-ms="1563" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Malformed event payloads are rejected by the API contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:40 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T09:56:41 UTC" duration-ms="1560" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Malformed event payloads are rejected by the API contract"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.eventhub.automation.runners.ParallelCucumberTestRunner@75d366c2]" started-at="2026-08-03T09:56:41 UTC" name="tearDownClass" finished-at="2026-08-03T09:56:42 UTC" duration-ms="441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.eventhub.automation.runners.ParallelCucumberTestRunner -->
+    </test> <!-- Parallel Cucumber BDD Tests -->
+  </suite> <!-- EventHub Parallel Automation Suite -->
+</testng-results>
