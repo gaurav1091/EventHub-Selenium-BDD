@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260804082311",
+  "timestamp" : "2026-08-04T08:26:02.331159734",
+  "environment" : "qa",
+  "suiteName" : "ui-critical",
+  "browser" : "firefox",
+  "headless" : "true",
+  "executionTarget" : "browserstack",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "2",
+  "tags" : "(@ui and @critical) and not @stateful",
+  "passedScenarios" : 8,
+  "failedScenarios" : 0,
+  "totalScenarios" : 8,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "12c0ac97-a07b-4388-a7dd-d08a8b11fdbd",
+    "name" : "Registered user can sign in and sign out",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 5,
+    "status" : "PASSED",
+    "durationMs" : 67761,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@smoke", "@parallel-safe", "@critical", "@intent-session" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "c6adcfd0-0dc8-43fc-a2b8-0483217e1088",
+    "name" : "Event detail deep link loads correct metadata",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 97,
+    "status" : "PASSED",
+    "durationMs" : 52953,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p1", "@regression", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "624241d0-7e6d-4a43-86dc-86652d3d4273",
+    "name" : "User can view upcoming events",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 44446,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "b572728e-a279-4eac-bfd9-2247f6337ab7",
+    "name" : "Anonymous user is redirected from protected route",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 42,
+    "status" : "PASSED",
+    "durationMs" : 36051,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@regression", "@parallel-safe", "@critical", "@intent-security" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "0b2d59fb-5516-44f9-9b51-d02f07befdc5",
+    "name" : "Authenticated session survives page refresh",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 13,
+    "status" : "PASSED",
+    "durationMs" : 30250,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@critical", "@intent-session" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  } ]
+}
