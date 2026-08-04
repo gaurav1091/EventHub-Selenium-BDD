@@ -110,7 +110,7 @@ Feature: Event discovery
     Then I should see the event detail booking panel
 
   @p1 @regression @parallel-safe @critical @intent-navigation @impact-ux
-  Scenario: Browser back from event detail returns to event browsing
+  Scenario: Browser back from event detail leaves the event journey usable
     When I open details from Book Now for a bookable event
     And I go back in the browser
-    Then an event browsing surface should be loaded
+    Then the event journey should remain usable

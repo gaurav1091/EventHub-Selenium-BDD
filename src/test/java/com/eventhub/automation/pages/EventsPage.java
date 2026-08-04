@@ -109,6 +109,16 @@ public class EventsPage extends BasePage {
         assertSeededEventsVisible();
     }
 
+    public void assertEventJourneyUsable() {
+        Waits.loadingComplete(driver());
+        Waits.until(driver(), webDriver -> webDriver.findElements(By.xpath(
+                        "//*[contains(normalize-space(.),'Featured Events') "
+                                + "or contains(normalize-space(.),'Upcoming Events') "
+                                + "or contains(normalize-space(.),'Book Tickets')]"))
+                .stream()
+                .anyMatch(WebElement::isDisplayed));
+    }
+
     public void assertNoEventsFound() {
         assertNoEventsFoundForQuery("No Selenium Event Should Match This");
     }

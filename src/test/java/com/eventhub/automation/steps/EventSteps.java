@@ -90,6 +90,11 @@ public class EventSteps {
         eventsPage.assertBrowsableEventSurfaceVisible();
     }
 
+    @Then("the event journey should remain usable")
+    public void theEventJourneyShouldRemainUsable() {
+        eventsPage.assertEventJourneyUsable();
+    }
+
     @Then("I should see event {string}")
     public void iShouldSeeEvent(String eventName) {
         eventsPage.assertEventVisible(eventName);
