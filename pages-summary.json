@@ -1,42 +1,87 @@
 {
-  "currentRun": "30855735480-attempt-1",
-  "currentRunPath": "runs/30855735480-attempt-1/",
+  "currentRun": "30885669560-attempt-1",
+  "currentRunPath": "runs/30885669560-attempt-1/",
   "reports": [
     {
       "browser": "chrome",
-      "suite": "api-regression",
-      "parallel": "true",
-      "threads": "3",
-      "testCount": 26,
-      "jobName": "nightly-chrome-api-regression",
-      "path": "runs/30855735480-attempt-1/nightly-chrome-api-regression-chrome-api-regression-parallel-true-threads-3/index.html"
-    },
-    {
-      "browser": "chrome",
-      "suite": "regression",
-      "parallel": "true",
-      "threads": "4",
-      "testCount": 67,
-      "jobName": "nightly-chrome-regression",
-      "path": "runs/30855735480-attempt-1/nightly-chrome-regression-chrome-regression-parallel-true-threads-4/index.html"
-    },
-    {
-      "browser": "chrome",
-      "suite": "stateful-regression",
+      "suite": "grid-smoke",
       "parallel": "false",
       "threads": "1",
-      "testCount": 23,
-      "jobName": "nightly-chrome-stateful-regression",
-      "path": "runs/30855735480-attempt-1/nightly-chrome-stateful-regression-chrome-stateful-regression-parallel-false-threads-1/index.html"
+      "testCount": 6,
+      "jobName": "grid-chrome-smoke",
+      "path": "runs/30885669560-attempt-1/grid-chrome-smoke-chrome-grid-smoke-parallel-false-threads-1/index.html"
     },
     {
       "browser": "firefox",
-      "suite": "regression",
+      "suite": "grid-smoke",
+      "parallel": "false",
+      "threads": "1",
+      "testCount": 6,
+      "jobName": "grid-firefox-smoke",
+      "path": "runs/30885669560-attempt-1/grid-firefox-smoke-firefox-grid-smoke-parallel-false-threads-1/index.html"
+    },
+    {
+      "browser": "chrome",
+      "suite": "accessibility",
+      "parallel": "false",
+      "threads": "1",
+      "testCount": 4,
+      "jobName": "matrix-chrome-accessibility",
+      "path": "runs/30885669560-attempt-1/matrix-chrome-accessibility-chrome-accessibility-parallel-false-threads-1/index.html"
+    },
+    {
+      "browser": "chrome",
+      "suite": "api",
+      "parallel": "true",
+      "threads": "2",
+      "testCount": 25,
+      "jobName": "matrix-chrome-api",
+      "path": "runs/30885669560-attempt-1/matrix-chrome-api-chrome-api-parallel-true-threads-2/index.html"
+    },
+    {
+      "browser": "chrome",
+      "suite": "parallel-safe",
       "parallel": "true",
       "threads": "4",
-      "testCount": 67,
-      "jobName": "nightly-firefox-regression",
-      "path": "runs/30855735480-attempt-1/nightly-firefox-regression-firefox-regression-parallel-true-threads-4/index.html"
+      "testCount": 78,
+      "jobName": "matrix-chrome-parallel-safe",
+      "path": "runs/30885669560-attempt-1/matrix-chrome-parallel-safe-chrome-parallel-safe-parallel-true-threads-4/index.html"
+    },
+    {
+      "browser": "chrome",
+      "suite": "smoke",
+      "parallel": "false",
+      "threads": "2",
+      "testCount": 6,
+      "jobName": "matrix-chrome-smoke",
+      "path": "runs/30885669560-attempt-1/matrix-chrome-smoke-chrome-smoke-parallel-false-threads-2/index.html"
+    },
+    {
+      "browser": "firefox",
+      "suite": "accessibility",
+      "parallel": "false",
+      "threads": "1",
+      "testCount": 4,
+      "jobName": "matrix-firefox-accessibility",
+      "path": "runs/30885669560-attempt-1/matrix-firefox-accessibility-firefox-accessibility-parallel-false-threads-1/index.html"
+    },
+    {
+      "browser": "firefox",
+      "suite": "parallel-safe",
+      "parallel": "true",
+      "threads": "2",
+      "testCount": 78,
+      "jobName": "matrix-firefox-parallel-safe",
+      "path": "runs/30885669560-attempt-1/matrix-firefox-parallel-safe-firefox-parallel-safe-parallel-true-threads-2/index.html"
+    },
+    {
+      "browser": "firefox",
+      "suite": "smoke",
+      "parallel": "false",
+      "threads": "2",
+      "testCount": 6,
+      "jobName": "matrix-firefox-smoke",
+      "path": "runs/30885669560-attempt-1/matrix-firefox-smoke-firefox-smoke-parallel-false-threads-2/index.html"
     }
   ]
 }

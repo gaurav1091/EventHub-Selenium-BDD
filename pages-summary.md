@@ -1,7 +1,12 @@
 ### EventHub Published Report Links
 
-- [This workflow run](runs/30855735480-attempt-1/)
-- [chrome / api-regression / parallel=true / threads=3 / tests=26](runs/30855735480-attempt-1/nightly-chrome-api-regression-chrome-api-regression-parallel-true-threads-3/index.html)
-- [chrome / regression / parallel=true / threads=4 / tests=67](runs/30855735480-attempt-1/nightly-chrome-regression-chrome-regression-parallel-true-threads-4/index.html)
-- [chrome / stateful-regression / parallel=false / threads=1 / tests=23](runs/30855735480-attempt-1/nightly-chrome-stateful-regression-chrome-stateful-regression-parallel-false-threads-1/index.html)
-- [firefox / regression / parallel=true / threads=4 / tests=67](runs/30855735480-attempt-1/nightly-firefox-regression-firefox-regression-parallel-true-threads-4/index.html)
+- [This workflow run](runs/30885669560-attempt-1/)
+- [chrome / grid-smoke / parallel=false / threads=1 / tests=6](runs/30885669560-attempt-1/grid-chrome-smoke-chrome-grid-smoke-parallel-false-threads-1/index.html)
+- [firefox / grid-smoke / parallel=false / threads=1 / tests=6](runs/30885669560-attempt-1/grid-firefox-smoke-firefox-grid-smoke-parallel-false-threads-1/index.html)
+- [chrome / accessibility / parallel=false / threads=1 / tests=4](runs/30885669560-attempt-1/matrix-chrome-accessibility-chrome-accessibility-parallel-false-threads-1/index.html)
+- [chrome / api / parallel=true / threads=2 / tests=25](runs/30885669560-attempt-1/matrix-chrome-api-chrome-api-parallel-true-threads-2/index.html)
+- [chrome / parallel-safe / parallel=true / threads=4 / tests=78](runs/30885669560-attempt-1/matrix-chrome-parallel-safe-chrome-parallel-safe-parallel-true-threads-4/index.html)
+- [chrome / smoke / parallel=false / threads=2 / tests=6](runs/30885669560-attempt-1/matrix-chrome-smoke-chrome-smoke-parallel-false-threads-2/index.html)
+- [firefox / accessibility / parallel=false / threads=1 / tests=4](runs/30885669560-attempt-1/matrix-firefox-accessibility-firefox-accessibility-parallel-false-threads-1/index.html)
+- [firefox / parallel-safe / parallel=true / threads=2 / tests=78](runs/30885669560-attempt-1/matrix-firefox-parallel-safe-firefox-parallel-safe-parallel-true-threads-2/index.html)
+- [firefox / smoke / parallel=false / threads=2 / tests=6](runs/30885669560-attempt-1/matrix-firefox-smoke-firefox-smoke-parallel-false-threads-2/index.html)
