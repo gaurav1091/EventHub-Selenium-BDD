@@ -100,12 +100,30 @@ public class EventsPage extends BasePage {
     }
 
     public void assertNoEventsFound() {
+        assertNoEventsFoundForQuery("No Selenium Event Should Match This");
+    }
+
+    public void assertNoEventsFoundForQuery(String query) {
         Waits.until(driver(), webDriver -> webDriver.findElements(By.xpath("//article")).isEmpty()
                 || !webDriver.findElements(By.xpath(
                                 "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'no events')]"))
                         .isEmpty()
-                || "No Selenium Event Should Match This".equals(visible(SEARCH).getAttribute("value")));
-        assertThat(visible(SEARCH).getAttribute("value")).isEqualTo("No Selenium Event Should Match This");
+                || query.equals(visible(SEARCH).getAttribute("value")));
+        assertThat(visible(SEARCH).getAttribute("value")).isEqualTo(query);
+    }
+
+    public void assertNoMatchingEvents() {
+        Waits.loadingComplete(driver());
+        Waits.until(driver(), webDriver -> webDriver.findElements(By.xpath("//article")).isEmpty()
+                || !webDriver.findElements(By.xpath(
+                                "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'no events')]"))
+                        .isEmpty());
+        assertThat(driver().findElements(By.xpath("//article")).stream().noneMatch(WebElement::isDisplayed)
+                || !driver().findElements(By.xpath(
+                                "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'no events')]"))
+                        .isEmpty())
+                .as("Expected incompatible filters to show no visible event cards or an empty-state message")
+                .isTrue();
     }
 
     public void assertEventCardDetails(String eventName, String category, String city, String price) {

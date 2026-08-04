@@ -114,6 +114,11 @@ public class BookingSteps {
         detailPage.decreaseTickets(count);
     }
 
+    @When("I attempt to decrease tickets by {int}")
+    public void iAttemptToDecreaseTicketsBy(int count) {
+        detailPage.attemptDecreaseTickets(count);
+    }
+
     @When("I submit the booking form without customer details")
     public void iSubmitTheBookingFormWithoutCustomerDetails() {
         detailPage.submitEmptyBookingForm();

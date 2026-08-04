@@ -73,6 +73,12 @@ public class AuthSteps {
         Waits.appReady(DriverManager.getDriver());
     }
 
+    @When("I go back in the browser")
+    public void iGoBackInTheBrowser() {
+        DriverManager.getDriver().navigate().back();
+        Waits.appReady(DriverManager.getDriver());
+    }
+
     @When("I sign out")
     public void iSignOut() {
         navigationBar.logout();

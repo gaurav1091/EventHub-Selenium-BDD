@@ -68,3 +68,9 @@ Feature: EventHub authentication
       | /events       | events       |
       | /bookings     | bookings     |
       | /admin/events | admin events |
+
+  @p1 @regression @parallel-safe @negative @intent-security @impact-events
+  Scenario: Anonymous user is redirected from an event detail deep link
+    Given I am an anonymous visitor
+    When I directly open event detail for event "World Tech Summit"
+    Then I should be returned to the login page

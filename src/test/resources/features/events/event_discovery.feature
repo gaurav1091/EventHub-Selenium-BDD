@@ -66,6 +66,19 @@ Feature: Event discovery
     And I search events for "No Selenium Event Should Match This"
     Then I should see the no events found message
 
+  @p1 @regression @parallel-safe @negative @intent-validation
+  Scenario: Special-character event search does not show unrelated results
+    When I open the Events page
+    And I search events for "###@@@NoEvent"
+    Then I should see no events for query "###@@@NoEvent"
+
+  @p1 @regression @parallel-safe @negative @intent-filtering
+  Scenario: Incompatible event filters show an empty result state
+    When I open the Events page
+    And I filter events by category "Festival"
+    And I filter events by city "Hyderabad"
+    Then I should see no matching events
+
   @p1 @regression @parallel-safe
   Scenario: Event cards expose business-critical details
     When I open the Events page

@@ -100,6 +100,16 @@ public class EventSteps {
         eventsPage.assertNoEventsFound();
     }
 
+    @Then("I should see no events for query {string}")
+    public void iShouldSeeNoEventsForQuery(String query) {
+        eventsPage.assertNoEventsFoundForQuery(query);
+    }
+
+    @Then("I should see no matching events")
+    public void iShouldSeeNoMatchingEvents() {
+        eventsPage.assertNoMatchingEvents();
+    }
+
     @Then("event {string} card should show category {string}, city {string}, price {string}, seats, and availability status")
     public void eventCardShouldShowBusinessDetails(String eventName, String category, String city, String price) {
         eventsPage.assertEventCardDetails(eventName, category, city, price);

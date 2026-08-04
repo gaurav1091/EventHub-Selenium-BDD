@@ -15,6 +15,12 @@ Feature: Admin event management
     And I submit the admin event form without required fields
     Then the admin form should show required field validation
 
+  @p1 @regression @parallel-safe @negative @intent-validation
+  Scenario: Admin event form rejects invalid numeric values
+    When I open the Admin Events page
+    And I submit an admin event with invalid price and seats
+    Then the admin numeric fields should show validation
+
   @p1 @regression @stateful @api-cleanup
   Scenario: Admin can create a disposable event and find it in discovery
     When I create a one-seat admin event through the API

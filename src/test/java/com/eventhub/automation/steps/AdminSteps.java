@@ -32,6 +32,11 @@ public class AdminSteps {
         adminEventsPage.submitEmptyForm();
     }
 
+    @When("I submit an admin event with invalid price and seats")
+    public void iSubmitAnAdminEventWithInvalidPriceAndSeats() {
+        adminEventsPage.submitInvalidNumericValues();
+    }
+
     @When("I create a disposable admin event through the UI")
     public void iCreateADisposableAdminEventThroughTheUi() {
         EventRequest event = TestDataFactory.event("Selenium UI Event", 6);
@@ -96,6 +101,11 @@ public class AdminSteps {
     @Then("the admin form should show required field validation")
     public void theAdminFormShouldShowRequiredFieldValidation() {
         adminEventsPage.assertValidationVisible();
+    }
+
+    @Then("the admin numeric fields should show validation")
+    public void theAdminNumericFieldsShouldShowValidation() {
+        adminEventsPage.assertNumericValidationVisible();
     }
 
     @Then("the disposable admin event should appear in the admin table")

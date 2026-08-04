@@ -42,6 +42,15 @@ public class EventDetailPage extends BasePage {
         }
     }
 
+    public void attemptDecreaseTickets(int times) {
+        for (int index = 0; index < times; index++) {
+            if (!visible(MINUS).isEnabled()) {
+                return;
+            }
+            click(MINUS);
+        }
+    }
+
     public void assertQuantity(String quantity) {
         assertPageContains(driver(), quantity);
     }

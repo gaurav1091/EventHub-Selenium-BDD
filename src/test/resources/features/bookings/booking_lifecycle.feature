@@ -62,6 +62,13 @@ Feature: Event booking lifecycle
     When I decrease tickets by 1
     Then the ticket quantity should be 1
 
+  @p1 @regression @parallel-safe @negative @intent-capacity
+  Scenario: Ticket quantity cannot be decreased below one
+    When I open details for an event with at least 4 available tickets
+    And I attempt to decrease tickets by 3
+    Then the ticket quantity should be 1
+    And the ticket decrement control should be disabled
+
   @p1 @regression @stateful @api-cleanup @negative
   Scenario: Booking cannot exceed available tickets
     When I create a one-seat admin event through the API
