@@ -12,6 +12,7 @@ public class LoginPage extends BasePage {
     private static final By PASSWORD = By.cssSelector("input[type='password'], input[placeholder='••••••']");
     private static final By SIGN_IN = By.xpath("//button[normalize-space()='Sign In']");
     private static final By REGISTER_LINK = By.xpath("//a[contains(normalize-space(.),'Register') or contains(@href,'register')]");
+    private static final By LOGOUT = By.xpath("//button[normalize-space()='Logout']");
 
     public LoginPage openLoginPage() {
         open("/login");
@@ -29,8 +30,22 @@ public class LoginPage extends BasePage {
         return hasElements(EMAIL) && hasElements(PASSWORD) && hasElements(SIGN_IN);
     }
 
+    public boolean isAuthenticatedSessionVisible() {
+        return hasElements(LOGOUT) && driver().findElement(LOGOUT).isDisplayed();
+    }
+
     public void login(String email, String password) {
+        waitForLoginFormOrAuthenticatedSession();
+        if (isAuthenticatedSessionVisible()) {
+            return;
+        }
+
         type(EMAIL, email);
+        waitForPasswordFieldOrAuthenticatedSession();
+        if (isAuthenticatedSessionVisible()) {
+            return;
+        }
+
         WebElement passwordField = visible(PASSWORD);
         passwordField.clear();
         passwordField.sendKeys(password);
@@ -73,5 +88,15 @@ public class LoginPage extends BasePage {
         });
         assertThat(driver().getCurrentUrl()).contains("/login");
         assertPageContainsAnyOf(driver(), "Invalid", "invalid", "Incorrect", "incorrect", "rejected", "Sign In");
+    }
+
+    private void waitForLoginFormOrAuthenticatedSession() {
+        com.eventhub.automation.utils.Waits.until(driver(), webDriver ->
+                isAuthenticatedSessionVisible() || isLoginFormVisible());
+    }
+
+    private void waitForPasswordFieldOrAuthenticatedSession() {
+        com.eventhub.automation.utils.Waits.until(driver(), webDriver ->
+                isAuthenticatedSessionVisible() || isDisplayed(PASSWORD));
     }
 }
