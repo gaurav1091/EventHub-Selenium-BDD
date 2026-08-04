@@ -99,6 +99,16 @@ public class EventsPage extends BasePage {
         assertEventVisible("World Tech Summit");
     }
 
+    public void assertBrowsableEventSurfaceVisible() {
+        Waits.loadingComplete(driver());
+        Waits.until(driver(), webDriver -> webDriver.findElements(By.xpath(
+                        "//*[contains(normalize-space(.),'Featured Events') "
+                                + "or contains(normalize-space(.),'Upcoming Events')]"))
+                .stream()
+                .anyMatch(WebElement::isDisplayed));
+        assertSeededEventsVisible();
+    }
+
     public void assertNoEventsFound() {
         assertNoEventsFoundForQuery("No Selenium Event Should Match This");
     }

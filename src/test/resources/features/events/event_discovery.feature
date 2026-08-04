@@ -98,7 +98,19 @@ Feature: Event discovery
     When I directly open event detail for event "World Tech Summit"
     Then I should see metadata for event "World Tech Summit"
 
+  @p1 @regression @parallel-safe @critical @intent-navigation @impact-ux
+  Scenario: Event detail remains stable after browser refresh
+    When I directly open event detail for event "World Tech Summit"
+    And I refresh the current page
+    Then I should see metadata for event "World Tech Summit"
+
   @p1 @regression @parallel-safe @critical
   Scenario: User can open a bookable event detail page from Book Now
     When I open details from Book Now for a bookable event
     Then I should see the event detail booking panel
+
+  @p1 @regression @parallel-safe @critical @intent-navigation @impact-ux
+  Scenario: Browser back from event detail returns to event browsing
+    When I open details from Book Now for a bookable event
+    And I go back in the browser
+    Then an event browsing surface should be loaded

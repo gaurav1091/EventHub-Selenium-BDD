@@ -85,6 +85,11 @@ public class EventSteps {
         eventsPage.assertSeededEventsVisible();
     }
 
+    @Then("an event browsing surface should be loaded")
+    public void anEventBrowsingSurfaceShouldBeLoaded() {
+        eventsPage.assertBrowsableEventSurfaceVisible();
+    }
+
     @Then("I should see event {string}")
     public void iShouldSeeEvent(String eventName) {
         eventsPage.assertEventVisible(eventName);

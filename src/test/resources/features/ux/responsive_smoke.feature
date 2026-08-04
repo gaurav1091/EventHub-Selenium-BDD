@@ -14,6 +14,8 @@ Feature: Responsive smoke
       | page         | width | height |
       | home         | 390   | 844    |
       | events       | 390   | 844    |
+      | event detail | 390   | 844    |
       | bookings     | 390   | 844    |
       | admin events | 1366  | 768    |
       | events       | 1440  | 900    |
+      | event detail | 1440  | 900    |

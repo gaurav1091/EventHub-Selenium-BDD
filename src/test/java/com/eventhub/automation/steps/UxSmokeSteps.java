@@ -61,6 +61,10 @@ public class UxSmokeSteps {
             case "events":
                 new EventsPage().openEventsPage();
                 break;
+            case "event detail":
+                new EventsPage().openEventsPage().bookFirstAvailableEvent();
+                Waits.visibleTextContains(DriverManager.getDriver(), "Book Tickets");
+                break;
             case "bookings":
                 new BookingsPage().openBookingsPage().assertLoaded();
                 break;
