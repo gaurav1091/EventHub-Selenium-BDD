@@ -1,0 +1,172 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.eventhub:eventhub-selenium-bdd >-----------------
+[INFO] Building EventHub Selenium Java BDD Framework 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ eventhub-selenium-bdd ---
+[INFO] skip non existing resourceDirectory /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ eventhub-selenium-bdd ---
+[INFO] Copying 34 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 50 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.3.1:test (default-test) @ eventhub-selenium-bdd ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p0 @smoke @parallel-safe @critical
+Scenario: Admin Events page renders management controls                   # src/test/resources/features/admin/admin_event_management.feature:8
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @smoke @parallel-safe @critical @intent-session
+Scenario: Registered user can sign in and sign out # src/test/resources/features/auth/login.feature:5
+Aug 04, 2026 7:03:05 AM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
+INFO: Using OpenTelemetry for tracing
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  Given I am signed in to EventHub                                        # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I sign in with valid registered credentials # com.eventhub.automation.steps.AuthSteps.iSignInWithValidRegisteredCredentials()
+  When I open the Admin Events page                                       # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  Then the Admin Events page should show the create form and events table # com.eventhub.automation.steps.AdminSteps.theAdminEventsPageShouldShowTheCreateFormAndEventsTable()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @critical @intent-session
+Scenario: Authenticated session survives page refresh # src/test/resources/features/auth/login.feature:13
+  Then I should see the authenticated navigation   # com.eventhub.automation.steps.AuthSteps.iShouldSeeTheAuthenticatedNavigation()
+  When I sign out                                  # com.eventhub.automation.steps.AuthSteps.iSignOut()
+  Then I should be returned to the login page      # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from protected route # src/test/resources/features/auth/login.feature:42
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  When I directly open protected route "/bookings"          # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+  Given I am signed in to EventHub                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from the admin route # src/test/resources/features/auth/login.feature:48
+  When I refresh the current page                     # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then I should see the authenticated navigation      # com.eventhub.automation.steps.AuthSteps.iShouldSeeTheAuthenticatedNavigation()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p0 @smoke @parallel-safe @critical
+Scenario: User can view upcoming events    # src/test/resources/features/events/event_discovery.feature:8
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  When I directly open protected route "/admin/events"      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: Event detail deep link loads correct metadata           # src/test/resources/features/events/event_discovery.feature:97
+  Given I am signed in to EventHub         # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page              # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  Then I should see seeded upcoming events # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: User can open a bookable event detail page from Book Now # src/test/resources/features/events/event_discovery.feature:102
+  Given I am signed in to EventHub                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open event detail for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  Then I should see metadata for event "World Tech Summit"        # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+      org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.cssSelector: input[type='password'], input[placeholder='••••••'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='password'], input[placeholder='••••••']"}.
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 150.0.7871.47, chrome: {chromedriverVersion: 150.0.7871.46 (5b586c06e0d2..., userDataDir: C:\Windows\proxy\scoped_dir...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, goog:processID: 12948, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: e82a4cc0a536bb997e82e62c579...}
+Session ID: e82a4cc0a536bb997e82e62c579e39e7608d6344
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.eventhub.automation.utils.Waits.visible(Waits.java:18)
+	at com.eventhub.automation.pages.BasePage.visible(BasePage.java:24)
+	at com.eventhub.automation.pages.LoginPage.login(LoginPage.java:39)
+	at com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub(AuthSteps.java:31)
+	at ✽.I am signed in to EventHub(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:5)
+
+  When I open details from Book Now for a bookable event           # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromBookNowForABookableEvent()
+  Then I should see the event detail booking panel                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheEventDetailBookingPanel()
+
+    Embedding failure screenshot [image/png 569847 bytes]
+
+
+Failed scenarios:
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:102 # User can open a bookable event detail page from Book Now
+
+8 Scenarios (1 failed, 7 passed)
+26 Steps (1 failed, 2 skipped, 23 passed)
+1m36.081s
+
+
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.cssSelector: input[type='password'], input[placeholder='••••••'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='password'], input[placeholder='••••••']"}.
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 150.0.7871.47, chrome: {chromedriverVersion: 150.0.7871.46 (5b586c06e0d2..., userDataDir: C:\Windows\proxy\scoped_dir...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, goog:processID: 12948, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: e82a4cc0a536bb997e82e62c579...}
+Session ID: e82a4cc0a536bb997e82e62c579e39e7608d6344
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.eventhub.automation.utils.Waits.visible(Waits.java:18)
+	at com.eventhub.automation.pages.BasePage.visible(BasePage.java:24)
+	at com.eventhub.automation.pages.LoginPage.login(LoginPage.java:39)
+	at com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub(AuthSteps.java:31)
+	at ✽.I am signed in to EventHub(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:5)
+
+
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 105.3 s <<< FAILURE! -- in TestSuite
+[ERROR] com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["User can open a bookable event detail page from Book Now", "Event discovery"](8) -- Time elapsed: 32.47 s <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element found by By.cssSelector: input[type='password'], input[placeholder='••••••'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='password'], input[placeholder='••••••']"}.
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 150.0.7871.47, chrome: {chromedriverVersion: 150.0.7871.46 (5b586c06e0d2..., userDataDir: C:\Windows\proxy\scoped_dir...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, goog:processID: 12948, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: e82a4cc0a536bb997e82e62c579...}
+Session ID: e82a4cc0a536bb997e82e62c579e39e7608d6344
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.eventhub.automation.utils.Waits.visible(Waits.java:18)
+	at com.eventhub.automation.pages.BasePage.visible(BasePage.java:24)
+	at com.eventhub.automation.pages.LoginPage.login(LoginPage.java:39)
+	at com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub(AuthSteps.java:31)
+	at ✽.I am signed in to EventHub(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:5)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ParallelCucumberTestRunner.runScenario » Timeout Expected condition failed: waiting for visibility of element found by By.cssSelector: input[type='password'], input[placeholder='••••••'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[type='password'], input[placeholder='••••••']"}.
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 150.0.7871.47, chrome: {chromedriverVersion: 150.0.7871.46 (5b586c06e0d2..., userDataDir: C:\Windows\proxy\scoped_dir...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, goog:processID: 12948, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: e82a4cc0a536bb997e82e62c579...}
+Session ID: e82a4cc0a536bb997e82e62c579e39e7608d6344
+[INFO] 
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:53 min
+[INFO] Finished at: 2026-08-04T07:04:41Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.3.1:test (default-test) on project eventhub-selenium-bdd: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
