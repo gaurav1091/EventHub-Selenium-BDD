@@ -1,0 +1,88 @@
+{
+  "mode" : "threshold",
+  "url" : "https://eventhub.rahulshettyacademy.com/events",
+  "title" : "EventHub — Discover & Book Events",
+  "timestamp" : "2026-08-04T09:22:32.913600839",
+  "violationCount" : 3,
+  "violations" : [ {
+    "id" : "color-contrast",
+    "impact" : "serious",
+    "description" : "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help" : "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+    "tags" : [ "cat.color", "wcag2aa", "wcag143", "TTv5", "TT13.c", "EN-301-549", "EN-9.1.4.3", "ACT" ],
+    "nodeCount" : 10,
+    "nodes" : [ {
+      "target" : [ "article:nth-child(1) > .h-48.bg-gradient-to-br.from-indigo-100 > .right-3.absolute.top-3 > .bg-emerald-500.px-2.py-0\\.5" ],
+      "html" : "<span class=\"bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded-full\">Featured</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(1) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">8 seats left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(2) > .h-48.bg-gradient-to-br.from-indigo-100 > .right-3.absolute.top-3 > .bg-emerald-500.px-2.py-0\\.5" ],
+      "html" : "<span class=\"bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded-full\">Featured</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(2) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">8 seats left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(3) > .h-48.bg-gradient-to-br.from-indigo-100 > .right-3.absolute.top-3 > .bg-emerald-500.px-2.py-0\\.5" ],
+      "html" : "<span class=\"bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded-full\">Featured</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(3) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">8 seats left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(4) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">1 seat left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(5) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">1 seat left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(6) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">1 seat left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(7) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">1 seat left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    } ]
+  }, {
+    "id" : "heading-order",
+    "impact" : "moderate",
+    "description" : "Ensure the order of headings is semantically correct",
+    "help" : "Heading levels should only increase by one",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
+    "tags" : [ "cat.semantics", "best-practice" ],
+    "nodeCount" : 1,
+    "nodes" : [ {
+      "target" : [ "a[href$=\"events/3\"] > .text-\\[15px\\].line-clamp-2.hover\\:text-indigo-600" ],
+      "html" : "<h3 class=\"font-semibold text-gray-900 text-[15px] line-clamp-2 hover:text-indigo-600 transition-colors mb-2 leading-snug\">Dilli Diwali Mela</h3>",
+      "failureSummary" : "Fix any of the following:\n  Heading order invalid"
+    } ]
+  }, {
+    "id" : "select-name",
+    "impact" : "critical",
+    "description" : "Ensure select element has an accessible name",
+    "help" : "Select element must have an accessible name",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/select-name?application=axeAPI",
+    "tags" : [ "cat.forms", "wcag2a", "wcag412", "section508", "section508.22.n", "TTv5", "TT5.c", "EN-301-549", "EN-9.4.1.2", "ACT" ],
+    "nodeCount" : 2,
+    "nodes" : [ {
+      "target" : [ ".sm\\:w-48 > select" ],
+      "html" : "<select class=\"\n          w-full px-3 py-2 rounded-lg border text-sm text-gray-900 bg-white\n          focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent\n          transition-colors duration-150 appearance-none cursor-pointer\n          border-gray-300 hover:border-gray-400\n        \">",
+      "failureSummary" : "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+    }, {
+      "target" : [ ".sm\\:w-40 > select" ],
+      "html" : "<select class=\"\n          w-full px-3 py-2 rounded-lg border text-sm text-gray-900 bg-white\n          focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent\n          transition-colors duration-150 appearance-none cursor-pointer\n          border-gray-300 hover:border-gray-400\n        \">",
+      "failureSummary" : "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+    } ]
+  } ],
+  "maxViolations" : 3
+}
