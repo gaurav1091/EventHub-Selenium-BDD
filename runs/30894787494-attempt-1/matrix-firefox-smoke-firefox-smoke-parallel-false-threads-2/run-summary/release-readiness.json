@@ -1,0 +1,77 @@
+{
+  "generatedAt" : "2026-08-04T09:06:46.053269553",
+  "status" : "ready",
+  "runId" : "run-20260804090604",
+  "environment" : "qa",
+  "suiteName" : "smoke",
+  "browser" : "firefox",
+  "parallel" : "none",
+  "threadCount" : "2",
+  "totalScenarios" : 6,
+  "passedScenarios" : 6,
+  "failedScenarios" : 0,
+  "retriedScenarios" : 0,
+  "accessibilityViolations" : 0,
+  "visualDiffPixels" : 0,
+  "visualMissingBaselines" : 0,
+  "quarantineCount" : 0,
+  "expiredQuarantineCount" : 0,
+  "slowestScenarios" : [ {
+    "id" : "7119e93a-78b6-4da1-9a75-e9b82bea38de",
+    "name" : "Admin Events page renders management controls",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 16302,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "03a7ceb4-94a4-4c04-9968-cf8a428c2f1c",
+    "name" : "User can view upcoming events",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 9379,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "838bfe2a-ce6b-4ffb-a78d-82e235dae714",
+    "name" : "Registered user can sign in and sign out",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 5,
+    "status" : "PASSED",
+    "durationMs" : 7481,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@smoke", "@parallel-safe", "@critical", "@intent-session" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "e5e3efb9-7552-4aec-b5bf-7a676beba3e7",
+    "name" : "Registered user can authenticate through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 14,
+    "status" : "PASSED",
+    "durationMs" : 1973,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-auth" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  }, {
+    "id" : "edf1a08b-ec16-4799-8783-e974f73107fd",
+    "name" : "Authenticated user can list events through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 26,
+    "status" : "PASSED",
+    "durationMs" : 1739,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "firefox",
+    "environment" : "qa"
+  } ],
+  "checks" : {
+    "retry" : true,
+    "visual" : true,
+    "tests" : true,
+    "quarantine" : true,
+    "accessibility" : true
+  }
+}

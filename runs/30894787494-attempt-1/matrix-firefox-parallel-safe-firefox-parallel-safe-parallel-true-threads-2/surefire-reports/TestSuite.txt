@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 82, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 347.1 s <<< FAILURE! -- in TestSuite
+com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Browser back from event detail returns to event browsing", "Event discovery"](68) -- Time elapsed: 5.643 s <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for com.eventhub.automation.pages.EventsPage$$Lambda$1699/0x00007fdbfc9f4640@7a458f24
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1020-azure', java.version: '17.0.19'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 152.0.6, moz:accessibilityChecks: false, moz:buildID: 20260713164047, moz:geckodriverVersion: 0.37.1, moz:headless: true, moz:platformVersion: 6.17.0-1020-azure, moz:processID: 16548, moz:profile: /tmp/rust_mozprofilerlJ74Y, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Linux x86...}
+Session ID: 02cd71c1-3561-452b-bcd8-b36c18540b27
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.eventhub.automation.utils.Waits.until(Waits.java:74)
+	at com.eventhub.automation.pages.EventsPage.assertBrowsableEventSurfaceVisible(EventsPage.java:104)
+	at com.eventhub.automation.steps.EventSteps.anEventBrowsingSurfaceShouldBeLoaded(EventSteps.java:90)
+	at ✽.an event browsing surface should be loaded(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:116)
+
