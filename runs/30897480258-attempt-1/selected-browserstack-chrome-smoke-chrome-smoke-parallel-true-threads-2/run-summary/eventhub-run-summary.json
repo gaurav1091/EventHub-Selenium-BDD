@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260804094253",
+  "timestamp" : "2026-08-04T09:43:47.869093811",
+  "environment" : "qa",
+  "suiteName" : "smoke",
+  "browser" : "chrome",
+  "headless" : "true",
+  "executionTarget" : "browserstack",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "2",
+  "tags" : "(@smoke and not @stateful) and not @stateful",
+  "passedScenarios" : 6,
+  "failedScenarios" : 0,
+  "totalScenarios" : 6,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "aa0601dd-f445-4b3d-8c93-3f9568c0c90b",
+    "name" : "Admin Events page renders management controls",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 28336,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "73685daa-ecea-4f06-9119-5d4d4a7b0461",
+    "name" : "Registered user can sign in and sign out",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 5,
+    "status" : "PASSED",
+    "durationMs" : 23774,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p0", "@smoke", "@parallel-safe", "@critical", "@intent-session" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "4ad69920-409f-4bb3-be96-c1b9060548d4",
+    "name" : "User can view upcoming events",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 22245,
+    "tags" : [ "@events", "@ui", "@owner-platform", "@risk-discovery", "@intent-discovery", "@impact-events", "@p0", "@smoke", "@parallel-safe", "@critical" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "bb101ed2-88f1-46c4-a1a5-10cf9933ce3e",
+    "name" : "Authenticated user can list events through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 26,
+    "status" : "PASSED",
+    "durationMs" : 1678,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "7ae6ac01-0ee6-46a3-8ce7-9aba563142df",
+    "name" : "Registered user can authenticate through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 14,
+    "status" : "PASSED",
+    "durationMs" : 1139,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@parallel-safe", "@intent-auth" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ]
+}
