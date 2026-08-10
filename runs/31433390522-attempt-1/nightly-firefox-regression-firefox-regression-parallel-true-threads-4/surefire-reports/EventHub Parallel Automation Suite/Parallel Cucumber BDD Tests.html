@@ -1,0 +1,460 @@
+<html>
+<head>
+<title>TestNG:  Parallel Cucumber BDD Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Parallel Cucumber BDD Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>76/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Aug 10 21:20:54 UTC 2026</td>
+</tr>
+<tr><td>Total time:</td><td>189 seconds (189370 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td></td>
+<td>16</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed event payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can open event details", "Event discovery"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can directly open a protected route", "EventHub authentication"</td>
+<td></td>
+<td>11</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives refresh on protected pages", "EventHub authentication"</td>
+<td></td>
+<td>15</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives refresh on protected pages", "EventHub authentication"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event detail maps to a POJO with required business fields", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Anonymous user is redirected from protected route", "EventHub authentication"</td>
+<td></td>
+<td>9</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can retrieve an event detail through API", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can filter events by city and category", "Event discovery"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid credentials are rejected", "EventHub authentication"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can clear filters and restore the event list", "Event discovery"</td>
+<td></td>
+<td>13</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Special-character event search does not show unrelated results", "Event discovery"</td>
+<td></td>
+<td>11</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid credentials are rejected", "EventHub authentication"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Ticket quantity controls update the booking total", "Event booking lifecycle"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Browser back from event detail leaves the event journey usable", "Event discovery"</td>
+<td></td>
+<td>15</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event list maps to POJO responses with required business fields", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated key pages have visual sanity screenshots", "Visual sanity smoke"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form validates invalid customer data", "Event booking lifecycle"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Admin event form validates required fields", "Admin event management"</td>
+<td></td>
+<td>19</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can open a bookable event detail page from Book Now", "Event discovery"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Anonymous user is redirected from the admin route", "EventHub authentication"</td>
+<td></td>
+<td>9</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives refresh on protected pages", "EventHub authentication"</td>
+<td></td>
+<td>16</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated key pages have visual sanity screenshots", "Visual sanity smoke"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed event payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for an event by title and exclude unrelated cards", "Event discovery"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td></td>
+<td>9</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Anonymous user is redirected from an event detail deep link", "EventHub authentication"</td>
+<td></td>
+<td>9</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Ticket quantity cannot be decreased below one", "Event booking lifecycle"</td>
+<td></td>
+<td>13</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event cards expose business-critical details", "Event discovery"</td>
+<td></td>
+<td>11</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td></td>
+<td>15</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form accepts generated valid customer data before submit", "Event booking lifecycle"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated session survives page refresh", "EventHub authentication"</td>
+<td></td>
+<td>13</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event filters reset after refresh", "Event discovery"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed booking payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>5</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event detail deep link loads correct metadata", "Event discovery"</td>
+<td></td>
+<td>13</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event detail remains stable after browser refresh", "Event discovery"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Protected API rejects invalid or anonymous requests", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Register link opens account registration", "EventHub authentication"</td>
+<td></td>
+<td>7</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "API error responses follow the error contract", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key pages expose basic accessibility semantics", "Accessibility smoke"</td>
+<td></td>
+<td>16</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login page visual sanity screenshot is captured", "Visual sanity smoke"</td>
+<td></td>
+<td>8</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed booking payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>4</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form validates required customer details", "Event booking lifecycle"</td>
+<td></td>
+<td>14</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can move across primary navigation", "EventHub navigation"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for events by keyword", "Event discovery"</td>
+<td></td>
+<td>11</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed booking payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td></td>
+<td>9</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated key pages have visual sanity screenshots", "Visual sanity smoke"</td>
+<td></td>
+<td>11</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event filters reset after navigating away and back", "Event discovery"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Incompatible event filters show an empty result state", "Event discovery"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Admin event form rejects invalid numeric values", "Admin event management"</td>
+<td></td>
+<td>19</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Booking form validates invalid customer data", "Event booking lifecycle"</td>
+<td></td>
+<td>13</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User sees an empty state for unmatched search", "Event discovery"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Internal API contract manifest documents automated endpoints", "EventHub API contract"</td>
+<td></td>
+<td>0</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login form validates required credentials", "EventHub authentication"</td>
+<td></td>
+<td>8</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Event detail page shows booking form and event content", "Event booking lifecycle"</td>
+<td></td>
+<td>12</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Authenticated user can retrieve current user profile through API", "EventHub API contract"</td>
+<td></td>
+<td>2</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Malformed event payloads are rejected by the API contract", "EventHub API contract"</td>
+<td></td>
+<td>1</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for events by keyword", "Event discovery"</td>
+<td></td>
+<td>11</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Key authenticated pages fit common viewport sizes", "Responsive smoke"</td>
+<td></td>
+<td>11</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+<tr>
+<td title='com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.eventhub.automation.runners.ParallelCucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User can search for events by keyword", "Event discovery"</td>
+<td></td>
+<td>10</td>
+<td>com.eventhub.automation.runners.ParallelCucumberTestRunner@456f7d9e</td></tr>
+</table><p>
+</body>
+</html>
