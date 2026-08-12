@@ -1,0 +1,54 @@
+{
+  "mode" : "advisory-threshold-disabled",
+  "url" : "https://eventhub.rahulshettyacademy.com/",
+  "title" : "EventHub — Discover & Book Events",
+  "timestamp" : "2026-08-12T21:24:01.155967038",
+  "violationCount" : 1,
+  "violations" : [ {
+    "id" : "color-contrast",
+    "impact" : "serious",
+    "description" : "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help" : "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+    "tags" : [ "cat.color", "wcag2aa", "wcag143", "TTv5", "TT13.c", "EN-301-549", "EN-9.1.4.3", "ACT" ],
+    "nodeCount" : 9,
+    "nodes" : [ {
+      "target" : [ "article:nth-child(1) > .h-48.from-indigo-100.via-purple-50 > .right-3.top-3.absolute > .bg-emerald-500.px-2.py-0\\.5" ],
+      "html" : "<span class=\"bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded-full\">Featured</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(1) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">8 seats left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(2) > .h-48.from-indigo-100.via-purple-50 > .right-3.top-3.absolute > .bg-emerald-500.px-2.py-0\\.5" ],
+      "html" : "<span class=\"bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded-full\">Featured</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(2) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">8 seats left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(3) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">8 seats left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(4) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">1 seat left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(5) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">1 seat left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ "article:nth-child(6) > .p-4.flex-1.flex-col > .pt-3.border-t.justify-between > div > .text-amber-600.font-bold.text-xs" ],
+      "html" : "<span class=\"text-xs font-bold text-amber-600\">1 seat left!</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #d97706, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".max-w-lg" ],
+      "html" : "<p class=\"text-gray-500 mb-8 max-w-lg mx-auto\">Browse thousands of events across India. Book tickets in seconds.</p>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 4.32 (foreground color: #6b7280, background color: #eef2ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+    } ]
+  } ],
+  "maxViolations" : 0
+}
