@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260815205040",
+  "timestamp" : "2026-08-15T20:51:13.210538947",
+  "environment" : "qa",
+  "suiteName" : "api-regression",
+  "browser" : "chrome",
+  "headless" : "true",
+  "executionTarget" : "local",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "3",
+  "tags" : "@api and @regression",
+  "passedScenarios" : 26,
+  "failedScenarios" : 0,
+  "totalScenarios" : 26,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "3abd7b03-afed-4661-9a7f-7c23855ac988",
+    "name" : "Event capacity boundary rejects booking beyond available seats",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 127,
+    "status" : "PASSED",
+    "durationMs" : 10836,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@api-cleanup", "@intent-capacity" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "e457f6d6-b037-44c7-a9d6-39e6eff75b8f",
+    "name" : "Booking cancellation is not silently repeatable",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 58,
+    "status" : "PASSED",
+    "durationMs" : 6847,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@intent-booking" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "f00c3cff-f37b-4c60-99b4-4d1a1d6938d4",
+    "name" : "Duplicate booking attempts are handled consistently",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 122,
+    "status" : "PASSED",
+    "durationMs" : 6563,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@api-cleanup", "@intent-booking" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "7efbae89-e7d5-46cf-8c3e-7a3aa28c2bc3",
+    "name" : "Protected API rejects invalid or anonymous requests",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 78,
+    "status" : "PASSED",
+    "durationMs" : 4194,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-security" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "a8aebf2b-65e5-4d99-bf1a-e2c5a15e44ad",
+    "name" : "Authenticated user can retrieve an event detail through API",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 38,
+    "status" : "PASSED",
+    "durationMs" : 3934,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@parallel-safe", "@intent-discovery" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ]
+}

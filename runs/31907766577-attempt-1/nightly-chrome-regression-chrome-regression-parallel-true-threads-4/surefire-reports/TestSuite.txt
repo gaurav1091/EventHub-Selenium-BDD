@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 76, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 129.9 s <<< FAILURE! -- in TestSuite
+com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Event detail page shows booking form and event content", "Event booking lifecycle"](40) -- Time elapsed: 5.695 s <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for com.eventhub.automation.utils.Waits$$Lambda$1659/0x00007f96b89df3a8@24c76136
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1022-azure', java.version: '17.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.108, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35965}, goog:processID: 4317, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35965/devtoo..., se:cdpVersion: 151.0.7922.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e3a9b56e85d5a416b442f1028e038ee4
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.eventhub.automation.utils.Waits.loadingComplete(Waits.java:49)
+	at com.eventhub.automation.utils.Waits.appReady(Waits.java:45)
+	at com.eventhub.automation.pages.BasePage.open(BasePage.java:20)
+	at com.eventhub.automation.pages.LoginPage.openLoginPage(LoginPage.java:18)
+	at com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub(AuthSteps.java:30)
+	at ✽.I am signed in to EventHub(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature:5)
+
