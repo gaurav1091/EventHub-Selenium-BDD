@@ -1,0 +1,77 @@
+{
+  "generatedAt" : "2026-08-17T20:59:40.438722437",
+  "status" : "ready",
+  "runId" : "run-20260817205555",
+  "environment" : "qa",
+  "suiteName" : "stateful-regression",
+  "browser" : "chrome",
+  "parallel" : "none",
+  "threadCount" : "2",
+  "totalScenarios" : 23,
+  "passedScenarios" : 23,
+  "failedScenarios" : 0,
+  "retriedScenarios" : 0,
+  "accessibilityViolations" : 0,
+  "visualDiffPixels" : 0,
+  "visualMissingBaselines" : 0,
+  "quarantineCount" : 0,
+  "expiredQuarantineCount" : 0,
+  "slowestScenarios" : [ {
+    "id" : "55f6000d-8ce1-4661-9221-deef84a122c8",
+    "name" : "Admin can create a disposable event and find it in discovery",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 25,
+    "status" : "PASSED",
+    "durationMs" : 20829,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@stateful", "@api-cleanup" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "dd002638-856b-4256-b4d0-628bdec4c842",
+    "name" : "User can cancel a booking",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 37,
+    "status" : "PASSED",
+    "durationMs" : 11680,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful", "@critical" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "56b3279f-229d-4497-9e47-822b372e6973",
+    "name" : "User can book a ticket and view it under My Bookings",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 8,
+    "status" : "PASSED",
+    "durationMs" : 11106,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p0", "@smoke", "@stateful", "@critical" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "4f671235-b4bd-4e0f-8b7d-e8c6726dedeb",
+    "name" : "API cleanup of an API-created booking is reflected in the UI",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+    "line" : 38,
+    "status" : "PASSED",
+    "durationMs" : 11034,
+    "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "65750fc8-738a-470c-a663-2a7807618da4",
+    "name" : "User can clear all bookings",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 44,
+    "status" : "PASSED",
+    "durationMs" : 10838,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ],
+  "checks" : {
+    "tests" : true,
+    "visual" : true,
+    "retry" : true,
+    "accessibility" : true,
+    "quarantine" : true
+  }
+}

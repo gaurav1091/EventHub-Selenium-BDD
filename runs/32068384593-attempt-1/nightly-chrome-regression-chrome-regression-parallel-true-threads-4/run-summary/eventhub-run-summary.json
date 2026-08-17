@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260817205558",
+  "timestamp" : "2026-08-17T20:58:02.512161218",
+  "environment" : "qa",
+  "suiteName" : "regression",
+  "browser" : "chrome",
+  "headless" : "true",
+  "executionTarget" : "local",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "4",
+  "tags" : "(@regression and @parallel-safe) and not @stateful",
+  "passedScenarios" : 76,
+  "failedScenarios" : 0,
+  "totalScenarios" : 76,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "d8e336dd-3635-46fe-b8c5-92494db8a943",
+    "name" : "Admin event form rejects invalid numeric values",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 19,
+    "status" : "PASSED",
+    "durationMs" : 22145,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "6a3056cb-7dc7-428c-a62e-768bb77df46a",
+    "name" : "Admin event form validates required fields",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 13,
+    "status" : "PASSED",
+    "durationMs" : 21907,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "67d4c0d3-9511-4b0e-8dce-4f7f96c4df0d",
+    "name" : "Ticket quantity cannot be decreased below one",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 66,
+    "status" : "PASSED",
+    "durationMs" : 12506,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-capacity" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "f752ad06-fdf0-4f40-b4be-385f9b13e266",
+    "name" : "Ticket quantity controls update the booking total",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 56,
+    "status" : "PASSED",
+    "durationMs" : 11300,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "7801d07f-5453-4714-bee0-21c5f261637f",
+    "name" : "Event detail page shows booking form and event content",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 51,
+    "status" : "PASSED",
+    "durationMs" : 10651,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ]
+}
