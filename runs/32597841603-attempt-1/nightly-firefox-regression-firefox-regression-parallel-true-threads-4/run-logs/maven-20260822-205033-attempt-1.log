@@ -1,0 +1,539 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.eventhub:eventhub-selenium-bdd >-----------------
+[INFO] Building EventHub Selenium Java BDD Framework 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ eventhub-selenium-bdd ---
+[INFO] skip non existing resourceDirectory /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ eventhub-selenium-bdd ---
+[INFO] Copying 34 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 50 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.3.1:test (default-test) @ eventhub-selenium-bdd ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @parallel-safe @intent-validation
+Scenario: Admin event form validates required fields        # src/test/resources/features/admin/admin_event_management.feature:13
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-auth
+Scenario: Authenticated user can retrieve current user profile through API             # src/test/resources/features/api/api_contract.feature:20
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @parallel-safe @negative @intent-validation
+Scenario: Admin event form rejects invalid numeric values  # src/test/resources/features/admin/admin_event_management.feature:19
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-documentation
+Scenario: Internal API contract manifest documents automated endpoints   # src/test/resources/features/api/api_contract.feature:10
+  Then the internal API contract should document the automated endpoints # com.eventhub.automation.steps.ApiSteps.theInternalApiContractShouldDocumentTheAutomatedEndpoints()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-discovery
+Scenario: Event list maps to POJO responses with required business fields          # src/test/resources/features/api/api_contract.feature:32
+  When I request the current user profile through the API                              # com.eventhub.automation.steps.ApiSteps.iRequestTheCurrentUserProfileThroughTheApi()
+  Then the API current user response should include the registered identity            # com.eventhub.automation.steps.ApiSteps.theApiCurrentUserResponseShouldIncludeTheRegisteredIdentity()
+  When I request events through the API                                            # com.eventhub.automation.steps.ApiSteps.iRequestEventsThroughTheApi()
+  Then the API events response should map to event list POJOs with business fields # com.eventhub.automation.steps.ApiSteps.theApiEventsResponseShouldMapToEventListPojosWithBusinessFields()
+  And the API response should match schema "schemas/events-response.schema.json"   # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+  And the API response should match schema "schemas/current-user-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-discovery
+Scenario: Event detail maps to a POJO with required business fields                      # src/test/resources/features/api/api_contract.feature:44
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-discovery
+Scenario: Authenticated user can retrieve an event detail through API                  # src/test/resources/features/api/api_contract.feature:38
+  When I request event "World Tech Summit" through the API                             # com.eventhub.automation.steps.ApiSteps.iRequestEventThroughTheApi(java.lang.String)
+  When I request event "World Tech Summit" through the API                               # com.eventhub.automation.steps.ApiSteps.iRequestEventThroughTheApi(java.lang.String)
+  Then the API event detail response should describe "World Tech Summit"               # com.eventhub.automation.steps.ApiSteps.theApiEventDetailResponseShouldDescribe(java.lang.String)
+  And the API response should match schema "schemas/event-detail-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:73
+  Then the API event detail response should map to an event POJO for "World Tech Summit" # com.eventhub.automation.steps.ApiSteps.theApiEventDetailResponseShouldMapToAnEventPojoFor(java.lang.String)
+  And the API response should match schema "schemas/event-detail-response.schema.json"   # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests            # src/test/resources/features/api/api_contract.feature:74
+  When I request the current user profile through the API without authentication # com.eventhub.automation.steps.ApiSteps.iRequestTheCurrentUserProfileThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with status 401                         # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:75
+  When I authenticate through the API with invalid credentials        # com.eventhub.automation.steps.ApiSteps.iAuthenticateThroughTheApiWithInvalidCredentials()
+  Then the API should reject the request with status 400              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:76
+  When I request bookings through the API without authentication      # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with status 401              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:77
+  When I create a booking through the API without authentication      # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with status 401              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:78
+  When I request unknown event detail through the API                 # com.eventhub.automation.steps.ApiSteps.iRequestUnknownEventDetailThroughTheApi()
+  Then the API should reject the request with status 500              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:79
+  When I cancel an unknown booking through the API                    # com.eventhub.automation.steps.ApiSteps.iCancelAnUnknownBookingThroughTheApi()
+  Then the API should reject the request with status 500              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract # src/test/resources/features/api/api_contract.feature:88
+  When I authenticate through the API with invalid credentials  # com.eventhub.automation.steps.ApiSteps.iAuthenticateThroughTheApiWithInvalidCredentials()
+  Then the API should reject the request with an error response # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract  # src/test/resources/features/api/api_contract.feature:89
+  When I create a booking through the API with invalid payload        # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithInvalidPayload()
+  Then the API should reject the request with status 400              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract # src/test/resources/features/api/api_contract.feature:90
+  When I request bookings through the API without authentication # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with an error response  # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract # src/test/resources/features/api/api_contract.feature:91
+  When I create a booking through the API with invalid payload  # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithInvalidPayload()
+  Then the API should reject the request with an error response # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed booking payloads are rejected by the API contract       # src/test/resources/features/api/api_contract.feature:100
+  When I create an event through the API with invalid payload   # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithInvalidPayload()
+  Then the API should reject the request with an error response # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed booking payloads are rejected by the API contract            # src/test/resources/features/api/api_contract.feature:101
+  When I create a booking through the API with malformed payload "missing event id" # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                     # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed booking payloads are rejected by the API contract        # src/test/resources/features/api/api_contract.feature:102
+  When I create a booking through the API with malformed payload "invalid quantity type" # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                          # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed event payloads are rejected by the API contract     # src/test/resources/features/api/api_contract.feature:111
+  When I create an event through the API with malformed payload "missing title" # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                 # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+  When I create a booking through the API with malformed payload "negative quantity" # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithMalformedPayload(java.lang.String)
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed event payloads are rejected by the API contract          # src/test/resources/features/api/api_contract.feature:112
+  Then the API should reject the request with an error response                      # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed event payloads are rejected by the API contract      # src/test/resources/features/api/api_contract.feature:113
+  Given I am signed in to EventHub                         # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create an event through the API with malformed payload "invalid price type" # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                      # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @critical @intent-session
+Scenario: Authenticated session survives page refresh # src/test/resources/features/auth/login.feature:13
+  When I create an event through the API with malformed payload "negative seats" # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                  # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-validation
+Scenario: Login form validates required credentials         # src/test/resources/features/auth/login.feature:19
+  When I open the Admin Events page                        # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  When I open the Admin Events page                         # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  And I submit the admin event form without required fields # com.eventhub.automation.steps.AdminSteps.iSubmitTheAdminEventFormWithoutRequiredFields()
+  Then the admin form should show required field validation # com.eventhub.automation.steps.AdminSteps.theAdminFormShouldShowRequiredFieldValidation()
+  And I submit an admin event with invalid price and seats # com.eventhub.automation.steps.AdminSteps.iSubmitAnAdminEventWithInvalidPriceAndSeats()
+  Then the admin numeric fields should show validation     # com.eventhub.automation.steps.AdminSteps.theAdminNumericFieldsShouldShowValidation()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Invalid credentials are rejected # src/test/resources/features/auth/login.feature:32
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Invalid credentials are rejected # src/test/resources/features/auth/login.feature:33
+  Given I am on the EventHub login page                     # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I submit the login form without credentials          # com.eventhub.automation.steps.AuthSteps.iSubmitTheLoginFormWithoutCredentials()
+  Then the login form should show required field validation # com.eventhub.automation.steps.AuthSteps.theLoginFormShouldShowRequiredFieldValidation()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p2 @regression @parallel-safe @intent-navigation
+Scenario: Register link opens account registration # src/test/resources/features/auth/login.feature:36
+  Given I am signed in to EventHub                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I sign in with password "Test@12345"        # com.eventhub.automation.steps.AuthSteps.iSignInWithPassword(java.lang.String)
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  Then I should see a login error                  # com.eventhub.automation.steps.AuthSteps.iShouldSeeALoginError()
+  When I sign in with password "WrongPassword@123" # com.eventhub.automation.steps.AuthSteps.iSignInWithPassword(java.lang.String)
+  Then I should see a login error                  # com.eventhub.automation.steps.AuthSteps.iShouldSeeALoginError()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from protected route # src/test/resources/features/auth/login.feature:42
+  When I refresh the current page                     # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from the admin route # src/test/resources/features/auth/login.feature:48
+  Then I should see the authenticated navigation      # com.eventhub.automation.steps.AuthSteps.iShouldSeeTheAuthenticatedNavigation()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario: Authenticated user can directly open a protected route # src/test/resources/features/auth/login.feature:54
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I open the registration page from login     # com.eventhub.automation.steps.AuthSteps.iOpenTheRegistrationPageFromLogin()
+  Then I should be on the registration page        # com.eventhub.automation.steps.AuthSteps.iShouldBeOnTheRegistrationPage()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario Outline: Authenticated session survives refresh on protected pages # src/test/resources/features/auth/login.feature:68
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  When I directly open protected route "/bookings"          # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario Outline: Authenticated session survives refresh on protected pages # src/test/resources/features/auth/login.feature:69
+  When I directly open protected route "/admin/events"      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario Outline: Authenticated session survives refresh on protected pages # src/test/resources/features/auth/login.feature:70
+  Given I am signed in to EventHub                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open protected route "/bookings"               # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then the My Bookings page should be loaded                     # com.eventhub.automation.steps.NavigationSteps.theMyBookingsPageShouldBeLoaded()
+
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @negative @intent-security @impact-events
+Scenario: Anonymous user is redirected from an event detail deep link # src/test/resources/features/auth/login.feature:73
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open protected route "/events"                            # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open protected route "/bookings"                          # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  And I refresh the current page                                            # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then protected page "events" should remain loaded                         # com.eventhub.automation.steps.AuthSteps.protectedPageShouldRemainLoaded(java.lang.String)
+  When I directly open protected route "/admin/events"                      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Given I am an anonymous visitor                                     # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe
+Scenario: Event detail page shows booking form and event content # src/test/resources/features/bookings/booking_lifecycle.feature:51
+  And I refresh the current page                                            # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  When I directly open event detail for event "World Tech Summit"     # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  Then protected page "bookings" should remain loaded                       # com.eventhub.automation.steps.AuthSteps.protectedPageShouldRemainLoaded(java.lang.String)
+  Then I should be returned to the login page                         # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+  And I refresh the current page                                            # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe
+Scenario: Ticket quantity controls update the booking total          # src/test/resources/features/bookings/booking_lifecycle.feature:56
+  Then protected page "admin events" should remain loaded                   # com.eventhub.automation.steps.AuthSteps.protectedPageShouldRemainLoaded(java.lang.String)
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @negative @intent-capacity
+Scenario: Ticket quantity cannot be decreased below one              # src/test/resources/features/bookings/booking_lifecycle.feature:66
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Booking form validates invalid customer data                   # src/test/resources/features/bookings/booking_lifecycle.feature:88
+  Given I am signed in to EventHub                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for a bookable event                       # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then I should see the event detail booking panel               # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheEventDetailBookingPanel()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Booking form validates invalid customer data                   # src/test/resources/features/bookings/booking_lifecycle.feature:89
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for a bookable event                                       # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  When I open details for an event with at least 4 available tickets # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForAnEventWithAtLeastAvailableTickets(int)
+  Then the ticket quantity should be 1                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  And the ticket decrement control should be disabled                # com.eventhub.automation.steps.BookingSteps.theTicketDecrementControlShouldBeDisabled()
+  When I increase tickets by 1                                       # com.eventhub.automation.steps.BookingSteps.iIncreaseTicketsBy(int)
+  Then the ticket quantity should be 2                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  When I decrease tickets by 1                                       # com.eventhub.automation.steps.BookingSteps.iDecreaseTicketsBy(int)
+  Then the ticket quantity should be 1                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @intent-validation
+Scenario: Booking form validates required customer details    # src/test/resources/features/bookings/booking_lifecycle.feature:92
+  And I enter booking customer email "invalid-email" and phone "+91 98765 43210" # com.eventhub.automation.steps.BookingSteps.iEnterBookingCustomerEmailAndPhone(java.lang.String,java.lang.String)
+  Then the booking email field should be invalid                                 # com.eventhub.automation.steps.BookingSteps.theBookingEmailFieldShouldBeInvalid()
+  When I open details for an event with at least 4 available tickets # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForAnEventWithAtLeastAvailableTickets(int)
+  And I attempt to decrease tickets by 3                             # com.eventhub.automation.steps.BookingSteps.iAttemptToDecreaseTicketsBy(int)
+  Then the ticket quantity should be 1                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  And the ticket decrement control should be disabled                # com.eventhub.automation.steps.BookingSteps.theTicketDecrementControlShouldBeDisabled()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p2 @regression @parallel-safe @intent-validation
+Scenario: Booking form accepts generated valid customer data before submit # src/test/resources/features/bookings/booking_lifecycle.feature:98
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can search for events by keyword # src/test/resources/features/events/event_discovery.feature:20
+  Given I am signed in to EventHub                                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for a bookable event                                       # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  And I enter booking customer email "gauravarora1091@gmail.com" and phone "123" # com.eventhub.automation.steps.BookingSteps.iEnterBookingCustomerEmailAndPhone(java.lang.String,java.lang.String)
+  Then the booking phone field should be invalid                                 # com.eventhub.automation.steps.BookingSteps.theBookingPhoneFieldShouldBeInvalid()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can search for events by keyword # src/test/resources/features/events/event_discovery.feature:21
+  Given I am signed in to EventHub                            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for a bookable event                    # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  Given I am signed in to EventHub                                         # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                      # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And I submit the booking form without customer details      # com.eventhub.automation.steps.BookingSteps.iSubmitTheBookingFormWithoutCustomerDetails()
+  Then the booking form should show required field validation # com.eventhub.automation.steps.BookingSteps.theBookingFormShouldShowRequiredFieldValidation()
+  When I open the Events page                           # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can search for events by keyword # src/test/resources/features/events/event_discovery.feature:22
+  And I search events for "Dilli Diwali Mela"           # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see event "Dilli Diwali Mela"           # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: User can search for an event by title and exclude unrelated cards # src/test/resources/features/events/event_discovery.feature:25
+  When I enter valid booking customer details for a bookable event         # com.eventhub.automation.steps.BookingSteps.iEnterValidBookingCustomerDetailsForABookableEvent()
+  Then the booking form should contain the generated customer details      # com.eventhub.automation.steps.BookingSteps.theBookingFormShouldContainTheGeneratedCustomerDetails()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: User can filter events by city and category # src/test/resources/features/events/event_discovery.feature:32
+  Given I am signed in to EventHub                      # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                           # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Pragati Maidan"              # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see event "Dilli Diwali Mela"           # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: User can clear filters and restore the event list # src/test/resources/features/events/event_discovery.feature:39
+  Given I am signed in to EventHub                      # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                           # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "World Tech Summit"           # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then I should see event "World Tech Summit"           # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: Event filters reset after refresh   # src/test/resources/features/events/event_discovery.feature:47
+  Given I am signed in to EventHub                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                                               # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Dilli Diwali Mela"                               # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see event "Dilli Diwali Mela"                               # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+  And I should not see event "World Tech Summit"                            # com.eventhub.automation.steps.EventSteps.iShouldNotSeeEvent(java.lang.String)
+  When I open the Events page                         # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I filter events by category "Festival"          # com.eventhub.automation.steps.EventSteps.iFilterEventsByCategory(java.lang.String)
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: Event filters reset after navigating away and back # src/test/resources/features/events/event_discovery.feature:55
+  And I filter events by city "Delhi"                 # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  Given I am signed in to EventHub                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then I should see event "Dilli Diwali Mela"         # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @negative
+Scenario: User sees an empty state for unmatched search         # src/test/resources/features/events/event_discovery.feature:64
+  When I open the Events page                               # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I filter events by category "Festival"                # com.eventhub.automation.steps.EventSteps.iFilterEventsByCategory(java.lang.String)
+  And I filter events by city "Delhi"                       # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  And I clear event filters                                 # com.eventhub.automation.steps.EventSteps.iClearEventFilters()
+  Then I should see seeded upcoming events                  # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @negative @intent-validation
+Scenario: Special-character event search does not show unrelated results # src/test/resources/features/events/event_discovery.feature:70
+  Given I am signed in to EventHub            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                 # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Dilli Diwali Mela" # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Given I am signed in to EventHub                           # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And I refresh the current page              # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then event filters should be reset          # com.eventhub.automation.steps.EventSteps.eventFiltersShouldBeReset()
+  And I should see seeded upcoming events     # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @negative @intent-filtering
+Scenario: Incompatible event filters show an empty result state # src/test/resources/features/events/event_discovery.feature:76
+  When I open the Events page                                # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Dilli Diwali Mela"                # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Given I am signed in to EventHub                              # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And I filter events by city "Delhi"                        # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  And I navigate away from event discovery and return        # com.eventhub.automation.steps.EventSteps.iNavigateAwayFromEventDiscoveryAndReturn()
+  Then event filters should be reset                         # com.eventhub.automation.steps.EventSteps.eventFiltersShouldBeReset()
+  And I should see seeded upcoming events                    # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+  When I open the Events page                                   # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "No Selenium Event Should Match This" # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see the no events found message                 # com.eventhub.automation.steps.EventSteps.iShouldSeeTheNoEventsFoundMessage()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: Event cards expose business-critical details                                                                            # src/test/resources/features/events/event_discovery.feature:83
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can open event details                      # src/test/resources/features/events/event_discovery.feature:94
+  When I open the Events page                                            # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "###@@@NoEvent"                                # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see no events for query "###@@@NoEvent"                  # com.eventhub.automation.steps.EventSteps.iShouldSeeNoEventsForQuery(java.lang.String)
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: Event detail deep link loads correct metadata           # src/test/resources/features/events/event_discovery.feature:97
+  Given I am signed in to EventHub                              # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                                   # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I filter events by category "Festival"                    # com.eventhub.automation.steps.EventSteps.iFilterEventsByCategory(java.lang.String)
+  And I filter events by city "Hyderabad"                       # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  Given I am signed in to EventHub                                                                                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then I should see no matching events                          # com.eventhub.automation.steps.EventSteps.iShouldSeeNoMatchingEvents()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical @intent-navigation @impact-ux
+Scenario: Event detail remains stable after browser refresh       # src/test/resources/features/events/event_discovery.feature:102
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                                                                                                     # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  Then event "Dilli Diwali Mela" card should show category "Festival", city "Delhi", price "$300", seats, and availability status # com.eventhub.automation.steps.EventSteps.eventCardShouldShowBusinessDetails(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: User can open a bookable event detail page from Book Now # src/test/resources/features/events/event_discovery.feature:108
+  When I open details from the title for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromTheTitleForEvent(java.lang.String)
+  Then I should see metadata for event "World Tech Summit"         # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+  Given I am signed in to EventHub                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical @intent-navigation @impact-ux
+Scenario: Browser back from event detail leaves the event journey usable # src/test/resources/features/events/event_discovery.feature:113
+  When I directly open event detail for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  Then I should see metadata for event "World Tech Summit"        # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+
+@navigation @ui @owner-platform @risk-navigation @intent-navigation @impact-navigation @p1 @regression @parallel-safe
+Scenario: Authenticated user can move across primary navigation # src/test/resources/features/navigation/navigation.feature:8
+  Given I am signed in to EventHub                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open event detail for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details from Book Now for a bookable event           # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromBookNowForABookableEvent()
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And I refresh the current page                                  # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then I should see the event detail booking panel                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheEventDetailBookingPanel()
+  Then I should see metadata for event "World Tech Summit"        # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+  When I open details from Book Now for a bookable event                 # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromBookNowForABookableEvent()
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:16
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:17
+  Given I am signed in to EventHub                              # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open Home from the navigation                          # com.eventhub.automation.steps.NavigationSteps.iOpenHomeFromTheNavigation()
+  And I go back in the browser                                           # com.eventhub.automation.steps.AuthSteps.iGoBackInTheBrowser()
+  Then the event journey should remain usable                            # com.eventhub.automation.steps.EventSteps.theEventJourneyShouldRemainUsable()
+  Then the Home page should be loaded                           # com.eventhub.automation.steps.NavigationSteps.theHomePageShouldBeLoaded()
+  When I open Events from the navigation                        # com.eventhub.automation.steps.NavigationSteps.iOpenEventsFromTheNavigation()
+  Then the Events page should be loaded                         # com.eventhub.automation.steps.NavigationSteps.theEventsPageShouldBeLoaded()
+  When I open My Bookings from the navigation                   # com.eventhub.automation.steps.NavigationSteps.iOpenMyBookingsFromTheNavigation()
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:18
+  Then the My Bookings page should be loaded                    # com.eventhub.automation.steps.NavigationSteps.theMyBookingsPageShouldBeLoaded()
+
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:19
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "home"                                   # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  When I open UX smoke page "events"                                 # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  When I open UX smoke page "bookings"                               # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:15
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  When I open UX smoke page "admin events"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:16
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:17
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:18
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "home"                                   # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:19
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "events"                                 # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:20
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "event detail"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+  And I open UX smoke page "bookings"                               # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:21
+
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario: Login page visual sanity screenshot is captured # src/test/resources/features/ux/visual_sanity.feature:5
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 1366 by 768                                   # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "admin events"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario Outline: Authenticated key pages have visual sanity screenshots # src/test/resources/features/ux/visual_sanity.feature:17
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 1440 by 900                                   # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "events"                                 # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+  When I open UX smoke page "login"                       # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot    # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario Outline: Authenticated key pages have visual sanity screenshots # src/test/resources/features/ux/visual_sanity.feature:18
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 1440 by 900                                   # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario Outline: Authenticated key pages have visual sanity screenshots # src/test/resources/features/ux/visual_sanity.feature:19
+  And I open UX smoke page "event detail"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "events"                                     # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot                   # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "bookings"                                   # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot                   # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+  When I open UX smoke page "admin events"                               # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot                   # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+
+76 Scenarios (76 passed)
+265 Steps (265 passed)
+3m41.300s
+
+
+[INFO] Tests run: 76, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 230.2 s -- in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 76, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:59 min
+[INFO] Finished at: 2026-08-22T20:54:36Z
+[INFO] ------------------------------------------------------------------------
