@@ -1,0 +1,77 @@
+{
+  "generatedAt" : "2026-08-27T00:01:56.900770189",
+  "status" : "ready",
+  "runId" : "run-20260826235942",
+  "environment" : "qa",
+  "suiteName" : "regression",
+  "browser" : "chrome",
+  "parallel" : "methods",
+  "threadCount" : "4",
+  "totalScenarios" : 76,
+  "passedScenarios" : 76,
+  "failedScenarios" : 0,
+  "retriedScenarios" : 0,
+  "accessibilityViolations" : 16,
+  "visualDiffPixels" : 0,
+  "visualMissingBaselines" : 0,
+  "quarantineCount" : 0,
+  "expiredQuarantineCount" : 0,
+  "slowestScenarios" : [ {
+    "id" : "7e61fbb0-3a52-40ad-8832-cec2296bc8f4",
+    "name" : "Admin event form rejects invalid numeric values",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 19,
+    "status" : "PASSED",
+    "durationMs" : 20686,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "e5a95824-4fb6-4b02-94a9-e8134493406b",
+    "name" : "Admin event form validates required fields",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 13,
+    "status" : "PASSED",
+    "durationMs" : 19810,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "c84af82a-15c8-4e03-a8b5-5c47c5b8f2b9",
+    "name" : "Invalid credentials are rejected",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 33,
+    "status" : "PASSED",
+    "durationMs" : 15642,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "d89dddbb-5db0-49f5-91ec-e1a89b1b82ba",
+    "name" : "Invalid credentials are rejected",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 32,
+    "status" : "PASSED",
+    "durationMs" : 15192,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "9a849a77-eb57-4364-874b-9163ea9cbe4b",
+    "name" : "Authenticated session survives page refresh",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 13,
+    "status" : "PASSED",
+    "durationMs" : 14195,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@critical", "@intent-session" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ],
+  "checks" : {
+    "retry" : true,
+    "accessibility" : true,
+    "quarantine" : true,
+    "tests" : true,
+    "visual" : true
+  }
+}

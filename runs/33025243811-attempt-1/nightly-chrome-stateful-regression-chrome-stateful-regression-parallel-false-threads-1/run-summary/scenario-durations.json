@@ -1,0 +1,231 @@
+[ {
+  "id" : "3e3ce3b1-4f5f-4268-8005-3fa198cd9cf2",
+  "name" : "Admin can create a disposable event and find it in discovery",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+  "line" : 25,
+  "status" : "PASSED",
+  "durationMs" : 33335,
+  "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@stateful", "@api-cleanup" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "22ed7b4d-d325-46de-9475-54844dbf61d2",
+  "name" : "Sold-out admin event is unavailable from discovery",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+  "line" : 34,
+  "status" : "PASSED",
+  "durationMs" : 8154,
+  "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@stateful", "@api-cleanup", "@negative", "@intent-capacity" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "5dbd1c24-7926-44c7-9439-7cb05f067eff",
+  "name" : "Authenticated user can create and cancel a booking through API",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 50,
+  "status" : "PASSED",
+  "durationMs" : 3214,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p0", "@smoke", "@stateful", "@intent-booking" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "1ecc711f-7763-4b00-8e62-2710005bebab",
+  "name" : "Booking cancellation is not silently repeatable",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 58,
+  "status" : "PASSED",
+  "durationMs" : 3605,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@intent-booking" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "34a4365e-0906-4222-8201-2a032a75dadb",
+  "name" : "Booking list maps to POJO responses after API booking creation",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 116,
+  "status" : "PASSED",
+  "durationMs" : 2891,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@api-cleanup", "@intent-booking" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "d1b9c5b2-ab85-49f8-9730-eafe58614e6a",
+  "name" : "Duplicate booking attempts are handled consistently",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 122,
+  "status" : "PASSED",
+  "durationMs" : 2877,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@api-cleanup", "@intent-booking" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "4ab33018-ddb9-4137-95ba-df1d4286dbc6",
+  "name" : "Event capacity boundary rejects booking beyond available seats",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+  "line" : 127,
+  "status" : "PASSED",
+  "durationMs" : 3161,
+  "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@api-cleanup", "@intent-capacity" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "f307be54-f5af-49af-bc4b-eade229ce97a",
+  "name" : "User can book a ticket and view it under My Bookings",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 8,
+  "status" : "PASSED",
+  "durationMs" : 11766,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p0", "@smoke", "@stateful", "@critical" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "9b2d2317-63af-4bd5-b514-fa7c19c4d0b1",
+  "name" : "User can book tickets and see confirmation",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 21,
+  "status" : "PASSED",
+  "durationMs" : 9879,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "b46d4393-2ab4-4f9a-8740-cdeeb9a0b71d",
+  "name" : "User can book tickets and see confirmation",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 22,
+  "status" : "PASSED",
+  "durationMs" : 10494,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "c351e308-adde-4ff4-b915-b89652cddfdc",
+  "name" : "Booking confirmation shows customer, quantity, event, and total",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 25,
+  "status" : "PASSED",
+  "durationMs" : 9986,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful", "@critical" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "e62258c5-dbcb-441f-9d92-a5ca600a7e2b",
+  "name" : "User can view booking details",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 30,
+  "status" : "PASSED",
+  "durationMs" : 11151,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "84d956dd-a682-47db-a70d-c934964d0883",
+  "name" : "User can cancel a booking",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 37,
+  "status" : "PASSED",
+  "durationMs" : 11675,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful", "@critical" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "c143c80d-711b-4f32-a754-a8d4b9852eda",
+  "name" : "User can clear all bookings",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 44,
+  "status" : "PASSED",
+  "durationMs" : 11484,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "15681b55-d999-4b3f-b326-08e34b555457",
+  "name" : "Booking cannot exceed available tickets",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 73,
+  "status" : "PASSED",
+  "durationMs" : 9228,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful", "@api-cleanup", "@negative" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "2c7e6282-3174-4c3a-a0b7-f13063937921",
+  "name" : "Selenium-created bookings can be cleaned through API",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+  "line" : 103,
+  "status" : "PASSED",
+  "durationMs" : 9834,
+  "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@stateful", "@intent-cleanup" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "f76e6118-a3b4-4f49-baf7-d96f3cd66d0b",
+  "name" : "Booking created through API is visible in My Bookings",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+  "line" : 8,
+  "status" : "PASSED",
+  "durationMs" : 10568,
+  "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "b93a2a27-8046-43d4-b82b-604af9d7055f",
+  "name" : "API-created event is searchable and deep-linkable in the UI",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+  "line" : 16,
+  "status" : "PASSED",
+  "durationMs" : 8842,
+  "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "406434dd-7ef5-4b3d-997b-88fabeb4d9ac",
+  "name" : "API-created event appears in admin management and discovery",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+  "line" : 23,
+  "status" : "PASSED",
+  "durationMs" : 8786,
+  "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "c925789a-9272-4324-9d45-6f20bf359356",
+  "name" : "UI booking for API-created event is visible through the API",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+  "line" : 30,
+  "status" : "PASSED",
+  "durationMs" : 10834,
+  "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "1e1f8c0a-d5b7-4cf1-aa1e-181076f07285",
+  "name" : "API cleanup of an API-created booking is reflected in the UI",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+  "line" : 38,
+  "status" : "PASSED",
+  "durationMs" : 11455,
+  "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@api-cleanup" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "170eb41f-6fd3-435b-bc4d-49ed5401aee1",
+  "name" : "API-created booking details can be opened in the UI",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+  "line" : 47,
+  "status" : "PASSED",
+  "durationMs" : 9824,
+  "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+}, {
+  "id" : "eeaa2ae5-92c0-4910-a7e2-9313f143259d",
+  "name" : "API-created sold-out event is unavailable in event discovery",
+  "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/hybrid/api_ui_hybrid.feature",
+  "line" : 55,
+  "status" : "PASSED",
+  "durationMs" : 7944,
+  "tags" : [ "@hybrid", "@ui", "@stateful", "@owner-platform", "@risk-integration", "@intent-hybrid", "@impact-integration", "@p1", "@regression", "@negative", "@api-cleanup" ],
+  "browser" : "chrome",
+  "environment" : "qa"
+} ]
