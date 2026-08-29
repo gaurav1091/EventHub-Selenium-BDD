@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="232.26" tests="23" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="webdriver.chrome.driver" value="/home/runner/.cache/selenium/chromedriver/linux64/151.0.7922.138/chromedriver"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/test-classes:/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/classes:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-java/4.45.0/selenium-java-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-api/4.45.0/selenium-api-4.45.0.jar:/home/runner/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.45.0/selenium-chrome-driver-4.45.0.jar:/home/runner/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.45.0/selenium-chromium-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-json/4.45.0/selenium-json-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.45.0/selenium-manager-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-latest/4.45.0/selenium-devtools-latest-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.45.0/selenium-devtools-v147-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v148/4.45.0/selenium-devtools-v148-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v149/4.45.0/selenium-devtools-v149-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.45.0/selenium-edge-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.45.0/selenium-firefox-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-http/4.45.0/selenium-http-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.45.0/selenium-ie-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.45.0/selenium-remote-driver-4.45.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api/1.63.0/opentelemetry-api-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-context/1.63.0/opentelemetry-context-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-common/1.63.0/opentelemetry-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.63.0/opentelemetry-exporter-logging-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.63.0/opentelemetry-sdk-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.63.0/opentelemetry-sdk-extension-autoconfigure-spi-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.63.0/opentelemetry-sdk-extension-autoconfigure-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.63.0/opentelemetry-sdk-trace-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.63.0/opentelemetry-sdk-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.63.0/opentelemetry-sdk-metrics-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.63.0/opentelemetry-sdk-logs-1.63.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-os/4.45.0/selenium-os-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.45.0/selenium-safari-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-support/4.45.0/selenium-support-4.45.0.jar:/home/runner/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.2/webdrivermanager-5.9.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java/3.4.0/docker-java-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-core/3.4.0/docker-java-core-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-api/3.4.0/docker-java-api-3.4.0.jar:/home/runner/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.4.0/docker-java-transport-httpclient5-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport/3.4.0/docker-java-transport-3.4.0.jar:/home/runner/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/runner/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.15.0/commons-lang3-3.15.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-java/7.18.1/cucumber-java-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-core/7.18.1/cucumber-core-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin/7.18.1/cucumber-gherkin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.1/cucumber-gherkin-messages-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/home/runner/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/home/runner/.m2/repository/io/cucumber/testng-xml-formatter/0.2.0/testng-xml-formatter-0.2.0.jar:/home/runner/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/home/runner/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/home/runner/.m2/repository/io/cucumber/datatable/7.18.1/datatable-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-plugin/7.18.1/cucumber-plugin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/docstring/7.18.1/docstring-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/html-formatter/21.4.1/html-formatter-21.4.1.jar:/home/runner/.m2/repository/io/cucumber/junit-xml-formatter/0.5.0/junit-xml-formatter-0.5.0.jar:/home/runner/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-testng/7.18.1/cucumber-testng-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-picocontainer/7.18.1/cucumber-picocontainer-7.18.1.jar:/home/runner/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/runner/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured/5.5.0/rest-assured-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/runner/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/runner/.m2/repository/io/rest-assured/json-path/5.5.0/json-path-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured-common/5.5.0/rest-assured-common-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/xml-path/5.5.0/xml-path-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/json-schema-validator/5.5.0/json-schema-validator-5.5.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/home/runner/.m2/repository/com/deque/html/axe-core/selenium/4.10.2/selenium-4.10.2.jar:/home/runner/.m2/repository/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/home/runner/.m2/repository/com/deque/html/axe-core/dequeutilites/4.10.2/dequeutilites-4.10.2.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1.jar:/home/runner/.m2/repository/com/aventstack/extentreports/5.1.2/extentreports-5.1.2.jar:/home/runner/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.6/rxjava-3.1.6.jar:/home/runner/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/runner/.m2/repository/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar:/home/runner/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar:/home/runner/.m2/repository/tech/grasshopper/extentreports-cucumber7-adapter/1.14.0/extentreports-cucumber7-adapter-1.14.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-pdf-report/2.12.0/extent-pdf-report-2.12.0.jar:/home/runner/.m2/repository/tech/grasshopper/cucumber-pdf-report/2.14.0/cucumber-pdf-report-2.14.0.jar:/home/runner/.m2/repository/org/apache/pdfbox/pdfbox/2.0.26/pdfbox-2.0.26.jar:/home/runner/.m2/repository/org/apache/pdfbox/fontbox/2.0.26/fontbox-2.0.26.jar:/home/runner/.m2/repository/org/knowm/xchart/xchart/3.8.0/xchart-3.8.0.jar:/home/runner/.m2/repository/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.13/VectorGraphics2D-0.13.jar:/home/runner/.m2/repository/de/rototor/pdfbox/graphics2d/0.30/graphics2d-0.30.jar:/home/runner/.m2/repository/com/madgag/animated-gif-lib/1.4/animated-gif-lib-1.4.jar:/home/runner/.m2/repository/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar:/home/runner/.m2/repository/tech/grasshopper/table-layout/1.5.1/table-layout-1.5.1.jar:/home/runner/.m2/repository/tech/grasshopper/rest-assured-cucumber-pdf-report/1.5.0/rest-assured-cucumber-pdf-report-1.5.0.jar:/home/runner/.m2/repository/org/jsoup/jsoup/1.15.3/jsoup-1.15.3.jar:/home/runner/.m2/repository/com/aventstack/klov-reporter/5.1.0/klov-reporter-5.1.0.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver/3.6.4/mongodb-driver-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver-core/3.6.4/mongodb-driver-core-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/bson/3.6.4/bson-3.6.4.jar:/home/runner/.m2/repository/tech/grasshopper/htmlextentreporter/1.1.0/htmlextentreporter-1.1.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-excel-report/1.4.0/extent-excel-report-1.4.0.jar:/home/runner/.m2/repository/org/apache/poi/poi/5.2.3/poi-5.2.3.jar:/home/runner/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/runner/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/runner/.m2/repository/com/zaxxer/SparseBitSet/1.2/SparseBitSet-1.2.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml/5.2.3/poi-ooxml-5.2.3.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.3/poi-ooxml-lite-5.2.3.jar:/home/runner/.m2/repository/org/apache/xmlbeans/xmlbeans/5.1.1/xmlbeans-5.1.1.jar:/home/runner/.m2/repository/com/github/virtuald/curvesapi/1.07/curvesapi-1.07.jar:/home/runner/.m2/repository/io/qameta/allure/allure-cucumber7-jvm/2.29.0/allure-cucumber7-jvm-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-java-commons/2.29.0/allure-java-commons-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-model/2.29.0/allure-model-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-testng/2.29.0/allure-testng-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-test-filter/2.29.0/allure-test-filter-2.29.0.jar:/home/runner/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="os.name" value="Linux"/>
+    <property name="preflight.enabled" value="true"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/temurin-17-jdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire/surefirebooter-20260829224507114_3.jar /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire 2026-08-29T22-45-05_551-jvmRun1 surefire-20260829224507114_1tmp surefire_0-20260829224507114_2tmp"/>
+    <property name="visual.baseline.enabled" value="false"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/test-classes:/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/classes:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-java/4.45.0/selenium-java-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-api/4.45.0/selenium-api-4.45.0.jar:/home/runner/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.45.0/selenium-chrome-driver-4.45.0.jar:/home/runner/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.45.0/selenium-chromium-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-json/4.45.0/selenium-json-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.45.0/selenium-manager-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-latest/4.45.0/selenium-devtools-latest-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.45.0/selenium-devtools-v147-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v148/4.45.0/selenium-devtools-v148-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v149/4.45.0/selenium-devtools-v149-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.45.0/selenium-edge-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.45.0/selenium-firefox-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-http/4.45.0/selenium-http-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.45.0/selenium-ie-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.45.0/selenium-remote-driver-4.45.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api/1.63.0/opentelemetry-api-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-context/1.63.0/opentelemetry-context-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-common/1.63.0/opentelemetry-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.63.0/opentelemetry-exporter-logging-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.63.0/opentelemetry-sdk-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.63.0/opentelemetry-sdk-extension-autoconfigure-spi-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.63.0/opentelemetry-sdk-extension-autoconfigure-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.63.0/opentelemetry-sdk-trace-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.63.0/opentelemetry-sdk-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.63.0/opentelemetry-sdk-metrics-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.63.0/opentelemetry-sdk-logs-1.63.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-os/4.45.0/selenium-os-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.45.0/selenium-safari-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-support/4.45.0/selenium-support-4.45.0.jar:/home/runner/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.2/webdrivermanager-5.9.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java/3.4.0/docker-java-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-core/3.4.0/docker-java-core-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-api/3.4.0/docker-java-api-3.4.0.jar:/home/runner/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.4.0/docker-java-transport-httpclient5-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport/3.4.0/docker-java-transport-3.4.0.jar:/home/runner/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/runner/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.15.0/commons-lang3-3.15.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-java/7.18.1/cucumber-java-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-core/7.18.1/cucumber-core-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin/7.18.1/cucumber-gherkin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.1/cucumber-gherkin-messages-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/home/runner/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/home/runner/.m2/repository/io/cucumber/testng-xml-formatter/0.2.0/testng-xml-formatter-0.2.0.jar:/home/runner/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/home/runner/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/home/runner/.m2/repository/io/cucumber/datatable/7.18.1/datatable-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-plugin/7.18.1/cucumber-plugin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/docstring/7.18.1/docstring-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/html-formatter/21.4.1/html-formatter-21.4.1.jar:/home/runner/.m2/repository/io/cucumber/junit-xml-formatter/0.5.0/junit-xml-formatter-0.5.0.jar:/home/runner/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-testng/7.18.1/cucumber-testng-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-picocontainer/7.18.1/cucumber-picocontainer-7.18.1.jar:/home/runner/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/runner/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured/5.5.0/rest-assured-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/runner/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/runner/.m2/repository/io/rest-assured/json-path/5.5.0/json-path-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured-common/5.5.0/rest-assured-common-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/xml-path/5.5.0/xml-path-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/json-schema-validator/5.5.0/json-schema-validator-5.5.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/home/runner/.m2/repository/com/deque/html/axe-core/selenium/4.10.2/selenium-4.10.2.jar:/home/runner/.m2/repository/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/home/runner/.m2/repository/com/deque/html/axe-core/dequeutilites/4.10.2/dequeutilites-4.10.2.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1.jar:/home/runner/.m2/repository/com/aventstack/extentreports/5.1.2/extentreports-5.1.2.jar:/home/runner/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.6/rxjava-3.1.6.jar:/home/runner/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/runner/.m2/repository/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar:/home/runner/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar:/home/runner/.m2/repository/tech/grasshopper/extentreports-cucumber7-adapter/1.14.0/extentreports-cucumber7-adapter-1.14.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-pdf-report/2.12.0/extent-pdf-report-2.12.0.jar:/home/runner/.m2/repository/tech/grasshopper/cucumber-pdf-report/2.14.0/cucumber-pdf-report-2.14.0.jar:/home/runner/.m2/repository/org/apache/pdfbox/pdfbox/2.0.26/pdfbox-2.0.26.jar:/home/runner/.m2/repository/org/apache/pdfbox/fontbox/2.0.26/fontbox-2.0.26.jar:/home/runner/.m2/repository/org/knowm/xchart/xchart/3.8.0/xchart-3.8.0.jar:/home/runner/.m2/repository/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.13/VectorGraphics2D-0.13.jar:/home/runner/.m2/repository/de/rototor/pdfbox/graphics2d/0.30/graphics2d-0.30.jar:/home/runner/.m2/repository/com/madgag/animated-gif-lib/1.4/animated-gif-lib-1.4.jar:/home/runner/.m2/repository/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar:/home/runner/.m2/repository/tech/grasshopper/table-layout/1.5.1/table-layout-1.5.1.jar:/home/runner/.m2/repository/tech/grasshopper/rest-assured-cucumber-pdf-report/1.5.0/rest-assured-cucumber-pdf-report-1.5.0.jar:/home/runner/.m2/repository/org/jsoup/jsoup/1.15.3/jsoup-1.15.3.jar:/home/runner/.m2/repository/com/aventstack/klov-reporter/5.1.0/klov-reporter-5.1.0.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver/3.6.4/mongodb-driver-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver-core/3.6.4/mongodb-driver-core-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/bson/3.6.4/bson-3.6.4.jar:/home/runner/.m2/repository/tech/grasshopper/htmlextentreporter/1.1.0/htmlextentreporter-1.1.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-excel-report/1.4.0/extent-excel-report-1.4.0.jar:/home/runner/.m2/repository/org/apache/poi/poi/5.2.3/poi-5.2.3.jar:/home/runner/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/runner/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/runner/.m2/repository/com/zaxxer/SparseBitSet/1.2/SparseBitSet-1.2.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml/5.2.3/poi-ooxml-5.2.3.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.3/poi-ooxml-lite-5.2.3.jar:/home/runner/.m2/repository/org/apache/xmlbeans/xmlbeans/5.1.1/xmlbeans-5.1.1.jar:/home/runner/.m2/repository/com/github/virtuald/curvesapi/1.07/curvesapi-1.07.jar:/home/runner/.m2/repository/io/qameta/allure/allure-cucumber7-jvm/2.29.0/allure-cucumber7-jvm-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-java-commons/2.29.0/allure-java-commons-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-model/2.29.0/allure-model-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-testng/2.29.0/allure-testng-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-test-filter/2.29.0/allure-test-filter-2.29.0.jar:/home/runner/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="accessibility.threshold.enabled" value="false"/>
+    <property name="user.home" value="/home/runner"/>
+    <property name="user.language" value="en"/>
+    <property name="thread.count" value="2"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-08-18"/>
+    <property name="java.home" value="/usr/lib/jvm/temurin-17-jdk-amd64"/>
+    <property name="visual.baseline.update" value="false"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="cleanup.before.run" value="false"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire/surefirebooter-20260829224507114_3.jar"/>
+    <property name="java.util.logging.config.file" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/logging.properties"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="suite.name" value="stateful-regression"/>
+    <property name="java.runtime.version" value="17.0.20.1+1"/>
+    <property name="user.name" value="runner"/>
+    <property name="visual.diff.max.pixels" value="0"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.17.0-1022-azure"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="visual.baseline.dir" value="src/test/resources/visual-baselines"/>
+    <property name="parallel" value="none"/>
+    <property name="browser" value="chrome"/>
+    <property name="retry.count" value="0"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.20.1+1"/>
+    <property name="localRepository" value="/home/runner/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="retry.tags" value="@retryable"/>
+    <property name="java.version" value="17.0.20.1"/>
+    <property name="cucumber.filter.tags" value="@stateful"/>
+    <property name="user.dir" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="execution.target" value="local"/>
+    <property name="accessibility.max.violations" value="0"/>
+    <property name="headless" value="true"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="environment" value="qa"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.20.1+1"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="selenium.remote.url" value="http://localhost:4444/wd/hub"/>
+    <property name="retry.max.allowed" value="0"/>
+  </properties>
+  <testcase name="runScenario[&quot;Admin can create a disposable event and find it in discovery&quot;, &quot;Admin event management&quot;](1)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="21.28">
+    <system-out><![CDATA[
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @stateful @api-cleanup
+Scenario: Admin can create a disposable event and find it in discovery    # src/test/resources/features/admin/admin_event_management.feature:25
+  Given I am signed in to EventHub                                        # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                    # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I open the Admin Events page                                        # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  Then the created admin event should appear in the admin table           # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInTheAdminTable()
+  And the created admin event should appear in event discovery            # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()
+  When I clean up the created admin event through API                     # com.eventhub.automation.steps.AdminSteps.iCleanUpTheCreatedAdminEventThroughApi()
+  Then the created admin event should not appear through API or discovery # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldNotAppearThroughApiOrDiscovery()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:45:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Sold-out admin event is unavailable from discovery&quot;, &quot;Admin event management&quot;](2)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="9.783">
+    <system-out><![CDATA[
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @stateful @api-cleanup @negative @intent-capacity
+Scenario: Sold-out admin event is unavailable from discovery                                # src/test/resources/features/admin/admin_event_management.feature:34
+  Given I am signed in to EventHub                                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a sold-out one-seat admin event through the API                             # com.eventhub.automation.steps.AdminSteps.iCreateASoldOutOneSeatAdminEventThroughTheApi()
+  Then the created admin event should show no remaining seats or be unavailable for booking # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:45:38 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated user can create and cancel a booking through API&quot;, &quot;EventHub API contract&quot;](3)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="3.194">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p0 @smoke @stateful @intent-booking
+Scenario: Authenticated user can create and cancel a booking through API          # src/test/resources/features/api/api_contract.feature:50
+  When I create a booking through the API                                         # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()
+  Then the API booking response should include a booking reference                # com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()
+  And the API response should match schema "schemas/booking-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+  When I cancel the API-created booking                                           # com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()
+  Then the API booking cancellation should be successful                          # com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking cancellation is not silently repeatable&quot;, &quot;EventHub API contract&quot;](4)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="3.382">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @intent-booking
+Scenario: Booking cancellation is not silently repeatable          # src/test/resources/features/api/api_contract.feature:58
+  When I create a booking through the API                          # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()
+  Then the API booking response should include a booking reference # com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()
+  When I cancel the API-created booking                            # com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()
+  Then the API booking cancellation should be successful           # com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()
+  When I cancel the API-created booking again                      # com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBookingAgain()
+  Then the API should reject the request with an error response    # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking list maps to POJO responses after API booking creation&quot;, &quot;EventHub API contract&quot;](5)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="4.18">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @api-cleanup @intent-booking
+Scenario: Booking list maps to POJO responses after API booking creation             # src/test/resources/features/api/api_contract.feature:116
+  When I create a booking through the API                                            # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()
+  And I request bookings through the API                                             # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApi()
+  Then the API bookings response should map to booking POJOs for the created booking # com.eventhub.automation.steps.ApiSteps.theApiBookingsResponseShouldMapToBookingPojosForTheCreatedBooking()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Duplicate booking attempts are handled consistently&quot;, &quot;EventHub API contract&quot;](6)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="5.241">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @api-cleanup @intent-booking
+Scenario: Duplicate booking attempts are handled consistently                # src/test/resources/features/api/api_contract.feature:122
+  When I create the same booking through the API twice                       # com.eventhub.automation.steps.ApiSteps.iCreateTheSameBookingThroughTheApiTwice()
+  Then the duplicate booking response should follow the booking API contract # com.eventhub.automation.steps.ApiSteps.theDuplicateBookingResponseShouldFollowTheBookingApiContract()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event capacity boundary rejects booking beyond available seats&quot;, &quot;EventHub API contract&quot;](7)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="5.093">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @api-cleanup @intent-capacity
+Scenario: Event capacity boundary rejects booking beyond available seats # src/test/resources/features/api/api_contract.feature:127
+  When I create a one-seat event through the API                         # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatEventThroughTheApi()
+  And I book the full API event capacity                                 # com.eventhub.automation.steps.ApiSteps.iBookTheFullApiEventCapacity()
+  And I create one more booking for the capacity-bound event             # com.eventhub.automation.steps.ApiSteps.iCreateOneMoreBookingForTheCapacityBoundEvent()
+  Then the API should reject the request with an error response          # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can book a ticket and view it under My Bookings&quot;, &quot;Event booking lifecycle&quot;](8)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="11.181">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p0 @smoke @stateful @critical
+Scenario: User can book a ticket and view it under My Bookings # src/test/resources/features/bookings/booking_lifecycle.feature:8
+  Given I am signed in to EventHub                             # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event                    # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then I should see the booking confirmation                   # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+  When I open My Bookings from the confirmation                # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  Then I should see booking for the selected event             # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:46:09 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;User can book tickets and see confirmation&quot;, &quot;Event booking lifecycle&quot;](9)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="9.948">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario Outline: User can book tickets and see confirmation # src/test/resources/features/bookings/booking_lifecycle.feature:21
+  Given I am signed in to EventHub                           # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 tickets for a bookable event                 # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then I should see the booking confirmation                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:46:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;User can book tickets and see confirmation&quot;, &quot;Event booking lifecycle&quot;](10)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="9.622">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario Outline: User can book tickets and see confirmation # src/test/resources/features/bookings/booking_lifecycle.feature:22
+  Given I am signed in to EventHub                           # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 2 tickets for a bookable event                 # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then I should see the booking confirmation                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:46:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking confirmation shows customer, quantity, event, and total&quot;, &quot;Event booking lifecycle&quot;](11)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="9.634">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @critical
+Scenario: Booking confirmation shows customer, quantity, event, and total                     # src/test/resources/features/bookings/booking_lifecycle.feature:25
+  Given I am signed in to EventHub                                                            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 2 tickets for a bookable event                                                  # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then the booking confirmation should show the selected event, customer, quantity, and total # com.eventhub.automation.steps.BookingSteps.theBookingConfirmationShouldShowTheSelectedEventCustomerQuantityAndTotal()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:46:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;User can view booking details&quot;, &quot;Event booking lifecycle&quot;](12)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="10.756">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario: User can view booking details            # src/test/resources/features/bookings/booking_lifecycle.feature:30
+  Given I am signed in to EventHub                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event        # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  And I open My Bookings from the confirmation     # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  And I open the booking details                   # com.eventhub.automation.steps.BookingSteps.iOpenTheBookingDetails()
+  Then I should see booking for the selected event # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:46:50 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;User can cancel a booking&quot;, &quot;Event booking lifecycle&quot;](13)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="11.528">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @critical
+Scenario: User can cancel a booking                                # src/test/resources/features/bookings/booking_lifecycle.feature:37
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event                        # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  And I open My Bookings from the confirmation                     # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  And I cancel the booking                                         # com.eventhub.automation.steps.BookingSteps.iCancelTheBooking()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:47:00 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;User can clear all bookings&quot;, &quot;Event booking lifecycle&quot;](14)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="11.67">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario: User can clear all bookings                              # src/test/resources/features/bookings/booking_lifecycle.feature:44
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event                        # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  And I open My Bookings from the confirmation                     # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  And I clear all bookings                                         # com.eventhub.automation.steps.BookingSteps.iClearAllBookings()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:47:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking cannot exceed available tickets&quot;, &quot;Event booking lifecycle&quot;](15)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="10.648">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @api-cleanup @negative
+Scenario: Booking cannot exceed available tickets        # src/test/resources/features/bookings/booking_lifecycle.feature:73
+  Given I am signed in to EventHub                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API   # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I open booking details for the created admin event # com.eventhub.automation.steps.AdminSteps.iOpenBookingDetailsForTheCreatedAdminEvent()
+  Then the ticket quantity should be 1                   # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  And the ticket decrement control should be disabled    # com.eventhub.automation.steps.BookingSteps.theTicketDecrementControlShouldBeDisabled()
+  And the ticket increment control should be disabled    # com.eventhub.automation.steps.BookingSteps.theTicketIncrementControlShouldBeDisabled()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:47:24 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Selenium-created bookings can be cleaned through API&quot;, &quot;Event booking lifecycle&quot;](16)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="9.78">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @intent-cleanup
+Scenario: Selenium-created bookings can be cleaned through API     # src/test/resources/features/bookings/booking_lifecycle.feature:103
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup              # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I clean Selenium-created bookings through the API            # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+  And My Bookings should show an empty state                       # com.eventhub.automation.steps.BookingSteps.myBookingsShouldShowAnEmptyState()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:47:34 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking created through API is visible in My Bookings&quot;, &quot;API and UI hybrid coverage&quot;](17)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="10.542">
+    <system-out><![CDATA[
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression
+Scenario: Booking created through API is visible in My Bookings    # src/test/resources/features/hybrid/api_ui_hybrid.feature:8
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup              # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I directly open protected route "/bookings"                  # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should see booking for the selected event                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+  When I clean Selenium-created bookings through the API           # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:47:44 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;API-created event is searchable and deep-linkable in the UI&quot;, &quot;API and UI hybrid coverage&quot;](18)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="10.351">
+    <system-out><![CDATA[
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: API-created event is searchable and deep-linkable in the UI # src/test/resources/features/hybrid/api_ui_hybrid.feature:16
+  Given I am signed in to EventHub                                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  Then the created admin event should appear in event discovery       # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()
+  When I directly open event detail for the created admin event       # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForTheCreatedAdminEvent()
+  Then I should see metadata for the created admin event              # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForTheCreatedAdminEvent()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:47:55 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;API-created event appears in admin management and discovery&quot;, &quot;API and UI hybrid coverage&quot;](19)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="10.032">
+    <system-out><![CDATA[
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: API-created event appears in admin management and discovery # src/test/resources/features/hybrid/api_ui_hybrid.feature:23
+  Given I am signed in to EventHub                                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I open the Admin Events page                                    # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  Then the created admin event should appear in the admin table       # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInTheAdminTable()
+  And the created admin event should appear in event discovery        # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:48:05 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;UI booking for API-created event is visible through the API&quot;, &quot;API and UI hybrid coverage&quot;](20)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="12.82">
+    <system-out><![CDATA[
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: UI booking for API-created event is visible through the API  # src/test/resources/features/hybrid/api_ui_hybrid.feature:30
+  Given I am signed in to EventHub                                     # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                 # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I book 1 ticket for the created admin event                      # com.eventhub.automation.steps.AdminSteps.iBookTicketForTheCreatedAdminEvent(int)
+  Then I should see the booking confirmation                           # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+  When I request bookings through the API                              # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApi()
+  Then the API bookings response should include the UI-created booking # com.eventhub.automation.steps.ApiSteps.theApiBookingsResponseShouldIncludeTheUiCreatedBooking()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:48:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;API cleanup of an API-created booking is reflected in the UI&quot;, &quot;API and UI hybrid coverage&quot;](21)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="12.541">
+    <system-out><![CDATA[
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: API cleanup of an API-created booking is reflected in the UI # src/test/resources/features/hybrid/api_ui_hybrid.feature:38
+  Given I am signed in to EventHub                                     # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup                  # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I directly open protected route "/bookings"                      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should see booking for the selected event                     # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+  When I clean Selenium-created bookings through the API               # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+  And I directly open protected route "/bookings"                      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then no bookings for the current Selenium customer should remain     # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:48:28 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;API-created booking details can be opened in the UI&quot;, &quot;API and UI hybrid coverage&quot;](22)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="9.726">
+    <system-out><![CDATA[
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression
+Scenario: API-created booking details can be opened in the UI # src/test/resources/features/hybrid/api_ui_hybrid.feature:47
+  Given I am signed in to EventHub                            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup         # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I directly open protected route "/bookings"             # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  And I open the booking details                              # com.eventhub.automation.steps.BookingSteps.iOpenTheBookingDetails()
+  Then I should see booking for the selected event            # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+  When I clean Selenium-created bookings through the API      # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:48:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;API-created sold-out event is unavailable in event discovery&quot;, &quot;API and UI hybrid coverage&quot;](23)" classname="com.eventhub.automation.runners.CucumberTestRunner" time="9.83">
+    <system-out><![CDATA[
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @negative @api-cleanup
+Scenario: API-created sold-out event is unavailable in event discovery                      # src/test/resources/features/hybrid/api_ui_hybrid.feature:55
+  Given I am signed in to EventHub                                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a sold-out one-seat admin event through the API                             # com.eventhub.automation.steps.AdminSteps.iCreateASoldOutOneSeatAdminEventThroughTheApi()
+  Then the created admin event should show no remaining seats or be unavailable for booking # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking()
+]]></system-out>
+    <system-err><![CDATA[Aug 29, 2026 10:48:50 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+</testsuite>
