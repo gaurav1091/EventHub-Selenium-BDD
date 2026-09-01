@@ -1,0 +1,4369 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>EventHub Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">EventHub Selenium Java BDD Results</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Sep 1, 2026 10:45:41 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@negative</a><a class="dropdown-item" href="#">@intent-documentation</a><a class="dropdown-item" href="#">@intent-auth</a><a class="dropdown-item" href="#">@intent-security</a><a class="dropdown-item" href="#">@owner-platform</a><a class="dropdown-item" href="#">@impact-api</a><a class="dropdown-item" href="#">@intent-capacity</a><a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@api-cleanup</a><a class="dropdown-item" href="#">@intent-api-contract</a><a class="dropdown-item" href="#">@api</a><a class="dropdown-item" href="#">@intent-discovery</a><a class="dropdown-item" href="#">@intent-booking</a><a class="dropdown-item" href="#">@stateful</a><a class="dropdown-item" href="#">@intent-contract</a><a class="dropdown-item" href="#">@parallel-safe</a><a class="dropdown-item" href="#">@contract</a><a class="dropdown-item" href="#">@p1</a><a class="dropdown-item" href="#">@risk-contract</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">EventHub API contract</p>
+            <p class="text-sm">
+              <span>10:45:42 PM</span> / <span>00:00:31:029</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">EventHub API contract</h5>
+<span class='badge badge-success'>09.01.2026 10:45:42 PM</span>
+<span class='badge badge-danger'>09.01.2026 10:46:13 PM</span>
+<span class='badge badge-default'>00:00:31:029</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Internal API contract manifest documents automated endpoints</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theInternalApiContractShouldDocumentTheAutomatedEndpoints()">
+                <span>Then the internal API contract should document the automated endpoints</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Authenticated user can retrieve current user profile through API</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iRequestTheCurrentUserProfileThroughTheApi()">
+                <span>When I request the current user profile through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiCurrentUserResponseShouldIncludeTheRegisteredIdentity()">
+                <span>Then the API current user response should include the registered identity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)">
+                <span>And the API response should match schema "schemas/current-user-response.schema.json"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="4"><span class="badge log pass-bg mr-2">Pass</span>Event list maps to POJO responses with required business fields</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iRequestEventsThroughTheApi()">
+                <span>When I request events through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiEventsResponseShouldMapToEventListPojosWithBusinessFields()">
+                <span>Then the API events response should map to event list POJOs with business fields</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)">
+                <span>And the API response should match schema "schemas/events-response.schema.json"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>Authenticated user can retrieve an event detail through API</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iRequestEventThroughTheApi(java.lang.String)">
+                <span>When I request event "World Tech Summit" through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiEventDetailResponseShouldDescribe(java.lang.String)">
+                <span>Then the API event detail response should describe "World Tech Summit"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)">
+                <span>And the API response should match schema "schemas/event-detail-response.schema.json"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Event detail maps to a POJO with required business fields</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iRequestEventThroughTheApi(java.lang.String)">
+                <span>When I request event "World Tech Summit" through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiEventDetailResponseShouldMapToAnEventPojoFor(java.lang.String)">
+                <span>Then the API event detail response should map to an event POJO for "World Tech Summit"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)">
+                <span>And the API response should match schema "schemas/event-detail-response.schema.json"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="24"><span class="badge log pass-bg mr-2">Pass</span>Booking cancellation is not silently repeatable</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()">
+                <span>When I create a booking through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()">
+                <span>Then the API booking response should include a booking reference</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()">
+                <span>When I cancel the API-created booking</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()">
+                <span>Then the API booking cancellation should be successful</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBookingAgain()">
+                <span>When I cancel the API-created booking again</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()">
+                <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="32"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I authenticate through the API with invalid credentials</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with status 400</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="37"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I request the current user profile through the API without authentication</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with status 401</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="44"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I request bookings through the API without authentication</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with status 401</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create a booking through the API without authentication</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with status 401</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="57"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I request unknown event detail through the API</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with status 500</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="62"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I cancel an unknown booking through the API</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with status 500</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="68"><span class="badge log pass-bg mr-2">Pass</span>Protected API rejects invalid or anonymous requests</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create a booking through the API with invalid payload</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with status 400</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="79"><span class="badge log pass-bg mr-2">Pass</span>API error responses follow the error contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I request bookings through the API without authentication</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="86"><span class="badge log pass-bg mr-2">Pass</span>API error responses follow the error contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create a booking through the API with invalid payload</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="105"><span class="badge log pass-bg mr-2">Pass</span>Malformed booking payloads are rejected by the API contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create a booking through the API with malformed payload "negative quantity"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="118"><span class="badge log pass-bg mr-2">Pass</span>Malformed event payloads are rejected by the API contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create an event through the API with malformed payload "invalid price type"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="73"><span class="badge log pass-bg mr-2">Pass</span>API error responses follow the error contract</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="74"><span class="badge log pass-bg mr-2">Pass</span>API error responses follow the error contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I authenticate through the API with invalid credentials</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="89"><span class="badge log pass-bg mr-2">Pass</span>API error responses follow the error contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create an event through the API with invalid payload</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="100"><span class="badge log pass-bg mr-2">Pass</span>Malformed booking payloads are rejected by the API contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create a booking through the API with malformed payload "invalid quantity type"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="121"><span class="badge log pass-bg mr-2">Pass</span>Malformed event payloads are rejected by the API contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create an event through the API with malformed payload "negative seats"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="94"><span class="badge log pass-bg mr-2">Pass</span>Malformed booking payloads are rejected by the API contract</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="95"><span class="badge log pass-bg mr-2">Pass</span>Malformed booking payloads are rejected by the API contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create a booking through the API with malformed payload "missing event id"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="110"><span class="badge log pass-bg mr-2">Pass</span>Malformed event payloads are rejected by the API contract</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="111"><span class="badge log pass-bg mr-2">Pass</span>Malformed event payloads are rejected by the API contract</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>When I create an event through the API with malformed payload "missing title"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="126"><span class="badge log pass-bg mr-2">Pass</span>Booking list maps to POJO responses after API booking creation</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()">
+                <span>When I create a booking through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApi()">
+                <span>And I request bookings through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiBookingsResponseShouldMapToBookingPojosForTheCreatedBooking()">
+                <span>Then the API bookings response should map to booking POJOs for the created booking</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="134"><span class="badge log pass-bg mr-2">Pass</span>Duplicate booking attempts are handled consistently</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateTheSameBookingThroughTheApiTwice()">
+                <span>When I create the same booking through the API twice</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theDuplicateBookingResponseShouldFollowTheBookingApiContract()">
+                <span>Then the duplicate booking response should follow the booking API contract</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="135"><span class="badge log pass-bg mr-2">Pass</span>Event capacity boundary rejects booking beyond available seats</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatEventThroughTheApi()">
+                <span>When I create a one-seat event through the API</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iBookTheFullApiEventCapacity()">
+                <span>And I book the full API event capacity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.iCreateOneMoreBookingForTheCapacityBoundEvent()">
+                <span>And I create one more booking for the capacity-bound event</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()">
+                <span>Then the API should reject the request with an error response</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">19</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>17</span>
+</span>
+<p class="name">@negative</p>
+<p class="duration text-sm">17 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@negative</h4>
+<span status="pass" class='badge log pass-bg'>17 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@intent-documentation</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-documentation</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@intent-auth</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-auth</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@intent-security</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-security</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@owner-platform</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@owner-platform</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@impact-api</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@impact-api</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@intent-capacity</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-capacity</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@regression</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@regression</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@api-cleanup</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@api-cleanup</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@intent-api-contract</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-api-contract</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@api</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@api</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@intent-discovery</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-discovery</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@intent-booking</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-booking</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">@stateful</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@stateful</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>10</span>
+</span>
+<p class="name">@intent-contract</p>
+<p class="duration text-sm">10 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@intent-contract</h4>
+<span status="pass" class='badge log pass-bg'>10 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>22</span>
+</span>
+<p class="name">@parallel-safe</p>
+<p class="duration text-sm">22 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@parallel-safe</h4>
+<span status="pass" class='badge log pass-bg'>22 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@contract</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@contract</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@p1</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@p1</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>26</span>
+</span>
+<p class="name">@risk-contract</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@risk-contract</h4>
+<span status="pass" class='badge log pass-bg'>26 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Internal API contract manifest documents automated endpoints</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Internal API contract manifest documents automated endpoints</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Authenticated user can retrieve current user profile through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve current user profile through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Event list maps to POJO responses with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event list maps to POJO responses with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Authenticated user can retrieve an event detail through API</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Authenticated user can retrieve an event detail through API</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Event detail maps to a POJO with required business fields</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event detail maps to a POJO with required business fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Booking cancellation is not silently repeatable</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking cancellation is not silently repeatable</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='68'>Protected API rejects invalid or anonymous requests</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Protected API rejects invalid or anonymous requests</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='89'>API error responses follow the error contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.API error responses follow the error contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='95'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='100'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='105'>Malformed booking payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed booking payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='111'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='121'>Malformed event payloads are rejected by the API contract</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Malformed event payloads are rejected by the API contract</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='126'>Booking list maps to POJO responses after API booking creation</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Booking list maps to POJO responses after API booking creation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Duplicate booking attempts are handled consistently</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Duplicate booking attempts are handled consistently</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:45:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='135'>Event capacity boundary rejects booking beyond available seats</a>
+<div class="">
+<span class="badge badge-default">EventHub API contract.Event capacity boundary rejects booking beyond available seats</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Sep 1, 2026 10:45:41 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Sep 1, 2026 10:46:13 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>1</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>1</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>26</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>62</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"EventHub API contract":31.029
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@negative</td>
+<td>17</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-documentation</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-auth</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-security</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@owner-platform</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@impact-api</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-capacity</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@regression</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@api-cleanup</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-api-contract</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@api</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-discovery</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-booking</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@stateful</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@intent-contract</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@parallel-safe</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@contract</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@p1</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@risk-contract</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Run ID</td>
+<td>run-20260901224541</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>qa</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>chrome</td>
+</tr>
+<tr>
+<td>Headless</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Parallel</td>
+<td>methods</td>
+</tr>
+<tr>
+<td>Thread Count</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>@api and @regression</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 1,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 26,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 62,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
