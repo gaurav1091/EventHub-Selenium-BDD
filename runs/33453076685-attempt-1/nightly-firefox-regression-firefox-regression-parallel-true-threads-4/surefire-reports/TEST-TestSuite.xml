@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="231.024" tests="76" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/test-classes:/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/classes:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-java/4.45.0/selenium-java-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-api/4.45.0/selenium-api-4.45.0.jar:/home/runner/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.45.0/selenium-chrome-driver-4.45.0.jar:/home/runner/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.45.0/selenium-chromium-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-json/4.45.0/selenium-json-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.45.0/selenium-manager-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-latest/4.45.0/selenium-devtools-latest-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.45.0/selenium-devtools-v147-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v148/4.45.0/selenium-devtools-v148-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v149/4.45.0/selenium-devtools-v149-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.45.0/selenium-edge-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.45.0/selenium-firefox-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-http/4.45.0/selenium-http-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.45.0/selenium-ie-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.45.0/selenium-remote-driver-4.45.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api/1.63.0/opentelemetry-api-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-context/1.63.0/opentelemetry-context-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-common/1.63.0/opentelemetry-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.63.0/opentelemetry-exporter-logging-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.63.0/opentelemetry-sdk-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.63.0/opentelemetry-sdk-extension-autoconfigure-spi-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.63.0/opentelemetry-sdk-extension-autoconfigure-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.63.0/opentelemetry-sdk-trace-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.63.0/opentelemetry-sdk-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.63.0/opentelemetry-sdk-metrics-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.63.0/opentelemetry-sdk-logs-1.63.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-os/4.45.0/selenium-os-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.45.0/selenium-safari-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-support/4.45.0/selenium-support-4.45.0.jar:/home/runner/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.2/webdrivermanager-5.9.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java/3.4.0/docker-java-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-core/3.4.0/docker-java-core-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-api/3.4.0/docker-java-api-3.4.0.jar:/home/runner/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.4.0/docker-java-transport-httpclient5-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport/3.4.0/docker-java-transport-3.4.0.jar:/home/runner/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/runner/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.15.0/commons-lang3-3.15.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-java/7.18.1/cucumber-java-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-core/7.18.1/cucumber-core-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin/7.18.1/cucumber-gherkin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.1/cucumber-gherkin-messages-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/home/runner/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/home/runner/.m2/repository/io/cucumber/testng-xml-formatter/0.2.0/testng-xml-formatter-0.2.0.jar:/home/runner/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/home/runner/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/home/runner/.m2/repository/io/cucumber/datatable/7.18.1/datatable-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-plugin/7.18.1/cucumber-plugin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/docstring/7.18.1/docstring-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/html-formatter/21.4.1/html-formatter-21.4.1.jar:/home/runner/.m2/repository/io/cucumber/junit-xml-formatter/0.5.0/junit-xml-formatter-0.5.0.jar:/home/runner/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-testng/7.18.1/cucumber-testng-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-picocontainer/7.18.1/cucumber-picocontainer-7.18.1.jar:/home/runner/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/runner/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured/5.5.0/rest-assured-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/runner/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/runner/.m2/repository/io/rest-assured/json-path/5.5.0/json-path-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured-common/5.5.0/rest-assured-common-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/xml-path/5.5.0/xml-path-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/json-schema-validator/5.5.0/json-schema-validator-5.5.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/home/runner/.m2/repository/com/deque/html/axe-core/selenium/4.10.2/selenium-4.10.2.jar:/home/runner/.m2/repository/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/home/runner/.m2/repository/com/deque/html/axe-core/dequeutilites/4.10.2/dequeutilites-4.10.2.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1.jar:/home/runner/.m2/repository/com/aventstack/extentreports/5.1.2/extentreports-5.1.2.jar:/home/runner/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.6/rxjava-3.1.6.jar:/home/runner/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/runner/.m2/repository/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar:/home/runner/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar:/home/runner/.m2/repository/tech/grasshopper/extentreports-cucumber7-adapter/1.14.0/extentreports-cucumber7-adapter-1.14.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-pdf-report/2.12.0/extent-pdf-report-2.12.0.jar:/home/runner/.m2/repository/tech/grasshopper/cucumber-pdf-report/2.14.0/cucumber-pdf-report-2.14.0.jar:/home/runner/.m2/repository/org/apache/pdfbox/pdfbox/2.0.26/pdfbox-2.0.26.jar:/home/runner/.m2/repository/org/apache/pdfbox/fontbox/2.0.26/fontbox-2.0.26.jar:/home/runner/.m2/repository/org/knowm/xchart/xchart/3.8.0/xchart-3.8.0.jar:/home/runner/.m2/repository/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.13/VectorGraphics2D-0.13.jar:/home/runner/.m2/repository/de/rototor/pdfbox/graphics2d/0.30/graphics2d-0.30.jar:/home/runner/.m2/repository/com/madgag/animated-gif-lib/1.4/animated-gif-lib-1.4.jar:/home/runner/.m2/repository/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar:/home/runner/.m2/repository/tech/grasshopper/table-layout/1.5.1/table-layout-1.5.1.jar:/home/runner/.m2/repository/tech/grasshopper/rest-assured-cucumber-pdf-report/1.5.0/rest-assured-cucumber-pdf-report-1.5.0.jar:/home/runner/.m2/repository/org/jsoup/jsoup/1.15.3/jsoup-1.15.3.jar:/home/runner/.m2/repository/com/aventstack/klov-reporter/5.1.0/klov-reporter-5.1.0.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver/3.6.4/mongodb-driver-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver-core/3.6.4/mongodb-driver-core-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/bson/3.6.4/bson-3.6.4.jar:/home/runner/.m2/repository/tech/grasshopper/htmlextentreporter/1.1.0/htmlextentreporter-1.1.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-excel-report/1.4.0/extent-excel-report-1.4.0.jar:/home/runner/.m2/repository/org/apache/poi/poi/5.2.3/poi-5.2.3.jar:/home/runner/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/runner/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/runner/.m2/repository/com/zaxxer/SparseBitSet/1.2/SparseBitSet-1.2.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml/5.2.3/poi-ooxml-5.2.3.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.3/poi-ooxml-lite-5.2.3.jar:/home/runner/.m2/repository/org/apache/xmlbeans/xmlbeans/5.1.1/xmlbeans-5.1.1.jar:/home/runner/.m2/repository/com/github/virtuald/curvesapi/1.07/curvesapi-1.07.jar:/home/runner/.m2/repository/io/qameta/allure/allure-cucumber7-jvm/2.29.0/allure-cucumber7-jvm-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-java-commons/2.29.0/allure-java-commons-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-model/2.29.0/allure-model-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-testng/2.29.0/allure-testng-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-test-filter/2.29.0/allure-test-filter-2.29.0.jar:/home/runner/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="preflight.enabled" value="true"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/temurin-17-jdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire/surefirebooter-20260901000147294_3.jar /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire 2026-09-01T00-01-45_281-jvmRun1 surefire-20260901000147294_1tmp surefire_0-20260901000147294_2tmp"/>
+    <property name="visual.baseline.enabled" value="false"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/test-classes:/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/classes:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-java/4.45.0/selenium-java-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-api/4.45.0/selenium-api-4.45.0.jar:/home/runner/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.45.0/selenium-chrome-driver-4.45.0.jar:/home/runner/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.45.0/selenium-chromium-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-json/4.45.0/selenium-json-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.45.0/selenium-manager-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-latest/4.45.0/selenium-devtools-latest-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.45.0/selenium-devtools-v147-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v148/4.45.0/selenium-devtools-v148-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v149/4.45.0/selenium-devtools-v149-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.45.0/selenium-edge-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.45.0/selenium-firefox-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-http/4.45.0/selenium-http-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.45.0/selenium-ie-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.45.0/selenium-remote-driver-4.45.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api/1.63.0/opentelemetry-api-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-context/1.63.0/opentelemetry-context-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-common/1.63.0/opentelemetry-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.63.0/opentelemetry-exporter-logging-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.63.0/opentelemetry-sdk-common-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.63.0/opentelemetry-sdk-extension-autoconfigure-spi-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.63.0/opentelemetry-sdk-extension-autoconfigure-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.63.0/opentelemetry-sdk-trace-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.63.0/opentelemetry-sdk-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.63.0/opentelemetry-sdk-metrics-1.63.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.63.0/opentelemetry-sdk-logs-1.63.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-os/4.45.0/selenium-os-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.45.0/selenium-safari-driver-4.45.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-support/4.45.0/selenium-support-4.45.0.jar:/home/runner/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.2/webdrivermanager-5.9.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java/3.4.0/docker-java-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-core/3.4.0/docker-java-core-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-api/3.4.0/docker-java-api-3.4.0.jar:/home/runner/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.4.0/docker-java-transport-httpclient5-3.4.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport/3.4.0/docker-java-transport-3.4.0.jar:/home/runner/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/runner/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.15.0/commons-lang3-3.15.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-java/7.18.1/cucumber-java-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-core/7.18.1/cucumber-core-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin/7.18.1/cucumber-gherkin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.1/cucumber-gherkin-messages-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/home/runner/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/home/runner/.m2/repository/io/cucumber/testng-xml-formatter/0.2.0/testng-xml-formatter-0.2.0.jar:/home/runner/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/home/runner/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/home/runner/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/home/runner/.m2/repository/io/cucumber/datatable/7.18.1/datatable-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-plugin/7.18.1/cucumber-plugin-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/docstring/7.18.1/docstring-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/html-formatter/21.4.1/html-formatter-21.4.1.jar:/home/runner/.m2/repository/io/cucumber/junit-xml-formatter/0.5.0/junit-xml-formatter-0.5.0.jar:/home/runner/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/io/cucumber/cucumber-testng/7.18.1/cucumber-testng-7.18.1.jar:/home/runner/.m2/repository/io/cucumber/cucumber-picocontainer/7.18.1/cucumber-picocontainer-7.18.1.jar:/home/runner/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/runner/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured/5.5.0/rest-assured-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-xml/4.0.22/groovy-xml-4.0.22.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/runner/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/runner/.m2/repository/io/rest-assured/json-path/5.5.0/json-path-5.5.0.jar:/home/runner/.m2/repository/org/apache/groovy/groovy-json/4.0.22/groovy-json-4.0.22.jar:/home/runner/.m2/repository/io/rest-assured/rest-assured-common/5.5.0/rest-assured-common-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/xml-path/5.5.0/xml-path-5.5.0.jar:/home/runner/.m2/repository/io/rest-assured/json-schema-validator/5.5.0/json-schema-validator-5.5.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/home/runner/.m2/repository/com/deque/html/axe-core/selenium/4.10.2/selenium-4.10.2.jar:/home/runner/.m2/repository/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/home/runner/.m2/repository/com/deque/html/axe-core/dequeutilites/4.10.2/dequeutilites-4.10.2.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1.jar:/home/runner/.m2/repository/com/aventstack/extentreports/5.1.2/extentreports-5.1.2.jar:/home/runner/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.6/rxjava-3.1.6.jar:/home/runner/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/runner/.m2/repository/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar:/home/runner/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar:/home/runner/.m2/repository/tech/grasshopper/extentreports-cucumber7-adapter/1.14.0/extentreports-cucumber7-adapter-1.14.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-pdf-report/2.12.0/extent-pdf-report-2.12.0.jar:/home/runner/.m2/repository/tech/grasshopper/cucumber-pdf-report/2.14.0/cucumber-pdf-report-2.14.0.jar:/home/runner/.m2/repository/org/apache/pdfbox/pdfbox/2.0.26/pdfbox-2.0.26.jar:/home/runner/.m2/repository/org/apache/pdfbox/fontbox/2.0.26/fontbox-2.0.26.jar:/home/runner/.m2/repository/org/knowm/xchart/xchart/3.8.0/xchart-3.8.0.jar:/home/runner/.m2/repository/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.13/VectorGraphics2D-0.13.jar:/home/runner/.m2/repository/de/rototor/pdfbox/graphics2d/0.30/graphics2d-0.30.jar:/home/runner/.m2/repository/com/madgag/animated-gif-lib/1.4/animated-gif-lib-1.4.jar:/home/runner/.m2/repository/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar:/home/runner/.m2/repository/tech/grasshopper/table-layout/1.5.1/table-layout-1.5.1.jar:/home/runner/.m2/repository/tech/grasshopper/rest-assured-cucumber-pdf-report/1.5.0/rest-assured-cucumber-pdf-report-1.5.0.jar:/home/runner/.m2/repository/org/jsoup/jsoup/1.15.3/jsoup-1.15.3.jar:/home/runner/.m2/repository/com/aventstack/klov-reporter/5.1.0/klov-reporter-5.1.0.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver/3.6.4/mongodb-driver-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/mongodb-driver-core/3.6.4/mongodb-driver-core-3.6.4.jar:/home/runner/.m2/repository/org/mongodb/bson/3.6.4/bson-3.6.4.jar:/home/runner/.m2/repository/tech/grasshopper/htmlextentreporter/1.1.0/htmlextentreporter-1.1.0.jar:/home/runner/.m2/repository/tech/grasshopper/extent-excel-report/1.4.0/extent-excel-report-1.4.0.jar:/home/runner/.m2/repository/org/apache/poi/poi/5.2.3/poi-5.2.3.jar:/home/runner/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/runner/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/runner/.m2/repository/com/zaxxer/SparseBitSet/1.2/SparseBitSet-1.2.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml/5.2.3/poi-ooxml-5.2.3.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.3/poi-ooxml-lite-5.2.3.jar:/home/runner/.m2/repository/org/apache/xmlbeans/xmlbeans/5.1.1/xmlbeans-5.1.1.jar:/home/runner/.m2/repository/com/github/virtuald/curvesapi/1.07/curvesapi-1.07.jar:/home/runner/.m2/repository/io/qameta/allure/allure-cucumber7-jvm/2.29.0/allure-cucumber7-jvm-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-java-commons/2.29.0/allure-java-commons-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-model/2.29.0/allure-model-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-testng/2.29.0/allure-testng-2.29.0.jar:/home/runner/.m2/repository/io/qameta/allure/allure-test-filter/2.29.0/allure-test-filter-2.29.0.jar:/home/runner/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="accessibility.threshold.enabled" value="false"/>
+    <property name="user.home" value="/home/runner"/>
+    <property name="user.language" value="en"/>
+    <property name="thread.count" value="4"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-08-18"/>
+    <property name="java.home" value="/usr/lib/jvm/temurin-17-jdk-amd64"/>
+    <property name="visual.baseline.update" value="false"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="cleanup.before.run" value="false"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire/surefirebooter-20260901000147294_3.jar"/>
+    <property name="java.util.logging.config.file" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/logging.properties"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="suite.name" value="regression"/>
+    <property name="java.runtime.version" value="17.0.20.1+1"/>
+    <property name="user.name" value="runner"/>
+    <property name="visual.diff.max.pixels" value="0"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.17.0-1022-azure"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="visual.baseline.dir" value="src/test/resources/visual-baselines"/>
+    <property name="parallel" value="methods"/>
+    <property name="browser" value="firefox"/>
+    <property name="retry.count" value="0"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.20.1+1"/>
+    <property name="localRepository" value="/home/runner/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="retry.tags" value="@retryable"/>
+    <property name="java.version" value="17.0.20.1"/>
+    <property name="cucumber.filter.tags" value="(@regression and @parallel-safe) and not @stateful"/>
+    <property name="user.dir" value="/home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="webdriver.gecko.driver" value="/home/runner/.cache/selenium/geckodriver/linux64/0.37.1/geckodriver"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="execution.target" value="local"/>
+    <property name="accessibility.max.violations" value="0"/>
+    <property name="headless" value="true"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="environment" value="qa"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.20.1+1"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="suite.xml.file" value="target/test-classes/suites/testng-parallel.xml"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="selenium.remote.url" value="http://localhost:4444/wd/hub"/>
+    <property name="retry.max.allowed" value="0"/>
+  </properties>
+  <testcase name="runScenario[&quot;Internal API contract manifest documents automated endpoints&quot;, &quot;EventHub API contract&quot;](1)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.647">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-documentation
+Scenario: Internal API contract manifest documents automated endpoints   # src/test/resources/features/api/api_contract.feature:10
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-auth
+Scenario: Authenticated user can retrieve current user profile through API             # src/test/resources/features/api/api_contract.feature:20
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @parallel-safe @negative @intent-validation
+Scenario: Admin event form rejects invalid numeric values  # src/test/resources/features/admin/admin_event_management.feature:19
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @parallel-safe @intent-validation
+Scenario: Admin event form validates required fields        # src/test/resources/features/admin/admin_event_management.feature:13
+  Then the internal API contract should document the automated endpoints # com.eventhub.automation.steps.ApiSteps.theInternalApiContractShouldDocumentTheAutomatedEndpoints()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated user can retrieve current user profile through API&quot;, &quot;EventHub API contract&quot;](2)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.888">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-discovery
+Scenario: Event list maps to POJO responses with required business fields          # src/test/resources/features/api/api_contract.feature:32
+  When I request the current user profile through the API                              # com.eventhub.automation.steps.ApiSteps.iRequestTheCurrentUserProfileThroughTheApi()
+  Then the API current user response should include the registered identity            # com.eventhub.automation.steps.ApiSteps.theApiCurrentUserResponseShouldIncludeTheRegisteredIdentity()
+  When I request events through the API                                            # com.eventhub.automation.steps.ApiSteps.iRequestEventsThroughTheApi()
+  Then the API events response should map to event list POJOs with business fields # com.eventhub.automation.steps.ApiSteps.theApiEventsResponseShouldMapToEventListPojosWithBusinessFields()
+  And the API response should match schema "schemas/current-user-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event list maps to POJO responses with required business fields&quot;, &quot;EventHub API contract&quot;](3)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.028">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-discovery
+Scenario: Authenticated user can retrieve an event detail through API                  # src/test/resources/features/api/api_contract.feature:38
+  And the API response should match schema "schemas/events-response.schema.json"   # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated user can retrieve an event detail through API&quot;, &quot;EventHub API contract&quot;](4)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.322">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @parallel-safe @intent-discovery
+Scenario: Event detail maps to a POJO with required business fields                      # src/test/resources/features/api/api_contract.feature:44
+  When I request event "World Tech Summit" through the API                             # com.eventhub.automation.steps.ApiSteps.iRequestEventThroughTheApi(java.lang.String)
+  When I request event "World Tech Summit" through the API                               # com.eventhub.automation.steps.ApiSteps.iRequestEventThroughTheApi(java.lang.String)
+  Then the API event detail response should describe "World Tech Summit"               # com.eventhub.automation.steps.ApiSteps.theApiEventDetailResponseShouldDescribe(java.lang.String)
+  And the API response should match schema "schemas/event-detail-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event detail maps to a POJO with required business fields&quot;, &quot;EventHub API contract&quot;](5)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.043">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:73
+  Then the API event detail response should map to an event POJO for "World Tech Summit" # com.eventhub.automation.steps.ApiSteps.theApiEventDetailResponseShouldMapToAnEventPojoFor(java.lang.String)
+  And the API response should match schema "schemas/event-detail-response.schema.json"   # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Protected API rejects invalid or anonymous requests&quot;, &quot;EventHub API contract&quot;](6)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.751">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests            # src/test/resources/features/api/api_contract.feature:74
+  When I authenticate through the API with invalid credentials        # com.eventhub.automation.steps.ApiSteps.iAuthenticateThroughTheApiWithInvalidCredentials()
+  When I request the current user profile through the API without authentication # com.eventhub.automation.steps.ApiSteps.iRequestTheCurrentUserProfileThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with status 400              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+  Then the API should reject the request with status 401                         # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Protected API rejects invalid or anonymous requests&quot;, &quot;EventHub API contract&quot;](7)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.0"/>
+  <testcase name="runScenario[&quot;Protected API rejects invalid or anonymous requests&quot;, &quot;EventHub API contract&quot;](8)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.649">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:75
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:76
+  When I request bookings through the API without authentication      # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with status 401              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Protected API rejects invalid or anonymous requests&quot;, &quot;EventHub API contract&quot;](9)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.05">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:77
+  When I create a booking through the API without authentication      # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with status 401              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Protected API rejects invalid or anonymous requests&quot;, &quot;EventHub API contract&quot;](10)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.386">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:78
+  When I request unknown event detail through the API                 # com.eventhub.automation.steps.ApiSteps.iRequestUnknownEventDetailThroughTheApi()
+  Then the API should reject the request with status 500              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Protected API rejects invalid or anonymous requests&quot;, &quot;EventHub API contract&quot;](11)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.1">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-security
+Scenario Outline: Protected API rejects invalid or anonymous requests # src/test/resources/features/api/api_contract.feature:79
+  When I cancel an unknown booking through the API                    # com.eventhub.automation.steps.ApiSteps.iCancelAnUnknownBookingThroughTheApi()
+  Then the API should reject the request with status 500              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;API error responses follow the error contract&quot;, &quot;EventHub API contract&quot;](12)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.769">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract # src/test/resources/features/api/api_contract.feature:88
+  When I authenticate through the API with invalid credentials  # com.eventhub.automation.steps.ApiSteps.iAuthenticateThroughTheApiWithInvalidCredentials()
+  Then the API should reject the request with an error response # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Protected API rejects invalid or anonymous requests&quot;, &quot;EventHub API contract&quot;](13)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.526">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract  # src/test/resources/features/api/api_contract.feature:89
+  When I create a booking through the API with invalid payload        # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithInvalidPayload()
+  Then the API should reject the request with status 400              # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithStatus(int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;API error responses follow the error contract&quot;, &quot;EventHub API contract&quot;](14)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.159">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract # src/test/resources/features/api/api_contract.feature:90
+  When I request bookings through the API without authentication # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApiWithoutAuthentication()
+  Then the API should reject the request with an error response  # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;API error responses follow the error contract&quot;, &quot;EventHub API contract&quot;](15)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.292">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: API error responses follow the error contract # src/test/resources/features/api/api_contract.feature:91
+  When I create a booking through the API with invalid payload  # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithInvalidPayload()
+  Then the API should reject the request with an error response # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;API error responses follow the error contract&quot;, &quot;EventHub API contract&quot;](16)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.138">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed booking payloads are rejected by the API contract       # src/test/resources/features/api/api_contract.feature:100
+  When I create an event through the API with invalid payload   # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithInvalidPayload()
+  Then the API should reject the request with an error response # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Malformed booking payloads are rejected by the API contract&quot;, &quot;EventHub API contract&quot;](17)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.056">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed booking payloads are rejected by the API contract            # src/test/resources/features/api/api_contract.feature:101
+  When I create a booking through the API with malformed payload "missing event id" # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                     # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Malformed booking payloads are rejected by the API contract&quot;, &quot;EventHub API contract&quot;](18)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.173">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed booking payloads are rejected by the API contract        # src/test/resources/features/api/api_contract.feature:102
+  When I create a booking through the API with malformed payload "invalid quantity type" # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                          # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Malformed event payloads are rejected by the API contract&quot;, &quot;EventHub API contract&quot;](19)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.47">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed event payloads are rejected by the API contract     # src/test/resources/features/api/api_contract.feature:111
+  When I create an event through the API with malformed payload "missing title" # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                 # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Malformed booking payloads are rejected by the API contract&quot;, &quot;EventHub API contract&quot;](20)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.473">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed event payloads are rejected by the API contract          # src/test/resources/features/api/api_contract.feature:112
+  When I create a booking through the API with malformed payload "negative quantity" # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                      # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Malformed event payloads are rejected by the API contract&quot;, &quot;EventHub API contract&quot;](21)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.02">
+    <system-out><![CDATA[
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @negative @parallel-safe @intent-contract
+Scenario Outline: Malformed event payloads are rejected by the API contract      # src/test/resources/features/api/api_contract.feature:113
+  When I create an event through the API with malformed payload "invalid price type" # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                      # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Malformed event payloads are rejected by the API contract&quot;, &quot;EventHub API contract&quot;](22)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.469">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @critical @intent-session
+Scenario: Authenticated session survives page refresh # src/test/resources/features/auth/login.feature:13
+  When I create an event through the API with malformed payload "negative seats" # com.eventhub.automation.steps.ApiSteps.iCreateAnEventThroughTheApiWithMalformedPayload(java.lang.String)
+  Then the API should reject the request with an error response                  # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Login form validates required credentials&quot;, &quot;EventHub authentication&quot;](23)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="19.161">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-validation
+Scenario: Login form validates required credentials         # src/test/resources/features/auth/login.feature:19
+  Given I am on the EventHub login page                     # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I submit the login form without credentials          # com.eventhub.automation.steps.AuthSteps.iSubmitTheLoginFormWithoutCredentials()
+  Then the login form should show required field validation # com.eventhub.automation.steps.AuthSteps.theLoginFormShouldShowRequiredFieldValidation()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Admin event form validates required fields&quot;, &quot;Admin event management&quot;](24)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="6.727">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Invalid credentials are rejected # src/test/resources/features/auth/login.feature:32
+  Given I am signed in to EventHub                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                         # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I sign in with password "WrongPassword@123" # com.eventhub.automation.steps.AuthSteps.iSignInWithPassword(java.lang.String)
+  When I open the Admin Events page                        # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  When I open the Admin Events page                         # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  And I submit the admin event form without required fields # com.eventhub.automation.steps.AdminSteps.iSubmitTheAdminEventFormWithoutRequiredFields()
+  Then the admin form should show required field validation # com.eventhub.automation.steps.AdminSteps.theAdminFormShouldShowRequiredFieldValidation()
+  And I submit an admin event with invalid price and seats # com.eventhub.automation.steps.AdminSteps.iSubmitAnAdminEventWithInvalidPriceAndSeats()
+  Then I should see a login error                  # com.eventhub.automation.steps.AuthSteps.iShouldSeeALoginError()
+  Then the admin numeric fields should show validation     # com.eventhub.automation.steps.AdminSteps.theAdminNumericFieldsShouldShowValidation()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Invalid credentials are rejected&quot;, &quot;EventHub authentication&quot;](25)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.437">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Invalid credentials are rejected # src/test/resources/features/auth/login.feature:33
+  When I refresh the current page                     # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Admin event form rejects invalid numeric values&quot;, &quot;Admin event management&quot;](26)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.127">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p2 @regression @parallel-safe @intent-navigation
+Scenario: Register link opens account registration # src/test/resources/features/auth/login.feature:36
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated session survives page refresh&quot;, &quot;EventHub authentication&quot;](27)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.793">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from protected route # src/test/resources/features/auth/login.feature:42
+  Then I should see the authenticated navigation      # com.eventhub.automation.steps.AuthSteps.iShouldSeeTheAuthenticatedNavigation()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Invalid credentials are rejected&quot;, &quot;EventHub authentication&quot;](28)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="9.553">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p0 @regression @parallel-safe @critical @intent-security
+Scenario: Anonymous user is redirected from the admin route # src/test/resources/features/auth/login.feature:48
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  Given I am on the EventHub login page            # com.eventhub.automation.steps.AuthSteps.iAmOnTheEventHubLoginPage()
+  When I sign in with password "Test@12345"        # com.eventhub.automation.steps.AuthSteps.iSignInWithPassword(java.lang.String)
+  When I open the registration page from login     # com.eventhub.automation.steps.AuthSteps.iOpenTheRegistrationPageFromLogin()
+  Then I should be on the registration page        # com.eventhub.automation.steps.AuthSteps.iShouldBeOnTheRegistrationPage()
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  Then I should see a login error                  # com.eventhub.automation.steps.AuthSteps.iShouldSeeALoginError()
+  When I directly open protected route "/bookings"          # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Register link opens account registration&quot;, &quot;EventHub authentication&quot;](29)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.052">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario: Authenticated user can directly open a protected route # src/test/resources/features/auth/login.feature:54
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Anonymous user is redirected from protected route&quot;, &quot;EventHub authentication&quot;](30)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.579">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario Outline: Authenticated session survives refresh on protected pages # src/test/resources/features/auth/login.feature:68
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Anonymous user is redirected from the admin route&quot;, &quot;EventHub authentication&quot;](31)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.022">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario Outline: Authenticated session survives refresh on protected pages # src/test/resources/features/auth/login.feature:69
+  Given I am an anonymous visitor                           # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  When I directly open protected route "/admin/events"      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should be returned to the login page               # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated user can directly open a protected route&quot;, &quot;EventHub authentication&quot;](32)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="10.377">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @intent-session
+Scenario Outline: Authenticated session survives refresh on protected pages # src/test/resources/features/auth/login.feature:70
+  Given I am signed in to EventHub                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open protected route "/bookings"               # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then the My Bookings page should be loaded                     # com.eventhub.automation.steps.NavigationSteps.theMyBookingsPageShouldBeLoaded()
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated session survives refresh on protected pages&quot;, &quot;EventHub authentication&quot;](33)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="4.247">
+    <system-out><![CDATA[
+@auth @ui @owner-platform @risk-auth @intent-auth @impact-auth @p1 @regression @parallel-safe @negative @intent-security @impact-events
+Scenario: Anonymous user is redirected from an event detail deep link # src/test/resources/features/auth/login.feature:73
+  When I directly open protected route "/events"                            # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open protected route "/bookings"                          # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  When I directly open protected route "/admin/events"                      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  And I refresh the current page                                            # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then protected page "events" should remain loaded                         # com.eventhub.automation.steps.AuthSteps.protectedPageShouldRemainLoaded(java.lang.String)
+  And I refresh the current page                                            # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated session survives refresh on protected pages&quot;, &quot;EventHub authentication&quot;](34)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.81">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe
+Scenario: Event detail page shows booking form and event content # src/test/resources/features/bookings/booking_lifecycle.feature:51
+  Then protected page "bookings" should remain loaded                       # com.eventhub.automation.steps.AuthSteps.protectedPageShouldRemainLoaded(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated session survives refresh on protected pages&quot;, &quot;EventHub authentication&quot;](35)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.44">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe
+Scenario: Ticket quantity controls update the booking total          # src/test/resources/features/bookings/booking_lifecycle.feature:56
+  And I refresh the current page                                            # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Given I am an anonymous visitor                                     # com.eventhub.automation.steps.AuthSteps.iAmAnAnonymousVisitor()
+  Then protected page "admin events" should remain loaded                   # com.eventhub.automation.steps.AuthSteps.protectedPageShouldRemainLoaded(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Anonymous user is redirected from an event detail deep link&quot;, &quot;EventHub authentication&quot;](36)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="3.449">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @negative @intent-capacity
+Scenario: Ticket quantity cannot be decreased below one              # src/test/resources/features/bookings/booking_lifecycle.feature:66
+  When I directly open event detail for event "World Tech Summit"     # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  Then I should be returned to the login page                         # com.eventhub.automation.steps.AuthSteps.iShouldBeReturnedToTheLoginPage()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event detail page shows booking form and event content&quot;, &quot;Event booking lifecycle&quot;](37)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="7.657">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Booking form validates invalid customer data                   # src/test/resources/features/bookings/booking_lifecycle.feature:88
+  Given I am signed in to EventHub                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for a bookable event                       # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  Then I should see the event detail booking panel               # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheEventDetailBookingPanel()
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Ticket quantity controls update the booking total&quot;, &quot;Event booking lifecycle&quot;](38)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="4.584">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @negative @intent-validation
+Scenario Outline: Booking form validates invalid customer data                   # src/test/resources/features/bookings/booking_lifecycle.feature:89
+  Given I am signed in to EventHub                                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for an event with at least 4 available tickets # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForAnEventWithAtLeastAvailableTickets(int)
+  Then the ticket quantity should be 1                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  And the ticket decrement control should be disabled                # com.eventhub.automation.steps.BookingSteps.theTicketDecrementControlShouldBeDisabled()
+  When I increase tickets by 1                                       # com.eventhub.automation.steps.BookingSteps.iIncreaseTicketsBy(int)
+  Then the ticket quantity should be 2                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  When I decrease tickets by 1                                       # com.eventhub.automation.steps.BookingSteps.iDecreaseTicketsBy(int)
+  Then the ticket quantity should be 1                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  When I open details for a bookable event                                       # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  When I open details for an event with at least 4 available tickets # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForAnEventWithAtLeastAvailableTickets(int)
+  And I attempt to decrease tickets by 3                             # com.eventhub.automation.steps.BookingSteps.iAttemptToDecreaseTicketsBy(int)
+  Then the ticket quantity should be 1                               # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  And the ticket decrement control should be disabled                # com.eventhub.automation.steps.BookingSteps.theTicketDecrementControlShouldBeDisabled()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Ticket quantity cannot be decreased below one&quot;, &quot;Event booking lifecycle&quot;](39)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.943">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @parallel-safe @intent-validation
+Scenario: Booking form validates required customer details    # src/test/resources/features/bookings/booking_lifecycle.feature:92
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking form validates invalid customer data&quot;, &quot;Event booking lifecycle&quot;](40)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.0">
+    <system-out><![CDATA[
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p2 @regression @parallel-safe @intent-validation
+Scenario: Booking form accepts generated valid customer data before submit # src/test/resources/features/bookings/booking_lifecycle.feature:98
+  And I enter booking customer email "invalid-email" and phone "+91 98765 43210" # com.eventhub.automation.steps.BookingSteps.iEnterBookingCustomerEmailAndPhone(java.lang.String,java.lang.String)
+  Then the booking email field should be invalid                                 # com.eventhub.automation.steps.BookingSteps.theBookingEmailFieldShouldBeInvalid()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking form validates invalid customer data&quot;, &quot;Event booking lifecycle&quot;](41)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="6.403">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can search for events by keyword # src/test/resources/features/events/event_discovery.feature:20
+  Given I am signed in to EventHub                                               # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for a bookable event                                       # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  And I enter booking customer email "gauravarora1091@gmail.com" and phone "123" # com.eventhub.automation.steps.BookingSteps.iEnterBookingCustomerEmailAndPhone(java.lang.String,java.lang.String)
+  Then the booking phone field should be invalid                                 # com.eventhub.automation.steps.BookingSteps.theBookingPhoneFieldShouldBeInvalid()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking form validates required customer details&quot;, &quot;Event booking lifecycle&quot;](42)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="6.207">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can search for events by keyword # src/test/resources/features/events/event_discovery.feature:21
+  Given I am signed in to EventHub                            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                         # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open details for a bookable event                    # com.eventhub.automation.steps.BookingSteps.iOpenDetailsForABookableEvent()
+  Given I am signed in to EventHub                      # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And I submit the booking form without customer details      # com.eventhub.automation.steps.BookingSteps.iSubmitTheBookingFormWithoutCustomerDetails()
+  Then the booking form should show required field validation # com.eventhub.automation.steps.BookingSteps.theBookingFormShouldShowRequiredFieldValidation()
+  When I enter valid booking customer details for a bookable event         # com.eventhub.automation.steps.BookingSteps.iEnterValidBookingCustomerDetailsForABookableEvent()
+  Then the booking form should contain the generated customer details      # com.eventhub.automation.steps.BookingSteps.theBookingFormShouldContainTheGeneratedCustomerDetails()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Booking form accepts generated valid customer data before submit&quot;, &quot;Event booking lifecycle&quot;](43)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.787">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can search for events by keyword # src/test/resources/features/events/event_discovery.feature:22
+  When I open the Events page                           # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Dilli Diwali Mela"           # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see event "Dilli Diwali Mela"           # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can search for events by keyword&quot;, &quot;Event discovery&quot;](44)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.613">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: User can search for an event by title and exclude unrelated cards # src/test/resources/features/events/event_discovery.feature:25
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can search for events by keyword&quot;, &quot;Event discovery&quot;](45)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="5.559">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: User can filter events by city and category # src/test/resources/features/events/event_discovery.feature:32
+  Given I am signed in to EventHub                      # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                           # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Pragati Maidan"              # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see event "Dilli Diwali Mela"           # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can search for events by keyword&quot;, &quot;Event discovery&quot;](46)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="7.222">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: User can clear filters and restore the event list # src/test/resources/features/events/event_discovery.feature:39
+  Given I am signed in to EventHub                      # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                           # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  When I open the Events page                                               # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "World Tech Summit"           # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see event "World Tech Summit"           # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+  And I search events for "Dilli Diwali Mela"                               # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see event "Dilli Diwali Mela"                               # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+  And I should not see event "World Tech Summit"                            # com.eventhub.automation.steps.EventSteps.iShouldNotSeeEvent(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can search for an event by title and exclude unrelated cards&quot;, &quot;Event discovery&quot;](47)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.689">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: Event filters reset after refresh   # src/test/resources/features/events/event_discovery.feature:47
+  When I open the Events page                         # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I filter events by category "Festival"          # com.eventhub.automation.steps.EventSteps.iFilterEventsByCategory(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can filter events by city and category&quot;, &quot;Event discovery&quot;](48)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.619">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: Event filters reset after navigating away and back # src/test/resources/features/events/event_discovery.feature:55
+  And I filter events by city "Delhi"                 # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  Given I am signed in to EventHub                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then I should see event "Dilli Diwali Mela"         # com.eventhub.automation.steps.EventSteps.iShouldSeeEvent(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can clear filters and restore the event list&quot;, &quot;Event discovery&quot;](49)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="4.169">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @negative
+Scenario: User sees an empty state for unmatched search         # src/test/resources/features/events/event_discovery.feature:64
+  When I open the Events page                               # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I filter events by category "Festival"                # com.eventhub.automation.steps.EventSteps.iFilterEventsByCategory(java.lang.String)
+  And I filter events by city "Delhi"                       # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  And I clear event filters                                 # com.eventhub.automation.steps.EventSteps.iClearEventFilters()
+  Then I should see seeded upcoming events                  # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event filters reset after navigating away and back&quot;, &quot;Event discovery&quot;](50)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="7.424">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @negative @intent-validation
+Scenario: Special-character event search does not show unrelated results # src/test/resources/features/events/event_discovery.feature:70
+  Given I am signed in to EventHub            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                           # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                 # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Dilli Diwali Mela" # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  When I open the Events page                                # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "Dilli Diwali Mela"                # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  And I filter events by city "Delhi"                        # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  And I navigate away from event discovery and return        # com.eventhub.automation.steps.EventSteps.iNavigateAwayFromEventDiscoveryAndReturn()
+  Given I am signed in to EventHub                              # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then event filters should be reset                         # com.eventhub.automation.steps.EventSteps.eventFiltersShouldBeReset()
+  And I should see seeded upcoming events                    # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event filters reset after refresh&quot;, &quot;Event discovery&quot;](51)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.702">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @negative @intent-filtering
+Scenario: Incompatible event filters show an empty result state # src/test/resources/features/events/event_discovery.feature:76
+  And I refresh the current page              # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then event filters should be reset          # com.eventhub.automation.steps.EventSteps.eventFiltersShouldBeReset()
+  And I should see seeded upcoming events     # com.eventhub.automation.steps.EventSteps.iShouldSeeSeededUpcomingEvents()
+  When I open the Events page                                   # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "No Selenium Event Should Match This" # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see the no events found message                 # com.eventhub.automation.steps.EventSteps.iShouldSeeTheNoEventsFoundMessage()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User sees an empty state for unmatched search&quot;, &quot;Event discovery&quot;](52)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.633">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario: Event cards expose business-critical details                                                                            # src/test/resources/features/events/event_discovery.feature:83
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Special-character event search does not show unrelated results&quot;, &quot;Event discovery&quot;](53)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="3.196">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe
+Scenario Outline: User can open event details                      # src/test/resources/features/events/event_discovery.feature:94
+  When I open the Events page                                            # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  And I search events for "###@@@NoEvent"                                # com.eventhub.automation.steps.EventSteps.iSearchEventsFor(java.lang.String)
+  Then I should see no events for query "###@@@NoEvent"                  # com.eventhub.automation.steps.EventSteps.iShouldSeeNoEventsForQuery(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Incompatible event filters show an empty result state&quot;, &quot;Event discovery&quot;](54)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="9.64">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: Event detail deep link loads correct metadata           # src/test/resources/features/events/event_discovery.feature:97
+  Given I am signed in to EventHub                              # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open the Events page                                   # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  Given I am signed in to EventHub                                                                                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  And I filter events by category "Festival"                    # com.eventhub.automation.steps.EventSteps.iFilterEventsByCategory(java.lang.String)
+  And I filter events by city "Hyderabad"                       # com.eventhub.automation.steps.EventSteps.iFilterEventsByCity(java.lang.String)
+  Then I should see no matching events                          # com.eventhub.automation.steps.EventSteps.iShouldSeeNoMatchingEvents()
+  When I open the Events page                                                                                                     # com.eventhub.automation.steps.EventSteps.iOpenTheEventsPage()
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then event "Dilli Diwali Mela" card should show category "Festival", city "Delhi", price "$300", seats, and availability status # com.eventhub.automation.steps.EventSteps.eventCardShouldShowBusinessDetails(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event cards expose business-critical details&quot;, &quot;Event discovery&quot;](55)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.491">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical @intent-navigation @impact-ux
+Scenario: Event detail remains stable after browser refresh       # src/test/resources/features/events/event_discovery.feature:102
+  Given I am signed in to EventHub                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can open event details&quot;, &quot;Event discovery&quot;](56)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="4.15">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical
+Scenario: User can open a bookable event detail page from Book Now # src/test/resources/features/events/event_discovery.feature:108
+  When I open details from the title for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromTheTitleForEvent(java.lang.String)
+  When I directly open event detail for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  Then I should see metadata for event "World Tech Summit"         # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+  Then I should see metadata for event "World Tech Summit"        # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event detail deep link loads correct metadata&quot;, &quot;Event discovery&quot;](57)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.666">
+    <system-out><![CDATA[
+@events @ui @owner-platform @risk-discovery @intent-discovery @impact-events @p1 @regression @parallel-safe @critical @intent-navigation @impact-ux
+Scenario: Browser back from event detail leaves the event journey usable # src/test/resources/features/events/event_discovery.feature:113
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;User can open a bookable event detail page from Book Now&quot;, &quot;Event discovery&quot;](58)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="9.128">
+    <system-out><![CDATA[
+@navigation @ui @owner-platform @risk-navigation @intent-navigation @impact-navigation @p1 @regression @parallel-safe
+Scenario: Authenticated user can move across primary navigation # src/test/resources/features/navigation/navigation.feature:8
+  Given I am signed in to EventHub                                # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I directly open event detail for event "World Tech Summit" # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForEvent(java.lang.String)
+  When I open details from Book Now for a bookable event           # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromBookNowForABookableEvent()
+  Then I should see the event detail booking panel                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheEventDetailBookingPanel()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Event detail remains stable after browser refresh&quot;, &quot;Event discovery&quot;](59)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.606">
+    <system-out><![CDATA[
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:16
+  Given I am signed in to EventHub                              # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open Home from the navigation                          # com.eventhub.automation.steps.NavigationSteps.iOpenHomeFromTheNavigation()
+  Then the Home page should be loaded                           # com.eventhub.automation.steps.NavigationSteps.theHomePageShouldBeLoaded()
+  When I open Events from the navigation                        # com.eventhub.automation.steps.NavigationSteps.iOpenEventsFromTheNavigation()
+  And I refresh the current page                                  # com.eventhub.automation.steps.AuthSteps.iRefreshTheCurrentPage()
+  Then I should see metadata for event "World Tech Summit"        # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForEvent(java.lang.String)
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then the Events page should be loaded                         # com.eventhub.automation.steps.NavigationSteps.theEventsPageShouldBeLoaded()
+  When I open My Bookings from the navigation                   # com.eventhub.automation.steps.NavigationSteps.iOpenMyBookingsFromTheNavigation()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated user can move across primary navigation&quot;, &quot;EventHub navigation&quot;](60)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="1.21">
+    <system-out><![CDATA[
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:17
+  Then the My Bookings page should be loaded                    # com.eventhub.automation.steps.NavigationSteps.theMyBookingsPageShouldBeLoaded()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Browser back from event detail leaves the event journey usable&quot;, &quot;Event discovery&quot;](61)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="3.842">
+    <system-out><![CDATA[
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:18
+  When I open details from Book Now for a bookable event                 # com.eventhub.automation.steps.EventSteps.iOpenDetailsFromBookNowForABookableEvent()
+  And I go back in the browser                                           # com.eventhub.automation.steps.AuthSteps.iGoBackInTheBrowser()
+  Then the event journey should remain usable                            # com.eventhub.automation.steps.EventSteps.theEventJourneyShouldRemainUsable()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key pages expose basic accessibility semantics&quot;, &quot;Accessibility smoke&quot;](62)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="11.308">
+    <system-out><![CDATA[
+@accessibility @ui @owner-platform @risk-ux @intent-accessibility @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key pages expose basic accessibility semantics     # src/test/resources/features/ux/accessibility_smoke.feature:19
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "home"                                   # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "events"                                 # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  When I open UX smoke page "bookings"                               # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  Given I am signed in to EventHub                                   # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  When I open UX smoke page "admin events"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should expose basic accessibility semantics          # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldExposeBasicAccessibilitySemantics()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key pages expose basic accessibility semantics&quot;, &quot;Accessibility smoke&quot;](63)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.197">
+    <system-out><![CDATA[
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:15
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key pages expose basic accessibility semantics&quot;, &quot;Accessibility smoke&quot;](64)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.223">
+    <system-out><![CDATA[
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:16
+  And the page should generate an Axe accessibility advisory report  # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldGenerateAnAxeAccessibilityAdvisoryReport()
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key pages expose basic accessibility semantics&quot;, &quot;Accessibility smoke&quot;](65)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.051">
+    <system-out><![CDATA[
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:17
+  And the page should satisfy the configured accessibility threshold # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldSatisfyTheConfiguredAccessibilityThreshold()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key authenticated pages fit common viewport sizes&quot;, &quot;Responsive smoke&quot;](66)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="6.102">
+    <system-out><![CDATA[
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:18
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "home"                                   # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key authenticated pages fit common viewport sizes&quot;, &quot;Responsive smoke&quot;](67)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="3.355">
+    <system-out><![CDATA[
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:19
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "events"                                 # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key authenticated pages fit common viewport sizes&quot;, &quot;Responsive smoke&quot;](68)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="3.697">
+    <system-out><![CDATA[
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:20
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  When I use viewport 390 by 844                                    # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "bookings"                               # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+  And I open UX smoke page "event detail"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key authenticated pages fit common viewport sizes&quot;, &quot;Responsive smoke&quot;](69)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="0.656">
+    <system-out><![CDATA[
+@responsive @ui @owner-platform @risk-ux @intent-responsive @impact-ux @p1 @regression @parallel-safe
+Scenario Outline: Key authenticated pages fit common viewport sizes # src/test/resources/features/ux/responsive_smoke.feature:21
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key authenticated pages fit common viewport sizes&quot;, &quot;Responsive smoke&quot;](70)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="4.387">
+    <system-out><![CDATA[
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario: Login page visual sanity screenshot is captured # src/test/resources/features/ux/visual_sanity.feature:5
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 1366 by 768                                   # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+  And I open UX smoke page "admin events"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 1440 by 900                                   # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key authenticated pages fit common viewport sizes&quot;, &quot;Responsive smoke&quot;](71)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="3.428">
+    <system-out><![CDATA[
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario Outline: Authenticated key pages have visual sanity screenshots # src/test/resources/features/ux/visual_sanity.feature:17
+  And I open UX smoke page "events"                                 # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Login page visual sanity screenshot is captured&quot;, &quot;Visual sanity smoke&quot;](72)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="2.445">
+    <system-out><![CDATA[
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario Outline: Authenticated key pages have visual sanity screenshots # src/test/resources/features/ux/visual_sanity.feature:18
+  When I open UX smoke page "login"                       # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot    # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+  Given I am signed in to EventHub                                  # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I use viewport 1440 by 900                                   # com.eventhub.automation.steps.UxSmokeSteps.iUseViewportBy(int,int)
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Key authenticated pages fit common viewport sizes&quot;, &quot;Responsive smoke&quot;](73)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="4.299">
+    <system-out><![CDATA[
+@visual @ui @owner-platform @risk-ux @intent-visual @impact-ux @p2 @regression @parallel-safe
+Scenario Outline: Authenticated key pages have visual sanity screenshots # src/test/resources/features/ux/visual_sanity.feature:19
+  And I open UX smoke page "event detail"                           # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should fit the viewport without horizontal overflow # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldFitTheViewportWithoutHorizontalOverflow()
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated key pages have visual sanity screenshots&quot;, &quot;Visual sanity smoke&quot;](74)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="6.84">
+    <system-out><![CDATA[  When I open UX smoke page "events"                                     # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot                   # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated key pages have visual sanity screenshots&quot;, &quot;Visual sanity smoke&quot;](75)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="9.754">
+    <system-out><![CDATA[  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  Given I am signed in to EventHub                                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I open UX smoke page "bookings"                                   # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot                   # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Authenticated key pages have visual sanity screenshots&quot;, &quot;Visual sanity smoke&quot;](76)" classname="com.eventhub.automation.runners.ParallelCucumberTestRunner" time="10.494">
+    <system-out><![CDATA[  When I open UX smoke page "admin events"                               # com.eventhub.automation.steps.UxSmokeSteps.iOpenUxSmokePage(java.lang.String)
+  Then the page should have a visual sanity screenshot                   # com.eventhub.automation.steps.UxSmokeSteps.thePageShouldHaveAVisualSanityScreenshot()
+]]></system-out>
+  </testcase>
+</testsuite>
