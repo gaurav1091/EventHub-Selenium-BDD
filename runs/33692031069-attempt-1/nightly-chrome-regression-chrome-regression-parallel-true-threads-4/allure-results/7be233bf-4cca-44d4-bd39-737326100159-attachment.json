@@ -1,0 +1,55 @@
+{
+  "mode" : "advisory-threshold-disabled",
+  "url" : "https://eventhub.rahulshettyacademy.com/bookings",
+  "title" : "EventHub — Discover & Book Events",
+  "timestamp" : "2026-09-02T22:49:14.347806299",
+  "violationCount" : 2,
+  "violations" : [ {
+    "id" : "color-contrast",
+    "impact" : "serious",
+    "description" : "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help" : "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+    "tags" : [ "cat.color", "wcag2aa", "wcag143", "TTv5", "TT13.c", "EN-301-549", "EN-9.1.4.3", "ACT" ],
+    "nodeCount" : 6,
+    "nodes" : [ {
+      "target" : [ ".text-red-500" ],
+      "html" : "<button class=\"text-sm text-red-500 hover:text-red-700 underline underline-offset-2 disabled:opacity-50\">Clear all bookings</button>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 3.6 (foreground color: #ef4444, background color: #f9fafb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".items-end > .text-gray-400" ],
+      "html" : "<p class=\"text-xs text-gray-400\">Do this often for clean test data.</p>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.42 (foreground color: #9ca3af, background color: #f9fafb, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".rounded-2xl.p-5.hover\\:shadow-md:nth-child(1) > .items-start.gap-4.justify-between > .flex-1.min-w-0 > .mb-2.gap-2.flex-wrap > .font-mono.text-gray-400[data-testid=\"booking-id\"]" ],
+      "html" : "<span data-testid=\"booking-id\" id=\"booking-id\" class=\"font-mono text-xs text-gray-400\">#142806</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".rounded-2xl.p-5.hover\\:shadow-md:nth-child(1) > .items-start.gap-4.justify-between > .text-right.shrink-0 > .text-gray-400" ],
+      "html" : "<p class=\"text-xs text-gray-400\">total</p>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".rounded-2xl.p-5.hover\\:shadow-md:nth-child(2) > .items-start.gap-4.justify-between > .flex-1.min-w-0 > .mb-2.gap-2.flex-wrap > .font-mono.text-gray-400[data-testid=\"booking-id\"]" ],
+      "html" : "<span data-testid=\"booking-id\" id=\"booking-id\" class=\"font-mono text-xs text-gray-400\">#142805</span>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    }, {
+      "target" : [ ".rounded-2xl.p-5.hover\\:shadow-md:nth-child(2) > .items-start.gap-4.justify-between > .text-right.shrink-0 > .text-gray-400" ],
+      "html" : "<p class=\"text-xs text-gray-400\">total</p>",
+      "failureSummary" : "Fix any of the following:\n  Element has insufficient color contrast of 2.53 (foreground color: #9ca3af, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+    } ]
+  }, {
+    "id" : "heading-order",
+    "impact" : "moderate",
+    "description" : "Ensure the order of headings is semantically correct",
+    "help" : "Heading levels should only increase by one",
+    "helpUrl" : "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
+    "tags" : [ "cat.semantics", "best-practice" ],
+    "nodeCount" : 1,
+    "nodes" : [ {
+      "target" : [ ".rounded-2xl.p-5.hover\\:shadow-md:nth-child(1) > .items-start.gap-4.justify-between > .flex-1.min-w-0 > .text-base.mb-1.truncate" ],
+      "html" : "<h3 class=\"font-semibold text-gray-900 text-base truncate mb-1\">Dilli Diwali Mela</h3>",
+      "failureSummary" : "Fix any of the following:\n  Heading order invalid"
+    } ]
+  } ],
+  "maxViolations" : 0
+}
