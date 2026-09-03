@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 76, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 184.9 s <<< FAILURE! -- in TestSuite
+com.eventhub.automation.runners.ParallelCucumberTestRunner.runScenario["Event filters reset after navigating away and back", "Event discovery"](56) -- Time elapsed: 1.840 s <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element found by By.xpath: //*[contains(normalize-space(.),'Featured Events')], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[contains(normalize-space(.),'Featured Events')].
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1022-azure', java.version: '17.0.20.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 154.0.1, moz:accessibilityChecks: false, moz:buildID: 20260824154132, moz:geckodriverVersion: 0.37.1, moz:headless: true, moz:platformVersion: 6.17.0-1022-azure, moz:processID: 12511, moz:profile: /tmp/rust_mozprofileRZ8x4j, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Linux x86...}
+Session ID: af0e885d-1b04-46d9-bfb6-ab8df7c8b129
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.eventhub.automation.utils.Waits.visibleTextContains(Waits.java:34)
+	at com.eventhub.automation.pages.NavigationBar.openHome(NavigationBar.java:24)
+	at com.eventhub.automation.steps.EventSteps.iNavigateAwayFromEventDiscoveryAndReturn(EventSteps.java:79)
+	at ✽.I navigate away from event discovery and return(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/events/event_discovery.feature:59)
+
