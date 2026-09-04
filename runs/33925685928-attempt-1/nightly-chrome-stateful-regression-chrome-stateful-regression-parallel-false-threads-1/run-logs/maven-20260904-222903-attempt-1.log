@@ -1,0 +1,509 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.eventhub:eventhub-selenium-bdd >-----------------
+[INFO] Building EventHub Selenium Java BDD Framework 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ eventhub-selenium-bdd ---
+[INFO] skip non existing resourceDirectory /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ eventhub-selenium-bdd ---
+[INFO] Copying 34 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ eventhub-selenium-bdd ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 50 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.3.1:test (default-test) @ eventhub-selenium-bdd ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @stateful @api-cleanup
+Scenario: Admin can create a disposable event and find it in discovery    # src/test/resources/features/admin/admin_event_management.feature:25
+Sep 04, 2026 10:29:27 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                        # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                    # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I open the Admin Events page                                        # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  Then the created admin event should appear in the admin table           # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInTheAdminTable()
+  And the created admin event should appear in event discovery            # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()
+  When I clean up the created admin event through API                     # com.eventhub.automation.steps.AdminSteps.iCleanUpTheCreatedAdminEventThroughApi()
+  Then the created admin event should not appear through API or discovery # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldNotAppearThroughApiOrDiscovery()
+
+@admin @ui @owner-platform @risk-admin @intent-admin @impact-admin @p1 @regression @stateful @api-cleanup @negative @intent-capacity
+Scenario: Sold-out admin event is unavailable from discovery                                # src/test/resources/features/admin/admin_event_management.feature:34
+Sep 04, 2026 10:29:42 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a sold-out one-seat admin event through the API                             # com.eventhub.automation.steps.AdminSteps.iCreateASoldOutOneSeatAdminEventThroughTheApi()
+  Then the created admin event should show no remaining seats or be unavailable for booking # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p0 @smoke @stateful @intent-booking
+Scenario: Authenticated user can create and cancel a booking through API          # src/test/resources/features/api/api_contract.feature:50
+  When I create a booking through the API                                         # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()
+  Then the API booking response should include a booking reference                # com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()
+  And the API response should match schema "schemas/booking-response.schema.json" # com.eventhub.automation.steps.ApiSteps.theApiResponseShouldMatchSchema(java.lang.String)
+  When I cancel the API-created booking                                           # com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()
+  Then the API booking cancellation should be successful                          # com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @intent-booking
+Scenario: Booking cancellation is not silently repeatable          # src/test/resources/features/api/api_contract.feature:58
+  When I create a booking through the API                          # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()
+      io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)
+	at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+	at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+	at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+	at io.restassured.path.json.JsonPath.getString(JsonPath.java:352)
+	at com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi(ApiSteps.java:58)
+	at ✽.I create a booking through the API(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature:59)
+Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading '<', no possible valid JSON value or punctuation could be recognized.
+	at groovy.json.JsonLexer.nextToken(JsonLexer.java:86)
+	at groovy.json.JsonLexer$nextToken.call(Unknown Source)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
+	at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)
+	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)
+	at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+	at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+	at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+	at io.restassured.path.json.JsonPath.getString(JsonPath.java:352)
+	at com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi(ApiSteps.java:58)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.CucumberTestRunner.runScenario(CucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+  Then the API booking response should include a booking reference # com.eventhub.automation.steps.ApiSteps.theApiBookingResponseShouldIncludeABookingReference()
+  When I cancel the API-created booking                            # com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBooking()
+  Then the API booking cancellation should be successful           # com.eventhub.automation.steps.ApiSteps.theApiBookingCancellationShouldBeSuccessful()
+  When I cancel the API-created booking again                      # com.eventhub.automation.steps.ApiSteps.iCancelTheApiCreatedBookingAgain()
+  Then the API should reject the request with an error response    # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @api-cleanup @intent-booking
+Scenario: Booking list maps to POJO responses after API booking creation             # src/test/resources/features/api/api_contract.feature:116
+  When I create a booking through the API                                            # com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi()
+  And I request bookings through the API                                             # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApi()
+  Then the API bookings response should map to booking POJOs for the created booking # com.eventhub.automation.steps.ApiSteps.theApiBookingsResponseShouldMapToBookingPojosForTheCreatedBooking()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @api-cleanup @intent-booking
+Scenario: Duplicate booking attempts are handled consistently                # src/test/resources/features/api/api_contract.feature:122
+  When I create the same booking through the API twice                       # com.eventhub.automation.steps.ApiSteps.iCreateTheSameBookingThroughTheApiTwice()
+  Then the duplicate booking response should follow the booking API contract # com.eventhub.automation.steps.ApiSteps.theDuplicateBookingResponseShouldFollowTheBookingApiContract()
+
+@api @contract @owner-platform @risk-contract @intent-api-contract @impact-api @p1 @regression @stateful @api-cleanup @intent-capacity
+Scenario: Event capacity boundary rejects booking beyond available seats # src/test/resources/features/api/api_contract.feature:127
+  When I create a one-seat event through the API                         # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatEventThroughTheApi()
+  And I book the full API event capacity                                 # com.eventhub.automation.steps.ApiSteps.iBookTheFullApiEventCapacity()
+  And I create one more booking for the capacity-bound event             # com.eventhub.automation.steps.ApiSteps.iCreateOneMoreBookingForTheCapacityBoundEvent()
+  Then the API should reject the request with an error response          # com.eventhub.automation.steps.ApiSteps.theApiShouldRejectTheRequestWithAnErrorResponse()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p0 @smoke @stateful @critical
+Scenario: User can book a ticket and view it under My Bookings # src/test/resources/features/bookings/booking_lifecycle.feature:8
+Sep 04, 2026 10:30:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                             # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event                    # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then I should see the booking confirmation                   # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+  When I open My Bookings from the confirmation                # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  Then I should see booking for the selected event             # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario Outline: User can book tickets and see confirmation # src/test/resources/features/bookings/booking_lifecycle.feature:21
+Sep 04, 2026 10:30:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                           # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 tickets for a bookable event                 # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then I should see the booking confirmation                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario Outline: User can book tickets and see confirmation # src/test/resources/features/bookings/booking_lifecycle.feature:22
+Sep 04, 2026 10:30:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                           # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 2 tickets for a bookable event                 # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then I should see the booking confirmation                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @critical
+Scenario: Booking confirmation shows customer, quantity, event, and total                     # src/test/resources/features/bookings/booking_lifecycle.feature:25
+Sep 04, 2026 10:30:55 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                                            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 2 tickets for a bookable event                                                  # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  Then the booking confirmation should show the selected event, customer, quantity, and total # com.eventhub.automation.steps.BookingSteps.theBookingConfirmationShouldShowTheSelectedEventCustomerQuantityAndTotal()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario: User can view booking details            # src/test/resources/features/bookings/booking_lifecycle.feature:30
+Sep 04, 2026 10:31:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event        # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  And I open My Bookings from the confirmation     # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  And I open the booking details                   # com.eventhub.automation.steps.BookingSteps.iOpenTheBookingDetails()
+  Then I should see booking for the selected event # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @critical
+Scenario: User can cancel a booking                                # src/test/resources/features/bookings/booking_lifecycle.feature:37
+Sep 04, 2026 10:31:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event                        # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  And I open My Bookings from the confirmation                     # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  And I cancel the booking                                         # com.eventhub.automation.steps.BookingSteps.iCancelTheBooking()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful
+Scenario: User can clear all bookings                              # src/test/resources/features/bookings/booking_lifecycle.feature:44
+Sep 04, 2026 10:31:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I book 1 ticket for a bookable event                        # com.eventhub.automation.steps.BookingSteps.iBookTicketsForABookableEvent(int)
+  And I open My Bookings from the confirmation                     # com.eventhub.automation.steps.BookingSteps.iOpenMyBookingsFromTheConfirmation()
+  And I clear all bookings                                         # com.eventhub.automation.steps.BookingSteps.iClearAllBookings()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @api-cleanup @negative
+Scenario: Booking cannot exceed available tickets        # src/test/resources/features/bookings/booking_lifecycle.feature:73
+Sep 04, 2026 10:31:46 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                       # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API   # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I open booking details for the created admin event # com.eventhub.automation.steps.AdminSteps.iOpenBookingDetailsForTheCreatedAdminEvent()
+  Then the ticket quantity should be 1                   # com.eventhub.automation.steps.BookingSteps.theTicketQuantityShouldBe(int)
+  And the ticket decrement control should be disabled    # com.eventhub.automation.steps.BookingSteps.theTicketDecrementControlShouldBeDisabled()
+  And the ticket increment control should be disabled    # com.eventhub.automation.steps.BookingSteps.theTicketIncrementControlShouldBeDisabled()
+
+@bookings @ui @owner-platform @risk-revenue @intent-booking @impact-bookings @p1 @regression @stateful @intent-cleanup
+Scenario: Selenium-created bookings can be cleaned through API     # src/test/resources/features/bookings/booking_lifecycle.feature:103
+Sep 04, 2026 10:31:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup              # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I clean Selenium-created bookings through the API            # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+  And My Bookings should show an empty state                       # com.eventhub.automation.steps.BookingSteps.myBookingsShouldShowAnEmptyState()
+
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression
+Scenario: Booking created through API is visible in My Bookings    # src/test/resources/features/hybrid/api_ui_hybrid.feature:8
+Sep 04, 2026 10:32:09 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                 # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup              # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I directly open protected route "/bookings"                  # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should see booking for the selected event                 # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+  When I clean Selenium-created bookings through the API           # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+  Then no bookings for the current Selenium customer should remain # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: API-created event is searchable and deep-linkable in the UI # src/test/resources/features/hybrid/api_ui_hybrid.feature:16
+Sep 04, 2026 10:32:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  Then the created admin event should appear in event discovery       # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()
+  When I directly open event detail for the created admin event       # com.eventhub.automation.steps.EventSteps.iDirectlyOpenEventDetailForTheCreatedAdminEvent()
+  Then I should see metadata for the created admin event              # com.eventhub.automation.steps.EventSteps.iShouldSeeMetadataForTheCreatedAdminEvent()
+
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: API-created event appears in admin management and discovery # src/test/resources/features/hybrid/api_ui_hybrid.feature:23
+Sep 04, 2026 10:32:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                    # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I open the Admin Events page                                    # com.eventhub.automation.steps.AdminSteps.iOpenTheAdminEventsPage()
+  Then the created admin event should appear in the admin table       # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInTheAdminTable()
+  And the created admin event should appear in event discovery        # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldAppearInEventDiscovery()
+
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: UI booking for API-created event is visible through the API  # src/test/resources/features/hybrid/api_ui_hybrid.feature:30
+Sep 04, 2026 10:32:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                     # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a one-seat admin event through the API                 # com.eventhub.automation.steps.AdminSteps.iCreateAOneSeatAdminEventThroughTheApi()
+  And I book 1 ticket for the created admin event                      # com.eventhub.automation.steps.AdminSteps.iBookTicketForTheCreatedAdminEvent(int)
+  Then I should see the booking confirmation                           # com.eventhub.automation.steps.BookingSteps.iShouldSeeTheBookingConfirmation()
+  When I request bookings through the API                              # com.eventhub.automation.steps.ApiSteps.iRequestBookingsThroughTheApi()
+  Then the API bookings response should include the UI-created booking # com.eventhub.automation.steps.ApiSteps.theApiBookingsResponseShouldIncludeTheUiCreatedBooking()
+
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @api-cleanup
+Scenario: API cleanup of an API-created booking is reflected in the UI # src/test/resources/features/hybrid/api_ui_hybrid.feature:38
+Sep 04, 2026 10:32:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                     # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup                  # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I directly open protected route "/bookings"                      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then I should see booking for the selected event                     # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+  When I clean Selenium-created bookings through the API               # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+  And I directly open protected route "/bookings"                      # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  Then no bookings for the current Selenium customer should remain     # com.eventhub.automation.steps.BookingSteps.noBookingsForTheCurrentSeleniumCustomerShouldRemain()
+
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression
+Scenario: API-created booking details can be opened in the UI # src/test/resources/features/hybrid/api_ui_hybrid.feature:47
+Sep 04, 2026 10:33:11 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                            # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a booking through the API for cleanup         # com.eventhub.automation.steps.BookingSteps.iCreateABookingThroughTheApiForCleanup()
+  And I directly open protected route "/bookings"             # com.eventhub.automation.steps.AuthSteps.iDirectlyOpenProtectedRoute(java.lang.String)
+  And I open the booking details                              # com.eventhub.automation.steps.BookingSteps.iOpenTheBookingDetails()
+  Then I should see booking for the selected event            # com.eventhub.automation.steps.BookingSteps.iShouldSeeBookingForTheSelectedEvent()
+  When I clean Selenium-created bookings through the API      # com.eventhub.automation.steps.BookingSteps.iCleanSeleniumCreatedBookingsThroughTheApi()
+
+@hybrid @ui @stateful @owner-platform @risk-integration @intent-hybrid @impact-integration @p1 @regression @negative @api-cleanup
+Scenario: API-created sold-out event is unavailable in event discovery                      # src/test/resources/features/hybrid/api_ui_hybrid.feature:55
+Sep 04, 2026 10:33:22 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 152, returning the closest version; found: 149; Please update to a Selenium version that supports CDP version 152
+  Given I am signed in to EventHub                                                          # com.eventhub.automation.steps.AuthSteps.iAmSignedInToEventHub()
+  When I create a sold-out one-seat admin event through the API                             # com.eventhub.automation.steps.AdminSteps.iCreateASoldOutOneSeatAdminEventThroughTheApi()
+  Then the created admin event should show no remaining seats or be unavailable for booking # com.eventhub.automation.steps.AdminSteps.theCreatedAdminEventShouldShowNoRemainingSeatsOrBeUnavailableForBooking()
+
+Failed scenarios:
+file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature:58 # Booking cancellation is not silently repeatable
+
+23 Scenarios (1 failed, 22 passed)
+108 Steps (1 failed, 5 skipped, 102 passed)
+4m7.625s
+
+
+io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)
+	at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+	at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+	at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+	at io.restassured.path.json.JsonPath.getString(JsonPath.java:352)
+	at com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi(ApiSteps.java:58)
+	at ✽.I create a booking through the API(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature:59)
+Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading '<', no possible valid JSON value or punctuation could be recognized.
+	at groovy.json.JsonLexer.nextToken(JsonLexer.java:86)
+	at groovy.json.JsonLexer$nextToken.call(Unknown Source)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
+	at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)
+	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)
+	at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+	at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+	at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+	at io.restassured.path.json.JsonPath.getString(JsonPath.java:352)
+	at com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi(ApiSteps.java:58)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.CucumberTestRunner.runScenario(CucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+
+[ERROR] Tests run: 23, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 257.2 s <<< FAILURE! -- in TestSuite
+[ERROR] com.eventhub.automation.runners.CucumberTestRunner.runScenario["Booking cancellation is not silently repeatable", "EventHub API contract"](4) -- Time elapsed: 2.548 s <<< FAILURE!
+io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)
+	at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+	at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+	at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+	at io.restassured.path.json.JsonPath.getString(JsonPath.java:352)
+	at com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi(ApiSteps.java:58)
+	at ✽.I create a booking through the API(file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature:59)
+Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading '<', no possible valid JSON value or punctuation could be recognized.
+	at groovy.json.JsonLexer.nextToken(JsonLexer.java:86)
+	at groovy.json.JsonLexer$nextToken.call(Unknown Source)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
+	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
+	at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)
+	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)
+	at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+	at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+	at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+	at io.restassured.path.json.JsonPath.getString(JsonPath.java:352)
+	at com.eventhub.automation.steps.ApiSteps.iCreateABookingThroughTheApi(ApiSteps.java:58)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at com.eventhub.automation.runners.CucumberTestRunner.runScenario(CucumberTestRunner.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CucumberTestRunner.runScenario » JsonPath Failed to parse the JSON document
+[INFO] 
+[ERROR] Tests run: 23, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  04:26 min
+[INFO] Finished at: 2026-09-04T22:33:33Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.3.1:test (default-test) on project eventhub-selenium-bdd: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
