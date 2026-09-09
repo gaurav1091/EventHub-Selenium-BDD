@@ -1,0 +1,77 @@
+{
+  "generatedAt" : "2026-09-09T22:42:27.911236466",
+  "status" : "ready",
+  "runId" : "run-20260909224155",
+  "environment" : "qa",
+  "suiteName" : "api-regression",
+  "browser" : "chrome",
+  "parallel" : "methods",
+  "threadCount" : "3",
+  "totalScenarios" : 26,
+  "passedScenarios" : 26,
+  "failedScenarios" : 0,
+  "retriedScenarios" : 0,
+  "accessibilityViolations" : 0,
+  "visualDiffPixels" : 0,
+  "visualMissingBaselines" : 0,
+  "quarantineCount" : 0,
+  "expiredQuarantineCount" : 0,
+  "slowestScenarios" : [ {
+    "id" : "d2bf2c0b-f5c4-44c7-bc39-9eb40bdae5d3",
+    "name" : "Event capacity boundary rejects booking beyond available seats",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 127,
+    "status" : "PASSED",
+    "durationMs" : 11790,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@api-cleanup", "@intent-capacity" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "b89b0a2d-473c-4eb4-ab03-aa863d091035",
+    "name" : "Duplicate booking attempts are handled consistently",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 122,
+    "status" : "PASSED",
+    "durationMs" : 6474,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@api-cleanup", "@intent-booking" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "cb9c2eb2-4ef7-486b-a247-42280f4bd449",
+    "name" : "Booking cancellation is not silently repeatable",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 58,
+    "status" : "PASSED",
+    "durationMs" : 5875,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@stateful", "@intent-booking" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "4d3dddb2-775a-490a-b930-7fa0e3548955",
+    "name" : "Malformed booking payloads are rejected by the API contract",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 102,
+    "status" : "PASSED",
+    "durationMs" : 3999,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "f399f1ba-0aba-4d3a-a0e3-1f5cb5650bcd",
+    "name" : "Malformed booking payloads are rejected by the API contract",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/api/api_contract.feature",
+    "line" : 101,
+    "status" : "PASSED",
+    "durationMs" : 3674,
+    "tags" : [ "@api", "@contract", "@owner-platform", "@risk-contract", "@intent-api-contract", "@impact-api", "@p1", "@regression", "@negative", "@parallel-safe", "@intent-contract" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ],
+  "checks" : {
+    "quarantine" : true,
+    "accessibility" : true,
+    "retry" : true,
+    "visual" : true,
+    "tests" : true
+  }
+}
