@@ -1,0 +1,70 @@
+{
+  "runId" : "run-20260910224403",
+  "timestamp" : "2026-09-10T22:46:02.828967595",
+  "environment" : "qa",
+  "suiteName" : "regression",
+  "browser" : "chrome",
+  "headless" : "true",
+  "executionTarget" : "local",
+  "seleniumRemoteUrl" : "http://localhost:4444/wd/hub",
+  "parallel" : "methods",
+  "threadCount" : "4",
+  "tags" : "(@regression and @parallel-safe) and not @stateful",
+  "passedScenarios" : 76,
+  "failedScenarios" : 0,
+  "totalScenarios" : 76,
+  "retriedScenarios" : 0,
+  "maxAllowedRetries" : 0,
+  "retryThresholdPassed" : true,
+  "slowestScenarios" : [ {
+    "id" : "b96692df-b5f5-4871-b615-7f35228e3c92",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 17,
+    "status" : "PASSED",
+    "durationMs" : 13245,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "01457644-ea41-4840-911e-251da8f6d0b2",
+    "name" : "Key pages expose basic accessibility semantics",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/ux/accessibility_smoke.feature",
+    "line" : 18,
+    "status" : "PASSED",
+    "durationMs" : 11688,
+    "tags" : [ "@accessibility", "@ui", "@owner-platform", "@risk-ux", "@intent-accessibility", "@impact-ux", "@p1", "@regression", "@parallel-safe" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "cdf133c9-f452-46c5-9f37-48d35ca4696f",
+    "name" : "Admin event form rejects invalid numeric values",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/admin/admin_event_management.feature",
+    "line" : 19,
+    "status" : "PASSED",
+    "durationMs" : 11414,
+    "tags" : [ "@admin", "@ui", "@owner-platform", "@risk-admin", "@intent-admin", "@impact-admin", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-validation" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "14629fdd-140c-4849-ae7b-acd5c8c26cf7",
+    "name" : "Ticket quantity cannot be decreased below one",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/bookings/booking_lifecycle.feature",
+    "line" : 66,
+    "status" : "PASSED",
+    "durationMs" : 10539,
+    "tags" : [ "@bookings", "@ui", "@owner-platform", "@risk-revenue", "@intent-booking", "@impact-bookings", "@p1", "@regression", "@parallel-safe", "@negative", "@intent-capacity" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  }, {
+    "id" : "2cd56a8f-8228-4e04-bf54-3d884f2644d6",
+    "name" : "Authenticated session survives refresh on protected pages",
+    "uri" : "file:///home/runner/work/EventHub-Selenium-BDD/EventHub-Selenium-BDD/src/test/resources/features/auth/login.feature",
+    "line" : 69,
+    "status" : "PASSED",
+    "durationMs" : 10149,
+    "tags" : [ "@auth", "@ui", "@owner-platform", "@risk-auth", "@intent-auth", "@impact-auth", "@p1", "@regression", "@parallel-safe", "@intent-session" ],
+    "browser" : "chrome",
+    "environment" : "qa"
+  } ]
+}

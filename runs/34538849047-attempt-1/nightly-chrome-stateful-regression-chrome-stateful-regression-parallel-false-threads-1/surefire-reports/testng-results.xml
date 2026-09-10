@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="23" passed="23" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-09-10T22:43:59 UTC" name="EventHub Automation Suite" finished-at="2026-09-10T22:47:57 UTC" duration-ms="237697">
+    <groups>
+      <group name="cucumber">
+        <method signature="CucumberTestRunner.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" name="runScenario" class="com.eventhub.automation.runners.CucumberTestRunner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2026-09-10T22:43:59 UTC" name="Cucumber BDD Tests" finished-at="2026-09-10T22:47:57 UTC" duration-ms="237697">
+      <class name="com.eventhub.automation.runners.CucumberTestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:05 UTC" name="setUpClass" finished-at="2026-09-10T22:44:06 UTC" duration-ms="868" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@160250e6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:06 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:44:27 UTC" duration-ms="21289" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Admin can create a disposable event and find it in discovery"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin event management"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:27 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:44:40 UTC" duration-ms="12644" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sold-out admin event is unavailable from discovery"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin event management"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:40 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:44:43 UTC" duration-ms="3229" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Authenticated user can create and cancel a booking through API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:43 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:44:47 UTC" duration-ms="3596" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Booking cancellation is not silently repeatable"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:47 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:44:51 UTC" duration-ms="4319" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Booking list maps to POJO responses after API booking creation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:51 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:44:56 UTC" duration-ms="4998" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Duplicate booking attempts are handled consistently"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:44:56 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:45:01 UTC" duration-ms="4977" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Event capacity boundary rejects booking beyond available seats"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["EventHub API contract"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:45:01 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:45:12 UTC" duration-ms="10842" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User can book a ticket and view it under My Bookings"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:45:12 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:45:22 UTC" duration-ms="10044" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User can book tickets and see confirmation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:45:22 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:45:33 UTC" duration-ms="10682" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User can book tickets and see confirmation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:45:33 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:45:43 UTC" duration-ms="10365" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Booking confirmation shows customer, quantity, event, and total"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:45:43 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:45:54 UTC" duration-ms="10579" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User can view booking details"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:45:54 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:46:05 UTC" duration-ms="11459" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User can cancel a booking"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:46:05 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:46:16 UTC" duration-ms="11514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User can clear all bookings"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:46:16 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:46:27 UTC" duration-ms="10642" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Booking cannot exceed available tickets"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:46:27 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:46:37 UTC" duration-ms="9960" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Selenium-created bookings can be cleaned through API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Event booking lifecycle"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:46:37 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:46:48 UTC" duration-ms="11225" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Booking created through API is visible in My Bookings"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["API and UI hybrid coverage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:46:48 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:46:59 UTC" duration-ms="10228" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API-created event is searchable and deep-linkable in the UI"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["API and UI hybrid coverage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:46:59 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:47:09 UTC" duration-ms="10246" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API-created event appears in admin management and discovery"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["API and UI hybrid coverage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:47:09 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:47:24 UTC" duration-ms="14785" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UI booking for API-created event is visible through the API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["API and UI hybrid coverage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:47:24 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:47:36 UTC" duration-ms="12847" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API cleanup of an API-created booking is reflected in the UI"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["API and UI hybrid coverage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:47:36 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:47:46 UTC" duration-ms="10021" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API-created booking details can be opened in the UI"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["API and UI hybrid coverage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:47:46 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-09-10T22:47:56 UTC" duration-ms="10017" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["API-created sold-out event is unavailable in event discovery"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["API and UI hybrid coverage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.eventhub.automation.runners.CucumberTestRunner@3249e278]" started-at="2026-09-10T22:47:56 UTC" name="tearDownClass" finished-at="2026-09-10T22:47:57 UTC" duration-ms="395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.eventhub.automation.runners.CucumberTestRunner -->
+    </test> <!-- Cucumber BDD Tests -->
+  </suite> <!-- EventHub Automation Suite -->
+</testng-results>
