@@ -1,0 +1,27 @@
+[
+  {
+    "name": "UI Synchronization",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(TimeoutException|StaleElementReferenceException|ElementClickInterceptedException).*"
+  },
+  {
+    "name": "Environment Or Configuration",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(Missing required configuration|Environment health check failed|Preflight).*"
+  },
+  {
+    "name": "API Contract",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(JsonSchema|schema|statusCode|API).*"
+  },
+  {
+    "name": "Accessibility",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(Axe|accessibility|violation).*"
+  },
+  {
+    "name": "Assertion",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(AssertionError|Expecting|Expected).*"
+  }
+]
