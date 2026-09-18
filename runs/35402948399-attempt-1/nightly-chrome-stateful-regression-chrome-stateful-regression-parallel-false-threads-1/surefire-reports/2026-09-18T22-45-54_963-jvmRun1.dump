@@ -1,0 +1,27 @@
+# Created at 2026-09-18T22:46:04.342
+com.eventhub.automation.exceptions.FrameworkException: Preflight failed: configured EventHub credentials were rejected with HTTP 400
+	at com.eventhub.automation.support.EnvironmentHealthCheck.verifyCredentials(EnvironmentHealthCheck.java:87)
+	at com.eventhub.automation.support.EnvironmentHealthCheck.verify(EnvironmentHealthCheck.java:43)
+	at com.eventhub.automation.listeners.TestLifecycleListener.onStart(TestLifecycleListener.java:36)
+	at org.testng.TestRunner.fireEvent(TestRunner.java:864)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:640)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+
